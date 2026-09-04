@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------ */
+/* Design Tokens via CSS Custom Properties                            */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  /* Stone-inspired colour palette */
+  --color-stone-50: #FAFAF8;
+  --color-stone-100: #F5F5F0;
+  --color-stone-200: #E8E6E1;
+  --color-stone-300: #D4D0C8;
+  --color-stone-400: #B8B3A8;
+  --color-stone-500: #8A8477;
+  --color-stone-600: #6B6560;
+  --color-stone-700: #4A4540;
+  --color-stone-800: #2C2C2C;
+  --color-stone-900: #1A1A1A;
+
+  --color-warm-gold: #B8956A;
+  --color-warm-beige: #C4A882;
+  --color-warm-cream: #F0EBE3;
+
+  /* Typography */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ------------------------------------------------------------------ */
+/* Base styles                                                        */
+/* ------------------------------------------------------------------ */
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  background-color: var(--color-stone-50);
+  color: var(--color-stone-900);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ------------------------------------------------------------------ */
+/* Smooth scroll                                                      */
+/* ------------------------------------------------------------------ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ------------------------------------------------------------------ */
+/* Selection colour                                                   */
+/* ------------------------------------------------------------------ */
+
+::selection {
+  background-color: var(--color-warm-beige);
+  color: white;
+}
+
+/* ------------------------------------------------------------------ */
+/* Focus ring                                                         */
+/* ------------------------------------------------------------------ */
+
+*:focus-visible {
+  outline: 2px solid var(--color-warm-gold);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Subtle reveal animation                                            */
+/* ------------------------------------------------------------------ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+/* ------------------------------------------------------------------ */
+/* Image hover scale                                                  */
+/* ------------------------------------------------------------------ */
+
+.img-hover-scale {
+  overflow: hidden;
+}
+
+.img-hover-scale img {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-scale:hover img {
+  transform: scale(1.05);
+}
+
+/* ------------------------------------------------------------------ */
+/* Underline transition for nav links                                 */
+/* ------------------------------------------------------------------ */
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-stone-900);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
