@@ -97,6 +97,7 @@ export interface AboutContent {
 
 export interface AboutPreviewContent {
   sectionNumber?: string;
+  eyebrow?: string;
   label: string;
   headline: string;
   body: string;

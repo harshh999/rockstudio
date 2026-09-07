@@ -137,6 +137,7 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
     return () => ctx.revert();
   }, []);
 
+  const eyebrow = content?.eyebrow || "ABOUT ROCKS STUDIO";
   const headline = content?.headline || "Natural stone, chosen with intention.";
   const body =
     content?.body ||
@@ -148,7 +149,7 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#F5F3EF] py-[100px] lg:py-[130px] overflow-hidden"
+      className="relative bg-[#F5F3EF] py-[80px] lg:py-[100px] overflow-hidden"
     >
       {/* Background Subtle Stone-Inspired SVG Linework Layer */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -165,65 +166,65 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
 
       {/* Main Container */}
       <div className="relative z-10 mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-[40px]">
-        {/* Main 2-Column Grid (42% / 58%) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] items-center gap-12 lg:gap-[64px]">
+        {/* Main 2-Column Grid (46% / 54%) */}
+        <div className="grid grid-cols-1 lg:grid-cols-[46%_54%] items-center gap-10 lg:gap-[56px]">
           {/* Left Column: Text Block */}
           <div ref={textRef} className="max-w-[480px] self-center">
+            {/* Eyebrow */}
+            <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#1B1B19] block mb-3">
+              {eyebrow}
+            </span>
+
             {/* Primary Display Headline */}
-            <h2 className="font-serif text-[38px] sm:text-[46px] lg:text-[clamp(42px,3.8vw,58px)] font-normal leading-[1.04] tracking-[-0.04em] text-[#1B1B19]">
+            <h2 className="font-serif text-[36px] sm:text-[44px] lg:text-[clamp(38px,3.5vw,52px)] font-normal leading-[1.06] tracking-[-0.035em] text-[#1B1B19]">
               {headline}
             </h2>
 
             {/* Paragraph Description */}
-            <p className="mt-[26px] text-[15px] font-normal leading-[1.7] text-[#68635C] max-w-[420px]">
+            <p className="mt-[22px] text-[15px] font-normal leading-[1.68] text-[#68635C] max-w-[420px]">
               {body}
             </p>
 
             {/* CTA Link */}
-            <div className="mt-[32px]">
+            <div className="mt-[28px]">
               <Link
                 href={linkHref}
-                className="inline-flex items-center text-[14px] font-medium tracking-wide text-[#1B1B19] border-b border-[#1B1B19] pb-[5px] transition-opacity duration-200 hover:opacity-60"
+                className="inline-flex items-center text-[14px] font-medium tracking-wide text-[#1B1B19] border-b border-[#1B1B19] pb-[4px] transition-opacity duration-200 hover:opacity-60"
               >
-                {linkLabel}
+                {linkLabel} &rarr;
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Dominant Architectural Image (Tall 4:5 Crop) */}
+          {/* Right Column: Compact Architectural Image (5:6 Crop) */}
           <div ref={imageRef} className="w-full flex justify-start lg:justify-end">
-            <div className="relative w-full max-w-[560px] aspect-[4/5] rounded-[32px] overflow-hidden bg-stone-200/60 shadow-sm border border-stone-300/30">
+            <div className="relative w-full max-w-[500px] aspect-[5/6] rounded-[32px] overflow-hidden bg-stone-200/60 shadow-xs border border-stone-300/30">
               <Image
                 src={imageSrc}
                 alt="Refined natural stone architectural detail"
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 560px"
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-cover object-center transition-transform duration-700 hover:scale-[1.01]"
               />
             </div>
           </div>
         </div>
 
-        {/* Integrated KPI / Information Strip */}
+        {/* Integrated Editorial KPI / Proof Point Strip */}
         <div
           ref={kpisRef}
-          className="mt-16 lg:mt-20 pt-10 border-t border-stone-300/60 grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12"
+          className="mt-10 lg:mt-12 pt-8 lg:pt-9 border-t border-stone-300/70 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12"
         >
-          {KPIS.map((kpi, idx) => (
-            <div
-              key={kpi.label}
-              className={`kpi-item ${
-                idx === 2 ? "col-span-2 md:col-span-1" : "col-span-1"
-              }`}
-            >
-              <div className="font-sans text-[20px] sm:text-[24px] lg:text-[26px] font-light tracking-tight text-[#1B1B19] uppercase">
+          {KPIS.map((kpi) => (
+            <div key={kpi.label} className="kpi-item text-left">
+              <div className="font-sans text-[28px] sm:text-[32px] lg:text-[36px] font-normal tracking-tight text-[#1B1B19] leading-none">
                 {kpi.value}
               </div>
-              <div className="mt-1 text-[11px] font-semibold tracking-[0.14em] text-[#1B1B19] uppercase">
+              <div className="mt-2.5 text-[11px] font-semibold tracking-[0.14em] text-[#1B1B19] uppercase">
                 {kpi.label}
               </div>
-              <div className="mt-1 text-[13px] text-[#68635C] font-normal">
+              <div className="mt-1 text-[13px] text-[#68635C] font-normal max-w-[200px] leading-[1.5]">
                 {kpi.supporting}
               </div>
             </div>
