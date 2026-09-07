@@ -149,7 +149,7 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#F5F3EF] py-[80px] lg:py-[100px] overflow-hidden"
+      className="relative bg-[#F5F3EF] py-20 lg:py-24 overflow-hidden"
     >
       {/* Background Subtle Stone-Inspired SVG Linework Layer */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -165,70 +165,88 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-[40px]">
-        {/* Main 2-Column Grid (46% / 54%) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[46%_54%] items-center gap-10 lg:gap-[56px]">
-          {/* Left Column: Text Block */}
-          <div ref={textRef} className="max-w-[480px] self-center">
-            {/* Eyebrow */}
-            <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#1B1B19] block mb-3">
-              {eyebrow}
-            </span>
+      <div className="relative z-10 mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-12">
+        {/* Unified 2-Column Composition (42% / 58%) */}
+        <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] items-stretch gap-8 lg:gap-14">
+          {/* Left Column: Integrated Editorial & Proof Point Area */}
+          <div ref={textRef} className="flex flex-col justify-between max-w-[540px]">
+            {/* Editorial Story Header */}
+            <div>
+              <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#1B1B19] block mb-3">
+                {eyebrow}
+              </span>
 
-            {/* Primary Display Headline */}
-            <h2 className="font-serif text-[36px] sm:text-[44px] lg:text-[clamp(38px,3.5vw,52px)] font-normal leading-[1.06] tracking-[-0.035em] text-[#1B1B19]">
-              {headline}
-            </h2>
+              <h2 className="font-serif text-[38px] sm:text-[48px] lg:text-[60px] font-normal leading-[0.98] tracking-[-0.04em] text-[#1B1B19] max-w-[600px]">
+                {headline}
+              </h2>
 
-            {/* Paragraph Description */}
-            <p className="mt-[22px] text-[15px] font-normal leading-[1.68] text-[#68635C] max-w-[420px]">
-              {body}
-            </p>
+              <p className="mt-5 text-[15px] sm:text-[16px] font-normal leading-[1.65] text-[#68635C] max-w-[520px]">
+                {body}
+              </p>
 
-            {/* CTA Link */}
-            <div className="mt-[28px]">
-              <Link
-                href={linkHref}
-                className="inline-flex items-center text-[14px] font-medium tracking-wide text-[#1B1B19] border-b border-[#1B1B19] pb-[4px] transition-opacity duration-200 hover:opacity-60"
-              >
-                {linkLabel} &rarr;
-              </Link>
+              <div className="mt-6">
+                <Link
+                  href={linkHref}
+                  className="inline-flex items-center text-[14px] font-medium tracking-wide text-[#1B1B19] border-b border-[#1B1B19] pb-1 transition-opacity duration-200 hover:opacity-60"
+                >
+                  {linkLabel} &rarr;
+                </Link>
+              </div>
+            </div>
+
+            {/* Mobile-Only Architectural Image (Renders between text & KPIs on mobile) */}
+            <div className="block lg:hidden my-6">
+              <div className="relative w-full aspect-[4/3] sm:aspect-[4/5] max-h-[460px] rounded-[20px] overflow-hidden bg-stone-200/60 border border-stone-300/30">
+                <Image
+                  src={imageSrc}
+                  alt="Refined natural stone architectural detail"
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
+
+            {/* Integrated KPI Proof Points Block */}
+            <div
+              ref={kpisRef}
+              className="mt-6 lg:mt-10 pt-6 border-t border-stone-300/70 grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5"
+            >
+              {KPIS.map((kpi, idx) => (
+                <div
+                  key={kpi.label}
+                  className={`kpi-item text-left ${
+                    idx !== 0 ? "pt-3 sm:pt-0 border-t sm:border-t-0 border-stone-300/40" : ""
+                  }`}
+                >
+                  <div className="font-sans text-[22px] sm:text-[24px] lg:text-[28px] font-normal tracking-tight text-[#1B1B19] leading-none">
+                    {kpi.value}
+                  </div>
+                  <div className="mt-1.5 text-[10px] font-semibold tracking-[0.14em] text-[#1B1B19] uppercase">
+                    {kpi.label}
+                  </div>
+                  <div className="mt-1 text-[12px] text-[#68635C] font-normal leading-[1.45]">
+                    {kpi.supporting}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Right Column: Compact Architectural Image (5:6 Crop) */}
-          <div ref={imageRef} className="w-full flex justify-start lg:justify-end">
-            <div className="relative w-full max-w-[500px] aspect-[5/6] rounded-[32px] overflow-hidden bg-stone-200/60 shadow-xs border border-stone-300/30">
+          {/* Right Column: Dominant Architectural Visual Anchor (Desktop) */}
+          <div ref={imageRef} className="hidden lg:flex w-full justify-end">
+            <div className="relative w-full h-[520px] lg:h-[560px] rounded-[24px] overflow-hidden bg-stone-200/60 shadow-xs border border-stone-300/30">
               <Image
                 src={imageSrc}
                 alt="Refined natural stone architectural detail"
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 500px"
+                sizes="650px"
                 className="object-cover object-center transition-transform duration-700 hover:scale-[1.01]"
               />
             </div>
           </div>
-        </div>
-
-        {/* Integrated Editorial KPI / Proof Point Strip */}
-        <div
-          ref={kpisRef}
-          className="mt-10 lg:mt-12 pt-8 lg:pt-9 border-t border-stone-300/70 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12"
-        >
-          {KPIS.map((kpi) => (
-            <div key={kpi.label} className="kpi-item text-left">
-              <div className="font-sans text-[28px] sm:text-[32px] lg:text-[36px] font-normal tracking-tight text-[#1B1B19] leading-none">
-                {kpi.value}
-              </div>
-              <div className="mt-2.5 text-[11px] font-semibold tracking-[0.14em] text-[#1B1B19] uppercase">
-                {kpi.label}
-              </div>
-              <div className="mt-1 text-[13px] text-[#68635C] font-normal max-w-[200px] leading-[1.5]">
-                {kpi.supporting}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
