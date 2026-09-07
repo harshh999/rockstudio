@@ -26,7 +26,9 @@ import { testimonials } from "@/data/testimonials";
 import { siteSettings } from "@/data/site-settings";
 import { aboutContent, aboutPreviewContent } from "@/data/about";
 import { heroContent } from "@/data/hero";
-import type { HeroContent } from "@/types";
+import { applications } from "@/data/applications";
+import { whyStudioData, type WhyStudioContent } from "@/data/why-studio";
+import type { HeroContent, ApplicationTile } from "@/types";
 
 export class MockCMSProvider implements CMSProvider {
   // ---------------------------------------------------------------------------
@@ -120,4 +122,22 @@ export class MockCMSProvider implements CMSProvider {
   async getHeroContent(): Promise<HeroContent> {
     return { ...heroContent };
   }
+
+  // ---------------------------------------------------------------------------
+  // Applications
+  // ---------------------------------------------------------------------------
+
+  async getApplications(): Promise<ApplicationTile[]> {
+    return [...applications];
+  }
+
+  // ---------------------------------------------------------------------------
+  // Why Studio
+  // ---------------------------------------------------------------------------
+
+  async getWhyStudioContent(): Promise<WhyStudioContent> {
+    return { ...whyStudioData };
+  }
 }
+
+

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { categories } from "@/data/categories";
 
 interface FormData {
   name: string;
@@ -187,10 +188,13 @@ export default function ContactForm() {
           className="mt-2 block w-full border-b border-stone-200 bg-transparent py-3 text-base text-stone-900 outline-none transition-colors focus:border-stone-900"
         >
           <option value="">Select a requirement</option>
-          <option value="marble">Marble</option>
-          <option value="granite">Granite</option>
-          <option value="quartzite">Quartzite</option>
-          <option value="sandstone">Sandstone</option>
+          {[...categories]
+            .sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0))
+            .map((cat) => (
+              <option key={cat.id || cat.slug} value={cat.slug}>
+                {cat.name}
+              </option>
+            ))}
           <option value="custom">Custom / Other</option>
         </select>
       </div>

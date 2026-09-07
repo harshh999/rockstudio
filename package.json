@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "setup:wix": "npx tsx scripts/bootstrap-wix.ts"
   },
   "dependencies": {
+    "@wix/data": "^1.0.514",
+    "@wix/sdk": "^1.21.16",
     "clsx": "^2.1.1",
     "gsap": "^3.15.0",
     "next": "16.3.4",

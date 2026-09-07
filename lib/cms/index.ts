@@ -8,9 +8,15 @@
 
 import type { CMSProvider } from "./types";
 import { MockCMSProvider } from "./mock";
-// Future: import { WixCMSProvider } from "./wix";
+import { WixCMSProvider } from "./wix";
 
-const cms: CMSProvider = new MockCMSProvider();
-// Future: const cms: CMSProvider = new WixCMSProvider();
+const isWixConfigured = Boolean(
+  process.env.WIX_API_KEY && process.env.WIX_SITE_ID
+);
+
+const cms: CMSProvider = isWixConfigured
+  ? new WixCMSProvider()
+  : new MockCMSProvider();
 
 export default cms;
+

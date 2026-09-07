@@ -29,8 +29,29 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Wix Headless CMS Configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This application connects to Wix Headless CMS using `@wix/sdk` and `@wix/data`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Environment Configuration
+1. Open `.env.local` in the project root.
+2. Ensure `WIX_SITE_ID` is set:
+   ```env
+   WIX_SITE_ID="8afeacdd-8129-40a8-a2c3-431c9f5e0cca"
+   ```
+3. Add your server-side Wix API key:
+   ```env
+   WIX_API_KEY="your-wix-api-key"
+   ```
+
+> **Security Note:** `WIX_API_KEY` is a server-side environment variable. Never prefix it with `NEXT_PUBLIC_` or expose it to client-side code.
+
+### Bootstrapping Collections & Seed Data
+Run the automated bootstrap script to automatically create required Wix CMS collections (`Categories`, `Products`, `Testimonials`, `HomeContent`, `AboutContent`, `SiteSettings`, `Locations`), set permission levels, and seed initial content:
+
+```bash
+npm run setup:wix
+```
+
+The script is idempotent: running it multiple times will not create duplicate collections or duplicate seed records.
+

@@ -1,5 +1,5 @@
 /**
- * Wix Field Mapping — STUB.
+ * Wix Field Mapping.
  *
  * Centralises the mapping between Wix CMS collection field IDs and
  * application-level property names. This file is the ONLY place where
@@ -7,7 +7,6 @@
  *
  * Rules:
  *  - Never import this file from UI components.
- *  - Never reference Wix field names (e.g. "Title", "Image") outside this file.
  *  - Only the Wix CMS adapter (./wix.ts) should consume these mappings.
  */
 
@@ -16,47 +15,105 @@
 // ---------------------------------------------------------------------------
 
 export const COLLECTIONS = {
-  products: "MenuItems",
   categories: "Categories",
-  projects: "Projects",
+  products: "Products",
   testimonials: "Testimonials",
+  homeContent: "HomeContent",
+  aboutContent: "AboutContent",
   siteSettings: "SiteSettings",
-  about: "About",
+  locations: "Locations",
+  projects: "Projects",
 } as const;
 
 // ---------------------------------------------------------------------------
 // Field Mappings
 // ---------------------------------------------------------------------------
 
-/**
- * Maps Wix CMS field IDs → application property names for the Products collection.
- *
- * Usage inside the Wix adapter:
- *   const product: Product = {
- *     name: wixItem[PRODUCT_FIELDS.name],
- *     heroImage: wixItem[PRODUCT_FIELDS.heroImage],
- *     ...
- *   };
- */
-export const PRODUCT_FIELDS = {
-  name: "Title",
-  description: "description",
-  price: "price",
-  heroImage: "Image",
-  category: "category",
-  featured: "featured",
-  slug: "slug",
-  sortOrder: "sortOrder",
-} as const;
-
 export const CATEGORY_FIELDS = {
-  name: "Title",
+  name: "name",
   slug: "slug",
   description: "description",
-  image: "Image",
+  image: "image",
   sortOrder: "sortOrder",
+  active: "active",
 } as const;
 
-// Future: Add field maps for other collections as they are set up in Wix.
-// export const PROJECT_FIELDS = { ... };
-// export const TESTIMONIAL_FIELDS = { ... };
+export const PRODUCT_FIELDS = {
+  name: "name",
+  slug: "slug",
+  category: "category",
+  subcategory: "subcategory",
+  shortDescription: "shortDescription",
+  description: "description",
+  mainImage: "mainImage",
+  gallery: "gallery",
+  featured: "featured",
+  sortOrder: "sortOrder",
+  active: "active",
+} as const;
+
+export const TESTIMONIAL_FIELDS = {
+  name: "name",
+  role: "role",
+  company: "company",
+  quote: "quote",
+  image: "image",
+  sortOrder: "sortOrder",
+  active: "active",
+} as const;
+
+export const HOME_CONTENT_FIELDS = {
+  heroTitle: "heroTitle",
+  heroDescription: "heroDescription",
+  heroImage: "heroImage",
+  aboutTitle: "aboutTitle",
+  aboutDescription: "aboutDescription",
+  aboutImage: "aboutImage",
+  aboutLinkText: "aboutLinkText",
+  ctaTitle: "ctaTitle",
+  ctaDescription: "ctaDescription",
+  ctaImage: "ctaImage",
+  ctaButtonText: "ctaButtonText",
+} as const;
+
+export const ABOUT_CONTENT_FIELDS = {
+  introTitle: "introTitle",
+  introDescription: "introDescription",
+  manufacturingTitle: "manufacturingTitle",
+  manufacturingDescription: "manufacturingDescription",
+  manufacturingImage: "manufacturingImage",
+  sourcingTitle: "sourcingTitle",
+  sourcingDescription: "sourcingDescription",
+  sourcingImage: "sourcingImage",
+  qualityTitle: "qualityTitle",
+  qualityDescription: "qualityDescription",
+  qualityImage: "qualityImage",
+  capabilitiesTitle: "capabilitiesTitle",
+  capabilitiesDescription: "capabilitiesDescription",
+  capabilitiesImage: "capabilitiesImage",
+  ctaTitle: "ctaTitle",
+  ctaDescription: "ctaDescription",
+  ctaImage: "ctaImage",
+} as const;
+
+export const SITE_SETTINGS_FIELDS = {
+  companyName: "companyName",
+  logo: "logo",
+  phone: "phone",
+  email: "email",
+  whatsapp: "whatsapp",
+  address: "address",
+  instagramUrl: "instagramUrl",
+  facebookUrl: "facebookUrl",
+  googleMapsUrl: "googleMapsUrl",
+} as const;
+
+export const LOCATION_FIELDS = {
+  name: "name",
+  address: "address",
+  contactPerson: "contactPerson",
+  phone: "phone",
+  email: "email",
+  sortOrder: "sortOrder",
+  active: "active",
+} as const;

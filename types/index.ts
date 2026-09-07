@@ -147,3 +147,22 @@ export interface NavItem {
   route: string;
 }
 
+// ---------------------------------------------------------------------------
+// Applications & Why Studio Sections
+// ---------------------------------------------------------------------------
+
+export interface ApplicationTile {
+  title: string;
+  slug: string;
+  image: string;
+}
+
+export interface WhyStudioTile {
+  type: "text" | "image";
+  title: string;
+  description: string;
+  image?: string;
+}
+
+
+

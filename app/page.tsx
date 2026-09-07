@@ -5,23 +5,29 @@ import {
   getTestimonials,
   getHeroContent,
   getAboutPreview,
+  getApplications,
+  getWhyStudioContent,
 } from "@/lib/data";
 import Hero from "@/components/ui/Hero";
 import AboutPreview from "@/components/ui/AboutPreview";
+import CategoryGallery from "@/components/ui/CategoryGallery";
+import Applications from "@/components/ui/Applications";
+import WhyStudio from "@/components/ui/WhyStudio";
 import SectionHeading from "@/components/ui/SectionHeading";
-import CategoryCard from "@/components/ui/CategoryCard";
 import ProductCard from "@/components/ui/ProductCard";
 import TestimonialGrid from "@/components/ui/TestimonialGrid";
 import QuoteCTA from "@/components/ui/QuoteCTA";
 
 export default async function HomePage() {
-  const [categories, featuredProducts, testimonials, hero, aboutPreview] =
+  const [categories, featuredProducts, testimonials, hero, aboutPreview, applicationTiles, whyStudio] =
     await Promise.all([
       getProductCategories(),
       getFeaturedProducts(),
       getTestimonials(),
       getHeroContent(),
       getAboutPreview(),
+      getApplications(),
+      getWhyStudioContent(),
     ]);
 
   const selectedProducts = featuredProducts.slice(0, 4);
@@ -41,20 +47,12 @@ export default async function HomePage() {
       {/* ============================================================ */}
       {/* PRODUCT CATEGORIES                                           */}
       {/* ============================================================ */}
-      <section className="bg-[#FAF9F6] py-24 lg:py-32">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-10">
-          <SectionHeading
-            label="Our Materials"
-            title="Natural Stone Categories"
-            subtitle="Explore our curated range of premium natural stone, sourced from established quarries."
-          />
-          <div className="mt-14 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {categories.map((cat) => (
-              <CategoryCard key={cat.id} category={cat} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <CategoryGallery categories={categories} />
+
+      {/* ============================================================ */}
+      {/* APPLICATIONS                                                 */}
+      {/* ============================================================ */}
+      <Applications tiles={applicationTiles} />
 
       {/* ============================================================ */}
       {/* SELECTED PRODUCTS                                            */}
@@ -93,50 +91,7 @@ export default async function HomePage() {
       {/* ============================================================ */}
       {/* WHY ROCKS STUDIO                                             */}
       {/* ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-        <SectionHeading
-          label="Why Choose Us"
-          title="Why Rocks Studio"
-          subtitle="We combine quality materials, modern processing, and reliable service to support your projects."
-        />
-        <div className="mt-16 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              title: "Premium Materials",
-              desc: "Natural stone sourced from established quarries, inspected for quality before entering our production line.",
-            },
-            {
-              title: "Modern Processing",
-              desc: "Our facility is equipped with precision cutting, calibration, and finishing equipment for consistent results.",
-            },
-            {
-              title: "Reliable Supply",
-              desc: "Capacity to handle orders from boutique installations to large-scale commercial requirements, delivered on schedule.",
-            },
-            {
-              title: "Expert Guidance",
-              desc: "Our team works closely with architects and project managers to fulfil material specifications.",
-            },
-            {
-              title: "Quality Assurance",
-              desc: "Systematic quality checks from raw block inspection through processing and final dispatch.",
-            },
-            {
-              title: "Wide Range",
-              desc: "Marble, granite, quartzite, and sandstone available in various finishes, sizes, and thicknesses.",
-            },
-          ].map((item) => (
-            <div key={item.title} className="border-t border-stone-200 pt-6">
-              <h3 className="text-lg font-medium tracking-tight text-stone-900">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-stone-500">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <WhyStudio content={whyStudio} />
 
       {/* ============================================================ */}
       {/* TESTIMONIALS                                                 */}

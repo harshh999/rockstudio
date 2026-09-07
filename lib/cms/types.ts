@@ -19,7 +19,9 @@ import type {
   AboutContent,
   AboutPreviewContent,
   HeroContent,
+  ApplicationTile,
 } from "@/types";
+import type { WhyStudioContent } from "@/data/why-studio";
 
 export interface CMSProvider {
   // Products
@@ -49,4 +51,12 @@ export interface CMSProvider {
 
   // Hero
   getHeroContent(): Promise<HeroContent>;
+
+  // Applications
+  getApplications(): Promise<ApplicationTile[]>;
+
+  // Why Studio
+  getWhyStudioContent(): Promise<WhyStudioContent>;
 }
+
+

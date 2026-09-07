@@ -20,7 +20,9 @@ import type {
   AboutContent,
   AboutPreviewContent,
   HeroContent,
+  ApplicationTile,
 } from "@/types";
+import type { WhyStudioContent } from "@/data/why-studio";
 
 // ---------------------------------------------------------------------------
 // Products
@@ -113,4 +115,22 @@ export async function getAboutPreview(): Promise<AboutPreviewContent> {
 export async function getHeroContent(): Promise<HeroContent> {
   return cms.getHeroContent();
 }
+
+// ---------------------------------------------------------------------------
+// Applications
+// ---------------------------------------------------------------------------
+
+export async function getApplications(): Promise<ApplicationTile[]> {
+  return cms.getApplications();
+}
+
+// ---------------------------------------------------------------------------
+// Why Studio
+// ---------------------------------------------------------------------------
+
+export async function getWhyStudioContent(): Promise<WhyStudioContent> {
+  return cms.getWhyStudioContent();
+}
+
+
 
