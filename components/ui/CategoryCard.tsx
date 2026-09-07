@@ -10,7 +10,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link
       href={`/products?category=${category.slug}`}
-      className="group relative block aspect-[4/5] overflow-hidden rounded-[14px] sm:rounded-[16px] bg-stone-200"
+      className="group relative block aspect-[4/5] overflow-hidden rounded-[32px] bg-stone-200"
     >
       <Image
         src={category.image}

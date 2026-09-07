@@ -54,7 +54,7 @@ export default function QuoteCTA({
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full overflow-hidden flex items-center justify-center min-h-[460px] md:min-h-[500px] ${
+      className={`relative overflow-hidden flex items-center justify-center min-h-[460px] md:min-h-[500px] m-4 lg:m-6 rounded-[32px] ${
         isDark ? "bg-stone-900 text-white" : "bg-[#FAFAF8] text-stone-900"
       }`}
     >

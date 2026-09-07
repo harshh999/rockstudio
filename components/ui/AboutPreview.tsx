@@ -192,7 +192,7 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
 
           {/* Right Column: Dominant Architectural Image (Tall 4:5 Crop) */}
           <div ref={imageRef} className="w-full flex justify-start lg:justify-end">
-            <div className="relative w-full max-w-[560px] aspect-[4/5] rounded-[14px] overflow-hidden bg-stone-200/60 shadow-sm border border-stone-300/30">
+            <div className="relative w-full max-w-[560px] aspect-[4/5] rounded-[32px] overflow-hidden bg-stone-200/60 shadow-sm border border-stone-300/30">
               <Image
                 src={imageSrc}
                 alt="Refined natural stone architectural detail"

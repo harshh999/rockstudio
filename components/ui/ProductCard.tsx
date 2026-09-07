@@ -12,7 +12,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       href={`/products/${product.slug}`}
       className="group block"
     >
-      <div className="img-hover-scale aspect-[4/5] overflow-hidden bg-stone-100">
+      <div className="img-hover-scale aspect-[4/5] overflow-hidden bg-stone-100 rounded-[24px]">
         <Image
           src={product.heroImage}
           alt={product.name}

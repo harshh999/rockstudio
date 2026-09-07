@@ -158,7 +158,7 @@ export default function CategoryGallery({ categories }: CategoryGalleryProps) {
       <div className="w-full px-3 sm:px-5 md:px-6 lg:px-[26px]">
         <div
           ref={gridRef}
-          className="grid grid-cols-2 md:grid-cols-12 md:grid-rows-2 gap-2 sm:gap-2.5 lg:gap-[10px] rounded-[10px] md:rounded-[14px] overflow-hidden"
+          className="grid grid-cols-2 md:grid-cols-12 md:grid-rows-2 gap-2 sm:gap-2.5 lg:gap-[10px] rounded-[24px] md:rounded-[32px] overflow-hidden"
         >
           {categories.map((category, index) => {
             const isFeatured = index === 0; // Marble
@@ -167,7 +167,7 @@ export default function CategoryGallery({ categories }: CategoryGalleryProps) {
               <Link
                 key={category.id}
                 href={`/products?category=${category.slug}`}
-                className={`group relative block overflow-hidden bg-stone-200 ${getLayoutClasses(
+                className={`group relative block overflow-hidden rounded-[16px] md:rounded-[24px] bg-stone-200 ${getLayoutClasses(
                   index
                 )}`}
               >

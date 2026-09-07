@@ -37,7 +37,7 @@ export default async function AboutPage() {
       {/* ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+          <div className="relative aspect-[4/3] overflow-hidden bg-stone-100 rounded-[32px]">
             <Image
               src="/images/about/manufacturing.jpg"
               alt="Stone manufacturing facility"
@@ -77,7 +77,7 @@ export default async function AboutPage() {
                 {about.sourcing}
               </p>
             </div>
-            <div className="relative order-1 aspect-[4/3] overflow-hidden bg-stone-200 lg:order-2">
+            <div className="relative order-1 aspect-[4/3] overflow-hidden bg-stone-200 lg:order-2 rounded-[32px]">
               <Image
                 src="/images/categories/quartzite.jpg"
                 alt="Natural stone quarry"
@@ -95,7 +95,7 @@ export default async function AboutPage() {
       {/* ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+          <div className="relative aspect-[4/3] overflow-hidden bg-stone-100 rounded-[32px]">
             <Image
               src="/images/categories/marble.jpg"
               alt="Quality stone finishing"

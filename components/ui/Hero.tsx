@@ -8,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({ content }: HeroProps) {
   return (
-    <section className="relative h-[100svh] min-h-[720px] overflow-hidden bg-[#F5F3EF]">
+    <section className="relative h-[100svh] min-h-[720px] overflow-hidden bg-[#F5F3EF] rounded-b-[40px] lg:rounded-b-[60px]">
       {/* Full-Bleed Architectural Photograph (Calm, Soft & Naturally Lit) */}
       <Image
         src={content.backgroundImage}

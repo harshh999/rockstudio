@@ -75,7 +75,7 @@ export default function Applications({ tiles }: ApplicationsProps) {
             <Link
               key={tile.slug}
               href={`/products?application=${tile.slug}`}
-              className="group relative block w-full aspect-[4/3] rounded-[14px] overflow-hidden bg-stone-200/60 transition-transform duration-500 hover:scale-[1.01]"
+              className="group relative block w-full aspect-[4/3] rounded-[32px] overflow-hidden bg-stone-200/60 transition-transform duration-500 hover:scale-[1.01]"
             >
               {/* Background Photography */}
               <Image
