@@ -15,16 +15,19 @@ const KPIS = [
     value: "8+",
     label: "STONE CATEGORIES",
     supporting: "Curated natural materials",
+    isPrimaryNumeric: true,
   },
   {
     value: "INDIA + GLOBAL",
     label: "SOURCING NETWORK",
     supporting: "Established quarry partners",
+    isPrimaryNumeric: false,
   },
   {
     value: "END-TO-END",
     label: "STONE EXPERTISE",
     supporting: "Sourcing to final dispatch",
+    isPrimaryNumeric: false,
   },
 ];
 
@@ -211,7 +214,7 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
             {/* Integrated KPI Proof Points Block */}
             <div
               ref={kpisRef}
-              className="mt-6 lg:mt-10 pt-6 border-t border-stone-300/70 grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5"
+              className="mt-6 lg:mt-8 pt-6 border-t border-stone-300/70 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             >
               {KPIS.map((kpi, idx) => (
                 <div
@@ -220,13 +223,19 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
                     idx !== 0 ? "pt-3 sm:pt-0 border-t sm:border-t-0 border-stone-300/40" : ""
                   }`}
                 >
-                  <div className="font-sans text-[22px] sm:text-[24px] lg:text-[28px] font-normal tracking-tight text-[#1B1B19] leading-none">
+                  <div
+                    className={`font-sans font-normal tracking-tight text-[#1B1B19] ${
+                      kpi.isPrimaryNumeric
+                        ? "text-[28px] sm:text-[32px] lg:text-[34px] leading-none"
+                        : "text-[18px] sm:text-[19px] lg:text-[20px] leading-[1.1] sm:whitespace-nowrap"
+                    }`}
+                  >
                     {kpi.value}
                   </div>
-                  <div className="mt-1.5 text-[10px] font-semibold tracking-[0.14em] text-[#1B1B19] uppercase">
+                  <div className="mt-2 text-[9px] sm:text-[10px] font-semibold tracking-[0.16em] text-[#1B1B19] uppercase">
                     {kpi.label}
                   </div>
-                  <div className="mt-1 text-[12px] text-[#68635C] font-normal leading-[1.45]">
+                  <div className="mt-1 text-[12px] sm:text-[13px] text-[#68635C] font-normal leading-[1.4]">
                     {kpi.supporting}
                   </div>
                 </div>
