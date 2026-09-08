@@ -16,6 +16,7 @@
 
 export const COLLECTIONS = {
   categories: "Categories",
+  subcategories: "Subcategories",
   products: "Products",
   testimonials: "Testimonials",
   homeContent: "HomeContent",
@@ -32,6 +33,16 @@ export const COLLECTIONS = {
 export const CATEGORY_FIELDS = {
   name: "name",
   slug: "slug",
+  description: "description",
+  image: "image",
+  sortOrder: "sortOrder",
+  active: "active",
+} as const;
+
+export const SUBCATEGORY_FIELDS = {
+  name: "name",
+  slug: "slug",
+  category: "category",
   description: "description",
   image: "image",
   sortOrder: "sortOrder",

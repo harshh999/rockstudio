@@ -12,15 +12,22 @@ import type { CMSProvider } from "./types";
 import type {
   Product,
   ProductCategory,
+  ProductSubcategory,
   Project,
   Testimonial,
   SiteSettings,
   AboutContent,
   AboutPreviewContent,
+  ProcessContent,
+  HeroContent,
+  ApplicationTile,
 } from "@/types";
 
-import { products } from "@/data/products";
-import { categories } from "@/data/categories";
+import {
+  categories,
+  subcategories,
+  products,
+} from "@/data/catalogue-taxonomy";
 import { projects } from "@/data/projects";
 import { testimonials } from "@/data/testimonials";
 import { siteSettings } from "@/data/site-settings";
@@ -28,7 +35,7 @@ import { aboutContent, aboutPreviewContent } from "@/data/about";
 import { heroContent } from "@/data/hero";
 import { applications } from "@/data/applications";
 import { whyStudioData, type WhyStudioContent } from "@/data/why-studio";
-import type { HeroContent, ApplicationTile } from "@/types";
+import { processContent } from "@/data/process";
 
 export class MockCMSProvider implements CMSProvider {
   // ---------------------------------------------------------------------------
@@ -55,6 +62,12 @@ export class MockCMSProvider implements CMSProvider {
       .sort((a, b) => a.sortOrder - b.sortOrder);
   }
 
+  async getProductsBySubcategory(subcategory: string): Promise<Product[]> {
+    return products
+      .filter((p) => p.subcategory === subcategory)
+      .sort((a, b) => a.sortOrder - b.sortOrder);
+  }
+
   // ---------------------------------------------------------------------------
   // Product Categories
   // ---------------------------------------------------------------------------
@@ -67,6 +80,28 @@ export class MockCMSProvider implements CMSProvider {
     slug: string
   ): Promise<ProductCategory | null> {
     return categories.find((c) => c.slug === slug) ?? null;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Product Subcategories
+  // ---------------------------------------------------------------------------
+
+  async getProductSubcategories(): Promise<ProductSubcategory[]> {
+    return [...subcategories].sort((a, b) => a.sortOrder - b.sortOrder);
+  }
+
+  async getProductSubcategoriesByCategory(
+    category: string
+  ): Promise<ProductSubcategory[]> {
+    return subcategories
+      .filter((s) => s.category === category)
+      .sort((a, b) => a.sortOrder - b.sortOrder);
+  }
+
+  async getProductSubcategoryBySlug(
+    slug: string
+  ): Promise<ProductSubcategory | null> {
+    return subcategories.find((s) => s.slug === slug) ?? null;
   }
 
   // ---------------------------------------------------------------------------
@@ -137,6 +172,14 @@ export class MockCMSProvider implements CMSProvider {
 
   async getWhyStudioContent(): Promise<WhyStudioContent> {
     return { ...whyStudioData };
+  }
+
+  // ---------------------------------------------------------------------------
+  // Process
+  // ---------------------------------------------------------------------------
+
+  async getProcessContent(): Promise<ProcessContent> {
+    return { ...processContent };
   }
 }
 

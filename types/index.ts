@@ -16,6 +16,7 @@ export interface Product {
   name: string;
   slug: string;
   category: string;
+  subcategory: string;
   shortDescription: string;
   description: string;
   heroImage: string;
@@ -28,6 +29,16 @@ export interface ProductCategory {
   id: string;
   name: string;
   slug: string;
+  description: string;
+  image: string;
+  sortOrder: number;
+}
+
+export interface ProductSubcategory {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
   description: string;
   image: string;
   sortOrder: number;
@@ -163,6 +174,88 @@ export interface WhyStudioTile {
   title: string;
   description: string;
   image?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Process Page
+// ---------------------------------------------------------------------------
+
+export interface ProcessHeroContent {
+  eyebrow: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface MaterialFinishItem {
+  name: string;
+  image: string;
+  description?: string;
+}
+
+export interface MaterialFinishGroup {
+  material: string;
+  description: string;
+  finishes: MaterialFinishItem[];
+}
+
+export interface ProcessContent {
+  hero: ProcessHeroContent;
+  miningSourcing: {
+    number: string;
+    title: string;
+    description: string;
+    supportingPoints: string[];
+    images: string[];
+  };
+  manufacturing: {
+    number: string;
+    title: string;
+    description: string;
+    supportingPoints: string[];
+    facility: {
+      name: string;
+      subtitle: string;
+      details: string[];
+    };
+    images: string[];
+  };
+  processingFinishing: {
+    number: string;
+    title: string;
+    intro: {
+      title: string;
+      description: string;
+    };
+    materialExamples: MaterialFinishGroup[];
+  };
+  qualityControl: {
+    number: string;
+    title: string;
+    description: string;
+    stages: {
+      number: string;
+      name: string;
+      description: string;
+    }[];
+    image: string;
+  };
+  capabilities: {
+    number: string;
+    title: string;
+    description: string;
+    focus: {
+      title: string;
+      detail: string;
+    }[];
+    image: string;
+  };
+  cta: {
+    title: string;
+    description: string;
+    buttonText: string;
+    buttonHref: string;
+  };
 }
 
 

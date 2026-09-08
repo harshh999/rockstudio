@@ -1,7 +1,6 @@
 import { createClient, ApiKeyStrategy } from "@wix/sdk";
 import { collections, items } from "@wix/data";
-import { categories } from "../data/categories";
-import { products } from "../data/products";
+import { categories, subcategories, products } from "../data/catalogue-taxonomy";
 import { testimonials } from "../data/testimonials";
 import { siteSettings } from "../data/site-settings";
 import { aboutContent } from "../data/about";
@@ -37,6 +36,24 @@ const REQUIRED_COLLECTIONS: CollectionSpec[] = [
     ],
   },
   {
+    id: "Subcategories",
+    displayName: "Subcategories",
+    fields: [
+      { key: "name", displayName: "Name", type: "TEXT" },
+      { key: "slug", displayName: "Slug", type: "TEXT" },
+      {
+        key: "category",
+        displayName: "Category",
+        type: "REFERENCE",
+        referencedCollectionId: "Categories",
+      },
+      { key: "description", displayName: "Description", type: "TEXT" },
+      { key: "image", displayName: "Image", type: "IMAGE" },
+      { key: "sortOrder", displayName: "Sort Order", type: "NUMBER" },
+      { key: "active", displayName: "Active", type: "BOOLEAN" },
+    ],
+  },
+  {
     id: "Products",
     displayName: "Products",
     fields: [
@@ -48,7 +65,12 @@ const REQUIRED_COLLECTIONS: CollectionSpec[] = [
         type: "REFERENCE",
         referencedCollectionId: "Categories",
       },
-      { key: "subcategory", displayName: "Subcategory", type: "TEXT" },
+      {
+        key: "subcategory",
+        displayName: "Subcategory",
+        type: "REFERENCE",
+        referencedCollectionId: "Subcategories",
+      },
       { key: "shortDescription", displayName: "Short Description", type: "TEXT" },
       { key: "description", displayName: "Description", type: "RICH_TEXT" },
       { key: "mainImage", displayName: "Main Image", type: "IMAGE" },
@@ -285,16 +307,45 @@ async function bootstrap() {
     }
   }
 
+  // Seed Subcategories
+  console.log("\nSeeding [Subcategories]...");
+  const subcategoryIdMap = new Map<string, string>(); // slug -> wix item _id
+  for (const sub of subcategories) {
+    const catWixId = categoryIdMap.get(sub.category) || sub.category;
+    const itemData = {
+      _id: sub.id,
+      name: sub.name,
+      slug: sub.slug,
+      category: catWixId,
+      description: sub.description,
+      image: null,
+      sortOrder: sub.sortOrder,
+      active: true,
+    };
+
+    try {
+      await (client.items as any).saveDataItem({
+        dataCollectionId: "Subcategories",
+        dataItem: { _id: sub.id, data: itemData },
+      });
+      subcategoryIdMap.set(sub.slug, sub.id);
+      console.log(`  ✓ Saved subcategory: ${sub.name} (${sub.id})`);
+    } catch (err: any) {
+      console.error(`  x Error saving subcategory ${sub.name}:`, err.message || err);
+    }
+  }
+
   // Seed Products
   console.log("\nSeeding [Products]...");
   for (const prod of products) {
     const catWixId = categoryIdMap.get(prod.category) || prod.category;
+    const subWixId = subcategoryIdMap.get(prod.subcategory) || prod.subcategory;
     const itemData = {
       _id: prod.id,
       name: prod.name,
       slug: prod.slug,
       category: catWixId,
-      subcategory: "",
+      subcategory: subWixId,
       shortDescription: prod.shortDescription,
       description: prod.description,
       mainImage: null,

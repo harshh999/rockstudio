@@ -56,13 +56,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-4 md:top-[32px] left-1/2 z-[100] w-[calc(100vw-24px)] sm:w-[calc(100vw-32px)] md:w-[min(820px,calc(100vw-48px))] lg:w-[820px] transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none ${
+      className={`fixed top-4 md:top-[32px] left-1/2 z-[100] w-[calc(100vw-24px)] md:w-auto max-w-[calc(100vw-24px)] transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none ${
         showNavbar
           ? "-translate-x-1/2 translate-y-0"
           : "-translate-x-1/2 -translate-y-[calc(100%+40px)]"
       }`}
     >
-      <nav className="flex h-[60px] md:h-[68px] lg:h-[72px] items-center justify-between rounded-full bg-white pl-4 pr-2 md:pl-[22px] md:pr-[8px] shadow-[0_4px_25px_rgba(0,0,0,0.07)] transition-shadow hover:shadow-[0_6px_30px_rgba(0,0,0,0.1)]">
+      <nav className="flex items-center justify-between md:justify-start rounded-full bg-white py-[8px] pl-[18px] pr-[10px] border border-stone-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] md:gap-8 lg:gap-14 transition-shadow hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] w-full">
         {/* Brand / Logo (Left) */}
         <div className="flex shrink-0 items-center">
           <Link
@@ -75,14 +75,14 @@ export default function Navbar() {
               alt="Rocks Studio"
               width={701}
               height={302}
-              className="h-[28px] md:h-[32px] lg:h-[34px] w-auto object-contain"
+              className="h-[28px] md:h-[30px] lg:h-[32px] w-auto object-contain"
               priority
             />
           </Link>
         </div>
 
         {/* Desktop Navigation (Center) */}
-        <ul className="hidden items-center gap-4 lg:gap-[24px] md:flex shrink-0 whitespace-nowrap mx-auto">
+        <ul className="hidden items-center gap-6 lg:gap-[32px] md:flex shrink-0 whitespace-nowrap">
           {NAV_ITEMS.map((item) => {
             const isActive = pathname === item.route;
             return (
@@ -103,19 +103,19 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA (Right) */}
-        <div className="hidden md:flex shrink-0 items-center ml-3">
+        <div className="hidden md:flex shrink-0 items-center">
           <Link
             href="/contact"
-            className="inline-flex h-[48px] lg:h-[52px] w-[124px] lg:w-[132px] items-center justify-center rounded-full bg-[#191919] text-[14px] lg:text-[15px] font-medium text-white whitespace-nowrap transition-colors duration-180 hover:bg-black"
+            className="inline-flex items-center justify-center rounded-full bg-[#171717] px-[22px] py-[12px] text-[14px] font-medium text-white whitespace-nowrap transition-colors duration-180 hover:bg-black"
           >
-            Get a Quote
+            Contact Us
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-100 text-stone-900 transition-colors hover:bg-stone-200 md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-100 text-stone-900 transition-colors hover:bg-stone-200 md:hidden ml-auto"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label="Toggle mobile menu"
           aria-expanded={mobileOpen}

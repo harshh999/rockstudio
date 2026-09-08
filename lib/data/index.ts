@@ -14,6 +14,7 @@ import cms from "@/lib/cms";
 import type {
   Product,
   ProductCategory,
+  ProductSubcategory,
   Project,
   Testimonial,
   SiteSettings,
@@ -21,6 +22,7 @@ import type {
   AboutPreviewContent,
   HeroContent,
   ApplicationTile,
+  ProcessContent,
 } from "@/types";
 import type { WhyStudioContent } from "@/data/why-studio";
 
@@ -48,6 +50,12 @@ export async function getProductsByCategory(
   return cms.getProductsByCategory(category);
 }
 
+export async function getProductsBySubcategory(
+  subcategory: string
+): Promise<Product[]> {
+  return cms.getProductsBySubcategory(subcategory);
+}
+
 // ---------------------------------------------------------------------------
 // Product Categories
 // ---------------------------------------------------------------------------
@@ -60,6 +68,26 @@ export async function getProductCategoryBySlug(
   slug: string
 ): Promise<ProductCategory | null> {
   return cms.getProductCategoryBySlug(slug);
+}
+
+// ---------------------------------------------------------------------------
+// Product Subcategories
+// ---------------------------------------------------------------------------
+
+export async function getProductSubcategories(): Promise<ProductSubcategory[]> {
+  return cms.getProductSubcategories();
+}
+
+export async function getProductSubcategoriesByCategory(
+  category: string
+): Promise<ProductSubcategory[]> {
+  return cms.getProductSubcategoriesByCategory(category);
+}
+
+export async function getProductSubcategoryBySlug(
+  slug: string
+): Promise<ProductSubcategory | null> {
+  return cms.getProductSubcategoryBySlug(slug);
 }
 
 // ---------------------------------------------------------------------------
@@ -130,6 +158,14 @@ export async function getApplications(): Promise<ApplicationTile[]> {
 
 export async function getWhyStudioContent(): Promise<WhyStudioContent> {
   return cms.getWhyStudioContent();
+}
+
+// ---------------------------------------------------------------------------
+// Process
+// ---------------------------------------------------------------------------
+
+export async function getProcessContent(): Promise<ProcessContent> {
+  return cms.getProcessContent();
 }
 
 

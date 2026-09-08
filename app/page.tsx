@@ -96,25 +96,38 @@ export default async function HomePage() {
       {/* ============================================================ */}
       {/* TESTIMONIALS                                                 */}
       {/* ============================================================ */}
-      <section className="relative w-full bg-[#FAFAF8] py-[100px] overflow-hidden">
+      <section className="relative w-full bg-[#FAFAF8] pt-[110px] pb-[90px] overflow-hidden">
         {/* Header */}
-        <div className="relative z-10 mx-auto max-w-[760px] px-6 text-center mb-[70px]">
-          <h2 className="font-serif text-[36px] sm:text-[42px] lg:text-[48px] font-normal leading-[1.05] tracking-[-0.035em] text-[#171717] m-0">
+        <div className="relative z-10 mx-auto max-w-[620px] px-6 text-center mb-[60px]">
+          <p className="text-[12px] font-semibold tracking-[0.15em] text-[#55534F] uppercase mb-4">
+            Client Feedback
+          </p>
+          <h2 className="font-serif text-[34px] sm:text-[46px] lg:text-[56px] font-normal leading-[1.0] tracking-[-0.035em] text-[#171717] m-0">
             What Our Clients Are Saying
           </h2>
-          <p className="mt-[22px] max-w-[650px] mx-auto text-[18px] leading-[1.5] font-normal text-[#4B4D54] font-sans">
-            We take pride in delivering exceptional solutions that deliver great results. But don’t just take our word for it.
+          <p className="mt-[22px] mx-auto text-[16px] leading-[1.55] font-normal text-[#55534F] font-sans">
+            Rocks Studio works closely with architects, designers, builders, and project teams to source and supply premium natural stone for exceptional spaces.
           </p>
         </div>
 
-        {/* Testimonials Marquee Track */}
+        {/* Testimonials Showcase */}
         <TestimonialGrid testimonials={testimonials} />
+
+        {/* CTA */}
+        <div className="relative z-10 mx-auto px-6 text-center mt-[50px]">
+          <Link
+            href="/about#testimonials"
+            className="inline-block border-b border-[#171717] pb-1 text-[15px] font-medium tracking-wide text-[#171717] transition-colors hover:text-[#55534F] hover:border-[#55534F]"
+          >
+            See all Reviews
+          </Link>
+        </div>
       </section>
 
       {/* ============================================================ */}
       {/* CONTACT CTA                                                  */}
       {/* ============================================================ */}
-      <QuoteCTA variant="light" />
+      <QuoteCTA variant="light" bgImage="/images/projects/villa-flooring.jpg" />
     </>
   );
 }

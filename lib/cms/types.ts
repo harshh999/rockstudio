@@ -13,6 +13,7 @@
 import type {
   Product,
   ProductCategory,
+  ProductSubcategory,
   Project,
   Testimonial,
   SiteSettings,
@@ -20,6 +21,7 @@ import type {
   AboutPreviewContent,
   HeroContent,
   ApplicationTile,
+  ProcessContent,
 } from "@/types";
 import type { WhyStudioContent } from "@/data/why-studio";
 
@@ -29,10 +31,16 @@ export interface CMSProvider {
   getProductBySlug(slug: string): Promise<Product | null>;
   getFeaturedProducts(): Promise<Product[]>;
   getProductsByCategory(category: string): Promise<Product[]>;
+  getProductsBySubcategory(subcategory: string): Promise<Product[]>;
 
   // Product Categories
   getProductCategories(): Promise<ProductCategory[]>;
   getProductCategoryBySlug(slug: string): Promise<ProductCategory | null>;
+
+  // Product Subcategories
+  getProductSubcategories(): Promise<ProductSubcategory[]>;
+  getProductSubcategoriesByCategory(category: string): Promise<ProductSubcategory[]>;
+  getProductSubcategoryBySlug(slug: string): Promise<ProductSubcategory | null>;
 
   // Projects
   getProjects(): Promise<Project[]>;
@@ -57,6 +65,9 @@ export interface CMSProvider {
 
   // Why Studio
   getWhyStudioContent(): Promise<WhyStudioContent>;
+
+  // Process
+  getProcessContent(): Promise<ProcessContent>;
 }
 
 

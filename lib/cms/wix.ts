@@ -16,6 +16,7 @@ import type { CMSProvider } from "./types";
 import type {
   Product,
   ProductCategory,
+  ProductSubcategory,
   Project,
   Testimonial,
   SiteSettings,
@@ -24,11 +25,13 @@ import type {
   HeroContent,
   LocationItem,
   ApplicationTile,
+  ProcessContent,
 } from "@/types";
 import { COLLECTIONS } from "./wix-field-map";
 import { projects as mockProjects } from "@/data/projects";
 import { applications as mockApplications } from "@/data/applications";
 import { whyStudioData as mockWhyStudioData, type WhyStudioContent } from "@/data/why-studio";
+import { processContent as mockProcessContent } from "@/data/process";
 
 // Helper to strip simple HTML tags if rich text is returned as HTML string
 function stripHtml(html: string | undefined | null): string {
@@ -81,11 +84,20 @@ export class WixCMSProvider implements CMSProvider {
             ? catRef
             : "";
 
+        const subRef = d.subcategory;
+        const subcategorySlug =
+          typeof subRef === "object" && subRef !== null
+            ? subRef.slug || subRef._id || ""
+            : typeof subRef === "string"
+            ? subRef
+            : "";
+
         return {
           id: item._id || "",
           name: d.name || "",
           slug: d.slug || "",
           category: categorySlug,
+          subcategory: subcategorySlug,
           shortDescription: d.shortDescription || "",
           description: stripHtml(d.description),
           heroImage: typeof d.mainImage === "string" ? d.mainImage : d.mainImage?.src || "",
@@ -122,11 +134,20 @@ export class WixCMSProvider implements CMSProvider {
           ? catRef
           : "";
 
+      const subRef = d.subcategory;
+      const subcategorySlug =
+        typeof subRef === "object" && subRef !== null
+          ? subRef.slug || subRef._id || ""
+          : typeof subRef === "string"
+          ? subRef
+          : "";
+
       return {
         id: item._id || "",
         name: d.name || "",
         slug: d.slug || "",
         category: categorySlug,
+        subcategory: subcategorySlug,
         shortDescription: d.shortDescription || "",
         description: stripHtml(d.description),
         heroImage: typeof d.mainImage === "string" ? d.mainImage : d.mainImage?.src || "",
@@ -150,6 +171,11 @@ export class WixCMSProvider implements CMSProvider {
   async getProductsByCategory(category: string): Promise<Product[]> {
     const all = await this.getProducts();
     return all.filter((p) => p.category === category);
+  }
+
+  async getProductsBySubcategory(subcategory: string): Promise<Product[]> {
+    const all = await this.getProducts();
+    return all.filter((p) => p.subcategory === subcategory);
   }
 
   // ---------------------------------------------------------------------------
@@ -184,6 +210,54 @@ export class WixCMSProvider implements CMSProvider {
   async getProductCategoryBySlug(slug: string): Promise<ProductCategory | null> {
     const all = await this.getProductCategories();
     return all.find((c) => c.slug === slug) ?? null;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Product Subcategories
+  // ---------------------------------------------------------------------------
+
+  async getProductSubcategories(): Promise<ProductSubcategory[]> {
+    try {
+      const { items: results } = await this.client.items
+        .queryDataItems({ dataCollectionId: COLLECTIONS.subcategories })
+        .eq("active", true)
+        .ascending("sortOrder")
+        .find();
+
+      return results.map((item: any) => {
+        const d = item.data || {};
+        const catRef = d.category;
+        const categorySlug =
+          typeof catRef === "object" && catRef !== null
+            ? catRef.slug || catRef._id || ""
+            : typeof catRef === "string"
+            ? catRef
+            : "";
+
+        return {
+          id: item._id || "",
+          name: d.name || "",
+          slug: d.slug || "",
+          category: categorySlug,
+          description: d.description || "",
+          image: typeof d.image === "string" ? d.image : d.image?.src || "",
+          sortOrder: d.sortOrder ?? 0,
+        };
+      });
+    } catch (error) {
+      console.error("WixCMSProvider.getProductSubcategories error:", error);
+      return [];
+    }
+  }
+
+  async getProductSubcategoriesByCategory(category: string): Promise<ProductSubcategory[]> {
+    const all = await this.getProductSubcategories();
+    return all.filter((s) => s.category === category);
+  }
+
+  async getProductSubcategoryBySlug(slug: string): Promise<ProductSubcategory | null> {
+    const all = await this.getProductSubcategories();
+    return all.find((s) => s.slug === slug) ?? null;
   }
 
   // ---------------------------------------------------------------------------
@@ -422,6 +496,14 @@ export class WixCMSProvider implements CMSProvider {
 
   async getWhyStudioContent(): Promise<WhyStudioContent> {
     return { ...mockWhyStudioData };
+  }
+
+  // ---------------------------------------------------------------------------
+  // Process
+  // ---------------------------------------------------------------------------
+
+  async getProcessContent(): Promise<ProcessContent> {
+    return { ...mockProcessContent };
   }
 }
 
