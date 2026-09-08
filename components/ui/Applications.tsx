@@ -52,9 +52,9 @@ export default function Applications({ tiles }: ApplicationsProps) {
       ref={sectionRef}
       className="bg-[#FAF9F6] py-24 lg:py-32"
     >
-      <div className="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div ref={headerRef} className="max-w-[720px] mb-12 lg:mb-16">
+        <div ref={headerRef} className="max-w-[720px] mb-10 lg:mb-12">
           <span className="text-[12px] font-semibold tracking-[0.18em] uppercase text-[#1B1B19]">
             APPLICATIONS
           </span>
@@ -66,16 +66,16 @@ export default function Applications({ tiles }: ApplicationsProps) {
           </p>
         </div>
 
-        {/* 3-Column Editorial Grid (2 Columns on Tablet, 1 Column on Mobile) */}
+        {/* 3-Column Editorial Grid with tighter 12px-16px gaps */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-3.5 lg:gap-4"
         >
           {tiles.map((tile) => (
             <Link
               key={tile.slug}
               href={`/products?application=${tile.slug}`}
-              className="group relative block w-full aspect-[4/3] rounded-[32px] overflow-hidden bg-stone-200/60 transition-transform duration-500 hover:scale-[1.01]"
+              className="group relative block w-full aspect-[4/3] rounded-[24px] sm:rounded-[28px] lg:rounded-[32px] overflow-hidden bg-stone-200/60 transition-transform duration-500 hover:scale-[1.01]"
             >
               {/* Background Photography */}
               <Image

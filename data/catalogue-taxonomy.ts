@@ -363,12 +363,20 @@ const sampleMaterialImages: Record<string, string> = {
 
 export const categories: ProductCategory[] = [
   {
+    id: "cat-marble",
+    name: "Marble",
+    slug: "marble",
+    description: "Classic imported and Italian marble slabs, featuring distinct veins and elegant translucent tones.",
+    image: sampleMaterialImages["marble"],
+    sortOrder: 1,
+  },
+  {
     id: "cat-granite",
     name: "Granite",
     slug: "granite",
     description: "Durable, high-density natural granite sourced from top domestic and international quarries.",
     image: sampleMaterialImages["granite"],
-    sortOrder: 1,
+    sortOrder: 2,
   },
   {
     id: "cat-cnc",
@@ -376,14 +384,6 @@ export const categories: ProductCategory[] = [
     slug: "cnc",
     description: "Precision CNC carved, fluted, inlaid, and 3D architectural stone surfaces.",
     image: sampleMaterialImages["cnc"],
-    sortOrder: 2,
-  },
-  {
-    id: "cat-marble",
-    name: "Marble",
-    slug: "marble",
-    description: "Classic imported and Italian marble slabs, featuring distinct veins and elegant translucent tones.",
-    image: sampleMaterialImages["marble"],
     sortOrder: 3,
   },
   {
@@ -396,7 +396,7 @@ export const categories: ProductCategory[] = [
   },
   {
     id: "cat-sandstone",
-    name: "Sandstone",
+    name: "Sand Stone",
     slug: "sandstone",
     description: "Warm, textured sandstone blocks and cobbles for interior and exterior architectural accents.",
     image: sampleMaterialImages["sandstone"],
@@ -409,6 +409,22 @@ export const categories: ProductCategory[] = [
     description: "Tactile natural stone, slate, and travertine wall cladding panels and stacked tiles.",
     image: sampleMaterialImages["wall-cladding"],
     sortOrder: 6,
+  },
+  {
+    id: "cat-kota",
+    name: "Kota",
+    slug: "kota",
+    description: "Fine-grained blue-green and brown limestone flooring and paving slabs.",
+    image: "/images/categories/kota.jpg",
+    sortOrder: 7,
+  },
+  {
+    id: "cat-kaddapa",
+    name: "Kaddapa",
+    slug: "kaddapa",
+    description: "Deep black natural limestone suited for interior, exterior, and landscaping.",
+    image: "/images/categories/kaddapa.jpg",
+    sortOrder: 8,
   },
 ];
 
