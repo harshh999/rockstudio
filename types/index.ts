@@ -100,7 +100,11 @@ export interface SiteSettings {
 
 export interface AboutContent {
   intro: string;
-  manufacturing: string;
+  foundation: {
+    title: string;
+    description: string;
+    image: string;
+  };
   sourcing: string;
   quality: string;
   capabilities: string;
@@ -148,6 +152,12 @@ export interface HeroContent {
   bottomLeftText?: string;
   bottomRightText?: string;
   bottomIndicator?: string;
+  bottomCta?: {
+    title: string;
+    description: string;
+    image: string;
+    buttonText: string;
+  };
 }
 
 // ---------------------------------------------------------------------------

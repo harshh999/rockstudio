@@ -33,6 +33,8 @@ import { applications as mockApplications } from "@/data/applications";
 import { whyStudioData as mockWhyStudioData, type WhyStudioContent } from "@/data/why-studio";
 import { processContent as mockProcessContent } from "@/data/process";
 
+import { getWixClient } from "@/lib/wix/client";
+
 // Helper to strip simple HTML tags if rich text is returned as HTML string
 function stripHtml(html: string | undefined | null): string {
   if (!html) return "";
@@ -43,23 +45,7 @@ export class WixCMSProvider implements CMSProvider {
   private client: ReturnType<typeof createClient>;
 
   constructor() {
-    const apiKey = process.env.WIX_API_KEY;
-    const siteId = process.env.WIX_SITE_ID;
-
-    if (!apiKey || !siteId) {
-      // In runtime environments without keys, fallback safely or log warning
-      console.warn(
-        "WixCMSProvider: WIX_API_KEY or WIX_SITE_ID missing. Client operations may fail."
-      );
-    }
-
-    this.client = createClient({
-      auth: ApiKeyStrategy({
-        apiKey: apiKey || "",
-        siteId: siteId || "",
-      }),
-      modules: { items },
-    });
+    this.client = getWixClient();
   }
 
   // ---------------------------------------------------------------------------
@@ -69,13 +55,14 @@ export class WixCMSProvider implements CMSProvider {
   async getProducts(): Promise<Product[]> {
     try {
       const { items: results } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.products })
+        .query(COLLECTIONS.products)
         .eq("active", true)
         .ascending("sortOrder")
+        .limit(1000)
         .find();
 
       return results.map((item: any) => {
-        const d = item.data || {};
+        const d = item.data || item;
         const catRef = d.category;
         const categorySlug =
           typeof catRef === "object" && catRef !== null
@@ -117,7 +104,7 @@ export class WixCMSProvider implements CMSProvider {
   async getProductBySlug(slug: string): Promise<Product | null> {
     try {
       const { items: results } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.products })
+        .query(COLLECTIONS.products)
         .eq("slug", slug)
         .eq("active", true)
         .limit(1)
@@ -125,7 +112,7 @@ export class WixCMSProvider implements CMSProvider {
 
       if (results.length === 0) return null;
       const item = results[0];
-      const d = item.data || {};
+      const d = item.data || item;
       const catRef = d.category;
       const categorySlug =
         typeof catRef === "object" && catRef !== null
@@ -185,13 +172,14 @@ export class WixCMSProvider implements CMSProvider {
   async getProductCategories(): Promise<ProductCategory[]> {
     try {
       const { items: results } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.categories })
+        .query(COLLECTIONS.categories)
         .eq("active", true)
         .ascending("sortOrder")
+        .limit(1000)
         .find();
 
       return results.map((item: any) => {
-        const d = item.data || {};
+        const d = item.data || item;
         return {
           id: item._id || "",
           name: d.name || "",
@@ -213,37 +201,42 @@ export class WixCMSProvider implements CMSProvider {
   }
 
   // ---------------------------------------------------------------------------
-  // Product Subcategories
+  // Product Subcategories (Derived dynamically from Products collection)
   // ---------------------------------------------------------------------------
 
   async getProductSubcategories(): Promise<ProductSubcategory[]> {
     try {
-      const { items: results } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.subcategories })
-        .eq("active", true)
-        .ascending("sortOrder")
-        .find();
+      const products = await this.getProducts();
+      const subcatMap = new Map<string, ProductSubcategory>();
 
-      return results.map((item: any) => {
-        const d = item.data || {};
-        const catRef = d.category;
-        const categorySlug =
-          typeof catRef === "object" && catRef !== null
-            ? catRef.slug || catRef._id || ""
-            : typeof catRef === "string"
-            ? catRef
-            : "";
+      let sortOrder = 1;
+      for (const p of products) {
+        if (!p.subcategory) continue;
+        const key = `${p.category}:${p.subcategory}`;
+        if (!subcatMap.has(key)) {
+          const name = p.subcategory
+            .split("-")
+            .map((word) => {
+              const lower = word.toLowerCase();
+              if (lower === "cnc") return "CNC";
+              if (lower === "sd") return "SD";
+              return word.charAt(0).toUpperCase() + word.slice(1);
+            })
+            .join(" ");
 
-        return {
-          id: item._id || "",
-          name: d.name || "",
-          slug: d.slug || "",
-          category: categorySlug,
-          description: d.description || "",
-          image: typeof d.image === "string" ? d.image : d.image?.src || "",
-          sortOrder: d.sortOrder ?? 0,
-        };
-      });
+          subcatMap.set(key, {
+            id: `subcat-${p.subcategory}`,
+            name,
+            slug: p.subcategory,
+            category: p.category,
+            description: `${name} material items.`,
+            image: p.heroImage || "",
+            sortOrder: sortOrder++,
+          });
+        }
+      }
+
+      return Array.from(subcatMap.values());
     } catch (error) {
       console.error("WixCMSProvider.getProductSubcategories error:", error);
       return [];
@@ -283,13 +276,13 @@ export class WixCMSProvider implements CMSProvider {
   async getTestimonials(): Promise<Testimonial[]> {
     try {
       const { items: results } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.testimonials })
+        .query(COLLECTIONS.testimonials)
         .eq("active", true)
         .ascending("sortOrder")
         .find();
 
       return results.map((item: any) => {
-        const d = item.data || {};
+        const d = item.data || item;
         return {
           id: item._id || "",
           name: d.name || "",
@@ -312,18 +305,24 @@ export class WixCMSProvider implements CMSProvider {
   async getSiteSettings(): Promise<SiteSettings> {
     try {
       const { items: results } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.siteSettings })
+        .query(COLLECTIONS.siteSettings)
         .limit(1)
         .find();
 
-      const { items: locResults } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.locations })
-        .eq("active", true)
-        .ascending("sortOrder")
-        .find();
+      let locResults: any[] = [];
+      try {
+        const { items } = await this.client.items
+          .query(COLLECTIONS.locations)
+          .eq("active", true)
+          .ascending("sortOrder")
+          .find();
+        locResults = items;
+      } catch (err) {
+        // intentionally ignore missing locations collection
+      }
 
       const locations: LocationItem[] = locResults.map((item: any) => {
-        const d = item.data || {};
+        const d = item.data || item;
         return {
           name: d.name || "",
           address: d.address || "",
@@ -334,7 +333,7 @@ export class WixCMSProvider implements CMSProvider {
       });
 
       if (results.length > 0) {
-        const d = results[0].data || {};
+        const d = results[0].data || results[0];
         return {
           companyName: d.companyName || "Rocks Studio",
           phone: d.phone || "",
@@ -352,12 +351,12 @@ export class WixCMSProvider implements CMSProvider {
 
     return {
       companyName: "Rocks Studio",
-      phone: "+91 93777 16669",
-      email: "rocksstudio2017@gmail.com",
-      address: "Nr. CNG Petrol Pump, Gota Cross Road, Gota, Ahmedabad",
-      whatsapp: "+91 93777 16669",
-      instagram: "https://instagram.com/rocksstudio",
-      facebook: "https://facebook.com/rocksstudio",
+      phone: "",
+      email: "",
+      address: "",
+      whatsapp: "",
+      instagram: "",
+      facebook: undefined,
       locations: [],
     };
   }
@@ -369,15 +368,19 @@ export class WixCMSProvider implements CMSProvider {
   async getAboutContent(): Promise<AboutContent> {
     try {
       const { items: results } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.aboutContent })
+        .query(COLLECTIONS.aboutContent)
         .limit(1)
         .find();
 
       if (results.length > 0) {
-        const d = results[0].data || {};
+        const d = results[0].data || results[0];
         return {
           intro: stripHtml(d.introDescription),
-          manufacturing: stripHtml(d.manufacturingDescription),
+          foundation: {
+            title: d.manufacturingTitle || "",
+            description: stripHtml(d.manufacturingDescription),
+            image: typeof d.manufacturingImage === "string" ? d.manufacturingImage : d.manufacturingImage?.src || "",
+          },
           sourcing: stripHtml(d.sourcingDescription),
           quality: stripHtml(d.qualityDescription),
           capabilities: stripHtml(d.capabilitiesDescription),
@@ -389,7 +392,11 @@ export class WixCMSProvider implements CMSProvider {
 
     return {
       intro: "",
-      manufacturing: "",
+      foundation: {
+        title: "",
+        description: "",
+        image: "",
+      },
       sourcing: "",
       quality: "",
       capabilities: "",
@@ -399,12 +406,12 @@ export class WixCMSProvider implements CMSProvider {
   async getAboutPreview(): Promise<AboutPreviewContent> {
     try {
       const { items: results } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.homeContent })
+        .query(COLLECTIONS.homeContent)
         .limit(1)
         .find();
 
       if (results.length > 0) {
-        const d = results[0].data || {};
+        const d = results[0].data || results[0];
         return {
           sectionNumber: "01",
           label: "ABOUT ROCKS STUDIO",
@@ -422,14 +429,14 @@ export class WixCMSProvider implements CMSProvider {
     }
 
     return {
-      sectionNumber: "01",
-      label: "ABOUT ROCKS STUDIO",
-      headline: "Natural stone, chosen with intention.",
+      sectionNumber: "",
+      label: "",
+      headline: "",
       body: "",
-      image: "/images/about/about-preview.jpg",
+      image: "",
       cta: {
-        label: "Discover Rocks Studio",
-        href: "/about",
+        label: "",
+        href: "",
       },
     };
   }
@@ -441,12 +448,12 @@ export class WixCMSProvider implements CMSProvider {
   async getHeroContent(): Promise<HeroContent> {
     try {
       const { items: results } = await this.client.items
-        .queryDataItems({ dataCollectionId: COLLECTIONS.homeContent })
+        .query(COLLECTIONS.homeContent)
         .limit(1)
         .find();
 
       if (results.length > 0) {
-        const d = results[0].data || {};
+        const d = results[0].data || results[0];
         return {
           headline: d.heroTitle || "Stone for spaces that endure.",
           description: d.heroDescription || "",
@@ -461,6 +468,12 @@ export class WixCMSProvider implements CMSProvider {
           },
           bottomLeftText: "AHMEDABAD · INDIA",
           bottomRightText: "SCROLL TO EXPLORE",
+          bottomCta: {
+            title: d.ctaTitle || "",
+            description: d.ctaDescription || "",
+            image: typeof d.ctaImage === "string" ? d.ctaImage : d.ctaImage?.src || "",
+            buttonText: d.ctaButtonText || "",
+          },
         };
       }
     } catch (error) {
@@ -468,16 +481,22 @@ export class WixCMSProvider implements CMSProvider {
     }
 
     return {
-      headline: "Stone for spaces that endure.",
+      headline: "",
       description: "",
-      backgroundImage: "/images/hero-calm.jpg",
+      backgroundImage: "",
       primaryCta: {
-        label: "Explore Materials",
-        href: "/products",
+        label: "",
+        href: "",
       },
       secondaryCta: {
-        label: "Get a Quote",
-        href: "/contact",
+        label: "",
+        href: "",
+      },
+      bottomCta: {
+        title: "",
+        description: "",
+        image: "",
+        buttonText: "",
       },
     };
   }

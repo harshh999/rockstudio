@@ -15,8 +15,7 @@
 // ---------------------------------------------------------------------------
 
 export const COLLECTIONS = {
-  categories: "Categories",
-  subcategories: "Subcategories",
+  categories: "categories",
   products: "Products",
   testimonials: "Testimonials",
   homeContent: "HomeContent",

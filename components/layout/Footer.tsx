@@ -3,10 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { siteSettings } from "@/data/site-settings";
+import type { SiteSettings } from "@/types";
 import { categories } from "@/data/categories";
 
-export default function Footer() {
+interface FooterProps {
+  settings: SiteSettings;
+}
+
+export default function Footer({ settings }: FooterProps) {
   const pathname = usePathname();
   const currentYear = new Date().getFullYear();
   const isPrivacyActive = pathname === "/privacy-policy";
@@ -17,12 +21,12 @@ export default function Footer() {
   );
 
   // Primary contacts
-  const address = siteSettings.address || "Nr. CNG Petrol Pump, Gota Cross Road, Gota, Ahmedabad";
-  const phone = siteSettings.phone || "+91 93777 16669";
-  const email = siteSettings.email || "rocksstudio2017@gmail.com";
+  const address = settings.address || "Nr. CNG Petrol Pump, Gota Cross Road, Gota, Ahmedabad";
+  const phone = settings.phone || "+91 93777 16669";
+  const email = settings.email || "rocksstudio2017@gmail.com";
 
   // Secondary Locations (excluding the primary Rocks Studio headquarters)
-  const secondaryLocations = (siteSettings.locations || []).filter(
+  const secondaryLocations = (settings.locations || []).filter(
     (loc) => loc.name !== "Rocks Studio"
   );
 
@@ -55,7 +59,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 pt-1">
               {/* Facebook */}
               <a
-                href={siteSettings.facebook || "https://facebook.com/rocksstudio"}
+                href={settings.facebook || "https://facebook.com/rocksstudio"}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -68,7 +72,7 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href={siteSettings.instagram || "https://instagram.com/rocksstudio"}
+                href={settings.instagram || "https://instagram.com/rocksstudio"}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

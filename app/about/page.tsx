@@ -44,14 +44,22 @@ export default async function AboutPage() {
                 Our Foundation
               </span>
               <h2 className="font-serif text-3xl font-light tracking-tight text-stone-900 sm:text-4xl">
-                Curating Materials for Spaces That Endure
+                {about.foundation?.title || "Curating Materials for Spaces That Endure"}
               </h2>
-              <p className="text-base leading-relaxed text-stone-600">
-                Based in Ahmedabad, Gujarat, Rocks Studio was founded on a simple conviction: natural stone is not merely a construction material, but a permanent architectural expression.
-              </p>
-              <p className="text-base leading-relaxed text-stone-600">
-                We work collaboratively alongside leading architects, interior designers, builders, and discerning homeowners across India to curate, detail, and supply exceptional marble, granite, onyx, sandstone, and bespoke CNC carved stone surfaces.
-              </p>
+              {about.foundation?.description ? (
+                <p className="text-base leading-relaxed text-stone-600 whitespace-pre-wrap">
+                  {about.foundation.description}
+                </p>
+              ) : (
+                <>
+                  <p className="text-base leading-relaxed text-stone-600">
+                    Based in Ahmedabad, Gujarat, Rocks Studio was founded on a simple conviction: natural stone is not merely a construction material, but a permanent architectural expression.
+                  </p>
+                  <p className="text-base leading-relaxed text-stone-600">
+                    We work collaboratively alongside leading architects, interior designers, builders, and discerning homeowners across India to curate, detail, and supply exceptional marble, granite, onyx, sandstone, and bespoke CNC carved stone surfaces.
+                  </p>
+                </>
+              )}
 
               <div className="pt-4 flex flex-wrap gap-4">
                 <Link
@@ -72,8 +80,8 @@ export default async function AboutPage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[32px] bg-stone-100 shadow-sm">
                 <Image
-                  src="/images/about/about-preview.jpg"
-                  alt="Rocks Studio stone curation gallery"
+                  src={about.foundation?.image || "/images/about/about-preview.jpg"}
+                  alt={about.foundation?.title || "Rocks Studio stone curation gallery"}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

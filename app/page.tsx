@@ -127,7 +127,13 @@ export default async function HomePage() {
       {/* ============================================================ */}
       {/* CONTACT CTA                                                  */}
       {/* ============================================================ */}
-      <QuoteCTA variant="light" bgImage="/images/projects/villa-flooring.jpg" />
+      <QuoteCTA 
+        variant="light" 
+        title={hero.bottomCta?.title}
+        subtitle={hero.bottomCta?.description}
+        bgImage={hero.bottomCta?.image || "/images/projects/villa-flooring.jpg"}
+        buttonText={hero.bottomCta?.buttonText}
+      />
     </>
   );
 }

@@ -4,8 +4,11 @@ export const aboutContent: AboutContent = {
   intro:
     "Rocks Studio is a natural stone company based in Ahmedabad, Gujarat. We specialise in sourcing, processing, and supplying premium marble, granite, quartzite, and sandstone for architectural and interior applications. Our commitment is to deliver materials of consistent quality that meet the standards of discerning architects, designers, and builders.",
 
-  manufacturing:
-    "Our processing facility is equipped with modern stone-processing machinery, enabling precision cutting, calibration, and finishing of natural stone slabs and tiles. We maintain rigorous quality control at every stage of production to ensure dimensional accuracy and surface consistency across every batch.",
+  foundation: {
+    title: "Curating Materials for Spaces That Endure",
+    description: "Our processing facility is equipped with modern stone-processing machinery, enabling precision cutting, calibration, and finishing of natural stone slabs and tiles. We maintain rigorous quality control at every stage of production to ensure dimensional accuracy and surface consistency across every batch.",
+    image: "/images/about/about-preview.jpg"
+  },
 
   sourcing:
     "We source natural stone from established quarries across India and select international origins. Our sourcing process emphasises material quality, geological consistency, and responsible extraction practices. Each block is inspected before entering our production line.",
