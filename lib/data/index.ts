@@ -7,9 +7,11 @@
  * Rules:
  *  - Pages import from here — never from lib/cms directly.
  *  - Return types are always application-level types.
- *  - Caching / revalidation can be added here later (e.g. unstable_cache).
+ *  - Uses Next.js unstable_cache to implement ISR (revalidation every 60s)
+ *    so that Wix CMS changes propagate without manual redeployment.
  */
 
+import { unstable_cache } from "next/cache";
 import cms from "@/lib/cms";
 import type {
   Product,
@@ -26,147 +28,174 @@ import type {
 } from "@/types";
 import type { WhyStudioContent } from "@/data/why-studio";
 
+const REVALIDATE_INTERVAL = 60; // 60 seconds
+
 // ---------------------------------------------------------------------------
 // Products
 // ---------------------------------------------------------------------------
 
-export async function getProducts(): Promise<Product[]> {
-  return cms.getProducts();
-}
+export const getProducts = unstable_cache(
+  async (): Promise<Product[]> => cms.getProducts(),
+  ["products"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getProductBySlug(
-  slug: string
-): Promise<Product | null> {
-  return cms.getProductBySlug(slug);
-}
+export const getProductBySlug = unstable_cache(
+  async (slug: string): Promise<Product | null> => cms.getProductBySlug(slug),
+  ["productBySlug"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getFeaturedProducts(): Promise<Product[]> {
-  return cms.getFeaturedProducts();
-}
+export const getFeaturedProducts = unstable_cache(
+  async (): Promise<Product[]> => cms.getFeaturedProducts(),
+  ["featuredProducts"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getProductsByCategory(
-  category: string
-): Promise<Product[]> {
-  return cms.getProductsByCategory(category);
-}
+export const getProductsByCategory = unstable_cache(
+  async (category: string): Promise<Product[]> => cms.getProductsByCategory(category),
+  ["productsByCategory"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getProductsBySubcategory(
-  subcategory: string
-): Promise<Product[]> {
-  return cms.getProductsBySubcategory(subcategory);
-}
+export const getProductsBySubcategory = unstable_cache(
+  async (subcategory: string): Promise<Product[]> => cms.getProductsBySubcategory(subcategory),
+  ["productsBySubcategory"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // Product Categories
 // ---------------------------------------------------------------------------
 
-export async function getProductCategories(): Promise<ProductCategory[]> {
-  return cms.getProductCategories();
-}
+export const getProductCategories = unstable_cache(
+  async (): Promise<ProductCategory[]> => cms.getProductCategories(),
+  ["productCategories"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getProductCategoryBySlug(
-  slug: string
-): Promise<ProductCategory | null> {
-  return cms.getProductCategoryBySlug(slug);
-}
+export const getProductCategoryBySlug = unstable_cache(
+  async (slug: string): Promise<ProductCategory | null> => cms.getProductCategoryBySlug(slug),
+  ["productCategoryBySlug"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // Product Subcategories
 // ---------------------------------------------------------------------------
 
-export async function getProductSubcategories(): Promise<ProductSubcategory[]> {
-  return cms.getProductSubcategories();
-}
+export const getProductSubcategories = unstable_cache(
+  async (): Promise<ProductSubcategory[]> => cms.getProductSubcategories(),
+  ["productSubcategories"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getProductSubcategoriesByCategory(
-  category: string
-): Promise<ProductSubcategory[]> {
-  return cms.getProductSubcategoriesByCategory(category);
-}
+export const getProductSubcategoriesByCategory = unstable_cache(
+  async (category: string): Promise<ProductSubcategory[]> => cms.getProductSubcategoriesByCategory(category),
+  ["productSubcategoriesByCategory"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getProductSubcategoryBySlug(
-  slug: string
-): Promise<ProductSubcategory | null> {
-  return cms.getProductSubcategoryBySlug(slug);
-}
+export const getProductSubcategoryBySlug = unstable_cache(
+  async (slug: string): Promise<ProductSubcategory | null> => cms.getProductSubcategoryBySlug(slug),
+  ["productSubcategoryBySlug"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // Projects
 // ---------------------------------------------------------------------------
 
-export async function getProjects(): Promise<Project[]> {
-  return cms.getProjects();
-}
+export const getProjects = unstable_cache(
+  async (): Promise<Project[]> => cms.getProjects(),
+  ["projects"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getFeaturedProjects(): Promise<Project[]> {
-  return cms.getFeaturedProjects();
-}
+export const getFeaturedProjects = unstable_cache(
+  async (): Promise<Project[]> => cms.getFeaturedProjects(),
+  ["featuredProjects"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getProjectBySlug(
-  slug: string
-): Promise<Project | null> {
-  return cms.getProjectBySlug(slug);
-}
+export const getProjectBySlug = unstable_cache(
+  async (slug: string): Promise<Project | null> => cms.getProjectBySlug(slug),
+  ["projectBySlug"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // Testimonials
 // ---------------------------------------------------------------------------
 
-export async function getTestimonials(): Promise<Testimonial[]> {
-  return cms.getTestimonials();
-}
+export const getTestimonials = unstable_cache(
+  async (): Promise<Testimonial[]> => cms.getTestimonials(),
+  ["testimonials"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // Site
 // ---------------------------------------------------------------------------
 
-export async function getSiteSettings(): Promise<SiteSettings> {
-  return cms.getSiteSettings();
-}
+export const getSiteSettings = unstable_cache(
+  async (): Promise<SiteSettings> => cms.getSiteSettings(),
+  ["siteSettings"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // About
 // ---------------------------------------------------------------------------
 
-export async function getAboutContent(): Promise<AboutContent> {
-  return cms.getAboutContent();
-}
+export const getAboutContent = unstable_cache(
+  async (): Promise<AboutContent> => cms.getAboutContent(),
+  ["aboutContent"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
-export async function getAboutPreview(): Promise<AboutPreviewContent> {
-  return cms.getAboutPreview();
-}
+export const getAboutPreview = unstable_cache(
+  async (): Promise<AboutPreviewContent> => cms.getAboutPreview(),
+  ["aboutPreview"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // Hero
 // ---------------------------------------------------------------------------
 
-export async function getHeroContent(): Promise<HeroContent> {
-  return cms.getHeroContent();
-}
+export const getHeroContent = unstable_cache(
+  async (): Promise<HeroContent> => cms.getHeroContent(),
+  ["heroContent"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // Applications
 // ---------------------------------------------------------------------------
 
-export async function getApplications(): Promise<ApplicationTile[]> {
-  return cms.getApplications();
-}
+export const getApplications = unstable_cache(
+  async (): Promise<ApplicationTile[]> => cms.getApplications(),
+  ["applications"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // Why Studio
 // ---------------------------------------------------------------------------
 
-export async function getWhyStudioContent(): Promise<WhyStudioContent> {
-  return cms.getWhyStudioContent();
-}
+export const getWhyStudioContent = unstable_cache(
+  async (): Promise<WhyStudioContent> => cms.getWhyStudioContent(),
+  ["whyStudioContent"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
 
 // ---------------------------------------------------------------------------
 // Process
 // ---------------------------------------------------------------------------
 
-export async function getProcessContent(): Promise<ProcessContent> {
-  return cms.getProcessContent();
-}
-
-
-
+export const getProcessContent = unstable_cache(
+  async (): Promise<ProcessContent> => cms.getProcessContent(),
+  ["processContent"],
+  { revalidate: REVALIDATE_INTERVAL }
+);
