@@ -26,9 +26,11 @@ export function getWixClient() {
     modules: {
       items,
     },
-    // Prevent Next.js from aggressively caching the Wix SDK's internal fetch calls
-    // so that `unstable_cache` in lib/data/index.ts can properly manage revalidation.
-    fetch: (url, options) => fetch(url, { ...options, cache: "no-store" }),
+    // Prevent Next.js from caching the Wix SDK's internal HTTP GET requests in the fetch Data Cache.
+    // This ensures `unstable_cache` wrappers in lib/data/index.ts control 60s application revalidation
+    // and always fetch fresh network data from Wix CMS when revalidating.
+    fetch: (url: RequestInfo | URL, options?: RequestInit) =>
+      fetch(url, { ...options, cache: "no-store" }),
   });
 }
 
