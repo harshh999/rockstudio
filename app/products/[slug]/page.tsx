@@ -133,7 +133,7 @@ export default async function ProductDetailPage({
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
-        <section className="border-t border-stone-200 bg-stone-50 px-6 py-24 lg:px-8">
+        <section className="bg-white px-6 py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="font-serif text-2xl font-light tracking-tight text-stone-900 md:text-3xl">
               Related Products

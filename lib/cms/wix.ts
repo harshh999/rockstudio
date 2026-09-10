@@ -419,7 +419,7 @@ export class WixCMSProvider implements CMSProvider {
           body: stripHtml(d.aboutDescription),
           image: typeof d.aboutImage === "string" ? d.aboutImage : d.aboutImage?.src || "/images/about/about-preview.jpg",
           cta: {
-            label: d.aboutLinkText || "Discover Rocks Studio",
+            label: d.aboutLinkText || "Know More",
             href: "/about",
           },
         };
@@ -457,7 +457,7 @@ export class WixCMSProvider implements CMSProvider {
         return {
           headline: d.heroTitle || "Stone for spaces that endure.",
           description: d.heroDescription || "",
-          backgroundImage: typeof d.heroImage === "string" ? d.heroImage : d.heroImage?.src || "/images/hero-calm.jpg",
+          backgroundImage: typeof d.heroImage === "string" ? d.heroImage : d.heroImage?.src || "/images/projects/Hero_3.png",
           primaryCta: {
             label: "Explore Materials",
             href: "/products",

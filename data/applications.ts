@@ -4,31 +4,31 @@ export const applications: ApplicationTile[] = [
   {
     title: "Kitchens",
     slug: "kitchens",
-    image: "/images/products/statuario-white.jpg",
+    image: "/HeroPage/Kitchens.jpg",
   },
   {
     title: "Bathrooms",
     slug: "bathrooms",
-    image: "/images/products/calacatta-gold.jpg",
+    image: "/HeroPage/Bathrooms.jpg",
   },
   {
     title: "Living Spaces",
     slug: "living-spaces",
-    image: "/images/projects/villa-flooring.jpg",
+    image: "/HeroPage/LivingSpaces.jpg",
   },
   {
     title: "Feature Walls",
     slug: "feature-walls",
-    image: "/images/projects/hotel-lobby.jpg",
+    image: "/HeroPage/FeatureWalls.jpg",
   },
   {
     title: "Facades",
     slug: "facades",
-    image: "/images/projects/corporate-office.jpg",
+    image: "/HeroPage/Facades.jpg",
   },
   {
     title: "Commercial Spaces",
     slug: "commercial-spaces",
-    image: "/images/projects/resort-pool.jpg",
+    image: "/HeroPage/CommercialSpaces.jpg",
   },
 ];

@@ -80,7 +80,7 @@ export default function WhyStudio({ content }: WhyStudioProps) {
         className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5"
       >
         {/* Tile 1 (Top-Left): Large Intro Tile (Spans 2 cols on md/lg) */}
-        <div className="relative md:col-span-2 bg-[#F5F3EF] rounded-[32px] p-7 sm:p-8 lg:p-10 flex flex-col justify-between overflow-hidden min-h-[240px] sm:min-h-[260px]">
+        <div className="relative md:col-span-2 bg-stone-50/70 border border-stone-200/60 rounded-[32px] p-7 sm:p-8 lg:p-10 flex flex-col justify-between overflow-hidden min-h-[240px] sm:min-h-[260px]">
           <StoneVeinTextureSvg />
           <div className="relative z-10">
             <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#1B1B19]">
@@ -98,7 +98,7 @@ export default function WhyStudio({ content }: WhyStudioProps) {
         {/* Tile 2 (Top-Right): Image-backed Card — Premium Materials */}
         <div className="group relative min-h-[240px] sm:min-h-[260px] rounded-[32px] overflow-hidden bg-stone-200">
           <Image
-            src={tile1?.image || "/images/products/statuario-white.jpg"}
+            src={tile1?.title === "Premium Materials" ? "/HeroPage/PremiumMaterials.jpg" : (tile1?.image || "/images/products/statuario-white.jpg")}
             alt={tile1?.title || "Premium Materials"}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
@@ -119,7 +119,7 @@ export default function WhyStudio({ content }: WhyStudioProps) {
         {tile2 && (
           <div className="group relative md:col-span-2 min-h-[260px] sm:min-h-[280px] rounded-[32px] overflow-hidden bg-stone-200">
             <Image
-              src={tile2.image || "/images/projects/villa-flooring.jpg"}
+              src={tile2.title === "Made for Architecture" ? "/HeroPage/MadeForArchitecture.png" : (tile2.image || "/images/projects/villa-flooring.jpg")}
               alt={tile2.title}
               fill
               sizes="(max-width: 768px) 100vw, 66vw"
@@ -140,7 +140,7 @@ export default function WhyStudio({ content }: WhyStudioProps) {
         {/* Tile 4 (Bottom-Right): Image-backed Card — Reliable Supply */}
         <div className="group relative min-h-[260px] sm:min-h-[280px] rounded-[32px] overflow-hidden bg-stone-200">
           <Image
-            src={tile3?.image || "/images/projects/corporate-office.jpg"}
+            src={tile3?.title === "Reliable Supply" ? "/HeroPage/ReliableSupply.png" : (tile3?.image || "/images/projects/corporate-office.jpg")}
             alt={tile3?.title || "Reliable Supply"}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"

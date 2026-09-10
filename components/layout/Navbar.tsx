@@ -82,17 +82,17 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation (Center) */}
-        <ul className="hidden items-center gap-6 lg:gap-[32px] md:flex shrink-0 whitespace-nowrap">
+        <ul className="hidden items-center gap-1 lg:gap-2 md:flex shrink-0 whitespace-nowrap">
           {NAV_ITEMS.map((item) => {
             const isActive = pathname === item.route;
             return (
               <li key={item.route}>
                 <Link
                   href={item.route}
-                  className={`text-[14px] lg:text-[15px] font-medium whitespace-nowrap transition-colors duration-180 ${
+                  className={`inline-flex items-center px-3.5 py-1.5 rounded-full text-[14px] lg:text-[15px] font-medium whitespace-nowrap transition-all duration-300 ease-out border border-transparent hover:bg-white/50 hover:backdrop-blur-md hover:border-white/40 hover:shadow-xs ${
                     isActive
                       ? "text-[#111111] font-semibold"
-                      : "text-[#171717] hover:text-[#666666]"
+                      : "text-[#171717] hover:text-[#000000]"
                   }`}
                 >
                   {item.label}

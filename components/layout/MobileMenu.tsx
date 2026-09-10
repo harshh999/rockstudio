@@ -74,7 +74,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               className="flex w-full items-center justify-center rounded-full bg-[#1B1B1B] py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-black"
               onClick={onClose}
             >
-              Get a Quote
+              Contact Us
             </Link>
           </div>
         </nav>

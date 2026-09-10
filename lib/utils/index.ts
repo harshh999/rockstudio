@@ -22,6 +22,5 @@ export const NAV_ITEMS = [
   { label: "About Us", route: "/about" },
   { label: "Products", route: "/products" },
   { label: "Process", route: "/process" },
-  { label: "Contact Us", route: "/contact" },
 ] as const;
 

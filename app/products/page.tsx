@@ -96,10 +96,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       </section>
 
       {/* CTA */}
-      <QuoteCTA
-        title="Looking for Custom Sourcing or Cut-to-Size Specifications?"
-        subtitle="Our stone specialists can source specific blocks and produce custom CNC cut-to-size panels for architectural projects."
-      />
+      <QuoteCTA />
     </>
   );
 }

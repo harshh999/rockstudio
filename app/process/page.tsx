@@ -14,11 +14,11 @@ export default async function ProcessPage() {
   const content = await getProcessContent();
 
   return (
-    <div className="bg-[#FAFAF8] text-stone-900">
+    <div className="bg-white text-stone-900">
       {/* ============================================================ */}
       {/* FULL-WIDTH EDITORIAL HERO (70-80vh)                           */}
       {/* ============================================================ */}
-      <section className="relative h-[75vh] min-h-[580px] max-h-[760px] w-full overflow-hidden bg-stone-950">
+      <section className="relative w-full overflow-hidden bg-stone-950 px-6 pt-36 pb-16 lg:px-8 lg:pt-44 lg:pb-24">
         {/* Background Image with Gradient Overlay */}
         <Image
           src={content.hero.image}
@@ -31,14 +31,14 @@ export default async function ProcessPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/20" />
 
         {/* Hero Content (Bottom-Left Aligned with Navbar Clearance) */}
-        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-14 sm:pb-20 pt-36 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl">
           <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-warm-beige">
             {content.hero.eyebrow}
           </span>
-          <h1 className="mt-3 max-w-3xl font-serif text-4xl font-light tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.04]">
+          <h1 className="mt-4 max-w-3xl font-serif text-4xl font-light tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.04]">
             {content.hero.title}
           </h1>
-          <p className="mt-5 max-w-2xl font-sans text-base sm:text-lg leading-relaxed text-stone-300">
+          <p className="mt-4 max-w-2xl font-sans text-base sm:text-lg leading-relaxed text-stone-300">
             {content.hero.description}
           </p>
         </div>
@@ -50,7 +50,7 @@ export default async function ProcessPage() {
       {/* ============================================================ */}
       <section
         id="mining-sourcing"
-        className="w-full bg-[#FAFAF8] text-[#171717] px-6 sm:px-10 lg:px-[6.5vw] py-14 sm:py-16 lg:py-20"
+        className="w-full bg-white text-[#171717] px-6 sm:px-10 lg:px-[6.5vw] py-14 sm:py-16 lg:py-20"
       >
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[38%_62%] gap-8 lg:gap-[50px] items-center">
@@ -112,7 +112,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       QUARRY EXTRACTION
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
 
@@ -130,7 +129,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       RAW BLOCK SELECTION
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
               </div>
@@ -151,7 +149,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       QUARRY OPERATIONS
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
 
@@ -169,7 +166,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       NATURAL STONE CHARACTER
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
               </div>
@@ -183,7 +179,7 @@ export default async function ProcessPage() {
       {/* ============================================================ */}
       <section
         id="manufacturing"
-        className="w-full bg-[#FAFAF8] text-[#171717] px-6 sm:px-10 lg:px-[6.5vw] py-14 sm:py-16 lg:py-20"
+        className="w-full bg-white text-[#171717] px-6 sm:px-10 lg:px-[6.5vw] py-14 sm:py-16 lg:py-20"
       >
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[62%_38%] gap-8 lg:gap-[50px] items-center">
@@ -205,7 +201,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       PROCESSING FACILITY
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
 
@@ -223,7 +218,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       PRECISION CUTTING
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
               </div>
@@ -244,7 +238,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       STONE PROCESSING
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
 
@@ -262,7 +255,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       FINISHING &amp; QUALITY
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
               </div>
@@ -326,7 +318,7 @@ export default async function ProcessPage() {
       {/* ============================================================ */}
       <section
         id="processing-finishing"
-        className="w-full bg-[#FAFAF8] text-[#171717] px-6 sm:px-10 lg:px-[6.5vw] py-14 sm:py-16 lg:py-20"
+        className="w-full bg-white text-[#171717] px-6 sm:px-10 lg:px-[6.5vw] py-14 sm:py-16 lg:py-20"
       >
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[38%_62%] gap-8 lg:gap-[50px] items-center">
@@ -396,7 +388,7 @@ export default async function ProcessPage() {
                 {/* Slot 01: Polished Finish (~68% width) */}
                 <div className="w-full sm:w-[68%] h-[230px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
-                    src="/images/categories/granite.jpg"
+                    src="/images/process/Polished Finished.png"
                     alt="Polished natural stone surface finish"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 65vw, 42vw"
@@ -407,14 +399,13 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       POLISHED FINISH
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
 
                 {/* Slot 02: Honed / Matte (~32% width) */}
                 <div className="w-full sm:w-[32%] h-[180px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
-                    src="/images/categories/sandstone.jpg"
+                    src="/images/process/Honed Matte.png"
                     alt="Honed and matte stone surface finish"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 35vw, 20vw"
@@ -425,7 +416,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       HONED / MATTE
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
               </div>
@@ -435,7 +425,7 @@ export default async function ProcessPage() {
                 {/* Slot 03: Surface Processing (~54% width) */}
                 <div className="w-full sm:w-[54%] h-[200px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
-                    src="/images/about/manufacturing.jpg"
+                    src="/images/process/Surface Processing.png"
                     alt="Stone surface being processed by machinery"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 55vw, 34vw"
@@ -446,14 +436,13 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       SURFACE PROCESSING
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
 
                 {/* Slot 04: Textured Finish (~46% width) */}
                 <div className="w-full sm:w-[46%] h-[190px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
-                    src="/images/categories/wall-cladding.jpg"
+                    src="/images/process/Texture Finished.png"
                     alt="Textured and flamed stone finish detail"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 45vw, 28vw"
@@ -464,7 +453,6 @@ export default async function ProcessPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       TEXTURED FINISH
                     </span>
-                    <span className="w-[30px] h-[1px] bg-white/60 shrink-0" />
                   </div>
                 </div>
               </div>
@@ -507,7 +495,7 @@ export default async function ProcessPage() {
                   {content.qualityControl.stages.map((stage) => (
                     <div
                       key={stage.number}
-                      className="flex items-start gap-4 p-3 rounded-[4px] border border-stone-200/60 bg-[#FAFAF8]"
+                      className="flex items-start gap-4 p-3 rounded-[4px] border border-stone-200/60 bg-white"
                     >
                       <span className="font-serif text-xs font-semibold text-stone-500 pt-0.5">
                         {stage.number}
@@ -555,7 +543,7 @@ export default async function ProcessPage() {
       {/* ============================================================ */}
       {/* SECTION 05: BUILT FOR SCALE (Light Editorial)                 */}
       {/* ============================================================ */}
-      <section id="capabilities" className="w-full bg-[#FAFAF8] text-[#171717] px-6 sm:px-10 lg:px-[6.5vw] py-14 sm:py-16 lg:py-20">
+      <section id="capabilities" className="w-full bg-white text-[#171717] px-6 sm:px-10 lg:px-[6.5vw] py-14 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           {/* Section Header */}
           <div className="max-w-[700px] space-y-4">
@@ -602,27 +590,14 @@ export default async function ProcessPage() {
             ))}
           </div>
 
-          {/* Scale Photography Banner */}
-          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[2.35/1] min-h-[320px] md:min-h-[420px] w-full overflow-hidden rounded-[6px] border border-[#DDDAD4] bg-stone-100 mt-14 lg:mt-20">
-            <Image
-              src={content.capabilities.image}
-              alt="Project scale natural stone supply"
-              fill
-              sizes="100vw"
-              className="object-cover opacity-90 transition-transform duration-[2s] hover:scale-[1.02]"
-            />
-          </div>
+
         </div>
       </section>
 
       {/* ============================================================ */}
       {/* FINAL CTA                                                    */}
       {/* ============================================================ */}
-      <QuoteCTA
-        title={content.cta.title}
-        subtitle={content.cta.description}
-        buttonText={content.cta.buttonText}
-      />
+      <QuoteCTA />
     </div>
   );
 }

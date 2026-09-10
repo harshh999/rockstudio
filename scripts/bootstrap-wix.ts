@@ -401,7 +401,7 @@ async function bootstrap() {
     aboutTitle: "ABOUT ROCKS STUDIO",
     aboutDescription: "Rocks Studio is an Ahmedabad-based natural stone company sourcing and supplying marble, granite and other natural materials for architecture and interiors.",
     aboutImage: null,
-    aboutLinkText: "Discover Rocks Studio",
+    aboutLinkText: "Know More",
     ctaTitle: "Elevate your next architectural project",
     ctaDescription: "Connect with our stone specialists to discuss material specifications and custom sourcing.",
     ctaImage: null,

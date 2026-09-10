@@ -22,10 +22,10 @@ export const processContent: ProcessContent = {
       "Responsible and regulated extraction practices",
     ],
     images: [
-      "/images/hero-architectural.jpg",
-      "/images/categories/sandstone.jpg",
-      "/images/about/manufacturing.jpg",
-      "/images/categories/kaddapa.jpg",
+      "/images/process/Quarry Extraction.png",
+      "/images/process/Raw Block Selection.png",
+      "/images/process/Quarry Operations.png",
+      "/images/process/Natural Stone Character.png",
     ],
   },
 
@@ -57,10 +57,10 @@ export const processContent: ProcessContent = {
       ],
     },
     images: [
-      "/images/about/manufacturing.jpg",
-      "/images/categories/cnc.jpg",
-      "/images/categories/granite.jpg",
-      "/images/categories/onyx.jpg",
+      "/images/process/Processing Facility.png",
+      "/images/process/Precision Cutting.png",
+      "/images/process/Stone Processing.png",
+      "/images/process/Finishing & Quality.png",
     ],
   },
 
@@ -177,7 +177,7 @@ export const processContent: ProcessContent = {
         description: "Heavy-duty wooden crate packing with protective interleaving for transit.",
       },
     ],
-    image: "/images/categories/marble.jpg",
+    image: "/images/process/quality-inspection.jpg",
   },
 
   capabilities: {

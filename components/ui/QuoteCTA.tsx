@@ -1,121 +1,65 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { gsap } from "gsap";
 
-interface QuoteCTAProps {
-  title?: string;
-  subtitle?: string;
-  buttonText?: string;
-  buttonHref?: string;
-  variant?: "dark" | "light";
-  bgImage?: string;
-}
-
-export default function QuoteCTA({
-  title = "Ready to Start Your Project?",
-  subtitle = "Get in touch with our team to discuss your requirements and receive a personalised quote.",
-  buttonText = "Get a Quote",
-  buttonHref = "/contact",
-  variant = "light",
-  bgImage = "/images/hero-architectural.jpg",
-}: QuoteCTAProps) {
-  const isDark = variant === "dark";
-  const sectionRef = useRef<HTMLElement>(null);
-  const bgImageRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      if (bgImageRef.current) {
-        gsap.fromTo(
-          bgImageRef.current,
-          { scale: 1.03 },
-          { scale: 1, duration: 1.2, ease: "power2.out" }
-        );
-      }
-
-      if (contentRef.current) {
-        gsap.fromTo(
-          contentRef.current,
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", delay: 0.15 }
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
+export default function QuoteCTA() {
   return (
-    <section
-      ref={sectionRef}
-      className={`relative overflow-hidden flex items-center justify-center min-h-[460px] md:min-h-[500px] m-4 lg:m-6 rounded-[32px] ${
-        isDark ? "bg-stone-900 text-white" : "bg-[#FAFAF8] text-stone-900"
-      }`}
-    >
-      {/* Layer 0: Luxury Architectural Natural Stone Interior Background */}
-      {!isDark && (
-        <div ref={bgImageRef} className="absolute inset-0 z-0 pointer-events-none">
-          <Image
-            src={bgImage}
-            alt="Luxury natural stone architectural interior space"
-            fill
-            className="object-cover object-center opacity-100"
-            sizes="100vw"
-            quality={85}
-            priority={false}
-          />
-        </div>
-      )}
+    <section className="relative w-full bg-white pt-[100px] lg:pt-[120px] pb-[55px] lg:pb-[70px]">
+      <div className="w-[calc(100%-24px)] sm:w-[96%] lg:w-[98%] max-w-[1700px] mx-auto relative rounded-[24px] overflow-hidden h-[520px] sm:h-[480px] lg:h-[500px]">
+        {/* Background Architectural Image */}
+        <Image 
+          src="/Hero_1.png" 
+          alt="Rocks Studio Architectural Stone" 
+          fill 
+          className="object-cover object-center"
+          sizes="(max-width: 1700px) 98vw, 1700px"
+          priority
+        />
 
-      {/* Layer 1: Subtle Warm Tint & Localized Radial Readability Gradient */}
-      {!isDark && (
-        <>
-          <div className="absolute inset-0 bg-[#FAFAF8]/15 pointer-events-none z-1" />
-          <div
-            className="absolute inset-0 z-1 pointer-events-none"
+        {/* Subtle image overlay (12% opacity neutral light) to preserve natural photograph tonal depth and texture */}
+        <div 
+          className="absolute inset-0 pointer-events-none z-[1]" 
+          style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }} 
+        />
+
+        {/* Localized soft radial glow behind central text area for pristine text contrast */}
+        <div 
+          className="absolute inset-0 pointer-events-none z-[2] flex items-center justify-center"
+        >
+          <div 
+            className="w-full max-w-[850px] h-[350px] rounded-full blur-3xl opacity-70 pointer-events-none"
             style={{
-              background:
-                "radial-gradient(ellipse at center, rgba(250,250,248,0.72) 0%, rgba(250,250,248,0.32) 45%, rgba(250,250,248,0) 75%)",
+              background: "radial-gradient(ellipse at center, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%)"
             }}
           />
-        </>
-      )}
+        </div>
 
-      {/* Layer 2: CTA Content */}
-      <div
-        ref={contentRef}
-        className="relative z-10 mx-auto max-w-[760px] px-6 py-[100px] text-center md:px-8"
-      >
-        <h2
-          className={`font-serif text-[36px] md:text-[48px] font-normal leading-[1.05] tracking-[-0.035em] m-0 ${
-            isDark ? "text-white" : "text-[#171717]"
-          }`}
-        >
-          {title}
-        </h2>
-        <p
-          className={`mx-auto mt-[20px] max-w-[620px] font-sans text-[16px] md:text-[18px] leading-[1.5] font-normal ${
-            isDark ? "text-stone-300" : "text-[#55534F]"
-          }`}
-        >
-          {subtitle}
-        </p>
-        <Link
-          href={buttonHref}
-          className={`mt-[34px] inline-block px-[34px] py-[15px] rounded-none text-[15px] font-medium tracking-wide transition-all duration-200 shadow-xs ${
-            isDark
-              ? "border border-white bg-white text-stone-900 hover:bg-stone-200"
-              : "bg-[#181818] text-white hover:bg-[#2B2B2B] hover:-translate-y-0.5"
-          }`}
-        >
-          {buttonText}
-        </Link>
+        {/* Centered CTA Content */}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 sm:px-12 py-8 max-w-[760px] mx-auto">
+          {/* Eyebrow */}
+          <p className="text-[11px] font-medium tracking-[0.22em] text-[#333333] uppercase mb-[22px] font-sans">
+            START A PROJECT
+          </p>
+
+          {/* Heading */}
+          <h2 className="font-serif text-[36px] sm:text-[46px] lg:text-[54px] font-normal leading-[1.05] text-[#111111] m-0">
+            Ready to Start Your Project?
+          </h2>
+
+          {/* Description */}
+          <p className="mt-[20px] mb-[28px] text-[15px] sm:text-[17px] leading-[1.5] font-normal text-[#333333] max-w-[650px] mx-auto font-sans">
+            Get in touch with our team to discuss your requirements and receive a personalised quote.
+          </p>
+
+          {/* Button */}
+          <Link
+            href="/contact"
+            className="inline-block bg-[#171717] text-white text-[15px] font-medium px-[34px] py-[15px] rounded-none border-none transition-all duration-[180ms] ease-in-out hover:bg-[#2a2a2a] hover:-translate-y-[1px]"
+          >
+            Get a Quote
+          </Link>
+        </div>
       </div>
     </section>
   );

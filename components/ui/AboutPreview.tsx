@@ -145,14 +145,14 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
   const body =
     content?.body ||
     "Rocks Studio is an Ahmedabad-based natural stone company sourcing and supplying marble, granite and other natural materials for architecture and interiors.";
-  const linkLabel = content?.cta?.label || "Discover Rocks Studio";
+  const linkLabel = content?.cta?.label || "Know More";
   const linkHref = content?.cta?.href || "/about";
   const imageSrc = content?.image || "/images/about/about-preview.jpg";
 
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#F5F3EF] py-20 lg:py-24 overflow-hidden"
+      className="relative bg-white py-20 lg:py-28 overflow-hidden"
     >
       {/* Background Subtle Stone-Inspired SVG Linework Layer */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -167,38 +167,38 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
         </div>
       </div>
 
-      {/* Main Container */}
-      <div className="relative z-10 mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-12">
-        {/* Unified 2-Column Composition (42% / 58%) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[42%_58%] items-stretch gap-8 lg:gap-14">
-          {/* Left Column: Integrated Editorial & Proof Point Area */}
-          <div ref={textRef} className="flex flex-col justify-between max-w-[540px]">
-            {/* Editorial Story Header */}
-            <div>
-              <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#1B1B19] block mb-3">
+      {/* Comfortable Inset Container (92-94% width, max-w-[1480px]) */}
+      <div className="relative z-10 w-[92%] sm:w-[93%] max-w-[1480px] mx-auto">
+        {/* 12-Column Grid: Left Content & Metrics (Cols 1-5) + Right Image Anchor (Cols 6-12) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
+          
+          {/* Left Content Zone (Cols 1-5) */}
+          <div className="lg:col-span-5 flex flex-col justify-center text-left">
+            <div ref={textRef}>
+              <span className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#1B1B19] block mb-3">
                 {eyebrow}
               </span>
 
-              <h2 className="font-serif text-[38px] sm:text-[48px] lg:text-[60px] font-normal leading-[0.98] tracking-[-0.04em] text-[#1B1B19] max-w-[600px]">
+              <h2 className="font-serif text-[38px] sm:text-[48px] lg:text-[54px] xl:text-[60px] font-normal leading-[0.98] tracking-[-0.04em] text-[#1B1B19] max-w-[420px]">
                 {headline}
               </h2>
 
-              <p className="mt-5 text-[15px] sm:text-[16px] font-normal leading-[1.65] text-[#68635C] max-w-[520px]">
+              <p className="mt-5 text-[15px] sm:text-[16px] font-normal leading-[1.55] text-[#68635C] max-w-[400px]">
                 {body}
               </p>
 
-              <div className="mt-6">
+              <div className="mt-7 sm:mt-8">
                 <Link
                   href={linkHref}
                   className="inline-flex items-center text-[14px] font-medium tracking-wide text-[#1B1B19] border-b border-[#1B1B19] pb-1 transition-opacity duration-200 hover:opacity-60"
                 >
-                  {linkLabel} &rarr;
+                  Know More &rarr;
                 </Link>
               </div>
             </div>
 
-            {/* Mobile-Only Architectural Image (Renders between text & KPIs on mobile) */}
-            <div className="block lg:hidden my-6">
+            {/* Mobile-Only Architectural Image */}
+            <div className="block lg:hidden my-8">
               <div className="relative w-full aspect-[4/3] sm:aspect-[4/5] max-h-[460px] rounded-[20px] overflow-hidden bg-stone-200/60 border border-stone-300/30">
                 <Image
                   src={imageSrc}
@@ -211,54 +211,71 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
               </div>
             </div>
 
-            {/* Integrated KPI Proof Points Block */}
+            {/* Supporting Metrics (3 Horizontal Editorial Columns Underneath Left Text Block) */}
             <div
               ref={kpisRef}
-              className="mt-6 lg:mt-8 pt-6 border-t border-stone-300/70 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+              className="mt-10 lg:mt-14 pt-9 border-t border-black/12 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 items-start w-full max-w-[540px]"
             >
-              {KPIS.map((kpi, idx) => (
-                <div
-                  key={kpi.label}
-                  className={`kpi-item text-left ${
-                    idx !== 0 ? "pt-3 sm:pt-0 border-t sm:border-t-0 border-stone-300/40" : ""
-                  }`}
-                >
-                  <div
-                    className={`font-sans font-normal tracking-tight text-[#1B1B19] ${
-                      kpi.isPrimaryNumeric
-                        ? "text-[28px] sm:text-[32px] lg:text-[34px] leading-none"
-                        : "text-[18px] sm:text-[19px] lg:text-[20px] leading-[1.1] sm:whitespace-nowrap"
-                    }`}
-                  >
-                    {kpi.value}
-                  </div>
-                  <div className="mt-2 text-[9px] sm:text-[10px] font-semibold tracking-[0.16em] text-[#1B1B19] uppercase">
-                    {kpi.label}
-                  </div>
-                  <div className="mt-1 text-[12px] sm:text-[13px] text-[#68635C] font-normal leading-[1.4]">
-                    {kpi.supporting}
-                  </div>
+              {/* Metric 1: 8+ STONE CATEGORIES */}
+              <div className="kpi-item text-left flex flex-col justify-start">
+                <div className="font-sans font-normal tracking-[-0.03em] text-[#1B1B19] text-[52px] sm:text-[58px] lg:text-[64px] leading-[0.9] mb-3 sm:mb-3.5">
+                  8+
                 </div>
-              ))}
+                <div className="text-[11px] sm:text-[12px] font-medium tracking-[0.16em] text-[#1B1B19] uppercase">
+                  STONE CATEGORIES
+                </div>
+                <div className="mt-1.5 sm:mt-2 text-[15px] sm:text-[16px] lg:text-[17px] text-[#68635C] font-normal leading-[1.45] max-w-[180px]">
+                  Curated natural materials
+                </div>
+              </div>
+
+              {/* Metric 2: INDIA + GLOBAL */}
+              <div className="kpi-item text-left flex flex-col justify-start">
+                <div className="font-sans font-normal tracking-tight text-[#1B1B19] text-[24px] sm:text-[26px] lg:text-[28px] leading-[1.1] mb-3 sm:mb-3.5">
+                  INDIA + GLOBAL
+                </div>
+                <div className="text-[11px] sm:text-[12px] font-medium tracking-[0.16em] text-[#1B1B19] uppercase">
+                  SOURCING NETWORK
+                </div>
+                <div className="mt-1.5 sm:mt-2 text-[15px] sm:text-[16px] lg:text-[17px] text-[#68635C] font-normal leading-[1.45] max-w-[190px]">
+                  Established quarry partners
+                </div>
+              </div>
+
+              {/* Metric 3: END-TO-END */}
+              <div className="kpi-item text-left flex flex-col justify-start">
+                <div className="font-sans font-normal tracking-tight text-[#1B1B19] text-[24px] sm:text-[26px] lg:text-[28px] leading-[1.1] mb-3 sm:mb-3.5">
+                  END-TO-END
+                </div>
+                <div className="text-[11px] sm:text-[12px] font-medium tracking-[0.16em] text-[#1B1B19] uppercase">
+                  STONE EXPERTISE
+                </div>
+                <div className="mt-1.5 sm:mt-2 text-[15px] sm:text-[16px] lg:text-[17px] text-[#68635C] font-normal leading-[1.45] max-w-[190px]">
+                  Sourcing to final dispatch
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Dominant Architectural Visual Anchor (Desktop) */}
-          <div ref={imageRef} className="hidden lg:flex w-full justify-end">
-            <div className="relative w-full h-[520px] lg:h-[560px] rounded-[24px] overflow-hidden bg-stone-200/60 shadow-xs border border-stone-300/30">
+          {/* Right Image Zone (Cols 6-12 / Dominant Visual Anchor) */}
+          <div ref={imageRef} className="hidden lg:flex lg:col-span-7 w-full justify-end">
+            <div className="relative w-full h-[520px] lg:h-[560px] rounded-[20px] lg:rounded-[22px] overflow-hidden bg-stone-200/60 shadow-xs border border-stone-300/30">
               <Image
                 src={imageSrc}
                 alt="Refined natural stone architectural detail"
                 fill
                 priority
-                sizes="650px"
+                sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-cover object-center transition-transform duration-700 hover:scale-[1.01]"
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>
   );
 }
+
+
 

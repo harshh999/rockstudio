@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, TouchEvent } from "react";
+import { useState, useRef, useEffect, TouchEvent } from "react";
 import type { Testimonial } from "@/types";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 
@@ -9,20 +9,47 @@ interface TestimonialGridProps {
 }
 
 export default function TestimonialGrid({ testimonials }: TestimonialGridProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  if (!testimonials || testimonials.length === 0) return null;
+
+  const N = testimonials.length;
+  // Calculate repeat count to ensure at least 30 cards for a dense, seamless infinite track
+  const repeatCount = Math.max(3, Math.ceil(30 / N));
+  const clonedTestimonials = Array(repeatCount).fill(testimonials).flat();
+
+  // Start in the middle set of testimonials so left/prev navigation works seamlessly on load
+  const middleSetIndex = Math.floor(repeatCount / 2);
+  const startIndex = middleSetIndex * N;
+
+  const [currentIndex, setCurrentIndex] = useState(startIndex);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
-  if (!testimonials || testimonials.length === 0) return null;
-
-  const count = testimonials.length;
+  // Sync start index if testimonials array length changes dynamically
+  useEffect(() => {
+    setCurrentIndex(startIndex);
+  }, [N, startIndex]);
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev === 0 ? count - 1 : prev - 1));
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev === count - 1 ? 0 : prev + 1));
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  const handleTransitionEnd = () => {
+    // Calculate normalized index within the base set
+    const relativeOffset = ((currentIndex - startIndex) % N + N) % N;
+    const targetIndex = startIndex + relativeOffset;
+
+    if (targetIndex !== currentIndex) {
+      setIsTransitioning(false);
+      setCurrentIndex(targetIndex);
+    }
   };
 
   const handleTouchStart = (e: TouchEvent) => {
@@ -46,9 +73,12 @@ export default function TestimonialGrid({ testimonials }: TestimonialGridProps) 
     }
   };
 
+  // Calculate 1-based display index for indicator
+  const displayIndex = (((currentIndex - startIndex) % N + N) % N) + 1;
+
   return (
-    <div className="relative w-full overflow-hidden py-4 select-none">
-      {/* Track Container */}
+    <div className="w-[95%] max-w-[1500px] mx-auto select-none">
+      {/* Track Viewport Container */}
       <div
         className="w-full overflow-hidden cursor-grab active:cursor-grabbing"
         onTouchStart={handleTouchStart}
@@ -56,62 +86,53 @@ export default function TestimonialGrid({ testimonials }: TestimonialGridProps) 
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className="flex gap-[20px] transition-transform duration-500 ease-out items-center"
+          className="flex gap-[20px] items-stretch"
           style={{
-            transform: `translateX(calc(50% - (${activeIndex} * (clamp(280px, 80vw, 360px) + 20px)) - (clamp(280px, 80vw, 360px) / 2)))`,
+            transform: `translateX(calc(-1 * ${currentIndex} * (clamp(290px, 22vw, 340px) + 20px)))`,
+            transition: isTransitioning
+              ? "transform 600ms cubic-bezier(0.25, 1, 0.5, 1)"
+              : "none",
           }}
+          onTransitionEnd={handleTransitionEnd}
         >
-          {testimonials.map((t, idx) => {
-            const isActive = idx === activeIndex;
-            return (
-              <div
-                key={t.id || idx}
-                onClick={() => setActiveIndex(idx)}
-                className={`shrink-0 w-[clamp(280px,80vw,360px)] transition-all duration-500 cursor-pointer ${
-                  isActive
-                    ? "opacity-100 scale-100 shadow-sm z-10"
-                    : "opacity-40 scale-[0.93] hover:opacity-75 z-0"
-                }`}
-              >
-                <TestimonialCard testimonial={t} className="h-full min-h-[300px]" />
-              </div>
-            );
-          })}
+          {clonedTestimonials.map((t, idx) => (
+            <div
+              key={`${t.id || idx}-${idx}`}
+              className="shrink-0 w-[clamp(290px,22vw,340px)] transition-all duration-300"
+            >
+              <TestimonialCard testimonial={t} className="h-[280px] sm:h-[290px]" />
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Navigation Controls */}
-      <div className="mt-8 flex items-center justify-center gap-4">
+      {/* Navigation Controls & Progress Indicator */}
+      <div className="mt-10 flex items-center justify-center gap-6">
         <button
           onClick={handlePrev}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 text-stone-700 bg-white/80 transition-all hover:border-stone-900 hover:bg-stone-900 hover:text-white"
-          aria-label="Previous testimonial"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15 text-[#171717] bg-white shadow-none transition-all hover:bg-[#171717] hover:text-white hover:border-[#171717] active:scale-95 cursor-pointer"
+          aria-label="Previous review"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
-        {/* Indicators */}
-        <div className="flex items-center gap-1.5">
-          {testimonials.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveIndex(idx)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                idx === activeIndex
-                  ? "w-6 bg-stone-900"
-                  : "w-1.5 bg-stone-300 hover:bg-stone-400"
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
+        {/* Minimal Progress Indicator */}
+        <div className="relative w-[48px] sm:w-[64px] h-[1px] bg-black/10 rounded-full overflow-hidden shrink-0">
+          <div 
+            className="absolute top-0 left-0 h-full bg-[#171717] rounded-full transition-transform duration-500 ease-out"
+            style={{ 
+              width: `${100 / N}%`,
+              transform: `translateX(${(displayIndex - 1) * 100}%)`
+            }}
+          />
         </div>
 
         <button
           onClick={handleNext}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 text-stone-700 bg-white/80 transition-all hover:border-stone-900 hover:bg-stone-900 hover:text-white"
-          aria-label="Next testimonial"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15 text-[#171717] bg-white shadow-none transition-all hover:bg-[#171717] hover:text-white hover:border-[#171717] active:scale-95 cursor-pointer"
+          aria-label="Next review"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 5l7 7-7 7" />

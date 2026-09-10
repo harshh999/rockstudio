@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
   ];
 
   return (
-    <article className="min-h-screen bg-[#FAF8F5] text-stone-800 pt-36 pb-24 sm:pt-44 sm:pb-32 px-5 sm:px-8">
+    <article className="min-h-screen bg-white text-stone-800 pt-36 pb-24 sm:pt-44 sm:pb-32 px-5 sm:px-8">
       <div className="mx-auto max-w-[940px]">
         {/* ============================================================ */}
         {/* PAGE INTRO                                                   */}

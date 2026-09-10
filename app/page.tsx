@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   getProductCategories,
   getFeaturedProducts,
@@ -57,33 +58,39 @@ export default async function HomePage() {
       {/* ============================================================ */}
       {/* SELECTED PRODUCTS                                            */}
       {/* ============================================================ */}
-      <section className="bg-stone-100 px-6 py-24 lg:px-8 lg:py-32">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex items-end justify-between">
-            <SectionHeading
-              label="Featured"
-              title="Selected Products"
-              align="left"
-            />
-            <Link
-              href="/products"
-              className="hidden border-b border-stone-900 pb-1 text-sm font-medium tracking-wide text-stone-900 transition-colors hover:border-warm-gold hover:text-warm-gold md:inline-block"
-            >
-              View All Products →
-            </Link>
+      <section className="bg-white py-[75px] sm:py-[80px] lg:py-[85px]">
+        <div className="w-[95%] max-w-[1500px] mx-auto">
+          {/* Editorial Header */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-end justify-between mb-[40px] sm:mb-[44px] lg:mb-[48px]">
+            {/* Left Column: Eyebrow + Title */}
+            <div className="text-left">
+              <span className="text-[11px] sm:text-[12px] font-semibold tracking-[0.16em] uppercase text-[#1B1B19] mb-2 sm:mb-3 block">
+                FEATURED
+              </span>
+              <h2 className="font-serif text-[42px] sm:text-[54px] lg:text-[60px] font-normal leading-[0.98] tracking-[-0.035em] text-[#1B1B19]">
+                Selected Products
+              </h2>
+            </div>
+
+            {/* Right Column: Description + View All Link */}
+            <div className="lg:text-right lg:flex lg:flex-col lg:items-end lg:justify-end lg:ml-auto">
+              <p className="max-w-[340px] text-[14px] sm:text-[15px] font-sans font-normal leading-[1.5] text-[#68635C] mb-5 lg:mb-6">
+                A considered selection of materials from our collection.
+              </p>
+              <Link
+                href="/products"
+                className="inline-flex items-center text-[14px] font-medium tracking-wide text-[#1B1B19] border-b border-[#1B1B19] pb-1 transition-opacity duration-200 hover:opacity-60"
+              >
+                View All Products &rarr;
+              </Link>
+            </div>
           </div>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {selectedProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+
+          {/* 4 Equal-Sized Product Cards Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[10px] sm:gap-[12px] lg:gap-[14px]">
+            {selectedProducts.map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
             ))}
-          </div>
-          <div className="mt-8 text-center md:hidden">
-            <Link
-              href="/products"
-              className="border-b border-stone-900 pb-1 text-sm font-medium tracking-wide text-stone-900"
-            >
-              View All Products →
-            </Link>
           </div>
         </div>
       </section>
@@ -96,7 +103,7 @@ export default async function HomePage() {
       {/* ============================================================ */}
       {/* TESTIMONIALS                                                 */}
       {/* ============================================================ */}
-      <section className="relative w-full bg-[#FAFAF8] pt-[110px] pb-[90px] overflow-hidden">
+      <section className="relative w-full bg-white pt-[110px] pb-[90px] overflow-hidden">
         {/* Header */}
         <div className="relative z-10 mx-auto max-w-[620px] px-6 text-center mb-[60px]">
           <p className="text-[12px] font-semibold tracking-[0.15em] text-[#55534F] uppercase mb-4">
@@ -125,15 +132,9 @@ export default async function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/* CONTACT CTA                                                  */}
+      {/* CINEMATIC PRE-FOOTER CTA SECTION                             */}
       {/* ============================================================ */}
-      <QuoteCTA 
-        variant="light" 
-        title={hero.bottomCta?.title}
-        subtitle={hero.bottomCta?.description}
-        bgImage={hero.bottomCta?.image || "/images/projects/villa-flooring.jpg"}
-        buttonText={hero.bottomCta?.buttonText}
-      />
+      <QuoteCTA />
     </>
   );
 }

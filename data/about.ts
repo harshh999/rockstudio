@@ -25,10 +25,10 @@ export const aboutPreviewContent: AboutPreviewContent = {
   label: "ABOUT ROCKS STUDIO",
   headline: "Natural stone, chosen with intention.",
   body: "Rocks Studio is an Ahmedabad-based natural stone company sourcing and supplying marble, granite and other natural materials for architecture and interiors.",
-  image: "/images/about/about-preview.jpg",
+  image: "/HeroPage/About_hero.png",
   secondaryImage: "/images/products/calacatta-gold.jpg",
   cta: {
-    label: "Discover Rocks Studio",
+    label: "Know More",
     href: "/about",
   },
 };

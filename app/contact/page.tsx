@@ -64,7 +64,7 @@ export default async function ContactPage() {
       </section>
 
       {/* Map Placeholder */}
-      <section className="border-t border-stone-200">
+      <section className="bg-white">
         <div className="flex h-80 items-center justify-center bg-stone-100">
           <div className="text-center">
             <p className="text-sm font-medium text-stone-400">Map</p>

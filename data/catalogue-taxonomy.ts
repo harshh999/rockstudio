@@ -353,12 +353,12 @@ function slugify(text: string): string {
 
 // Fallback high quality natural stone sample images for presentation prior to CMS uploads
 const sampleMaterialImages: Record<string, string> = {
-  granite: "/images/categories/granite.jpg",
-  cnc: "/images/categories/cnc.jpg",
-  marble: "/images/categories/marble.jpg",
-  onyx: "/images/categories/onyx.jpg",
-  sandstone: "/images/categories/sandstone.jpg",
-  "wall-cladding": "/images/categories/wall-cladding.jpg",
+  granite: "/HeroPage/Granite_1.png",
+  cnc: "/HeroPage/CNC_1.jpg",
+  marble: "/HeroPage/Marble_1.png",
+  onyx: "/HeroPage/Onyx_1.jpg",
+  sandstone: "/HeroPage/Sandstone_1.png",
+  "wall-cladding": "/HeroPage/WallCladding_1.jpg",
 };
 
 export const categories: ProductCategory[] = [

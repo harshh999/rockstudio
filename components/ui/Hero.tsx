@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { HeroContent } from "@/types";
@@ -6,26 +9,62 @@ interface HeroProps {
   content: HeroContent;
 }
 
-export default function Hero({ content }: HeroProps) {
-  return (
-    <section className="relative h-[100svh] min-h-[720px] overflow-hidden bg-[#F5F3EF] rounded-b-[40px] lg:rounded-b-[60px]">
-      {/* Full-Bleed Architectural Photograph (Calm, Soft & Naturally Lit) */}
-      <Image
-        src={content.backgroundImage}
-        alt={content.headline.replace("\n", " ")}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center scale-[1.01] transition-transform duration-1000 ease-out"
-      />
+const HERO_IMAGES = [
+  "/Hero_1.png",
+  "/Hero_2.png",
+  "/Hero_3.png",
+];
 
-      {/* Subtle Warm Scrim to ensure crisp legibility for dark typography */}
+export default function Hero({ content }: HeroProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    // Respect prefers-reduced-motion
+    if (typeof window !== "undefined") {
+      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (mediaQuery.matches) {
+        return;
+      }
+    }
+
+    // 9-second interval between image transitions
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 9000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="relative h-[100svh] min-h-[720px] overflow-hidden bg-white rounded-b-[40px] lg:rounded-b-[60px]">
+      {/* Layer 0: 3-Image Layered Background Slideshow with 2s Crossfade */}
+      <div className="absolute inset-0 z-0">
+        {HERO_IMAGES.map((src, index) => (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${
+              index === activeIndex ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          >
+            <Image
+              src={src}
+              alt={content.headline.replace("\n", " ")}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center scale-[1.01]"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Layer 1: Static Black Scrim Overlay for Natural Stone Vibrancy & Legibility */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-[#F5F3EF]/60 via-[#F5F3EF]/20 to-transparent pointer-events-none"
+        className="absolute inset-0 z-[1] bg-gradient-to-t from-black/[0.20] via-black/[0.11] to-black/[0.05] pointer-events-none"
         aria-hidden="true"
       />
 
-      {/* Left-Aligned Editorial Content */}
+      {/* Layer 2: Left-Aligned Editorial Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-center px-6 sm:px-10 lg:px-16 pt-[72px] pb-16 pl-[clamp(48px,8vw,120px)] pr-12">
         <div className="max-w-[720px]">
           {/* Headline */}
@@ -89,3 +128,5 @@ export default function Hero({ content }: HeroProps) {
     </section>
   );
 }
+
+

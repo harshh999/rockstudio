@@ -24,20 +24,23 @@ export default function TestimonialCard({
 
   return (
     <blockquote
-      className={`relative flex flex-col justify-between p-[26px] sm:p-[30px] lg:p-[34px] text-left select-none overflow-hidden transition-all duration-300 ${className}`}
+      className={`relative flex flex-col justify-between p-[24px] sm:p-[28px] text-left select-none overflow-hidden transition-all duration-300 bg-white ${className}`}
       style={{
-        borderRadius: "14px",
+        borderRadius: "16px",
         background: "#FFFFFF",
         border: "1px solid rgba(0, 0, 0, 0.08)",
       }}
     >
       {/* Main Quote */}
-      <p className="font-serif text-[16px] sm:text-[17px] md:text-[18px] font-normal leading-[1.45] tracking-[-0.01em] text-[#171717] m-0">
-        {cleanQuote}
+      <p
+        className="text-[16px] sm:text-[17px] font-normal leading-[1.55] tracking-normal text-[#171717] m-0 line-clamp-5 sm:line-clamp-6"
+        style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
+      >
+        "{cleanQuote}"
       </p>
 
       {/* Author Identity Area with Monogram */}
-      <div className="mt-[28px] flex items-center gap-[12px] border-t border-stone-100 pt-[20px]">
+      <div className="mt-[24px] flex items-center gap-[12px] border-t border-black/[0.06] pt-[16px]">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-stone-100 font-sans text-[11px] font-semibold text-stone-700 border border-stone-200/60 select-none">
           {initials}
         </div>
