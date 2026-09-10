@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function QuoteCTA() {
   return (
     <section className="relative w-full bg-white pt-[100px] lg:pt-[120px] pb-[55px] lg:pb-[70px]">
-      <div className="w-[calc(100%-24px)] sm:w-[96%] lg:w-[98%] max-w-[1700px] mx-auto relative rounded-[24px] overflow-hidden h-[520px] sm:h-[480px] lg:h-[500px]">
+      <ScrollReveal className="w-[calc(100%-24px)] sm:w-[96%] lg:w-[98%] max-w-[1700px] mx-auto relative rounded-[24px] overflow-hidden h-[520px] sm:h-[480px] lg:h-[500px]">
         {/* Background Architectural Image */}
         <Image 
           src="/Hero_1.png" 
@@ -60,7 +61,7 @@ export default function QuoteCTA() {
             Get a Quote
           </Link>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

@@ -18,6 +18,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ProductCard from "@/components/ui/ProductCard";
 import TestimonialGrid from "@/components/ui/TestimonialGrid";
 import QuoteCTA from "@/components/ui/QuoteCTA";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default async function HomePage() {
   const [categories, featuredProducts, testimonials, hero, aboutPreview, applicationTiles, whyStudio] =
@@ -59,7 +60,7 @@ export default async function HomePage() {
       {/* SELECTED PRODUCTS                                            */}
       {/* ============================================================ */}
       <section className="bg-white py-[75px] sm:py-[80px] lg:py-[85px]">
-        <div className="w-[95%] max-w-[1500px] mx-auto">
+        <ScrollReveal className="w-[95%] max-w-[1500px] mx-auto">
           {/* Editorial Header */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-end justify-between mb-[40px] sm:mb-[44px] lg:mb-[48px]">
             {/* Left Column: Eyebrow + Title */}
@@ -92,7 +93,7 @@ export default async function HomePage() {
               <ProductCard key={product.id} product={product} index={index} />
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ============================================================ */}
@@ -104,8 +105,7 @@ export default async function HomePage() {
       {/* TESTIMONIALS                                                 */}
       {/* ============================================================ */}
       <section className="relative w-full bg-white pt-[110px] pb-[90px] overflow-hidden">
-        {/* Header */}
-        <div className="relative z-10 mx-auto max-w-[620px] px-6 text-center mb-[60px]">
+        <ScrollReveal className="relative z-10 mx-auto max-w-[620px] px-6 text-center mb-[60px]">
           <p className="text-[12px] font-semibold tracking-[0.15em] text-[#55534F] uppercase mb-4">
             Client Feedback
           </p>
@@ -115,7 +115,7 @@ export default async function HomePage() {
           <p className="mt-[22px] mx-auto text-[16px] leading-[1.55] font-normal text-[#55534F] font-sans">
             Rocks Studio works closely with architects, designers, builders, and project teams to source and supply premium natural stone for exceptional spaces.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Testimonials Showcase */}
         <TestimonialGrid testimonials={testimonials} />

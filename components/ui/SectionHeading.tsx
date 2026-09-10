@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ui/ScrollReveal";
+
 interface SectionHeadingProps {
   label?: string;
   title: string;
@@ -14,7 +16,7 @@ export default function SectionHeading({
   light = false,
 }: SectionHeadingProps) {
   return (
-    <div className={align === "center" ? "text-center" : "text-left"}>
+    <ScrollReveal className={align === "center" ? "text-center" : "text-left"}>
       {label && (
         <span
           className={`text-xs font-semibold uppercase tracking-[0.2em] ${
@@ -40,6 +42,6 @@ export default function SectionHeading({
           {subtitle}
         </p>
       )}
-    </div>
+    </ScrollReveal>
   );
 }

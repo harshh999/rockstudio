@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { NAV_ITEMS } from "@/lib/utils";
 
 interface MobileMenuProps {
@@ -13,15 +14,20 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close on route change
   useEffect(() => {
     onClose();
   }, [pathname, onClose]);
 
-  if (!open) return null;
+  if (!open || !mounted) return null;
 
-  return (
+  return createPortal(
     <>
       {/* Backdrop */}
       <div
@@ -79,7 +85,8 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           </div>
         </nav>
       </div>
-    </>
+    </>,
+    document.body
   );
 }
 

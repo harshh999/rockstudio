@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
 import type { HeroContent } from "@/types";
 
 interface HeroProps {
@@ -17,6 +18,7 @@ const HERO_IMAGES = [
 
 export default function Hero({ content }: HeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Respect prefers-reduced-motion
@@ -27,16 +29,48 @@ export default function Hero({ content }: HeroProps) {
       }
     }
 
+    // GSAP Hero Entrance Animation
+    let ctx = gsap.context(() => {
+      const headline = heroRef.current?.querySelector("h1");
+      const description = heroRef.current?.querySelector("p");
+      const ctas = heroRef.current?.querySelector(".hero-ctas");
+
+      if (headline) {
+        gsap.fromTo(
+          headline,
+          { opacity: 0, y: 35 },
+          { opacity: 1, y: 0, duration: 1.0, delay: 0.1, ease: "power2.out" }
+        );
+      }
+      if (description) {
+        gsap.fromTo(
+          description,
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: "power2.out" }
+        );
+      }
+      if (ctas) {
+        gsap.fromTo(
+          ctas,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.8, delay: 0.28, ease: "power2.out" }
+        );
+      }
+    }, heroRef);
+
     // 9-second interval between image transitions
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 9000);
 
-    return () => clearInterval(interval);
+    return () => {
+      ctx.revert();
+      clearInterval(interval);
+    };
   }, []);
 
   return (
-    <section className="relative h-[100svh] min-h-[720px] overflow-hidden bg-white rounded-b-[40px] lg:rounded-b-[60px]">
+    <section ref={heroRef} className="relative h-[100svh] min-h-[720px] overflow-hidden bg-white rounded-b-[40px] lg:rounded-b-[60px]">
       {/* Layer 0: 3-Image Layered Background Slideshow with 2s Crossfade */}
       <div className="absolute inset-0 z-0">
         {HERO_IMAGES.map((src, index) => (
@@ -86,7 +120,7 @@ export default function Hero({ content }: HeroProps) {
           </p>
 
           {/* CTAs */}
-          <div className="mt-[30px] flex flex-wrap items-center gap-3 sm:gap-3.5">
+          <div className="hero-ctas mt-[30px] flex flex-wrap items-center gap-3 sm:gap-3.5">
             <Link
               href={content.primaryCta.href}
               className="inline-flex items-center justify-center rounded-full bg-[#1B1B19] px-[25px] py-[15px] text-[14px] font-medium text-white transition-all duration-200 hover:bg-black hover:scale-[1.01] shadow-xs"
