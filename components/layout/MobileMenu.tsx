@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import gsap from "gsap";
 import { NAV_ITEMS } from "@/lib/utils";
 
 interface MobileMenuProps {
@@ -14,79 +13,82 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (!menuRef.current) return;
 
-  // Close on route change
-  useEffect(() => {
-    onClose();
-  }, [pathname, onClose]);
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      if (!open) {
+        gsap.set(menuRef.current, { display: "none", opacity: 0, y: -10 });
+      }
+    }
 
-  if (!open || !mounted) return null;
+    if (open) {
+      gsap.killTweensOf(menuRef.current);
+      gsap.set(menuRef.current, { display: "block" });
+      gsap.fromTo(
+        menuRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }
+      );
+    } else if (!isFirstRender.current) {
+      gsap.killTweensOf(menuRef.current);
+      gsap.to(menuRef.current, {
+        opacity: 0,
+        y: -10,
+        duration: 0.25,
+        ease: "power2.inOut",
+        onComplete: () => {
+          if (menuRef.current) {
+            gsap.set(menuRef.current, { display: "none" });
+          }
+        },
+      });
+    }
+  }, [open]);
 
-  return createPortal(
-    <>
-      {/* Backdrop */}
-      <div
-        className="fixed inset-0 z-40 bg-black/20 backdrop-blur-xs md:hidden"
-        onClick={onClose}
-        aria-hidden
-      />
+  return (
+    <div
+      ref={menuRef}
+      id="mobile-menu-panel"
+      className="mt-2.5 w-full rounded-[24px] bg-white border border-stone-200/80 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-4 sm:p-5 md:hidden"
+      style={{ display: open ? "block" : "none" }}
+    >
+      <nav aria-label="Mobile Navigation">
+        <ul className="flex flex-col space-y-1">
+          {NAV_ITEMS.map((item) => {
+            const isActive = pathname === item.route;
+            return (
+              <li key={item.route}>
+                <Link
+                  href={item.route}
+                  className={`block rounded-full px-4 py-3 text-[15px] font-medium transition-colors ${
+                    isActive
+                      ? "bg-stone-100 text-[#111111] font-semibold"
+                      : "text-[#171717] hover:bg-stone-50 hover:text-black"
+                  }`}
+                  onClick={onClose}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
 
-      {/* Dropdown Floating Panel */}
-      <div className="absolute top-[74px] left-0 right-0 z-50 w-full overflow-hidden rounded-3xl bg-white p-5 shadow-[0_10px_35px_rgba(0,0,0,0.12)] md:hidden animate-fade-in-up">
-        {/* Brand header */}
-        <div className="mb-3 pb-3 border-b border-stone-100 flex items-center justify-between px-2">
-          <Link href="/" onClick={onClose} className="inline-block" aria-label="Rocks Studio Home">
-            <Image
-              src="/images/logo.png"
-              alt="Rocks Studio"
-              width={701}
-              height={302}
-              className="h-7 w-auto object-contain"
-            />
+        <div className="mt-3 pt-3 border-t border-stone-100">
+          <Link
+            href="/contact"
+            className="flex w-full items-center justify-center rounded-full bg-[#171717] py-3 text-[14px] font-medium text-white transition-colors hover:bg-black"
+            onClick={onClose}
+          >
+            Contact Us
           </Link>
-          <span className="text-[11px] font-medium tracking-wider uppercase text-stone-400">Menu</span>
         </div>
-
-        <nav className="flex flex-col gap-2">
-          <ul className="flex flex-col gap-1">
-            {NAV_ITEMS.map((item) => {
-              const isActive = pathname === item.route;
-              return (
-                <li key={item.route}>
-                  <Link
-                    href={item.route}
-                    className={`block rounded-2xl px-4 py-3 text-[16px] font-medium transition-colors ${
-                      isActive
-                        ? "bg-stone-100 text-[#111111] font-semibold"
-                        : "text-[#202020] hover:bg-stone-50 hover:text-[#666666]"
-                    }`}
-                    onClick={onClose}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
-          <div className="mt-2 pt-3 border-t border-stone-100">
-            <Link
-              href="/contact"
-              className="flex w-full items-center justify-center rounded-full bg-[#1B1B1B] py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-black"
-              onClick={onClose}
-            >
-              Contact Us
-            </Link>
-          </div>
-        </nav>
-      </div>
-    </>,
-    document.body
+      </nav>
+    </div>
   );
 }
-
