@@ -39,12 +39,12 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-auto overflow-visible antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="flex min-h-screen h-auto overflow-visible flex-col font-sans">
         <SmoothScrollProvider>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 h-auto min-h-screen overflow-visible">{children}</main>
           <Footer settings={settings} />
         </SmoothScrollProvider>
       </body>

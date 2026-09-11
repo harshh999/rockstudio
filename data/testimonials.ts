@@ -2,57 +2,123 @@ import type { Testimonial } from "@/types";
 
 export const testimonials: Testimonial[] = [
   {
-    id: "test-001",
-    name: "Rajesh Mehta",
-    company: "Mehta Constructions",
-    role: "Managing Director, Mehta Constructions",
-    quote:
-      "Rocks Studio delivered exceptional quality marble for our residential project. The consistency of their slabs and attention to detail during selection was outstanding.",
+    id: "test-000",
+    name: "Harsh Gohil",
+    company: "",
+    role: "Google Review",
+    quote: "Great collection, excellent quality, and genuinely helpful people. Had a smooth experience with Rocks Studio and would definitely recommend them for marble and granite.",
     image: "",
+    rating: 5,
+    source: "Google Review"
+  },
+  {
+    id: "test-001",
+    name: "Rahul Jirawala",
+    company: "",
+    role: "Google Review",
+    quote:
+      "One of the best places for Italian marble and granite. Beautiful collection outstanding quality. Will definitely recommend to others.",
+    image: "",
+    rating: 5,
+    source: "Google Review"
   },
   {
     id: "test-002",
-    name: "Priya Sharma",
-    company: "Aura Interiors",
-    role: "Principal Designer, Aura Interiors",
+    name: "Mansi Sadariya",
+    company: "",
+    role: "Google Review",
     quote:
-      "Working with Rocks Studio has been a pleasure. Their granite collection is among the finest we've sourced, and their team understands the demands of high-end interior projects.",
+      "Decent collection. Reasonable rate. Good service. owners nature is Good.. must visit for stone purchase.",
     image: "",
+    rating: 5,
+    source: "Google Review"
   },
   {
     id: "test-003",
-    name: "Anil Patel",
-    company: "Skyline Developers",
-    role: "Director of Projects, Skyline Developers",
+    name: "M S Ghai",
+    company: "",
+    role: "Google Review",
     quote:
-      "We've partnered with Rocks Studio across multiple commercial developments. Their ability to supply large volumes without compromising on quality sets them apart.",
+      "Loved the warmth and post sale concerns",
     image: "",
+    rating: 5,
+    source: "Google Review"
   },
   {
     id: "test-004",
-    name: "Aarav Shah",
-    company: "Shah & Associates",
-    role: "Architect, Shah & Associates",
+    name: "abhi jain",
+    company: "",
+    role: "Google Review",
     quote:
-      "The material selection process was handled carefully and professionally. Rocks Studio made it easy to find the right stone for the project.",
+      "Exclusive collection of italian marbles and Indian stones.. Amazing display and customer service.. Should visit studio once 👌",
     image: "",
+    rating: 5,
+    source: "Google Review"
   },
   {
     id: "test-005",
-    name: "Neha Desai",
-    company: "Studio Desai",
-    role: "Interior Designer, Studio Desai",
+    name: "Sandeep Bhandari",
+    company: "",
+    role: "Google Review",
     quote:
-      "Their natural stone collection gives architects a strong range of materials to work with, from understated finishes to distinctive statement stones.",
+      "Largest collection of imported Marble and Granites available here",
     image: "",
+    rating: 5,
+    source: "Google Review"
   },
   {
     id: "test-006",
-    name: "Kunal Patel",
-    company: "Patel Developments",
-    role: "Project Consultant, Patel Developments",
+    name: "Sunil Kothari",
+    company: "",
+    role: "Google Review",
     quote:
-      "The team was responsive throughout the project and maintained a consistent standard of quality from selection through delivery.",
+      "Great collection and after sale support.",
     image: "",
+    rating: 5,
+    source: "Google Review"
   },
+  {
+    id: "test-007",
+    name: "Priyanshi Bhandari",
+    company: "",
+    role: "Google Review",
+    quote:
+      "Amazing collection of marbles & granite, there team is very helpful they suggest the best marbles and granites according to your needs .",
+    image: "",
+    rating: 5,
+    source: "Google Review"
+  },
+  {
+    id: "test-008",
+    name: "Bonish Bhavsar",
+    company: "",
+    role: "Google Review",
+    quote:
+      "They have a wide range of granite and marble. Very helpful staff. Recommended for your granite and marble purchase",
+    image: "",
+    rating: 5,
+    source: "Google Review"
+  },
+  {
+    id: "test-009",
+    name: "Madhu Sankhlecha",
+    company: "",
+    role: "Google Review",
+    quote:
+      "Exclusive collection of marbles n granite..👍🏻👍🏻",
+    image: "",
+    rating: 5,
+    source: "Google Review"
+  },
+  {
+    id: "test-010",
+    name: "Pushpendra Pareek",
+    company: "",
+    role: "Google Review",
+    quote:
+      "I purchased granite and marble from Rocks Studio for my home and had a wonderful experience. The material quality is excellent, the finishing is great, and their collection is quite premium. The staff is very cooperative and professional, … More",
+    image: "",
+    rating: 5,
+    source: "Google Review"
+  }
 ];

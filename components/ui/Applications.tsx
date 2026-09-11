@@ -16,7 +16,7 @@ const FALLBACK_IMAGES: Record<string, string> = {
   "living-spaces": "/HeroPage/LivingSpaces.jpg",
   "feature-walls": "/HeroPage/FeatureWalls.jpg",
   facades: "/HeroPage/Facades.jpg",
-  "commercial-spaces": "/HeroPage/CommercialSpaces.jpg",
+  "commercial-spaces": "/HeroPage/commercial.png",
 };
 
 export default function Applications({ tiles }: ApplicationsProps) {

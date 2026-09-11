@@ -72,6 +72,8 @@ export interface Testimonial {
   role: string;
   quote: string;
   image: string;
+  rating?: number;
+  source?: string;
 }
 
 // ---------------------------------------------------------------------------

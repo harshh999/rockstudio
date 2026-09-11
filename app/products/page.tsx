@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Suspense } from "react";
 import {
   getProducts,
@@ -62,8 +63,22 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   return (
     <>
       {/* Page Header */}
-      <section className="bg-stone-900 px-6 pt-36 pb-16 lg:px-8 lg:pt-44 lg:pb-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative flex flex-col justify-end min-h-[380px] lg:min-h-[460px] bg-stone-900 px-6 pt-32 pb-16 lg:px-8 lg:pt-40 lg:pb-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 bg-stone-900">
+          <Image
+            src="/images/products-hero.jpg"
+            alt="Rocks Studio Products Catalogue"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          {/* Cinematic Dark Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20 z-10" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl w-full">
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-warm-beige">
             Material Library
           </span>
@@ -77,7 +92,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       </section>
 
       {/* Filter & Grid */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-20">
+      <section id="catalogue" className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-20">
         <Suspense fallback={null}>
           <CategoryFilter categories={categories} subcategories={subcategories} />
         </Suspense>

@@ -18,10 +18,10 @@ export default async function ProcessPage() {
       {/* ============================================================ */}
       {/* FULL-WIDTH EDITORIAL HERO (70-80vh)                           */}
       {/* ============================================================ */}
-      <section className="relative w-full overflow-hidden bg-stone-950 px-6 pt-36 pb-16 lg:px-8 lg:pt-44 lg:pb-24">
+      <section className="relative flex flex-col justify-end min-h-[380px] lg:min-h-[460px] w-full overflow-hidden bg-stone-950 px-6 pt-32 pb-16 lg:px-8 lg:pt-40 lg:pb-24">
         {/* Background Image with Gradient Overlay */}
         <Image
-          src={content.hero.image}
+          src="/images/process-hero.jpg"
           alt="Natural stone quarry and architectural processing"
           fill
           priority
@@ -31,7 +31,7 @@ export default async function ProcessPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-950/20" />
 
         {/* Hero Content (Bottom-Left Aligned with Navbar Clearance) */}
-        <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="relative z-10 mx-auto max-w-7xl w-full">
           <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-warm-beige">
             {content.hero.eyebrow}
           </span>

@@ -15,8 +15,8 @@ export default async function ContactPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="bg-stone-900 px-6 pt-36 pb-20 lg:px-8 lg:pt-44 lg:pb-28">
-        <div className="mx-auto max-w-7xl">
+      <section className="flex flex-col justify-end min-h-[380px] lg:min-h-[460px] bg-stone-900 px-6 pt-32 pb-16 lg:px-8 lg:pt-40 lg:pb-24">
+        <div className="mx-auto max-w-7xl w-full">
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-warm-beige">
             Get in Touch
           </span>

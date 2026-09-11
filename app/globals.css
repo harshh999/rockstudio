@@ -37,11 +37,10 @@ body {
 }
 
 /* ------------------------------------------------------------------ */
-/* Smooth scroll                                                      */
+/* Removed scroll-behavior: smooth to prevent conflict with Lenis     */
 /* ------------------------------------------------------------------ */
-
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* ------------------------------------------------------------------ */

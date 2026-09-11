@@ -91,7 +91,7 @@ export default function Footer({ settings }: FooterProps) {
   ];
 
   return (
-    <footer className="relative bg-[#0D0D0D] text-white pt-16 lg:pt-20 pb-4 select-none overflow-hidden">
+    <footer className="relative bg-[#0D0D0D] text-white pt-12 lg:pt-14 pb-2 select-none overflow-hidden">
       {/* Background Texture - Dark Marble */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image 
@@ -107,19 +107,19 @@ export default function Footer({ settings }: FooterProps) {
 
       <ScrollReveal yOffset={15} className="relative z-10 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-20">
         {/* Layer 01: Four Columns (Brand, Menu, Materials, Expertise) with optical track sizing */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:[grid-template-columns:1fr_0.8fr_1.1fr_1.1fr] gap-8 lg:gap-10 xl:gap-12 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:[grid-template-columns:1.2fr_0.6fr_1.2fr_1.6fr] gap-8 lg:gap-10 xl:gap-12 items-start">
           {/* Column 1: Brand */}
           <div className="flex flex-col min-w-0">
-            <Link href="/" className="inline-block transition-opacity hover:opacity-80 shrink-0 mb-6" aria-label="Rocks Studio Home">
+            <Link href="/" className="inline-block transition-opacity hover:opacity-80 shrink-0 mb-4" aria-label="Rocks Studio Home">
               <Image
                 src="/images/logo-white.png"
                 alt="Rocks Studio"
                 width={701}
                 height={302}
-                className="h-[28px] sm:h-[30px] w-auto object-contain"
+                className="h-[37px] sm:h-[40px] w-auto object-contain"
               />
             </Link>
-            <p className="text-[14px] sm:text-[15px] leading-[1.6] text-white/65 font-sans mb-6 max-w-[300px]">
+            <p className="text-[14px] sm:text-[15px] leading-[1.6] text-white/65 font-sans mb-5 max-w-[300px]">
               Natural stone for architecture, interiors and spaces made to last.
             </p>
             {/* Social Icons */}
@@ -148,10 +148,10 @@ export default function Footer({ settings }: FooterProps) {
 
           {/* Column 2: MENU */}
           <div className="flex flex-col min-w-0">
-            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-6">
+            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-4">
               MENU
             </h4>
-            <ul className="flex flex-col space-y-5">
+            <ul className="flex flex-col space-y-3.5">
               {[
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
@@ -173,11 +173,11 @@ export default function Footer({ settings }: FooterProps) {
 
           {/* Column 3: MATERIALS */}
           <div className="flex flex-col min-w-0">
-            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-6">
+            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-4">
               MATERIALS
             </h4>
             <div className="grid grid-cols-2 gap-x-8 min-w-0">
-              <div className="flex flex-col space-y-5 min-w-0">
+              <div className="flex flex-col space-y-3.5 min-w-0">
                 {materialsCol1.map((item) => (
                   <Link
                     key={item.label}
@@ -188,7 +188,7 @@ export default function Footer({ settings }: FooterProps) {
                   </Link>
                 ))}
               </div>
-              <div className="flex flex-col space-y-5 min-w-0">
+              <div className="flex flex-col space-y-3.5 min-w-0">
                 {materialsCol2.map((item) => (
                   <Link
                     key={item.label}
@@ -204,11 +204,11 @@ export default function Footer({ settings }: FooterProps) {
 
           {/* Column 4: EXPERTISE */}
           <div className="flex flex-col min-w-0">
-            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-6">
+            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-4">
               EXPERTISE
             </h4>
-            <div className="grid grid-cols-2 gap-x-8 min-w-0">
-              <div className="flex flex-col space-y-5 min-w-0">
+            <div className="grid grid-cols-2 gap-x-12 min-w-0">
+              <div className="flex flex-col space-y-3.5 min-w-0">
                 {expertiseCol1.map((item) => (
                   <Link
                     key={item.label}
@@ -219,7 +219,7 @@ export default function Footer({ settings }: FooterProps) {
                   </Link>
                 ))}
               </div>
-              <div className="flex flex-col space-y-5 min-w-0">
+              <div className="flex flex-col space-y-3.5 min-w-0">
                 {expertiseCol2.map((item) => (
                   <Link
                     key={item.label}
@@ -235,21 +235,21 @@ export default function Footer({ settings }: FooterProps) {
         </div>
 
         {/* Divider 01 */}
-        <div className="mt-14 lg:mt-16 mb-12 lg:mb-14 border-t border-white/15 w-full" />
+        <div className="mt-10 lg:mt-12 mb-8 lg:mb-10 border-t border-white/15 w-full" />
 
         {/* Layer 02: LOCATIONS */}
         <div className="min-w-0">
-          <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-[26px]">
+          <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-5">
             LOCATIONS
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start min-w-0">
             {locationsList.map((loc) => (
               <div key={loc.num} className="flex flex-col min-w-0">
-                <h5 className="text-[15px] sm:text-[16px] font-medium text-white/90 mb-[14px] flex items-center gap-2.5">
+                <h5 className="text-[15px] sm:text-[16px] font-medium text-white/90 mb-2.5 flex items-center gap-2.5">
                   <span className="text-white/40 font-mono text-[13px] sm:text-[14px]">{loc.num}</span>
                   <span>{loc.name}</span>
                 </h5>
-                <p className="text-[14px] sm:text-[15px] leading-[1.55] text-white/65 mb-[18px]">
+                <p className="text-[14px] sm:text-[15px] leading-[1.55] text-white/65 mb-3">
                   {loc.address}
                 </p>
                 <div className="flex flex-wrap xl:flex-nowrap items-center gap-x-3 gap-y-1.5 text-[13px] text-white/75 min-w-0">
@@ -279,10 +279,10 @@ export default function Footer({ settings }: FooterProps) {
         </div>
 
         {/* Divider 02 */}
-        <div className="mt-12 lg:mt-14 border-t border-white/15 w-full" />
+        <div className="mt-8 lg:mt-10 border-t border-white/15 w-full" />
 
         {/* Bottom Bar */}
-        <div className="py-7 sm:py-8 flex flex-col sm:flex-row justify-between items-center gap-4 w-full text-[13px] sm:text-[14px]">
+        <div className="py-5 sm:py-6 flex flex-col sm:flex-row justify-between items-center gap-4 w-full text-[13px] sm:text-[14px]">
           <Link
             href="/privacy-policy"
             className={`transition-colors duration-200 ${

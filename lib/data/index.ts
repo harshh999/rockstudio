@@ -174,11 +174,9 @@ export const getHeroContent = unstable_cache(
 // Applications
 // ---------------------------------------------------------------------------
 
-export const getApplications = unstable_cache(
-  async (): Promise<ApplicationTile[]> => cms.getApplications(),
-  ["applications"],
-  { revalidate: REVALIDATE_INTERVAL }
-);
+export const getApplications = async (): Promise<ApplicationTile[]> => {
+  return cms.getApplications();
+};
 
 // ---------------------------------------------------------------------------
 // Why Studio

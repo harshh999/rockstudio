@@ -39,14 +39,14 @@ export const NAVIGATION_DATA: NavItem[] = [
     url: "/products",
     dropdown: true,
     categories: [
-      { id: 31, title: "Marble", slug: "Marble" },
-      { id: 32, title: "Granite", slug: "Granite" },
-      { id: 33, title: "CNC", slug: "CNC" },
-      { id: 34, title: "Onyx", slug: "Onyx" },
-      { id: 35, title: "Sand Stone", slug: "Sand Stone" },
-      { id: 36, title: "Wall Cladding", slug: "Wall Cladding" },
-      { id: 37, title: "Kota", slug: "Kota" },
-      { id: 38, title: "Kaddapa", slug: "Kaddapa" },
+      { id: 31, title: "Marble", slug: "marble" },
+      { id: 32, title: "Granite", slug: "granite" },
+      { id: 33, title: "CNC", slug: "cnc" },
+      { id: 34, title: "Onyx", slug: "onyx" },
+      { id: 35, title: "Sand Stone", slug: "sandstone" },
+      { id: 36, title: "Wall Cladding", slug: "wall-cladding" },
+      { id: 37, title: "Kota", slug: "kota" },
+      { id: 38, title: "Kaddapa", slug: "kaddapa" },
     ],
   },
   {
@@ -75,6 +75,22 @@ export default function Navbar() {
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
   const [prevPath, setPrevPath] = useState(pathname);
+  const [navClick, setNavClick] = useState(false);
+
+  useEffect(() => {
+    if (navClick) {
+      const timer = setTimeout(() => setNavClick(false), 600);
+      return () => clearTimeout(timer);
+    }
+  }, [pathname, navClick]);
+
+  const activeLayoutId = navClick ? "navbar-active" : `navbar-active-${pathname}`;
+
+  const handleHeaderClick = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest("a")) {
+      setNavClick(true);
+    }
+  };
 
   // Close menus and reset visibility on route change
   if (prevPath !== pathname) {
@@ -168,6 +184,7 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
+      onClick={handleHeaderClick}
       className={`fixed top-4 md:top-[32px] left-1/2 z-[100] w-[calc(100vw-24px)] md:w-auto max-w-[calc(100vw-24px)] transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none ${
         showNavbar
           ? "-translate-x-1/2 translate-y-0"
@@ -233,7 +250,7 @@ export default function Navbar() {
                   {/* Active Indicator Pill */}
                   {isActive && (
                     <motion.div
-                      layoutId="navbar-active"
+                      layoutId={activeLayoutId}
                       className="absolute inset-0 rounded-full bg-[#F3F3F1] -z-10"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
@@ -258,7 +275,7 @@ export default function Navbar() {
                               {col1.map((cat) => (
                                 <Link
                                   key={cat.id}
-                                  href={`/products?category=${encodeURIComponent(cat.slug)}`}
+                                  href={`/products?category=${encodeURIComponent(cat.slug)}#catalogue`}
                                   className="px-3 py-2 rounded-xl text-[14px] font-medium text-stone-700 hover:text-stone-900 hover:bg-[#F3F3F1] transition-colors duration-180 ease-out"
                                   onClick={() => setIsDropdownHovered(false)}
                                 >
@@ -270,7 +287,7 @@ export default function Navbar() {
                               {col2.map((cat) => (
                                 <Link
                                   key={cat.id}
-                                  href={`/products?category=${encodeURIComponent(cat.slug)}`}
+                                  href={`/products?category=${encodeURIComponent(cat.slug)}#catalogue`}
                                   className="px-3 py-2 rounded-xl text-[14px] font-medium text-stone-700 hover:text-stone-900 hover:bg-[#F3F3F1] transition-colors duration-180 ease-out"
                                   onClick={() => setIsDropdownHovered(false)}
                                 >
@@ -301,7 +318,7 @@ export default function Navbar() {
                 </Link>
                 {isActive && (
                   <motion.div
-                    layoutId="navbar-active"
+                    layoutId={activeLayoutId}
                     className="absolute inset-0 rounded-full bg-[#F3F3F1] -z-10"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
@@ -418,7 +435,7 @@ export default function Navbar() {
                                 {categories.map((cat) => (
                                   <Link
                                     key={cat.id}
-                                    href={`/products?category=${encodeURIComponent(cat.slug)}`}
+                                    href={`/products?category=${encodeURIComponent(cat.slug)}#catalogue`}
                                     className="px-3 py-2 rounded-xl text-[13px] font-medium text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-colors"
                                     onClick={closeMobileMenu}
                                   >

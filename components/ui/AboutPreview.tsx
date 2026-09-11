@@ -218,10 +218,10 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
             >
               {/* Metric 1: 8+ STONE CATEGORIES */}
               <div className="kpi-item text-left flex flex-col justify-start">
-                <div className="font-sans font-normal tracking-[-0.03em] text-[#1B1B19] text-[52px] sm:text-[58px] lg:text-[64px] leading-[0.9] mb-3 sm:mb-3.5">
+                <div className="font-sans font-normal tracking-[-0.03em] text-[#1B1B19] text-[52px] sm:text-[58px] lg:text-[64px] leading-[0.9] mb-3 sm:mb-3.5 sm:min-h-[70px] lg:min-h-[80px]">
                   8+
                 </div>
-                <div className="text-[11px] sm:text-[12px] font-medium tracking-[0.16em] text-[#1B1B19] uppercase">
+                <div className="text-[11px] sm:text-[12px] font-medium tracking-[0.16em] text-[#1B1B19] uppercase sm:min-h-[36px] lg:min-h-[40px]">
                   STONE CATEGORIES
                 </div>
                 <div className="mt-1.5 sm:mt-2 text-[15px] sm:text-[16px] lg:text-[17px] text-[#68635C] font-normal leading-[1.45] max-w-[180px]">
@@ -231,10 +231,10 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
 
               {/* Metric 2: INDIA + GLOBAL */}
               <div className="kpi-item text-left flex flex-col justify-start">
-                <div className="font-sans font-normal tracking-tight text-[#1B1B19] text-[24px] sm:text-[26px] lg:text-[28px] leading-[1.1] mb-3 sm:mb-3.5">
+                <div className="font-sans font-normal tracking-tight text-[#1B1B19] text-[24px] sm:text-[26px] lg:text-[28px] leading-[1.1] mb-3 sm:mb-3.5 sm:min-h-[70px] lg:min-h-[80px]">
                   INDIA + GLOBAL
                 </div>
-                <div className="text-[11px] sm:text-[12px] font-medium tracking-[0.16em] text-[#1B1B19] uppercase">
+                <div className="text-[11px] sm:text-[12px] font-medium tracking-[0.16em] text-[#1B1B19] uppercase sm:min-h-[36px] lg:min-h-[40px]">
                   SOURCING NETWORK
                 </div>
                 <div className="mt-1.5 sm:mt-2 text-[15px] sm:text-[16px] lg:text-[17px] text-[#68635C] font-normal leading-[1.45] max-w-[190px]">
@@ -244,10 +244,10 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
 
               {/* Metric 3: END-TO-END */}
               <div className="kpi-item text-left flex flex-col justify-start">
-                <div className="font-sans font-normal tracking-tight text-[#1B1B19] text-[24px] sm:text-[26px] lg:text-[28px] leading-[1.1] mb-3 sm:mb-3.5">
+                <div className="font-sans font-normal tracking-tight text-[#1B1B19] text-[24px] sm:text-[26px] lg:text-[28px] leading-[1.1] mb-3 sm:mb-3.5 sm:min-h-[70px] lg:min-h-[80px]">
                   END-TO-END
                 </div>
-                <div className="text-[11px] sm:text-[12px] font-medium tracking-[0.16em] text-[#1B1B19] uppercase">
+                <div className="text-[11px] sm:text-[12px] font-medium tracking-[0.16em] text-[#1B1B19] uppercase sm:min-h-[36px] lg:min-h-[40px]">
                   STONE EXPERTISE
                 </div>
                 <div className="mt-1.5 sm:mt-2 text-[15px] sm:text-[16px] lg:text-[17px] text-[#68635C] font-normal leading-[1.45] max-w-[190px]">

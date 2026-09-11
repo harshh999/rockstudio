@@ -29,6 +29,6 @@ export const applications: ApplicationTile[] = [
   {
     title: "Commercial Spaces",
     slug: "commercial-spaces",
-    image: "/HeroPage/CommercialSpaces.jpg",
+    image: "/HeroPage/commercial.png",
   },
 ];

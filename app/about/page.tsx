@@ -75,18 +75,30 @@ export default async function AboutPage() {
 
   return (
     <div className="bg-white text-stone-900">
-      {/* ============================================================ */}
-      {/* 01. INNER PAGE HERO                                          */}
-      {/* ============================================================ */}
-      <section className="bg-stone-900 px-6 pt-36 pb-16 lg:px-8 lg:pt-44 lg:pb-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative flex flex-col justify-end min-h-[380px] lg:min-h-[460px] px-6 pt-32 pb-16 lg:px-8 lg:pt-40 lg:pb-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 bg-stone-900">
+          <Image
+            src="/images/about/about-hero-new.jpg"
+            alt="About Rocks Studio Hero Background"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          {/* Cinematic Dark Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20 z-10" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-7xl w-full">
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-warm-beige">
             ABOUT ROCKS STUDIO
           </span>
           <h1 className="mt-4 font-serif text-4xl font-light tracking-tight text-white md:text-5xl">
             Natural Stone, Chosen with Intention
           </h1>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-stone-400">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-stone-200">
             Rocks Studio sources, processes and supplies natural stone for architectural and interior applications.
           </p>
         </div>
@@ -101,7 +113,7 @@ export default async function AboutPage() {
           <div className="lg:col-span-6 xl:col-span-7">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-100">
               <Image
-                src="/HeroPage/About_hero.png"
+                src="/images/about/who-we-are.jpg"
                 alt="Rocks Studio natural stone architectural interior"
                 fill
                 priority
@@ -221,7 +233,7 @@ export default async function AboutPage() {
           {/* Large Architectural Stone Image */}
           <div className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[2.4/1] w-full overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-100">
             <Image
-              src="/HeroPage/MadeForArchitecture.png"
+              src="/images/about/middle.png"
               alt="Natural stone architectural surface with organic veining"
               fill
               sizes="100vw"
@@ -318,7 +330,7 @@ export default async function AboutPage() {
             <div className="order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-100">
                 <Image
-                  src={about.foundation?.image || "/images/about/manufacturing.jpg"}
+                  src="/images/about/our-foundation.jpg"
                   alt="Rocks Studio stone processing facility and manufacturing"
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
