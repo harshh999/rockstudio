@@ -11,9 +11,9 @@ interface HeroProps {
 }
 
 const HERO_IMAGES = [
-  "/Hero_1.png",
-  "/Hero_2.png",
-  "/Hero_3.png",
+  "/HeroPage/h1.png",
+  "/HeroPage/h2.png",
+  "/HeroPage/h3.png",
 ];
 
 export default function Hero({ content }: HeroProps) {
@@ -92,35 +92,42 @@ export default function Hero({ content }: HeroProps) {
         ))}
       </div>
 
-      {/* Layer 1: Static Black Scrim Overlay for Natural Stone Vibrancy & Legibility */}
+      {/* Layer 1: Uniform Black Overlay for Text Readability */}
       <div
-        className="absolute inset-0 z-[1] bg-gradient-to-t from-black/[0.20] via-black/[0.11] to-black/[0.05] pointer-events-none"
+        className="absolute inset-0 z-[1] bg-black/[0.22] pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* Layer 1.5: Left-to-Right Localized Gradient Overlay for Text Contrast */}
+      <div
+        className="absolute inset-y-0 left-0 w-[65%] z-[1] pointer-events-none"
+        style={{
+          background: "linear-gradient(90deg, rgba(0,0,0,0.48) 0%, rgba(0,0,0,0.30) 32%, rgba(0,0,0,0.10) 58%, rgba(0,0,0,0) 78%)"
+        }}
         aria-hidden="true"
       />
 
       {/* Layer 2: Left-Aligned Editorial Content */}
-      <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-center px-6 sm:px-10 lg:px-16 pt-[72px] pb-16 pl-[clamp(48px,8vw,120px)] pr-12">
-        <div className="max-w-[720px]">
+      <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-center px-6 sm:px-10 pt-[72px] pb-[10vh] lg:pl-[10vw] lg:pr-12">
+        <div className="max-w-[760px]">
           {/* Headline */}
-          <h1 className="font-serif text-[44px] sm:text-[60px] md:text-[72px] lg:text-[clamp(58px,6vw,88px)] font-normal leading-[0.96] tracking-[-0.045em] text-[#1B1B19]">
-            {content.headline.includes("\n") ? (
-              content.headline.split("\n").map((line, i) => (
-                <span key={i} className="block">
-                  {line}
-                </span>
-              ))
-            ) : (
-              content.headline
-            )}
+          <h1 
+            className="max-w-[760px] font-serif text-[44px] sm:text-[60px] md:text-[72px] lg:text-[clamp(58px,6vw,88px)] font-medium leading-[0.95] tracking-[-0.045em] text-white"
+            style={{ textShadow: "0 2px 14px rgba(0,0,0,0.22)" }}
+          >
+            Stone, selected for the way you live.
           </h1>
 
           {/* Description */}
-          <p className="mt-[26px] max-w-[430px] text-[15px] sm:text-[16px] font-normal leading-[1.6] text-[#625E57]">
-            {content.description}
+          <p 
+            className="mt-[24px] max-w-[500px] text-[15px] sm:text-[16px] font-medium leading-[1.55]"
+            style={{ color: "rgba(255,255,255,0.92)", textShadow: "0 1px 8px rgba(0,0,0,0.28)" }}
+          >
+            Thoughtfully sourced natural stone for architecture, interiors and spaces with character.
           </p>
 
           {/* CTAs */}
-          <div className="hero-ctas mt-[30px] flex flex-wrap items-center gap-3 sm:gap-3.5">
+          <div className="hero-ctas mt-[28px] flex flex-wrap items-center gap-3 sm:gap-3.5">
             <Link
               href={content.primaryCta.href}
               className="inline-flex items-center justify-center rounded-full bg-[#1B1B19] px-[25px] py-[15px] text-[14px] font-medium text-white transition-all duration-200 hover:bg-black hover:scale-[1.01] shadow-xs"

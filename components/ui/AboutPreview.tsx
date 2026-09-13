@@ -107,39 +107,6 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
   const imageRef = useRef<HTMLDivElement>(null);
   const kpisRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      if (textRef.current) {
-        gsap.fromTo(
-          textRef.current,
-          { opacity: 0, y: 24 },
-          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
-        );
-      }
-
-      if (imageRef.current) {
-        gsap.fromTo(
-          imageRef.current,
-          { opacity: 0, scale: 0.98, y: 16 },
-          { opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "power3.out", delay: 0.1 }
-        );
-      }
-
-      if (kpisRef.current) {
-        const kpiItems = kpisRef.current.querySelectorAll(".kpi-item");
-        gsap.fromTo(
-          kpiItems,
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power2.out", delay: 0.25 }
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   const eyebrow = content?.eyebrow || "ABOUT ROCKS STUDIO";
   const headline = content?.headline || "Natural stone, chosen with intention.";
   const body =

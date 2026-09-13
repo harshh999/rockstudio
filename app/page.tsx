@@ -9,8 +9,7 @@ import {
   getApplications,
   getWhyStudioContent,
 } from "@/lib/data";
-import Hero from "@/components/ui/Hero";
-import AboutPreview from "@/components/ui/AboutPreview";
+import HeroCurtainReveal from "@/components/ui/HeroCurtainReveal";
 import CategoryGallery from "@/components/ui/CategoryGallery";
 import Applications from "@/components/ui/Applications";
 import WhyStudio from "@/components/ui/WhyStudio";
@@ -37,14 +36,9 @@ export default async function HomePage() {
   return (
     <>
       {/* ============================================================ */}
-      {/* HERO                                                         */}
+      {/* HERO & ABOUT US PREVIEW CURTAIN REVEAL                       */}
       {/* ============================================================ */}
-      <Hero content={hero} />
-
-      {/* ============================================================ */}
-      {/* ABOUT US PREVIEW                                             */}
-      {/* ============================================================ */}
-      <AboutPreview content={aboutPreview} />
+      <HeroCurtainReveal heroContent={hero} aboutContent={aboutPreview} />
 
       {/* ============================================================ */}
       {/* PRODUCT CATEGORIES                                           */}
