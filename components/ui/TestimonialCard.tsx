@@ -47,7 +47,7 @@ export default function TestimonialCard({
         className="text-[16px] sm:text-[17px] font-normal leading-[1.55] tracking-normal text-[#171717] m-0 line-clamp-5 sm:line-clamp-6"
         style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
       >
-        "{cleanQuote}"
+        &ldquo;{cleanQuote}&rdquo;
       </p>
 
       {/* Author Identity Area with Monogram */}

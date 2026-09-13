@@ -18,7 +18,7 @@ export const siteSettings: SiteSettings = {
     },
     {
       name: "Mahi Krupa Granite",
-      address: "Survey No. 61/1 & 663, Gham Vadi, Panchmahal",
+      address: "Survey No. 61/1 & 663, Gham Vadi,\nPanchmahals",
       phone: "+91 94279 55590",
       contactPerson: "Mr. Sunil Bhandari",
       email: "ssidrivein@rediffmail.com",

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { getProcessContent } from "@/lib/data";
 import QuoteCTA from "@/components/ui/QuoteCTA";
 
@@ -94,13 +93,13 @@ export default async function ProcessPage() {
             </div>
 
             {/* Right Visual Collage: Asymmetric Editorial Quarry Masonry */}
-            <div className="w-full flex flex-col gap-3 md:gap-3.5 lg:gap-4 h-auto sm:h-[580px] lg:h-[660px]">
+            <div className="w-full flex flex-col gap-2 sm:gap-2.5 lg:gap-3 h-auto sm:h-[580px] lg:h-[660px]">
               {/* Top Row: Dominant Quarry Extraction (68%) + Vertical Raw Block Selection (32%) */}
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-3.5 lg:gap-4 w-full h-auto sm:h-[55%] min-h-0">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-2.5 lg:gap-3 w-full h-auto sm:h-[55%] min-h-0">
                 {/* Slot 01: Quarry Extraction (Dominant largest image ~68% width) */}
                 <div className="w-full sm:w-[68%] h-[230px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
-                    src={content.miningSourcing.images[0] || "/images/hero-architectural.jpg"}
+                    src={content.miningSourcing.images[0] || "/images/process-hero.jpg"}
                     alt="Active natural stone quarry extraction"
                     fill
                     priority
@@ -118,7 +117,7 @@ export default async function ProcessPage() {
                 {/* Slot 02: Raw Block Selection (Narrow vertical ~32% width) */}
                 <div className="w-full sm:w-[32%] h-[180px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
-                    src={content.miningSourcing.images[1] || "/images/categories/sandstone.jpg"}
+                    src={content.miningSourcing.images[1] || "/images/process/Raw Block Selection.png"}
                     alt="Extracted raw natural stone block selection"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 35vw, 20vw"
@@ -134,7 +133,7 @@ export default async function ProcessPage() {
               </div>
 
               {/* Bottom Row: Offset Quarry Operations (54%) + Natural Stone Character (46%) */}
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-3.5 lg:gap-4 w-full h-auto sm:h-[45%] min-h-0">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-2.5 lg:gap-3 w-full h-auto sm:h-[45%] min-h-0">
                 {/* Slot 03: Quarry Operations (Medium/wide image ~54% width) */}
                 <div className="w-full sm:w-[54%] h-[200px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
@@ -184,9 +183,9 @@ export default async function ProcessPage() {
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[62%_38%] gap-8 lg:gap-[50px] items-center">
             {/* Left Visual Collage: Asymmetric Editorial Manufacturing Matrix (Order 2 on mobile, Order 1 on Desktop) */}
-            <div className="order-2 lg:order-1 w-full flex flex-col gap-3 md:gap-3.5 lg:gap-4 h-auto sm:h-[580px] lg:h-[660px]">
+            <div className="order-2 lg:order-1 w-full flex flex-col gap-2 sm:gap-2.5 lg:gap-3 h-auto sm:h-[580px] lg:h-[660px]">
               {/* Top Row: Dominant Processing Facility (68%) + Vertical Precision Cutting (32%) */}
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-3.5 lg:gap-4 w-full h-auto sm:h-[55%] min-h-0">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-2.5 lg:gap-3 w-full h-auto sm:h-[55%] min-h-0">
                 {/* Slot 01: Processing Facility (~68% width) */}
                 <div className="w-full sm:w-[68%] h-[230px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
@@ -223,7 +222,7 @@ export default async function ProcessPage() {
               </div>
 
               {/* Bottom Row: Offset Stone Processing (54%) + Finishing & Quality (46%) */}
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-3.5 lg:gap-4 w-full h-auto sm:h-[45%] min-h-0">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-2.5 lg:gap-3 w-full h-auto sm:h-[45%] min-h-0">
                 {/* Slot 03: Stone Processing (~54% width) */}
                 <div className="w-full sm:w-[54%] h-[200px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
@@ -244,7 +243,7 @@ export default async function ProcessPage() {
                 {/* Slot 04: Finishing & Quality (~46% width) */}
                 <div className="w-full sm:w-[46%] h-[190px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
-                    src={content.manufacturing.images[3] || "/images/categories/onyx.jpg"}
+                    src={content.manufacturing.images[3] || "/images/process/Finishing & Quality.png"}
                     alt="Finished stone and quality inspection detail"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 45vw, 28vw"
@@ -382,9 +381,9 @@ export default async function ProcessPage() {
             </div>
 
             {/* Right Visual Collage: Asymmetric Editorial Surface & Finishing Matrix (Order 2 on mobile & desktop) */}
-            <div className="order-2 w-full flex flex-col gap-3 md:gap-3.5 lg:gap-4 h-auto sm:h-[580px] lg:h-[660px]">
+            <div className="order-2 w-full flex flex-col gap-2 sm:gap-2.5 lg:gap-3 h-auto sm:h-[580px] lg:h-[660px]">
               {/* Top Row: Dominant Polished Finish (68%) + Vertical Honed/Matte (32%) */}
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-3.5 lg:gap-4 w-full h-auto sm:h-[55%] min-h-0">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-2.5 lg:gap-3 w-full h-auto sm:h-[55%] min-h-0">
                 {/* Slot 01: Polished Finish (~68% width) */}
                 <div className="w-full sm:w-[68%] h-[230px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image
@@ -421,7 +420,7 @@ export default async function ProcessPage() {
               </div>
 
               {/* Bottom Row: Offset Surface Processing (54%) + Textured Finish (46%) */}
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-3.5 lg:gap-4 w-full h-auto sm:h-[45%] min-h-0">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-2.5 lg:gap-3 w-full h-auto sm:h-[45%] min-h-0">
                 {/* Slot 03: Surface Processing (~54% width) */}
                 <div className="w-full sm:w-[54%] h-[200px] sm:h-full min-w-0 min-h-0 relative overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-200 group">
                   <Image

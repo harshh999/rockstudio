@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { ProductCategory } from "@/types";
 
 interface CategoryGalleryProps {
-  categories: ProductCategory[];
+  categories?: ProductCategory[];
 }
 
 // Explicit 8-category ordering:
@@ -41,7 +41,7 @@ const DISPLAY_NAMES: Record<string, string> = {
   cnc: "CNC",
   "wall-cladding": "Wall Cladding",
   onyx: "Onyx",
-  sandstone: "Sandstone",
+  sandstone: "Sand Stone",
   kota: "Kota",
   kaddapa: "Kaddapa",
 };
@@ -93,7 +93,7 @@ const LAYOUT_CONFIG: Record<
 
 const normalizeKey = (str: string) => str.toLowerCase().replace(/[^a-z0-9]/g, "");
 
-export default function CategoryGallery({ categories }: CategoryGalleryProps) {
+export default function CategoryGallery({ categories = [] }: CategoryGalleryProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -102,7 +102,6 @@ export default function CategoryGallery({ categories }: CategoryGalleryProps) {
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    // Respect prefers-reduced-motion
     if (typeof window !== "undefined") {
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (prefersReducedMotion) return;
@@ -112,7 +111,9 @@ export default function CategoryGallery({ categories }: CategoryGalleryProps) {
 
     const ctx = gsap.context(() => {
       const headerEl = headerRef.current;
-      const cardElements = gridRef.current ? (Array.from(gridRef.current.querySelectorAll(".category-card")) as HTMLElement[]) : [];
+      const cardElements = gridRef.current
+        ? (Array.from(gridRef.current.querySelectorAll(".category-card")) as HTMLElement[])
+        : [];
       const lightSweepEl = lightSweepRef.current;
 
       const galleryEase = "cubic-bezier(0.22, 1, 0.36, 1)";
@@ -140,13 +141,13 @@ export default function CategoryGallery({ categories }: CategoryGalleryProps) {
         );
       }
 
-      // 2. Set initial state of cards: opacity 0.78, filter brightness(0.72) saturate(0.65)
+      // 2. Set initial state of cards
       gsap.set(cardElements, {
         opacity: 0.78,
         filter: "brightness(0.72) saturate(0.65)",
       });
 
-      // 3. Subtle horizontal light sweep pass across gallery (opacity 0.12, high blur)
+      // 3. Subtle horizontal light sweep pass across gallery
       if (lightSweepEl) {
         gsap.set(lightSweepEl, { xPercent: -100, opacity: 0.12 });
 
@@ -171,8 +172,7 @@ export default function CategoryGallery({ categories }: CategoryGalleryProps) {
         );
       }
 
-      // 4. Gallery Flow reveal progression: Left-to-right cards bring material into full visual clarity
-      // Order: Marble, Granite, CNC, Wall Cladding, Onyx, Sandstone, Kota, Kaddapa
+      // 4. Gallery Flow reveal progression
       tl.to(
         cardElements,
         {
@@ -189,12 +189,13 @@ export default function CategoryGallery({ categories }: CategoryGalleryProps) {
     return () => ctx.revert();
   }, []);
 
-  // Normalize and map categories to explicit 8-category order
   const categoryMap = new Map<string, ProductCategory>();
-  categories.forEach((c) => {
-    if (c.slug) categoryMap.set(normalizeKey(c.slug), c);
-    if (c.name) categoryMap.set(normalizeKey(c.name), c);
-  });
+  if (categories) {
+    categories.forEach((c) => {
+      if (c.slug) categoryMap.set(normalizeKey(c.slug), c);
+      if (c.name) categoryMap.set(normalizeKey(c.name), c);
+    });
+  }
 
   const orderedCategories = ORDERED_SLUGS.map((slug) => {
     const norm = normalizeKey(slug);
@@ -236,7 +237,7 @@ export default function CategoryGallery({ categories }: CategoryGalleryProps) {
         </div>
       </div>
 
-      {/* Compact 1-Screen Asymmetric Masonry Grid Container (~94-96% Width) */}
+      {/* Grid Container */}
       <div className="relative w-[94%] sm:w-[95%] max-w-[1536px] mx-auto px-1 sm:px-2 flex-1 flex flex-col justify-center overflow-hidden">
         {/* Subtle soft illumination light sweep overlay */}
         <div
@@ -297,4 +298,3 @@ export default function CategoryGallery({ categories }: CategoryGalleryProps) {
     </section>
   );
 }
-

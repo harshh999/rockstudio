@@ -32,6 +32,7 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
     });
 
     lenisRef.current = lenis;
+    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
 
     // Synchronize Lenis scroll event with GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
@@ -44,6 +45,7 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      delete (window as unknown as { __lenis?: Lenis }).__lenis;
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
       lenisRef.current = null;

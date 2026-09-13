@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import {
   getProductCategories,
   getFeaturedProducts,
@@ -13,8 +12,7 @@ import HeroCurtainReveal from "@/components/ui/HeroCurtainReveal";
 import CategoryGallery from "@/components/ui/CategoryGallery";
 import Applications from "@/components/ui/Applications";
 import WhyStudio from "@/components/ui/WhyStudio";
-import SectionHeading from "@/components/ui/SectionHeading";
-import ProductCard from "@/components/ui/ProductCard";
+import SelectedProductsGrid from "@/components/ui/SelectedProductsGrid";
 import TestimonialGrid from "@/components/ui/TestimonialGrid";
 import QuoteCTA from "@/components/ui/QuoteCTA";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -81,12 +79,8 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* 4 Equal-Sized Product Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[10px] sm:gap-[12px] lg:gap-[14px]">
-            {selectedProducts.map((product, index) => (
-              <ProductCard key={product.id} product={product} index={index} />
-            ))}
-          </div>
+          {/* 4 Equal-Sized Product Cards Grid with Sequential Reveal */}
+          <SelectedProductsGrid products={selectedProducts} />
         </ScrollReveal>
       </section>
 
@@ -116,12 +110,14 @@ export default async function HomePage() {
 
         {/* CTA */}
         <div className="relative z-10 mx-auto px-6 text-center mt-[50px]">
-          <Link
-            href="/about#testimonials"
+          <a
+            href="https://maps.app.goo.gl/fSCy4793CfvBAeoNA"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block border-b border-[#171717] pb-1 text-[15px] font-medium tracking-wide text-[#171717] transition-colors hover:text-[#55534F] hover:border-[#55534F]"
           >
             See all Reviews
-          </Link>
+          </a>
         </div>
       </section>
 

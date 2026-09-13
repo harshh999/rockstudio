@@ -6,7 +6,7 @@ export const processContent: ProcessContent = {
     title: "From Quarry to Your Home",
     description:
       "A considered process of sourcing, extraction, processing and finishing that brings natural stone from its origin to architectural and interior applications.",
-    image: "/images/hero-architectural.jpg",
+    image: "/images/process-hero.jpg",
   },
 
   miningSourcing: {
@@ -85,7 +85,7 @@ export const processContent: ProcessContent = {
           },
           {
             name: "Leather Shiva Gold",
-            image: "/images/categories/sandstone.jpg",
+            image: "/HeroPage/Sandstone_1.png",
             description: "Tactile satin texture with a soft, undulating surface feel.",
           },
           {
@@ -95,12 +95,12 @@ export const processContent: ProcessContent = {
           },
           {
             name: "Flame River Shiva Gold",
-            image: "/images/projects/facade-cladding.jpg",
+            image: "/HeroPage/Facades.jpg",
             description: "Thermal flamed treatment providing slip-resistant exterior texture.",
           },
           {
             name: "Shot Blast Shiva Gold",
-            image: "/images/categories/wall-cladding.jpg",
+            image: "/HeroPage/WallCladding_1.jpg",
             description: "Fine abrasive impact surface providing reliable traction.",
           },
         ],
@@ -117,7 +117,7 @@ export const processContent: ProcessContent = {
           },
           {
             name: "Leather Steel Grey",
-            image: "/images/categories/onyx.jpg",
+            image: "/HeroPage/Onyx_1.jpg",
             description: "Smooth satin feel with subtle non-reflective depth.",
           },
           {
@@ -137,7 +137,7 @@ export const processContent: ProcessContent = {
           },
           {
             name: "Lapato Finish Steel Grey",
-            image: "/images/hero-architectural.jpg",
+            image: "/images/process-hero.jpg",
             description: "Semi-polished finish creating subtle matte-lustre interplay.",
           },
         ],

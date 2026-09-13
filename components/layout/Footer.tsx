@@ -54,7 +54,7 @@ export default function Footer({ settings }: FooterProps) {
 
   const mahiKrupa = secondaryLocations.find((l) => l.name.includes("Mahi Krupa")) || {
     name: "Mahi Krupa Granite",
-    address: "Survey No. 61/1 & 663, Gham Vadi, Panchmahal",
+    address: "Survey No. 61/1 & 663, Gham Vadi,\nPanchmahals",
     phone: "+91 94279 55590",
     email: "ssidrivein@rediffmail.com",
   };
@@ -66,23 +66,25 @@ export default function Footer({ settings }: FooterProps) {
     email: "sahara.granito@yahoo.com",
   };
 
+  const mahiKrupaAddress =
+    mahiKrupa.address.includes("\n")
+      ? mahiKrupa.address
+      : "Survey No. 61/1 & 663, Gham Vadi,\nPanchmahals";
+
   const locationsList = [
     {
-      num: "01",
       name: "Rocks Studio",
       address: primaryAddress,
       phone: primaryPhone,
       email: primaryEmail,
     },
     {
-      num: "02",
       name: mahiKrupa.name,
-      address: mahiKrupa.address,
+      address: mahiKrupaAddress,
       phone: mahiKrupa.phone,
       email: mahiKrupa.email,
     },
     {
-      num: "03",
       name: saharaGranito.name,
       address: saharaGranito.address,
       phone: saharaGranito.phone,
@@ -244,12 +246,11 @@ export default function Footer({ settings }: FooterProps) {
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start min-w-0">
             {locationsList.map((loc) => (
-              <div key={loc.num} className="flex flex-col min-w-0">
-                <h5 className="text-[15px] sm:text-[16px] font-medium text-white/90 mb-2.5 flex items-center gap-2.5">
-                  <span className="text-white/40 font-mono text-[13px] sm:text-[14px]">{loc.num}</span>
-                  <span>{loc.name}</span>
+              <div key={loc.name} className="flex flex-col min-w-0">
+                <h5 className="text-[15px] sm:text-[16px] font-medium text-white/90 mb-2.5">
+                  {loc.name}
                 </h5>
-                <p className="text-[14px] sm:text-[15px] leading-[1.55] text-white/65 mb-3">
+                <p className="text-[14px] sm:text-[15px] leading-[1.55] text-white/65 mb-3 whitespace-pre-line">
                   {loc.address}
                 </p>
                 <div className="flex flex-wrap xl:flex-nowrap items-center gap-x-3 gap-y-1.5 text-[13px] text-white/75 min-w-0">

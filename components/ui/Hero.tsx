@@ -11,9 +11,9 @@ interface HeroProps {
 }
 
 const HERO_IMAGES = [
-  "/HeroPage/h1.png",
-  "/HeroPage/h2.png",
-  "/HeroPage/h3.png",
+  "/HeroPage/beige_marble_hero.jpg",
+  "/HeroPage/green_marble_hero.jpg",
+  "/HeroPage/travertine_marble_hero.jpg",
 ];
 
 export default function Hero({ content }: HeroProps) {
@@ -30,7 +30,7 @@ export default function Hero({ content }: HeroProps) {
     }
 
     // GSAP Hero Entrance Animation
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       const headline = heroRef.current?.querySelector("h1");
       const description = heroRef.current?.querySelector("p");
       const ctas = heroRef.current?.querySelector(".hero-ctas");
@@ -58,10 +58,10 @@ export default function Hero({ content }: HeroProps) {
       }
     }, heroRef);
 
-    // 9-second interval between image transitions
+    // 5.5-second interval between image transitions
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 9000);
+    }, 5500);
 
     return () => {
       ctx.revert();
@@ -71,13 +71,13 @@ export default function Hero({ content }: HeroProps) {
 
   return (
     <section ref={heroRef} className="relative h-[100svh] min-h-[720px] overflow-hidden bg-white rounded-b-[40px] lg:rounded-b-[60px]">
-      {/* Layer 0: 3-Image Layered Background Slideshow with 2s Crossfade */}
+      {/* Layer 0: 3-Image Layered Background Slideshow with 1.2s Crossfade */}
       <div className="absolute inset-0 z-0">
         {HERO_IMAGES.map((src, index) => (
           <div
             key={src}
-            className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${
-              index === activeIndex ? "opacity-100" : "opacity-0 pointer-events-none"
+            className={`absolute inset-0 transition-opacity duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              index === activeIndex ? "opacity-100 z-[2]" : "opacity-0 z-[1] pointer-events-none"
             }`}
           >
             <Image
@@ -86,51 +86,53 @@ export default function Hero({ content }: HeroProps) {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-center scale-[1.01]"
+              className="object-cover object-center"
             />
           </div>
         ))}
       </div>
 
-      {/* Layer 1: Uniform Black Overlay for Text Readability */}
+      {/* Layer 1: Subtle Localized Left-Gradient Contrast Layer for Readability */}
       <div
-        className="absolute inset-0 z-[1] bg-black/[0.22] pointer-events-none"
-        aria-hidden="true"
-      />
-
-      {/* Layer 1.5: Left-to-Right Localized Gradient Overlay for Text Contrast */}
-      <div
-        className="absolute inset-y-0 left-0 w-[65%] z-[1] pointer-events-none"
+        className="absolute inset-0 z-[1] pointer-events-none"
         style={{
-          background: "linear-gradient(90deg, rgba(0,0,0,0.48) 0%, rgba(0,0,0,0.30) 32%, rgba(0,0,0,0.10) 58%, rgba(0,0,0,0) 78%)"
+          background: "linear-gradient(90deg, rgba(0,0,0,0.48) 0%, rgba(0,0,0,0.30) 45%, rgba(0,0,0,0) 78%)",
         }}
         aria-hidden="true"
       />
 
       {/* Layer 2: Left-Aligned Editorial Content */}
-      <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-center px-6 sm:px-10 pt-[72px] pb-[10vh] lg:pl-[10vw] lg:pr-12">
-        <div className="max-w-[760px]">
+      <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col justify-center px-6 sm:px-10 lg:px-16 pt-[72px] pb-16 pl-[clamp(48px,8vw,120px)] pr-12">
+        <div className="max-w-[720px]">
           {/* Headline */}
           <h1 
-            className="max-w-[760px] font-serif text-[44px] sm:text-[60px] md:text-[72px] lg:text-[clamp(58px,6vw,88px)] font-medium leading-[0.95] tracking-[-0.045em] text-white"
-            style={{ textShadow: "0 2px 14px rgba(0,0,0,0.22)" }}
+            className="font-serif text-[44px] sm:text-[60px] md:text-[72px] lg:text-[clamp(58px,6vw,88px)] font-medium leading-[0.96] tracking-[-0.045em] text-[#FFFFFF]"
+            style={{ textShadow: "0 3px 20px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4)" }}
           >
-            Stone, selected for the way you live.
+            {content.headline.includes("\n") ? (
+              content.headline.split("\n").map((line, i) => (
+                <span key={i} className="block">
+                  {line}
+                </span>
+              ))
+            ) : (
+              content.headline
+            )}
           </h1>
 
           {/* Description */}
           <p 
-            className="mt-[24px] max-w-[500px] text-[15px] sm:text-[16px] font-medium leading-[1.55]"
-            style={{ color: "rgba(255,255,255,0.92)", textShadow: "0 1px 8px rgba(0,0,0,0.28)" }}
+            className="mt-[26px] max-w-[430px] text-[15px] sm:text-[16px] font-normal leading-[1.6] text-[#FFFFFF] opacity-[0.92]"
+            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.55)" }}
           >
-            Thoughtfully sourced natural stone for architecture, interiors and spaces with character.
+            {content.description}
           </p>
 
           {/* CTAs */}
-          <div className="hero-ctas mt-[28px] flex flex-wrap items-center gap-3 sm:gap-3.5">
+          <div className="hero-ctas mt-[30px] flex flex-wrap items-center gap-3 sm:gap-3.5">
             <Link
               href={content.primaryCta.href}
-              className="inline-flex items-center justify-center rounded-full bg-[#1B1B19] px-[25px] py-[15px] text-[14px] font-medium text-white transition-all duration-200 hover:bg-black hover:scale-[1.01] shadow-xs"
+              className="inline-flex items-center justify-center rounded-full bg-[#171717] px-[25px] py-[15px] text-[14px] font-medium text-[#FFFFFF] transition-all duration-200 hover:bg-black hover:scale-[1.01] shadow-xs"
             >
               {content.primaryCta.label}
             </Link>
@@ -138,7 +140,7 @@ export default function Hero({ content }: HeroProps) {
             {content.secondaryCta && (
               <Link
                 href={content.secondaryCta.href}
-                className="inline-flex items-center justify-center rounded-full border border-[rgba(27,27,25,0.28)] bg-transparent px-[24px] py-[14px] text-[14px] font-medium text-[#1B1B19] transition-all duration-200 hover:bg-stone-900/5 hover:border-[#1B1B19]"
+                className="inline-flex items-center justify-center rounded-full border border-[rgba(255,255,255,0.5)] bg-[rgba(0,0,0,0.12)] px-[24px] py-[14px] text-[14px] font-medium text-[#FFFFFF] transition-all duration-200 hover:bg-[rgba(0,0,0,0.2)] hover:border-white"
               >
                 {content.secondaryCta.label}
               </Link>
@@ -149,20 +151,14 @@ export default function Hero({ content }: HeroProps) {
 
       {/* Bottom Peripheral Details */}
       <div className="absolute bottom-8 left-[clamp(48px,8vw,120px)] z-10 hidden sm:block pointer-events-none select-none">
-        <span className="text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.16em] text-[rgba(27,27,25,0.55)]">
+        <span className="text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.16em] text-white/70" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.3)" }}>
           {content.bottomLeftText || "AHMEDABAD · INDIA"}
-        </span>
-      </div>
-
-      <div className="absolute bottom-8 right-[clamp(48px,8vw,120px)] z-10 hidden sm:block pointer-events-none select-none">
-        <span className="text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.16em] text-[rgba(27,27,25,0.55)]">
-          {content.bottomRightText || content.bottomIndicator || "SCROLL TO EXPLORE"}
         </span>
       </div>
 
       {/* Mobile-Only Bottom Metadata */}
       <div className="absolute bottom-6 left-6 z-10 sm:hidden pointer-events-none select-none">
-        <span className="text-[9px] font-medium uppercase tracking-[0.16em] text-[rgba(27,27,25,0.55)]">
+        <span className="text-[9px] font-medium uppercase tracking-[0.16em] text-white/70" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.3)" }}>
           {content.bottomLeftText || "AHMEDABAD · INDIA"}
         </span>
       </div>

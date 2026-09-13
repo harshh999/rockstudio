@@ -10,8 +10,7 @@
  *  - Returns application-level types (from @/types) — never Wix SDK objects.
  */
 
-import { createClient, ApiKeyStrategy } from "@wix/sdk";
-import { items } from "@wix/data";
+import { createClient } from "@wix/sdk";
 import type { CMSProvider } from "./types";
 import type {
   Product,
@@ -36,9 +35,38 @@ import { processContent as mockProcessContent } from "@/data/process";
 import { getWixClient } from "@/lib/wix/client";
 
 // Helper to strip simple HTML tags if rich text is returned as HTML string
-function stripHtml(html: string | undefined | null): string {
-  if (!html) return "";
+function stripHtml(html: unknown): string {
+  if (typeof html !== "string") return "";
   return html.replace(/<[^>]*>?/gm, "").trim();
+}
+
+interface WixItem {
+  _id?: string;
+  data?: Record<string, unknown>;
+  [key: string]: unknown;
+}
+
+function extractItemData(item: unknown): { id: string; d: Record<string, unknown> } {
+  const obj = (item || {}) as WixItem;
+  const d = (obj.data || obj) as Record<string, unknown>;
+  return { id: String(obj._id || ""), d };
+}
+
+function extractImageSrc(val: unknown): string {
+  if (typeof val === "string") return val;
+  if (val && typeof val === "object" && "src" in val) {
+    return String((val as { src?: unknown }).src || "");
+  }
+  return "";
+}
+
+function extractSlug(ref: unknown): string {
+  if (typeof ref === "object" && ref !== null) {
+    const obj = ref as { slug?: unknown; _id?: unknown };
+    return String(obj.slug || obj._id || "");
+  }
+  if (typeof ref === "string") return ref;
+  return "";
 }
 
 export class WixCMSProvider implements CMSProvider {
@@ -61,38 +89,24 @@ export class WixCMSProvider implements CMSProvider {
         .limit(1000)
         .find();
 
-      return results.map((item: any) => {
-        const d = item.data || item;
-        const catRef = d.category;
-        const categorySlug =
-          typeof catRef === "object" && catRef !== null
-            ? catRef.slug || catRef._id || ""
-            : typeof catRef === "string"
-            ? catRef
-            : "";
-
-        const subRef = d.subcategory;
-        const subcategorySlug =
-          typeof subRef === "object" && subRef !== null
-            ? subRef.slug || subRef._id || ""
-            : typeof subRef === "string"
-            ? subRef
-            : "";
+      return (results as unknown[]).map((item) => {
+        const { id, d } = extractItemData(item);
+        const categorySlug = extractSlug(d.category);
+        const subcategorySlug = extractSlug(d.subcategory);
+        const galleryRaw = Array.isArray(d.gallery) ? d.gallery : [];
 
         return {
-          id: item._id || "",
-          name: d.name || "",
-          slug: d.slug || "",
+          id,
+          name: String(d.name || ""),
+          slug: String(d.slug || ""),
           category: categorySlug,
           subcategory: subcategorySlug,
-          shortDescription: d.shortDescription || "",
+          shortDescription: String(d.shortDescription || ""),
           description: stripHtml(d.description),
-          heroImage: typeof d.mainImage === "string" ? d.mainImage : d.mainImage?.src || "",
-          gallery: Array.isArray(d.gallery)
-            ? d.gallery.map((g: any) => (typeof g === "string" ? g : g.src || ""))
-            : [],
+          heroImage: extractImageSrc(d.mainImage),
+          gallery: galleryRaw.map((g) => extractImageSrc(g)),
           featured: Boolean(d.featured),
-          sortOrder: d.sortOrder ?? 0,
+          sortOrder: typeof d.sortOrder === "number" ? d.sortOrder : 0,
         };
       });
     } catch (error) {
@@ -111,38 +125,23 @@ export class WixCMSProvider implements CMSProvider {
         .find();
 
       if (results.length === 0) return null;
-      const item = results[0];
-      const d = item.data || item;
-      const catRef = d.category;
-      const categorySlug =
-        typeof catRef === "object" && catRef !== null
-          ? catRef.slug || catRef._id || ""
-          : typeof catRef === "string"
-          ? catRef
-          : "";
-
-      const subRef = d.subcategory;
-      const subcategorySlug =
-        typeof subRef === "object" && subRef !== null
-          ? subRef.slug || subRef._id || ""
-          : typeof subRef === "string"
-          ? subRef
-          : "";
+      const { id, d } = extractItemData(results[0]);
+      const categorySlug = extractSlug(d.category);
+      const subcategorySlug = extractSlug(d.subcategory);
+      const galleryRaw = Array.isArray(d.gallery) ? d.gallery : [];
 
       return {
-        id: item._id || "",
-        name: d.name || "",
-        slug: d.slug || "",
+        id,
+        name: String(d.name || ""),
+        slug: String(d.slug || ""),
         category: categorySlug,
         subcategory: subcategorySlug,
-        shortDescription: d.shortDescription || "",
+        shortDescription: String(d.shortDescription || ""),
         description: stripHtml(d.description),
-        heroImage: typeof d.mainImage === "string" ? d.mainImage : d.mainImage?.src || "",
-        gallery: Array.isArray(d.gallery)
-          ? d.gallery.map((g: any) => (typeof g === "string" ? g : g.src || ""))
-          : [],
+        heroImage: extractImageSrc(d.mainImage),
+        gallery: galleryRaw.map((g) => extractImageSrc(g)),
         featured: Boolean(d.featured),
-        sortOrder: d.sortOrder ?? 0,
+        sortOrder: typeof d.sortOrder === "number" ? d.sortOrder : 0,
       };
     } catch (error) {
       console.error("WixCMSProvider.getProductBySlug error:", error);
@@ -178,15 +177,15 @@ export class WixCMSProvider implements CMSProvider {
         .limit(1000)
         .find();
 
-      return results.map((item: any) => {
-        const d = item.data || item;
+      return (results as unknown[]).map((item) => {
+        const { id, d } = extractItemData(item);
         return {
-          id: item._id || "",
-          name: d.name || "",
-          slug: d.slug || "",
-          description: d.description || "",
-          image: typeof d.image === "string" ? d.image : d.image?.src || "",
-          sortOrder: d.sortOrder ?? 0,
+          id,
+          name: String(d.name || ""),
+          slug: String(d.slug || ""),
+          description: String(d.description || ""),
+          image: extractImageSrc(d.image),
+          sortOrder: typeof d.sortOrder === "number" ? d.sortOrder : 0,
         };
       });
     } catch (error) {
@@ -281,15 +280,15 @@ export class WixCMSProvider implements CMSProvider {
         .ascending("sortOrder")
         .find();
 
-      return results.map((item: any) => {
-        const d = item.data || item;
+      return (results as unknown[]).map((item) => {
+        const { id, d } = extractItemData(item);
         return {
-          id: item._id || "",
-          name: d.name || "",
-          company: d.company || "",
-          role: d.role || "",
+          id,
+          name: String(d.name || ""),
+          company: String(d.company || ""),
+          role: String(d.role || ""),
           quote: stripHtml(d.quote),
-          image: typeof d.image === "string" ? d.image : d.image?.src || "",
+          image: extractImageSrc(d.image),
         };
       });
     } catch (error) {
@@ -309,7 +308,7 @@ export class WixCMSProvider implements CMSProvider {
         .limit(1)
         .find();
 
-      let locResults: any[] = [];
+      let locResults: unknown[] = [];
       try {
         const { items } = await this.client.items
           .query(COLLECTIONS.locations)
@@ -317,31 +316,31 @@ export class WixCMSProvider implements CMSProvider {
           .ascending("sortOrder")
           .find();
         locResults = items;
-      } catch (err) {
+      } catch {
         // intentionally ignore missing locations collection
       }
 
-      const locations: LocationItem[] = locResults.map((item: any) => {
-        const d = item.data || item;
+      const locations: LocationItem[] = locResults.map((item) => {
+        const { d } = extractItemData(item);
         return {
-          name: d.name || "",
-          address: d.address || "",
-          phone: d.phone || "",
-          email: d.email || undefined,
-          contactPerson: d.contactPerson || undefined,
+          name: String(d.name || ""),
+          address: String(d.address || ""),
+          phone: String(d.phone || ""),
+          email: typeof d.email === "string" ? d.email : undefined,
+          contactPerson: typeof d.contactPerson === "string" ? d.contactPerson : undefined,
         };
       });
 
       if (results.length > 0) {
-        const d = results[0].data || results[0];
+        const { d } = extractItemData(results[0]);
         return {
-          companyName: d.companyName || "Rocks Studio",
-          phone: d.phone || "",
-          email: d.email || "",
-          address: d.address || "",
-          whatsapp: d.whatsapp || "",
-          instagram: d.instagramUrl || "",
-          facebook: d.facebookUrl || undefined,
+          companyName: String(d.companyName || "Rocks Studio"),
+          phone: String(d.phone || ""),
+          email: String(d.email || ""),
+          address: String(d.address || ""),
+          whatsapp: String(d.whatsapp || ""),
+          instagram: String(d.instagramUrl || ""),
+          facebook: typeof d.facebookUrl === "string" ? d.facebookUrl : undefined,
           locations,
         };
       }
@@ -455,8 +454,8 @@ export class WixCMSProvider implements CMSProvider {
       if (results.length > 0) {
         const d = results[0].data || results[0];
         return {
-          headline: d.heroTitle || "Stone for spaces that endure.",
-          description: d.heroDescription || "",
+          headline: d.heroTitle || "The right stone changes everything.",
+          description: d.heroDescription || "Curated materials selected to bring depth, character, and permanence to every space.",
           backgroundImage: typeof d.heroImage === "string" ? d.heroImage : d.heroImage?.src || "/images/projects/Hero_3.png",
           primaryCta: {
             label: "Explore Materials",

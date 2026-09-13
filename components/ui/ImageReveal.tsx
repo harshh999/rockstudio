@@ -30,7 +30,7 @@ export default function ImageReveal({
     gsap.registerPlugin(ScrollTrigger);
     const element = containerRef.current;
 
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       // Find img or inner element
       const target = element.querySelector("img") || element;
 

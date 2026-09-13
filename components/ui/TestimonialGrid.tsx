@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, TouchEvent } from "react";
+import { useState, useRef, TouchEvent } from "react";
 import type { Testimonial } from "@/types";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 
@@ -9,27 +9,29 @@ interface TestimonialGridProps {
 }
 
 export default function TestimonialGrid({ testimonials }: TestimonialGridProps) {
-  if (!testimonials || testimonials.length === 0) return null;
-
-  const N = testimonials.length;
+  const N = testimonials?.length || 0;
   // Calculate repeat count to ensure at least 30 cards for a dense, seamless infinite track
-  const repeatCount = Math.max(3, Math.ceil(30 / N));
-  const clonedTestimonials = Array(repeatCount).fill(testimonials).flat();
+  const repeatCount = N > 0 ? Math.max(3, Math.ceil(30 / N)) : 0;
+  const clonedTestimonials = N > 0 ? Array(repeatCount).fill(testimonials).flat() : [];
 
   // Start in the middle set of testimonials so left/prev navigation works seamlessly on load
   const middleSetIndex = Math.floor(repeatCount / 2);
   const startIndex = middleSetIndex * N;
 
   const [currentIndex, setCurrentIndex] = useState(startIndex);
+  const [prevStartIndex, setPrevStartIndex] = useState(startIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Sync start index during render if testimonials array length changes dynamically
+  if (prevStartIndex !== startIndex) {
+    setPrevStartIndex(startIndex);
+    setCurrentIndex(startIndex);
+  }
 
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
-  // Sync start index if testimonials array length changes dynamically
-  useEffect(() => {
-    setCurrentIndex(startIndex);
-  }, [N, startIndex]);
+  if (!testimonials || testimonials.length === 0) return null;
 
   const handlePrev = () => {
     setIsTransitioning(true);

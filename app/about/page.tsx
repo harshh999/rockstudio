@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { getAboutContent } from "@/lib/data";
 import QuoteCTA from "@/components/ui/QuoteCTA";
+import WhoWeAreSection from "@/components/ui/WhoWeAreSection";
+import OurApproachSection from "@/components/ui/OurApproachSection";
+import FoundationSection from "@/components/ui/FoundationSection";
 
 export const metadata: Metadata = {
   title: "About Us | Rocks Studio",
@@ -107,102 +109,12 @@ export default async function AboutPage() {
       {/* ============================================================ */}
       {/* 02. WHO WE ARE (Editorial Introduction)                      */}
       {/* ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Left Column: Architectural Stone Image (~55% width) */}
-          <div className="lg:col-span-6 xl:col-span-7">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-100">
-              <Image
-                src="/images/about/who-we-are.jpg"
-                alt="Rocks Studio natural stone architectural interior"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Right Column: Narrative Copy (~40% width) */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-6">
-            <div className="text-xs font-semibold uppercase tracking-[0.25em] text-warm-gold">
-              WHO WE ARE
-            </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-light tracking-tight text-stone-900 leading-[1.1]">
-              Stone is natural. The way it is chosen is not.
-            </h2>
-            <div className="space-y-4 font-sans text-[15px] sm:text-base leading-relaxed text-stone-600">
-              <p>
-                Based in Ahmedabad, Gujarat, Rocks Studio works with architects,
-                interior designers, and builders to source, detail, and supply
-                natural stone for residential, commercial, and hospitality projects.
-              </p>
-              <p>
-                Rather than offering undifferentiated materials, we evaluate each
-                stone block for geological stability, color consistency, and natural
-                character before it enters production.
-              </p>
-              <p>
-                From raw block selection to precision calibration and finishing,
-                our focus is ensuring the material performs reliably in its
-                intended architectural context.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhoWeAreSection />
 
       {/* ============================================================ */}
       {/* 03. OUR APPROACH (Numbered Editorial List)                   */}
       {/* ============================================================ */}
-      <section className="border-t border-[#DDDAD4]/70 bg-stone-50/40">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-28">
-          {/* Section Heading */}
-          <div className="max-w-2xl space-y-4">
-            <div className="text-xs font-semibold uppercase tracking-[0.25em] text-warm-gold">
-              OUR APPROACH
-            </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-light tracking-tight text-stone-900 leading-[1.1]">
-              From material to application.
-            </h2>
-            <p className="font-sans text-[15px] sm:text-base leading-relaxed text-stone-600">
-              Rocks Studio coordinates every stage from quarry sourcing and block
-              evaluation through custom processing, surface finishing, and project delivery.
-            </p>
-          </div>
-
-          {/* Full-width Numbered Rows */}
-          <div className="mt-12 lg:mt-16 flex flex-col w-full border-t border-[#DDDAD4]">
-            {approachItems.map((item) => (
-              <div
-                key={item.number}
-                className="group flex flex-col sm:flex-row sm:items-start border-b border-[#DDDAD4] py-7 lg:py-9 transition-colors hover:bg-stone-100/40"
-              >
-                {/* Number */}
-                <div className="sm:w-[12%] lg:w-[10%] shrink-0 mb-2 sm:mb-0">
-                  <span className="font-serif text-xl sm:text-2xl font-normal text-warm-gold">
-                    {item.number}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <div className="sm:w-[35%] lg:w-[32%] shrink-0 mb-2 sm:mb-0 pr-6">
-                  <h3 className="font-serif text-xl sm:text-[22px] font-normal tracking-tight text-stone-900">
-                    {item.title}
-                  </h3>
-                </div>
-
-                {/* Description */}
-                <div className="sm:flex-1">
-                  <p className="font-sans text-[15px] sm:text-base leading-relaxed text-stone-600 max-w-xl">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <OurApproachSection items={approachItems} />
 
       {/* ============================================================ */}
       {/* 04. MATERIAL PHILOSOPHY (Visual Statement Section)           */}
@@ -294,53 +206,10 @@ export default async function AboutPage() {
       {/* ============================================================ */}
       {/* 06. THE FOUNDATION (Closing Statement & Processing Facility) */}
       {/* ============================================================ */}
-      <section className="border-t border-[#DDDAD4]/70 bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-28">
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-            {/* Left Column: Narrative Copy (~40% width) */}
-            <div className="order-2 lg:order-1 lg:col-span-5 space-y-6">
-              <div className="text-xs font-semibold uppercase tracking-[0.25em] text-warm-gold">
-                THE FOUNDATION
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-light tracking-tight text-stone-900 leading-[1.1]">
-                {about.foundation?.title || "A considered approach to natural stone."}
-              </h2>
-              <p className="font-sans text-[15px] sm:text-base leading-relaxed text-stone-600">
-                {about.foundation?.description ||
-                  "Our processing facility is equipped with modern stone-processing machinery, enabling precision cutting, calibration, and finishing of natural stone slabs and tiles. We maintain rigorous quality control at every stage of production to ensure dimensional accuracy and surface consistency across every batch."}
-              </p>
-
-              <div className="pt-2 flex flex-wrap gap-6">
-                <Link
-                  href="/process"
-                  className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-stone-900 border-b border-stone-900 pb-1 hover:text-warm-gold hover:border-warm-gold transition-colors"
-                >
-                  Discover Our Process →
-                </Link>
-                <Link
-                  href="/products"
-                  className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-stone-600 border-b border-stone-300 pb-1 hover:text-stone-900 hover:border-stone-900 transition-colors"
-                >
-                  Explore Material Library →
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: Processing Facility Image (~55% width) */}
-            <div className="order-1 lg:order-2 lg:col-span-7">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-100">
-                <Image
-                  src="/images/about/our-foundation.jpg"
-                  alt="Rocks Studio stone processing facility and manufacturing"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FoundationSection
+        title={about.foundation?.title}
+        description={about.foundation?.description}
+      />
 
       {/* ============================================================ */}
       {/* 07. UNIVERSAL START A PROJECT CTA                            */}

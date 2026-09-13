@@ -43,7 +43,7 @@ export default function QuoteCTA() {
           {/* Button */}
           <Link
             href="/contact"
-            className="inline-block bg-white text-[#171717] text-[15px] font-medium px-[34px] py-[15px] rounded-none border-none transition-all duration-[180ms] ease-in-out hover:bg-stone-200 hover:-translate-y-[1px]"
+            className="inline-block bg-white text-[#171717] text-[15px] font-medium px-[34px] py-[15px] rounded-[14px] border-none transition-all duration-[180ms] ease-in-out hover:bg-stone-200 hover:-translate-y-[1px]"
           >
             Get a Quote
           </Link>

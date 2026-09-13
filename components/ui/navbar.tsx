@@ -373,7 +373,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="mt-2.5 w-full rounded-[24px] bg-white border border-stone-200/80 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-4 sm:p-5 md:hidden"
+            className="mt-2.5 w-full rounded-[24px] bg-white border border-stone-200/80 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-4 sm:p-5 lg:hidden"
           >
             <nav aria-label="Mobile Navigation">
               <ul className="flex flex-col space-y-1">

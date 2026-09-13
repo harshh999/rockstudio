@@ -1,10 +1,10 @@
 import type { HeroContent } from "@/types";
 
 export const heroContent: HeroContent = {
-  headline: "Stone for spaces that endure.",
+  headline: "The right stone changes everything.",
   description:
-    "Marble, granite and natural stone selected for architecture, interiors and spaces made to last.",
-  backgroundImage: "/images/projects/Hero_3.png",
+    "Curated materials selected to bring depth, character, and permanence to every space.",
+  backgroundImage: "/HeroPage/h1.png",
   primaryCta: {
     label: "Explore Materials",
     href: "/products",
@@ -16,3 +16,4 @@ export const heroContent: HeroContent = {
   bottomLeftText: "AHMEDABAD · INDIA",
   bottomRightText: "SCROLL TO EXPLORE",
 };
+

@@ -47,10 +47,10 @@ export async function testWixConnection(collectionId: string = "Products") {
       totalCount: result.totalCount ?? result.items.length,
       itemCount: result.items.length,
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
     return {
       success: false,
-      error: error?.message || String(error),
+      error: error instanceof Error ? error.message : String(error),
     };
   }
 }

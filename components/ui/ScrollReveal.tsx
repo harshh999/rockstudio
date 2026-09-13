@@ -40,7 +40,7 @@ export default function ScrollReveal({
     const isMobile = window.innerWidth < 768;
     const actualY = isMobile ? Math.min(yOffset, 18) : yOffset;
 
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       if (staggerSelector && stagger > 0) {
         const items = element.querySelectorAll(staggerSelector);
         if (items.length > 0) {
