@@ -251,7 +251,7 @@ export default function AboutPreview({ content }: AboutPreviewProps) {
       className="relative bg-white py-20 lg:py-28 overflow-hidden"
     >
       {/* Background Subtle Stone-Inspired SVG Linework Layer */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Top Right: Large Marble Vein */}
         <div className="absolute -top-6 -right-10 opacity-60 sm:opacity-80 lg:opacity-[0.08] transform -rotate-12">
           <MarbleVeinSvg />

@@ -18,7 +18,7 @@ function StoneVeinTextureSvg() {
       viewBox="0 0 380 300"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="pointer-events-none select-none absolute -right-6 -bottom-6 opacity-[0.025]"
+      className="pointer-events-none select-none absolute -right-6 -bottom-6 opacity-[0.025] hidden md:block"
     >
       <path
         d="M20 30C100 120 180 80 260 180C340 280 290 320 370 340"
@@ -54,10 +54,11 @@ export default function WhyStudio({ content }: WhyStudioProps) {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const ctx = gsap.context(() => {}, pinWrapperRef);
+    const mm = gsap.matchMedia();
 
     const timer = setTimeout(() => {
-      ctx.add(() => {
+      // Desktop (>= 768px): 3-column bento pinned circuit animation
+      mm.add("(min-width: 768px)", () => {
         const anchorEl = anchorRef.current;
         const premEl = premRef.current;
         const relEl = relRef.current;
@@ -137,11 +138,47 @@ export default function WhyStudio({ content }: WhyStudioProps) {
           invalidateOnRefresh: true,
         });
       });
+
+      // Mobile (< 768px): Sequential reveal in exact DOM order (Card 1: Anchor -> Card 2: premEl -> Card 3: archEl -> Card 4: relEl)
+      mm.add("(max-width: 767px)", () => {
+        const premEl = premRef.current;
+        const archEl = archRef.current;
+        const relEl = relRef.current;
+
+        if (!premEl || !archEl || !relEl) return;
+
+        // Reset transforms and clipping for mobile layout
+        gsap.set([premEl, archEl, relEl], {
+          x: 0,
+          y: 0,
+          clipPath: "none",
+        });
+
+        // Target cards sequentially in natural DOM order without skipping
+        const mobileCards = [premEl, archEl, relEl];
+        mobileCards.forEach((card) => {
+          gsap.fromTo(
+            card,
+            { opacity: 0, y: 28 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.65,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 88%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        });
+      });
     }, 50);
 
     return () => {
       clearTimeout(timer);
-      ctx.revert();
+      mm.revert();
     };
   }, []);
 
