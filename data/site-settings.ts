@@ -17,13 +17,6 @@ export const siteSettings: SiteSettings = {
       email: "rocksstudio2017@gmail.com",
     },
     {
-      name: "Mahi Krupa Granite",
-      address: "Survey No. 61/1 & 663, Gham Vadi,\nPanchmahals",
-      phone: "+91 94279 55590",
-      contactPerson: "Mr. Sunil Bhandari",
-      email: "ssidrivein@rediffmail.com",
-    },
-    {
       name: "Sahara Granito",
       address: "Survey No. 906, Gambhoi Dhundhar Road, Sabarkantha, Gujarat",
       phone: "+91 85114 84878",

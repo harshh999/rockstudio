@@ -52,13 +52,6 @@ export default function Footer({ settings }: FooterProps) {
     (loc) => loc.name !== "Rocks Studio"
   );
 
-  const mahiKrupa = secondaryLocations.find((l) => l.name.includes("Mahi Krupa")) || {
-    name: "Mahi Krupa Granite",
-    address: "Survey No. 61/1 & 663, Gham Vadi,\nPanchmahals",
-    phone: "+91 94279 55590",
-    email: "ssidrivein@rediffmail.com",
-  };
-
   const saharaGranito = secondaryLocations.find((l) => l.name.includes("Sahara")) || {
     name: "Sahara Granito",
     address: "Survey No. 906, Gambhoi Dhundhar Road, Sabarkantha, Gujarat",
@@ -66,23 +59,12 @@ export default function Footer({ settings }: FooterProps) {
     email: "sahara.granito@yahoo.com",
   };
 
-  const mahiKrupaAddress =
-    mahiKrupa.address.includes("\n")
-      ? mahiKrupa.address
-      : "Survey No. 61/1 & 663, Gham Vadi,\nPanchmahals";
-
   const locationsList = [
     {
       name: "Rocks Studio",
       address: primaryAddress,
       phone: primaryPhone,
       email: primaryEmail,
-    },
-    {
-      name: mahiKrupa.name,
-      address: mahiKrupaAddress,
-      phone: mahiKrupa.phone,
-      email: mahiKrupa.email,
     },
     {
       name: saharaGranito.name,
@@ -244,7 +226,7 @@ export default function Footer({ settings }: FooterProps) {
           <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-5">
             LOCATIONS
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start min-w-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start min-w-0">
             {locationsList.map((loc) => (
               <div key={loc.name} className="flex flex-col min-w-0">
                 <h5 className="text-[15px] sm:text-[16px] font-medium text-white/90 mb-2.5">
