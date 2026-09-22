@@ -125,6 +125,7 @@ export const rawCatalogueStructure = {
     ]
   },
   Marble: {
+    "Indian Marble": [],
     "Imported Marble": [
       "Agora Beige",
       "Agora Beige",
@@ -176,50 +177,44 @@ export const rawCatalogueStructure = {
       "Wavy Grey",
       "White Pearl"
     ],
-    "Italian Marble": {
-      "Beige Flooring": [
-        "Gulati Dyna",
-        "Beige Serfegenti",
-        "Bresia Onachita",
-        "Bela Pink"
-      ],
-      "Onyx": [
-        "Blue Onyx",
-        "Crystal Mango",
-        "Bricks Onyx",
-        "Green Onyx"
-      ],
-      "Brown": [
-        "Pietra Brown",
-        "Embassy Brown",
-        "Golden Brown",
-        "Armani Brown"
-      ],
-      "White": [
-        "White Pearl",
-        "Opera White",
-        "Michle Angelo",
-        "Statuario"
-      ],
-      "Exterior Cladding": [
-        "Noche Trevertino",
-        "Beige Trevertino",
-        "Silver Trevertino",
-        "Golden Trevertino"
-      ],
-      "Exotic Marble - Bathroom - Staircase Cladding": [
-        "Pure Black",
-        "Armani Bronze",
-        "Grey Orebico",
-        "Cloudy Grey"
-      ],
-      "Grey Flooring": [
-        "Levender Grey",
-        "Grey William",
-        "Cetara Grey",
-        "Metallic Grey"
-      ]
-    }
+    "Exotic Marble": [
+      "Pure Black",
+      "Armani Bronze",
+      "Grey Orebico",
+      "Cloudy Grey"
+    ],
+    "Italian Marble": [
+      "Gulati Dyna",
+      "Beige Serfegenti",
+      "Bresia Onachita",
+      "Bela Pink",
+      "Blue Onyx",
+      "Crystal Mango",
+      "Bricks Onyx",
+      "Green Onyx",
+      "Pietra Brown",
+      "Embassy Brown",
+      "Golden Brown",
+      "Armani Brown",
+      "White Pearl",
+      "Opera White",
+      "Michle Angelo",
+      "Statuario",
+      "Noche Trevertino",
+      "Beige Trevertino",
+      "Silver Trevertino",
+      "Golden Trevertino",
+      "Levender Grey",
+      "Grey William",
+      "Cetara Grey",
+      "Metallic Grey"
+    ],
+    "Brazilian Marble": []
+  },
+  Kota: {
+    "Green": [],
+    "Brown": [],
+    "Andhra Gray": []
   },
   Onyx: [
     "Blue Onyx",
@@ -241,6 +236,8 @@ export const rawCatalogueStructure = {
     "Dholpur Red"
   ],
   "Wall Cladding": {
+    "Flute": [],
+    "CNC Flute": [],
     "Imported Wall Cladding": [
       "Beige Travertine",
       "Black Hole",
