@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getSiteSettings } from "@/lib/data";
 import ContactDetails from "@/components/ui/ContactDetails";
 import ContactForm from "./ContactForm";
@@ -15,15 +16,31 @@ export default async function ContactPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="flex flex-col justify-end min-h-[380px] lg:min-h-[460px] bg-stone-900 px-6 pt-32 pb-16 lg:px-8 lg:pt-40 lg:pb-24">
-        <div className="mx-auto max-w-7xl w-full">
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-warm-beige">
+      <section className="relative flex flex-col justify-end min-h-[380px] lg:min-h-[460px] px-6 pt-32 pb-16 lg:px-8 lg:pt-40 lg:pb-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/contact-hero.png"
+            alt="Contact Rocks Studio"
+            fill
+            priority
+            className="object-cover object-center md:object-[center_65%]"
+            sizes="100vw"
+          />
+          {/* Subtle Overlay for Readability */}
+          <div className="absolute inset-0 bg-stone-900/40 lg:bg-stone-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-7xl w-full">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-warm-beige drop-shadow-md">
             Get in Touch
           </span>
-          <h1 className="mt-4 font-serif text-4xl font-light tracking-tight text-white md:text-5xl">
+          <h1 className="mt-4 font-serif text-4xl font-light tracking-tight text-white md:text-5xl drop-shadow-lg">
             Contact Us
           </h1>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-stone-400">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-stone-200 drop-shadow-md">
             Have a project in mind? Get in touch with our team to discuss your
             requirements and receive a personalised quote.
           </p>
@@ -63,15 +80,19 @@ export default async function ContactPage() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Map Section */}
       <section className="bg-white">
-        <div className="flex h-80 items-center justify-center bg-stone-100">
-          <div className="text-center">
-            <p className="text-sm font-medium text-stone-400">Map</p>
-            <p className="mt-1 text-xs text-stone-300">
-              {settings.address}
-            </p>
-          </div>
+        <div className="w-full h-[380px] md:h-[420px] lg:h-[457px] overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14556.355689673614!2d72.53072940078478!3d23.096223385688045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e832f4be0e7e1%3A0x3b87dd1f7782df78!2sRocks%20Studio!5e0!3m2!1sen!2sin!4v1790139989479!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            title="Rocks Studio Location Map"
+          />
         </div>
       </section>
     </>

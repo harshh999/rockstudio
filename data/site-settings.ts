@@ -2,7 +2,7 @@ import type { SiteSettings } from "@/types";
 
 export const siteSettings: SiteSettings = {
   companyName: "Rocks Studio",
-  phone: "+91 93777 16669",
+  phone: "+91 93777 16669, +91 97255 71888",
   email: "rocksstudio2017@gmail.com",
   address: "Nr. CNG Petrol Pump, Gota Cross Road, Gota, Ahmedabad",
   whatsapp: "+91 93777 16669",
@@ -13,7 +13,7 @@ export const siteSettings: SiteSettings = {
     {
       name: "Rocks Studio",
       address: "Nr. CNG Petrol Pump, Gota Cross Road, Gota, Ahmedabad",
-      phone: "+91 93777 16669",
+      phone: "+91 93777 16669, +91 97255 71888",
       email: "rocksstudio2017@gmail.com",
     },
     {

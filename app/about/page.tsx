@@ -5,6 +5,7 @@ import QuoteCTA from "@/components/ui/QuoteCTA";
 import WhoWeAreSection from "@/components/ui/WhoWeAreSection";
 import OurApproachSection from "@/components/ui/OurApproachSection";
 import FoundationSection from "@/components/ui/FoundationSection";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "About Us | Rocks Studio",
@@ -110,6 +111,49 @@ export default async function AboutPage() {
       {/* 02. WHO WE ARE (Editorial Introduction)                      */}
       {/* ============================================================ */}
       <WhoWeAreSection />
+
+      {/* ============================================================ */}
+      {/* 02.5 THE PEOPLE BEHIND ROCKS STUDIO                          */}
+      {/* ============================================================ */}
+      <section className="bg-white flex flex-col justify-center min-h-[100vh]">
+        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24 w-full">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Column: Text */}
+            <div className="lg:col-span-6 xl:col-span-5">
+              <ScrollReveal>
+                <div className="text-xs font-semibold uppercase tracking-[0.25em] text-warm-gold mb-4">
+                  THE PEOPLE BEHIND ROCKS STUDIO
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1}>
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[46px] font-light tracking-tight text-stone-900 leading-[1.08] mb-6">
+                  Built by people who understand the material.
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p className="font-sans text-[15px] sm:text-base leading-relaxed text-stone-600">
+                  From sourcing and selection to processing and project coordination, Rocks Studio is built around people who understand natural stone and the demands of architecture. Our team brings together experience across sourcing, production, design, and project execution.
+                </p>
+              </ScrollReveal>
+            </div>
+            
+            {/* Right Column: Image */}
+            <div className="lg:col-span-6 lg:col-start-7">
+              <ScrollReveal delay={0.3}>
+                <div className="relative w-full aspect-[5/4] sm:aspect-[4/3] lg:aspect-[5/4] xl:aspect-[4/3] overflow-hidden rounded-[8px] bg-stone-100 max-w-[620px] ml-auto">
+                  <Image
+                    src="/images/about/team-landscape.jpg"
+                    alt="The Rocks Studio Team"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ============================================================ */}
       {/* 03. OUR APPROACH (Numbered Editorial List)                   */}
