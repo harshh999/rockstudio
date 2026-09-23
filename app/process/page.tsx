@@ -2,12 +2,58 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getProcessContent } from "@/lib/data";
 import QuoteCTA from "@/components/ui/QuoteCTA";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Process | Rocks Studio",
   description:
     "Explore how Rocks Studio sources, processes and finishes premium natural stone for architectural and interior applications.",
 };
+
+const NATURAL_STONE_DATA = {
+  name: "Natural Stone",
+  description: "In its most authentic form.",
+  image: "/images/process/natural-stone.jpg",
+};
+
+const FINISHES_GRID_DATA = [
+  {
+    name: "Leathered",
+    description: "A textured, soft-touch finish that enhances the stone's natural character.",
+    order: 1,
+    image: "/images/process/leathered.jpg",
+  },
+  {
+    name: "Polished",
+    description: "A high-gloss finish that brings out the depth, colour and veining of the stone.",
+    order: 2,
+    image: "/images/process/polished.jpg",
+  },
+  {
+    name: "Flamed",
+    description: "A rough, textured surface created through high-temperature treatment.",
+    order: 3,
+    image: "/images/process/flamed.jpg",
+  },
+  {
+    name: "Shot Blasted",
+    description: "A finely textured, matte surface achieved through controlled blasting.",
+    order: 4,
+    image: "/images/process/shot-blasted.jpg",
+  },
+  {
+    name: "Canvas",
+    description: "A linear, tactile finish with a contemporary texture.",
+    order: 5,
+    image: "/images/process/canvas.jpg",
+  },
+  {
+    name: "Lapato",
+    description: "A refined, semi-polished finish that balances texture with a soft sheen.",
+    order: 6,
+    image: "/images/process/lapato.jpg",
+  },
+];
 
 export default async function ProcessPage() {
   const content = await getProcessContent();
@@ -40,6 +86,87 @@ export default async function ProcessPage() {
           <p className="mt-4 max-w-2xl font-sans text-base sm:text-lg leading-relaxed text-stone-300">
             {content.hero.description}
           </p>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* SECTION: FINISHES (Redesigned Editorial Flow)                */}
+      {/* ============================================================ */}
+      <section
+        id="finishes"
+        className="w-full bg-white text-[#171717] px-6 sm:px-10 lg:px-[6.5vw] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 border-b border-[#DDDAD4]/40"
+      >
+        <div className="w-full mx-auto max-w-7xl">
+          {/* Header & Concept Text */}
+          <ScrollReveal yOffset={25} duration={0.7}>
+            <div className="max-w-3xl mx-auto text-center">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#8A867D]">
+                FINISHES
+              </span>
+              <h2 className="mt-3.5 font-serif text-3xl sm:text-4xl lg:text-[52px] font-normal leading-[1.05] tracking-[-0.025em] text-[#171717]">
+                One stone. Many possibilities.
+              </h2>
+              <p className="mt-4 font-sans text-[15px] sm:text-[16px] leading-[1.65] text-[#6D6A64] max-w-2xl mx-auto">
+                The same natural stone can be finished in different ways, each surface bringing out a unique character. All finishes are processed in-house to ensure consistent quality, precision, and control across every project.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Centered Hero Sample: Natural Stone */}
+          <ScrollReveal yOffset={30} duration={0.8} delay={0.1} className="mt-12 sm:mt-14 lg:mt-16">
+            <div className="max-w-[560px] sm:max-w-[620px] lg:max-w-[680px] mx-auto text-center">
+              <div className="group relative w-full aspect-[16/9] overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-100 shadow-sm">
+                <Image
+                  src={NATURAL_STONE_DATA.image}
+                  alt={`${NATURAL_STONE_DATA.name} sample`}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 680px"
+                  className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                />
+              </div>
+              <h3 className="mt-4 font-serif text-xl sm:text-2xl font-normal text-[#171717] tracking-tight">
+                {NATURAL_STONE_DATA.name}
+              </h3>
+              <p className="mt-1 font-sans text-xs sm:text-sm text-[#8A867D]">
+                {NATURAL_STONE_DATA.description}
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* 3x2 Grid: 6 Finishes */}
+          <ScrollReveal
+            yOffset={30}
+            duration={0.8}
+            delay={0.2}
+            stagger={0.08}
+            staggerSelector=".finish-card"
+            className="mt-14 sm:mt-16 lg:mt-20"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6 sm:gap-x-8">
+              {FINISHES_GRID_DATA.map((finish) => (
+                <div key={finish.name} className="finish-card group flex flex-col text-center">
+                  {/* Image Container */}
+                  <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[8px] border border-[#DDDAD4]/60 bg-stone-100">
+                    <Image
+                      src={finish.image}
+                      alt={`${finish.name} stone finish sample`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  {/* Label & Description */}
+                  <h3 className="mt-3.5 font-serif text-lg sm:text-[20px] font-normal text-[#171717] tracking-tight">
+                    {finish.name}
+                  </h3>
+                  <p className="mt-1 font-sans text-xs sm:text-[13px] leading-relaxed text-[#6D6A64] max-w-[280px] mx-auto">
+                    {finish.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
