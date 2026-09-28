@@ -1,48 +1,6 @@
 import type { ProductCategory, ProductSubcategory, Product } from "@/types";
 
 export const rawCatalogueStructure = {
-  Granite: {
-    "Indian Granite": [
-      "Zed Black",
-      "Telephone Black",
-      "Super Black",
-      "Silver River",
-      "Silky Blue",
-      "Shiva Gold Canvas",
-      "S White",
-      "S K Blue",
-      "River White",
-      "Rajasthan Black",
-      "P White",
-      "New Kashmir White",
-      "Moon White",
-      "Misty White",
-      "Merry Gold",
-      "Imperial Gold",
-      "Imperial Black",
-      "Hassan Green",
-      "Hassan Gold",
-      "Forest Black",
-      "Colonial White"
-    ],
-    "Imported Granite": [
-      "African Brown",
-      "African Brown",
-      "Blue In Night",
-      "Blue Pearl",
-      "European Gold",
-      "Nano White",
-      "Silver Pearl",
-      "Volga Blue"
-    ],
-    "Gujarat Granite": [
-      "Crystal Blue",
-      "Crystal Red",
-      "G D Brown",
-      "G D Brown",
-      "Godhra Grey"
-    ]
-  },
   CNC: {
     "CNC Inlay": [
       "CNC Inlay 001",
@@ -124,117 +82,11 @@ export const rawCatalogueStructure = {
       "SD 020"
     ]
   },
-  Marble: {
-    "Indian Marble": [],
-    "Imported Marble": [
-      "Agora Beige",
-      "Agora Beige",
-      "Antique Beige",
-      "Armani Brown",
-      "Beige Serfegenti",
-      "Bela Pink",
-      "Blue Bresia",
-      "Bresia Color",
-      "Bresia Onachita",
-      "Brown William",
-      "Burburry Beige",
-      "Cetara Grey",
-      "Crackjack Brown",
-      "Crema Novel",
-      "Dyna",
-      "Dyna",
-      "Dyna",
-      "Embasy Brown",
-      "Era Grey",
-      "Era Grey",
-      "Era Grey",
-      "Firata Fisco",
-      "Golden Brown",
-      "Golden Spider",
-      "Golder Spider",
-      "Grey Breccia",
-      "Grey Feather",
-      "Grey William",
-      "Grey William Italy",
-      "Greyfito",
-      "Gulati Dyna",
-      "Light Emprador",
-      "Michle Angelo",
-      "Opera White",
-      "Pietra Brown",
-      "Repen Grey",
-      "Rosso Pistolo",
-      "Royal Grey",
-      "Silver",
-      "Silver River Light",
-      "Silver River",
-      "Sofitia",
-      "Sonata Grey",
-      "Sonata Grey",
-      "Statuario",
-      "Sugar Beige",
-      "Venetino",
-      "Wavy Grey",
-      "White Pearl"
-    ],
-    "Exotic Marble": [
-      "Pure Black",
-      "Armani Bronze",
-      "Grey Orebico",
-      "Cloudy Grey"
-    ],
-    "Italian Marble": [
-      "Gulati Dyna",
-      "Beige Serfegenti",
-      "Bresia Onachita",
-      "Bela Pink",
-      "Blue Onyx",
-      "Crystal Mango",
-      "Bricks Onyx",
-      "Green Onyx",
-      "Pietra Brown",
-      "Embassy Brown",
-      "Golden Brown",
-      "Armani Brown",
-      "White Pearl",
-      "Opera White",
-      "Michle Angelo",
-      "Statuario",
-      "Noche Trevertino",
-      "Beige Trevertino",
-      "Silver Trevertino",
-      "Golden Trevertino",
-      "Levender Grey",
-      "Grey William",
-      "Cetara Grey",
-      "Metallic Grey"
-    ],
-    "Brazilian Marble": []
-  },
   Kota: {
     "Green": [],
     "Brown": [],
     "Andhra Gray": []
   },
-  Onyx: [
-    "Blue Onyx",
-    "Bricks Onyx",
-    "Crystal Mango",
-    "Green Onyx",
-    "Pakistan Onyx",
-    "Treva Onyx"
-  ],
-  Sandstone: [
-    "Assam Green",
-    "Brown Forest",
-    "Brown Kandla Cobles",
-    "Bundi Brown",
-    "Bundi Chocolate",
-    "Bundi Grey",
-    "Chocolate Kota",
-    "Dholpur Pink",
-    "Dholpur Red"
-  ],
   "Wall Cladding": {
     "Flute": [],
     "CNC Flute": [],
@@ -246,7 +98,7 @@ export const rawCatalogueStructure = {
       "Noche Trevertino",
       "Red Trevertino",
       "Silver Trevertino",
-      "Yellow Trevertino"
+      "Yellow Travertino"
     ],
     "Indian Wall Cladding": [
       "Black Bushed Finish",
@@ -348,7 +200,6 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-// Fallback high quality natural stone sample images for presentation prior to CMS uploads
 const sampleMaterialImages: Record<string, string> = {
   granite: "/HeroPage/Granite_1.png",
   cnc: "/HeroPage/CNC_1.jpg",
@@ -425,11 +276,2342 @@ export const categories: ProductCategory[] = [
   },
 ];
 
-// Process raw structure into subcategories & products arrays
-export const subcategories: ProductSubcategory[] = [];
-export const products: Product[] = [];
+// Generated real products for Granite, Marble, Onyx, Sandstone
+const realProducts: Product[] = [
+  {
+    "id": "prod-adhunik-brown",
+    "name": "Adhunik Brown",
+    "slug": "adhunik-brown",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Adhunik Brown - Granite",
+    "description": "Premium natural Granite material: Adhunik Brown.",
+    "heroImage": "/products/Granite/Adhunik%20Brown.png",
+    "gallery": [
+      "/products/Granite/Adhunik%20Brown.png"
+    ],
+    "featured": false,
+    "sortOrder": 1
+  },
+  {
+    "id": "prod-astodia-ivory-2",
+    "name": "Astodia Ivory 2 ",
+    "slug": "astodia-ivory-2",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Astodia Ivory 2  - Granite",
+    "description": "Premium natural Granite material: Astodia Ivory 2 .",
+    "heroImage": "/products/Granite/Astodia%20Ivory%202%20.png",
+    "gallery": [
+      "/products/Granite/Astodia%20Ivory%202%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 2
+  },
+  {
+    "id": "prod-astodia-ivory",
+    "name": "Astodia Ivory",
+    "slug": "astodia-ivory",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Astodia Ivory - Granite",
+    "description": "Premium natural Granite material: Astodia Ivory.",
+    "heroImage": "/products/Granite/Astodia%20Ivory.png",
+    "gallery": [
+      "/products/Granite/Astodia%20Ivory.png"
+    ],
+    "featured": false,
+    "sortOrder": 3
+  },
+  {
+    "id": "prod-bess-paradise",
+    "name": "Bess Paradise",
+    "slug": "bess-paradise",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Bess Paradise - Granite",
+    "description": "Premium natural Granite material: Bess Paradise.",
+    "heroImage": "/products/Granite/Bess%20Paradise.png",
+    "gallery": [
+      "/products/Granite/Bess%20Paradise.png"
+    ],
+    "featured": false,
+    "sortOrder": 4
+  },
+  {
+    "id": "prod-black-marquina-r",
+    "name": "Black Marquina R",
+    "slug": "black-marquina-r",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Black Marquina R - Granite",
+    "description": "Premium natural Granite material: Black Marquina R.",
+    "heroImage": "/products/Granite/Black%20Marquina%20R.png",
+    "gallery": [
+      "/products/Granite/Black%20Marquina%20R.png"
+    ],
+    "featured": false,
+    "sortOrder": 5
+  },
+  {
+    "id": "prod-burgandy-white",
+    "name": "Burgandy White ",
+    "slug": "burgandy-white",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Burgandy White  - Granite",
+    "description": "Premium natural Granite material: Burgandy White .",
+    "heroImage": "/products/Granite/Burgandy%20White%20.png",
+    "gallery": [
+      "/products/Granite/Burgandy%20White%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 6
+  },
+  {
+    "id": "prod-classic-ivory",
+    "name": "Classic Ivory",
+    "slug": "classic-ivory",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Classic Ivory - Granite",
+    "description": "Premium natural Granite material: Classic Ivory.",
+    "heroImage": "/products/Granite/Classic%20Ivory.png",
+    "gallery": [
+      "/products/Granite/Classic%20Ivory.png"
+    ],
+    "featured": false,
+    "sortOrder": 7
+  },
+  {
+    "id": "prod-coffee-pearl",
+    "name": "Coffee Pearl",
+    "slug": "coffee-pearl",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Coffee Pearl - Granite",
+    "description": "Premium natural Granite material: Coffee Pearl.",
+    "heroImage": "/products/Granite/Coffee%20Pearl.png",
+    "gallery": [
+      "/products/Granite/Coffee%20Pearl.png"
+    ],
+    "featured": false,
+    "sortOrder": 8
+  },
+  {
+    "id": "prod-d-gray",
+    "name": "D Gray",
+    "slug": "d-gray",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "D Gray - Granite",
+    "description": "Premium natural Granite material: D Gray.",
+    "heroImage": "/products/Granite/D%20Gray.png",
+    "gallery": [
+      "/products/Granite/D%20Gray.png"
+    ],
+    "featured": false,
+    "sortOrder": 9
+  },
+  {
+    "id": "prod-diamond-pearl",
+    "name": "Diamond Pearl",
+    "slug": "diamond-pearl",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Diamond Pearl - Granite",
+    "description": "Premium natural Granite material: Diamond Pearl.",
+    "heroImage": "/products/Granite/Diamond%20Pearl.png",
+    "gallery": [
+      "/products/Granite/Diamond%20Pearl.png"
+    ],
+    "featured": false,
+    "sortOrder": 10
+  },
+  {
+    "id": "prod-dyna-blue",
+    "name": "Dyna Blue ",
+    "slug": "dyna-blue",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Dyna Blue  - Granite",
+    "description": "Premium natural Granite material: Dyna Blue .",
+    "heroImage": "/products/Granite/Dyna%20Blue%20.png",
+    "gallery": [
+      "/products/Granite/Dyna%20Blue%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 11
+  },
+  {
+    "id": "prod-forest-brown",
+    "name": "Forest Brown",
+    "slug": "forest-brown",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Forest Brown - Granite",
+    "description": "Premium natural Granite material: Forest Brown.",
+    "heroImage": "/products/Granite/Forest%20Brown.png",
+    "gallery": [
+      "/products/Granite/Forest%20Brown.png"
+    ],
+    "featured": true,
+    "sortOrder": 12
+  },
+  {
+    "id": "prod-godhra-gray",
+    "name": "Godhra gray",
+    "slug": "godhra-gray",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Godhra gray - Granite",
+    "description": "Premium natural Granite material: Godhra gray.",
+    "heroImage": "/products/Granite/Godhra%20gray.png",
+    "gallery": [
+      "/products/Granite/Godhra%20gray.png"
+    ],
+    "featured": false,
+    "sortOrder": 13
+  },
+  {
+    "id": "prod-gray-paradise",
+    "name": "Gray Paradise",
+    "slug": "gray-paradise",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Gray Paradise - Granite",
+    "description": "Premium natural Granite material: Gray Paradise.",
+    "heroImage": "/products/Granite/Gray%20Paradise.png",
+    "gallery": [
+      "/products/Granite/Gray%20Paradise.png"
+    ],
+    "featured": false,
+    "sortOrder": 14
+  },
+  {
+    "id": "prod-hocco-brown",
+    "name": "Hocco Brown ",
+    "slug": "hocco-brown",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Hocco Brown  - Granite",
+    "description": "Premium natural Granite material: Hocco Brown .",
+    "heroImage": "/products/Granite/Hocco%20Brown%20.png",
+    "gallery": [
+      "/products/Granite/Hocco%20Brown%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 15
+  },
+  {
+    "id": "prod-kashmiri-white",
+    "name": "Kashmiri White",
+    "slug": "kashmiri-white",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Kashmiri White - Granite",
+    "description": "Premium natural Granite material: Kashmiri White.",
+    "heroImage": "/products/Granite/Kashmiri%20White.png",
+    "gallery": [
+      "/products/Granite/Kashmiri%20White.png"
+    ],
+    "featured": false,
+    "sortOrder": 16
+  },
+  {
+    "id": "prod-kotda-black",
+    "name": "Kotda Black",
+    "slug": "kotda-black",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Kotda Black - Granite",
+    "description": "Premium natural Granite material: Kotda Black.",
+    "heroImage": "/products/Granite/Kotda%20Black.png",
+    "gallery": [
+      "/products/Granite/Kotda%20Black.png"
+    ],
+    "featured": false,
+    "sortOrder": 17
+  },
+  {
+    "id": "prod-kupam-white",
+    "name": "Kupam White",
+    "slug": "kupam-white",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Kupam White - Granite",
+    "description": "Premium natural Granite material: Kupam White.",
+    "heroImage": "/products/Granite/Kupam%20White.png",
+    "gallery": [
+      "/products/Granite/Kupam%20White.png"
+    ],
+    "featured": false,
+    "sortOrder": 18
+  },
+  {
+    "id": "prod-lakha-red",
+    "name": "Lakha Red",
+    "slug": "lakha-red",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Lakha Red - Granite",
+    "description": "Premium natural Granite material: Lakha Red.",
+    "heroImage": "/products/Granite/Lakha%20Red.png",
+    "gallery": [
+      "/products/Granite/Lakha%20Red.png"
+    ],
+    "featured": false,
+    "sortOrder": 19
+  },
+  {
+    "id": "prod-lava-gray",
+    "name": "Lava Gray",
+    "slug": "lava-gray",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Lava Gray - Granite",
+    "description": "Premium natural Granite material: Lava Gray.",
+    "heroImage": "/products/Granite/Lava%20Gray.png",
+    "gallery": [
+      "/products/Granite/Lava%20Gray.png"
+    ],
+    "featured": false,
+    "sortOrder": 20
+  },
+  {
+    "id": "prod-melton-brown",
+    "name": "Melton Brown",
+    "slug": "melton-brown",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Melton Brown - Granite",
+    "description": "Premium natural Granite material: Melton Brown.",
+    "heroImage": "/products/Granite/Melton%20Brown.png",
+    "gallery": [
+      "/products/Granite/Melton%20Brown.png"
+    ],
+    "featured": false,
+    "sortOrder": 21
+  },
+  {
+    "id": "prod-mountain-brown-2",
+    "name": "Mountain Brown 2",
+    "slug": "mountain-brown-2",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Mountain Brown 2 - Granite",
+    "description": "Premium natural Granite material: Mountain Brown 2.",
+    "heroImage": "/products/Granite/Mountain%20Brown%202.png",
+    "gallery": [
+      "/products/Granite/Mountain%20Brown%202.png"
+    ],
+    "featured": false,
+    "sortOrder": 22
+  },
+  {
+    "id": "prod-mountain-brown",
+    "name": "Mountain Brown",
+    "slug": "mountain-brown",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Mountain Brown - Granite",
+    "description": "Premium natural Granite material: Mountain Brown.",
+    "heroImage": "/products/Granite/Mountain%20Brown.png",
+    "gallery": [
+      "/products/Granite/Mountain%20Brown.png"
+    ],
+    "featured": false,
+    "sortOrder": 23
+  },
+  {
+    "id": "prod-p-white",
+    "name": "P White ",
+    "slug": "p-white",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "P White  - Granite",
+    "description": "Premium natural Granite material: P White .",
+    "heroImage": "/products/Granite/P%20White%20.png",
+    "gallery": [
+      "/products/Granite/P%20White%20.png"
+    ],
+    "featured": true,
+    "sortOrder": 24
+  },
+  {
+    "id": "prod-pebble-black",
+    "name": "Pebble Black",
+    "slug": "pebble-black",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Pebble Black - Granite",
+    "description": "Premium natural Granite material: Pebble Black.",
+    "heroImage": "/products/Granite/Pebble%20Black.png",
+    "gallery": [
+      "/products/Granite/Pebble%20Black.png"
+    ],
+    "featured": false,
+    "sortOrder": 25
+  },
+  {
+    "id": "prod-platinum-gray",
+    "name": "Platinum Gray",
+    "slug": "platinum-gray",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Platinum Gray - Granite",
+    "description": "Premium natural Granite material: Platinum Gray.",
+    "heroImage": "/products/Granite/Platinum%20Gray.png",
+    "gallery": [
+      "/products/Granite/Platinum%20Gray.png"
+    ],
+    "featured": false,
+    "sortOrder": 26
+  },
+  {
+    "id": "prod-prada-gold",
+    "name": "Prada Gold",
+    "slug": "prada-gold",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Prada Gold - Granite",
+    "description": "Premium natural Granite material: Prada Gold.",
+    "heroImage": "/products/Granite/Prada%20Gold.png",
+    "gallery": [
+      "/products/Granite/Prada%20Gold.png"
+    ],
+    "featured": false,
+    "sortOrder": 27
+  },
+  {
+    "id": "prod-rajyog-brown",
+    "name": "Rajyog Brown",
+    "slug": "rajyog-brown",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Rajyog Brown - Granite",
+    "description": "Premium natural Granite material: Rajyog Brown.",
+    "heroImage": "/products/Granite/Rajyog%20Brown.png",
+    "gallery": [
+      "/products/Granite/Rajyog%20Brown.png"
+    ],
+    "featured": false,
+    "sortOrder": 28
+  },
+  {
+    "id": "prod-raw-silk",
+    "name": "Raw Silk",
+    "slug": "raw-silk",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Raw Silk - Granite",
+    "description": "Premium natural Granite material: Raw Silk.",
+    "heroImage": "/products/Granite/Raw%20Silk.png",
+    "gallery": [
+      "/products/Granite/Raw%20Silk.png"
+    ],
+    "featured": false,
+    "sortOrder": 29
+  },
+  {
+    "id": "prod-river-white",
+    "name": "River White",
+    "slug": "river-white",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "River White - Granite",
+    "description": "Premium natural Granite material: River White.",
+    "heroImage": "/products/Granite/River%20White.png",
+    "gallery": [
+      "/products/Granite/River%20White.png"
+    ],
+    "featured": false,
+    "sortOrder": 30
+  },
+  {
+    "id": "prod-royal-brown",
+    "name": "Royal Brown",
+    "slug": "royal-brown",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Royal Brown - Granite",
+    "description": "Premium natural Granite material: Royal Brown.",
+    "heroImage": "/products/Granite/Royal%20Brown.png",
+    "gallery": [
+      "/products/Granite/Royal%20Brown.png"
+    ],
+    "featured": false,
+    "sortOrder": 31
+  },
+  {
+    "id": "prod-royal-gold",
+    "name": "Royal Gold",
+    "slug": "royal-gold",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Royal Gold - Granite",
+    "description": "Premium natural Granite material: Royal Gold.",
+    "heroImage": "/products/Granite/Royal%20Gold.png",
+    "gallery": [
+      "/products/Granite/Royal%20Gold.png"
+    ],
+    "featured": false,
+    "sortOrder": 32
+  },
+  {
+    "id": "prod-sk-blue",
+    "name": "SK Blue",
+    "slug": "sk-blue",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "SK Blue - Granite",
+    "description": "Premium natural Granite material: SK Blue.",
+    "heroImage": "/products/Granite/SK%20Blue.png",
+    "gallery": [
+      "/products/Granite/SK%20Blue.png"
+    ],
+    "featured": false,
+    "sortOrder": 33
+  },
+  {
+    "id": "prod-silky-silver",
+    "name": "Silky Silver",
+    "slug": "silky-silver",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Silky Silver - Granite",
+    "description": "Premium natural Granite material: Silky Silver.",
+    "heroImage": "/products/Granite/Silky%20Silver.png",
+    "gallery": [
+      "/products/Granite/Silky%20Silver.png"
+    ],
+    "featured": false,
+    "sortOrder": 34
+  },
+  {
+    "id": "prod-silver-river",
+    "name": "Silver River",
+    "slug": "silver-river",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Silver River - Granite",
+    "description": "Premium natural Granite material: Silver River.",
+    "heroImage": "/products/Granite/Silver%20River.png",
+    "gallery": [
+      "/products/Granite/Silver%20River.png"
+    ],
+    "featured": false,
+    "sortOrder": 35
+  },
+  {
+    "id": "prod-steel-gray",
+    "name": "Steel gray",
+    "slug": "steel-gray",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Steel gray - Granite",
+    "description": "Premium natural Granite material: Steel gray.",
+    "heroImage": "/products/Granite/Steel%20gray.png",
+    "gallery": [
+      "/products/Granite/Steel%20gray.png"
+    ],
+    "featured": true,
+    "sortOrder": 36
+  },
+  {
+    "id": "prod-swiss-brown",
+    "name": "Swiss Brown",
+    "slug": "swiss-brown",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Swiss Brown - Granite",
+    "description": "Premium natural Granite material: Swiss Brown.",
+    "heroImage": "/products/Granite/Swiss%20Brown.png",
+    "gallery": [
+      "/products/Granite/Swiss%20Brown.png"
+    ],
+    "featured": false,
+    "sortOrder": 37
+  },
+  {
+    "id": "prod-symphony-ivory",
+    "name": "Symphony Ivory ",
+    "slug": "symphony-ivory",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Symphony Ivory  - Granite",
+    "description": "Premium natural Granite material: Symphony Ivory .",
+    "heroImage": "/products/Granite/Symphony%20Ivory%20.png",
+    "gallery": [
+      "/products/Granite/Symphony%20Ivory%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 38
+  },
+  {
+    "id": "prod-walet-paradise",
+    "name": "Walet Paradise",
+    "slug": "walet-paradise",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Walet Paradise - Granite",
+    "description": "Premium natural Granite material: Walet Paradise.",
+    "heroImage": "/products/Granite/Walet%20Paradise.png",
+    "gallery": [
+      "/products/Granite/Walet%20Paradise.png"
+    ],
+    "featured": false,
+    "sortOrder": 39
+  },
+  {
+    "id": "prod-ytd-6",
+    "name": "YTD 6",
+    "slug": "ytd-6",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "YTD 6 - Granite",
+    "description": "Premium natural Granite material: YTD 6.",
+    "heroImage": "/products/Granite/YTD%206.png",
+    "gallery": [
+      "/products/Granite/YTD%206.png"
+    ],
+    "featured": false,
+    "sortOrder": 40
+  },
+  {
+    "id": "prod-zubrana-gray",
+    "name": "Zubrana Gray",
+    "slug": "zubrana-gray",
+    "category": "granite",
+    "subcategory": "granite-collection",
+    "shortDescription": "Zubrana Gray - Granite",
+    "description": "Premium natural Granite material: Zubrana Gray.",
+    "heroImage": "/products/Granite/Zubrana%20Gray.png",
+    "gallery": [
+      "/products/Granite/Zubrana%20Gray.png"
+    ],
+    "featured": false,
+    "sortOrder": 41
+  },
+  {
+    "id": "prod-abu-black",
+    "name": "Abu Black ",
+    "slug": "abu-black",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Abu Black  - Marble",
+    "description": "Premium natural Marble material: Abu Black .",
+    "heroImage": "/products/Marbles/Abu%20Black%20.png",
+    "gallery": [
+      "/products/Marbles/Abu%20Black%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 42
+  },
+  {
+    "id": "prod-agora-beige",
+    "name": "Agora Beige",
+    "slug": "agora-beige",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Agora Beige - Marble",
+    "description": "Premium natural Marble material: Agora Beige.",
+    "heroImage": "/products/Marbles/Agora%20Beige.png",
+    "gallery": [
+      "/products/Marbles/Agora%20Beige.png"
+    ],
+    "featured": false,
+    "sortOrder": 43
+  },
+  {
+    "id": "prod-arctic-white-b",
+    "name": "Arctic White (B)",
+    "slug": "arctic-white-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Arctic White (B) - Marble",
+    "description": "Premium natural Marble material: Arctic White (B).",
+    "heroImage": "/products/Marbles/Arctic%20White%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Arctic%20White%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 44
+  },
+  {
+    "id": "prod-armani-bronze",
+    "name": "Armani Bronze",
+    "slug": "armani-bronze",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Armani Bronze - Marble",
+    "description": "Premium natural Marble material: Armani Bronze.",
+    "heroImage": "/products/Marbles/Armani%20Bronze.png",
+    "gallery": [
+      "/products/Marbles/Armani%20Bronze.png"
+    ],
+    "featured": false,
+    "sortOrder": 45
+  },
+  {
+    "id": "prod-armani-brown-it",
+    "name": "Armani Brown (It)",
+    "slug": "armani-brown-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Armani Brown (It) - Marble",
+    "description": "Premium natural Marble material: Armani Brown (It).",
+    "heroImage": "/products/Marbles/Armani%20Brown%20%28It%29.png",
+    "gallery": [
+      "/products/Marbles/Armani%20Brown%20%28It%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 46
+  },
+  {
+    "id": "prod-ash-gray-it",
+    "name": "Ash Gray (IT)",
+    "slug": "ash-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Ash Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Ash Gray (IT).",
+    "heroImage": "/products/Marbles/Ash%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Ash%20Gray%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 47
+  },
+  {
+    "id": "prod-avocado-leather-finish-b",
+    "name": "Avocado Leather finish (B)",
+    "slug": "avocado-leather-finish-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Avocado Leather finish (B) - Marble",
+    "description": "Premium natural Marble material: Avocado Leather finish (B).",
+    "heroImage": "/products/Marbles/Avocado%20Leather%20finish%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Avocado%20Leather%20finish%20%28B%29.png"
+    ],
+    "featured": true,
+    "sortOrder": 48
+  },
+  {
+    "id": "prod-bardilo-gray-it",
+    "name": "Bardilo Gray (IT)",
+    "slug": "bardilo-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Bardilo Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Bardilo Gray (IT).",
+    "heroImage": "/products/Marbles/Bardilo%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Bardilo%20Gray%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 49
+  },
+  {
+    "id": "prod-belecimo-it",
+    "name": "Belecimo (IT)",
+    "slug": "belecimo-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Belecimo (IT) - Marble",
+    "description": "Premium natural Marble material: Belecimo (IT).",
+    "heroImage": "/products/Marbles/Belecimo%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Belecimo%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 50
+  },
+  {
+    "id": "prod-belecimo-new-it",
+    "name": "Belecimo New (IT)",
+    "slug": "belecimo-new-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Belecimo New (IT) - Marble",
+    "description": "Premium natural Marble material: Belecimo New (IT).",
+    "heroImage": "/products/Marbles/Belecimo%20New%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Belecimo%20New%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 51
+  },
+  {
+    "id": "prod-black-it",
+    "name": "Black (IT)",
+    "slug": "black-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Black (IT) - Marble",
+    "description": "Premium natural Marble material: Black (IT).",
+    "heroImage": "/products/Marbles/Black%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Black%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 52
+  },
+  {
+    "id": "prod-black-antique",
+    "name": "Black Antique",
+    "slug": "black-antique",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Black Antique - Marble",
+    "description": "Premium natural Marble material: Black Antique.",
+    "heroImage": "/products/Marbles/Black%20Antique.png",
+    "gallery": [
+      "/products/Marbles/Black%20Antique.png"
+    ],
+    "featured": false,
+    "sortOrder": 53
+  },
+  {
+    "id": "prod-black-marquina",
+    "name": "Black Marquina ",
+    "slug": "black-marquina",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Black Marquina  - Marble",
+    "description": "Premium natural Marble material: Black Marquina .",
+    "heroImage": "/products/Marbles/Black%20Marquina%20.png",
+    "gallery": [
+      "/products/Marbles/Black%20Marquina%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 54
+  },
+  {
+    "id": "prod-black-rose-it",
+    "name": "Black Rose (IT)",
+    "slug": "black-rose-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Black Rose (IT) - Marble",
+    "description": "Premium natural Marble material: Black Rose (IT).",
+    "heroImage": "/products/Marbles/Black%20Rose%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Black%20Rose%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 55
+  },
+  {
+    "id": "prod-blue-bresiait",
+    "name": "Blue Bresia(IT)",
+    "slug": "blue-bresiait",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Blue Bresia(IT) - Marble",
+    "description": "Premium natural Marble material: Blue Bresia(IT).",
+    "heroImage": "/products/Marbles/Blue%20Bresia%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Blue%20Bresia%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 56
+  },
+  {
+    "id": "prod-brazillian-ytd-1",
+    "name": "Brazillian YTD 1",
+    "slug": "brazillian-ytd-1",
+    "category": "marble",
+    "subcategory": "yet-to-decide",
+    "shortDescription": "Brazillian YTD 1 - Marble",
+    "description": "Premium natural Marble material: Brazillian YTD 1.",
+    "heroImage": "/products/Marbles/Brazillian%20YTD%201.png",
+    "gallery": [
+      "/products/Marbles/Brazillian%20YTD%201.png"
+    ],
+    "featured": false,
+    "sortOrder": 57
+  },
+  {
+    "id": "prod-cnc-fluted-indian-ytd-2",
+    "name": "CNC Fluted (INDIAN) YTD 2",
+    "slug": "cnc-fluted-indian-ytd-2",
+    "category": "marble",
+    "subcategory": "yet-to-decide",
+    "shortDescription": "CNC Fluted (INDIAN) YTD 2 - Marble",
+    "description": "Premium natural Marble material: CNC Fluted (INDIAN) YTD 2.",
+    "heroImage": "/products/Marbles/CNC%20Fluted%20%28INDIAN%29%20YTD%202.png",
+    "gallery": [
+      "/products/Marbles/CNC%20Fluted%20%28INDIAN%29%20YTD%202.png"
+    ],
+    "featured": false,
+    "sortOrder": 58
+  },
+  {
+    "id": "prod-cnc-white-ytd",
+    "name": "CNC White YTD",
+    "slug": "cnc-white-ytd",
+    "category": "marble",
+    "subcategory": "yet-to-decide",
+    "shortDescription": "CNC White YTD - Marble",
+    "description": "Premium natural Marble material: CNC White YTD.",
+    "heroImage": "/products/Marbles/CNC%20White%20YTD.png",
+    "gallery": [
+      "/products/Marbles/CNC%20White%20YTD.png"
+    ],
+    "featured": false,
+    "sortOrder": 59
+  },
+  {
+    "id": "prod-calcutta-white-b",
+    "name": "Calcutta White (B)",
+    "slug": "calcutta-white-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Calcutta White (B) - Marble",
+    "description": "Premium natural Marble material: Calcutta White (B).",
+    "heroImage": "/products/Marbles/Calcutta%20White%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Calcutta%20White%20%28B%29.png"
+    ],
+    "featured": true,
+    "sortOrder": 60
+  },
+  {
+    "id": "prod-camel-brown-it",
+    "name": "Camel Brown (IT)",
+    "slug": "camel-brown-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Camel Brown (IT) - Marble",
+    "description": "Premium natural Marble material: Camel Brown (IT).",
+    "heroImage": "/products/Marbles/Camel%20Brown%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Camel%20Brown%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 61
+  },
+  {
+    "id": "prod-cardian-gray-it",
+    "name": "Cardian Gray (IT)",
+    "slug": "cardian-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Cardian Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Cardian Gray (IT).",
+    "heroImage": "/products/Marbles/Cardian%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Cardian%20Gray%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 62
+  },
+  {
+    "id": "prod-cora-cabana-b",
+    "name": "Cora Cabana (B)",
+    "slug": "cora-cabana-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Cora Cabana (B) - Marble",
+    "description": "Premium natural Marble material: Cora Cabana (B).",
+    "heroImage": "/products/Marbles/Cora%20Cabana%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Cora%20Cabana%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 63
+  },
+  {
+    "id": "prod-cream-italian",
+    "name": "Cream Italian ",
+    "slug": "cream-italian",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Cream Italian  - Marble",
+    "description": "Premium natural Marble material: Cream Italian .",
+    "heroImage": "/products/Marbles/Cream%20Italian%20.png",
+    "gallery": [
+      "/products/Marbles/Cream%20Italian%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 64
+  },
+  {
+    "id": "prod-cream-karaman-it",
+    "name": "Cream Karaman (IT)",
+    "slug": "cream-karaman-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Cream Karaman (IT) - Marble",
+    "description": "Premium natural Marble material: Cream Karaman (IT).",
+    "heroImage": "/products/Marbles/Cream%20Karaman%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Cream%20Karaman%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 65
+  },
+  {
+    "id": "prod-crystal-lizato-b",
+    "name": "Crystal Lizato (B)",
+    "slug": "crystal-lizato-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Crystal Lizato (B) - Marble",
+    "description": "Premium natural Marble material: Crystal Lizato (B).",
+    "heroImage": "/products/Marbles/Crystal%20Lizato%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Crystal%20Lizato%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 66
+  },
+  {
+    "id": "prod-cygnus-black-b",
+    "name": "Cygnus Black (B)",
+    "slug": "cygnus-black-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Cygnus Black (B) - Marble",
+    "description": "Premium natural Marble material: Cygnus Black (B).",
+    "heroImage": "/products/Marbles/Cygnus%20Black%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Cygnus%20Black%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 67
+  },
+  {
+    "id": "prod-emotion-gray-it",
+    "name": "Emotion Gray (IT)",
+    "slug": "emotion-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Emotion Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Emotion Gray (IT).",
+    "heroImage": "/products/Marbles/Emotion%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Emotion%20Gray%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 68
+  },
+  {
+    "id": "prod-ess-gray-it",
+    "name": "Ess Gray (IT)",
+    "slug": "ess-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Ess Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Ess Gray (IT).",
+    "heroImage": "/products/Marbles/Ess%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Ess%20Gray%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 69
+  },
+  {
+    "id": "prod-extreme-gold-b",
+    "name": "Extreme Gold (B)",
+    "slug": "extreme-gold-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Extreme Gold (B) - Marble",
+    "description": "Premium natural Marble material: Extreme Gold (B).",
+    "heroImage": "/products/Marbles/Extreme%20Gold%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Extreme%20Gold%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 70
+  },
+  {
+    "id": "prod-fairyland-blue-it",
+    "name": "Fairyland Blue (IT)",
+    "slug": "fairyland-blue-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Fairyland Blue (IT) - Marble",
+    "description": "Premium natural Marble material: Fairyland Blue (IT).",
+    "heroImage": "/products/Marbles/Fairyland%20Blue%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Fairyland%20Blue%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 71
+  },
+  {
+    "id": "prod-fendi-gray-it",
+    "name": "Fendi Gray (IT)",
+    "slug": "fendi-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Fendi Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Fendi Gray (IT).",
+    "heroImage": "/products/Marbles/Fendi%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Fendi%20Gray%20%28IT%29.png"
+    ],
+    "featured": true,
+    "sortOrder": 72
+  },
+  {
+    "id": "prod-french-black-b",
+    "name": "French Black (B)",
+    "slug": "french-black-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "French Black (B) - Marble",
+    "description": "Premium natural Marble material: French Black (B).",
+    "heroImage": "/products/Marbles/French%20Black%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/French%20Black%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 73
+  },
+  {
+    "id": "prod-givenchy-white-b",
+    "name": "Givenchy white (B)",
+    "slug": "givenchy-white-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Givenchy white (B) - Marble",
+    "description": "Premium natural Marble material: Givenchy white (B).",
+    "heroImage": "/products/Marbles/Givenchy%20white%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Givenchy%20white%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 74
+  },
+  {
+    "id": "prod-glitter-brown-b",
+    "name": "Glitter Brown (B)",
+    "slug": "glitter-brown-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Glitter Brown (B) - Marble",
+    "description": "Premium natural Marble material: Glitter Brown (B).",
+    "heroImage": "/products/Marbles/Glitter%20Brown%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Glitter%20Brown%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 75
+  },
+  {
+    "id": "prod-golden-spider-it",
+    "name": "Golden Spider (IT)",
+    "slug": "golden-spider-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Golden Spider (IT) - Marble",
+    "description": "Premium natural Marble material: Golden Spider (IT).",
+    "heroImage": "/products/Marbles/Golden%20Spider%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Golden%20Spider%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 76
+  },
+  {
+    "id": "prod-gray-horizon-b",
+    "name": "Gray Horizon (B)",
+    "slug": "gray-horizon-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Gray Horizon (B) - Marble",
+    "description": "Premium natural Marble material: Gray Horizon (B).",
+    "heroImage": "/products/Marbles/Gray%20Horizon%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Gray%20Horizon%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 77
+  },
+  {
+    "id": "prod-gray-milano-it",
+    "name": "Gray Milano (IT)",
+    "slug": "gray-milano-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Gray Milano (IT) - Marble",
+    "description": "Premium natural Marble material: Gray Milano (IT).",
+    "heroImage": "/products/Marbles/Gray%20Milano%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Gray%20Milano%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 78
+  },
+  {
+    "id": "prod-gray-wave-it",
+    "name": "Gray wave (IT)",
+    "slug": "gray-wave-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Gray wave (IT) - Marble",
+    "description": "Premium natural Marble material: Gray wave (IT).",
+    "heroImage": "/products/Marbles/Gray%20wave%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Gray%20wave%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 79
+  },
+  {
+    "id": "prod-green-canyon-b",
+    "name": "Green Canyon (B)",
+    "slug": "green-canyon-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Green Canyon (B) - Marble",
+    "description": "Premium natural Marble material: Green Canyon (B).",
+    "heroImage": "/products/Marbles/Green%20Canyon%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Green%20Canyon%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 80
+  },
+  {
+    "id": "prod-ice-gray-it",
+    "name": "Ice Gray (IT)",
+    "slug": "ice-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Ice Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Ice Gray (IT).",
+    "heroImage": "/products/Marbles/Ice%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Ice%20Gray%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 81
+  },
+  {
+    "id": "prod-imperial-gray-indian",
+    "name": "Imperial Gray (INDIAN)",
+    "slug": "imperial-gray-indian",
+    "category": "marble",
+    "subcategory": "indian-marble",
+    "shortDescription": "Imperial Gray (INDIAN) - Marble",
+    "description": "Premium natural Marble material: Imperial Gray (INDIAN).",
+    "heroImage": "/products/Marbles/Imperial%20Gray%20%28INDIAN%29.png",
+    "gallery": [
+      "/products/Marbles/Imperial%20Gray%20%28INDIAN%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 82
+  },
+  {
+    "id": "prod-lime-brown-it",
+    "name": "Lime Brown (IT)",
+    "slug": "lime-brown-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Lime Brown (IT) - Marble",
+    "description": "Premium natural Marble material: Lime Brown (IT).",
+    "heroImage": "/products/Marbles/Lime%20Brown%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Lime%20Brown%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 83
+  },
+  {
+    "id": "prod-lime-white",
+    "name": "Lime White ",
+    "slug": "lime-white",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Lime White  - Marble",
+    "description": "Premium natural Marble material: Lime White .",
+    "heroImage": "/products/Marbles/Lime%20White%20.png",
+    "gallery": [
+      "/products/Marbles/Lime%20White%20.png"
+    ],
+    "featured": true,
+    "sortOrder": 84
+  },
+  {
+    "id": "prod-london-gray-b",
+    "name": "London Gray (B)",
+    "slug": "london-gray-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "London Gray (B) - Marble",
+    "description": "Premium natural Marble material: London Gray (B).",
+    "heroImage": "/products/Marbles/London%20Gray%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/London%20Gray%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 85
+  },
+  {
+    "id": "prod-luna-gray-it",
+    "name": "Luna Gray (IT)",
+    "slug": "luna-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Luna Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Luna Gray (IT).",
+    "heroImage": "/products/Marbles/Luna%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Luna%20Gray%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 86
+  },
+  {
+    "id": "prod-maori-b",
+    "name": "Maori (B)",
+    "slug": "maori-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Maori (B) - Marble",
+    "description": "Premium natural Marble material: Maori (B).",
+    "heroImage": "/products/Marbles/Maori%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Maori%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 87
+  },
+  {
+    "id": "prod-marco-polo",
+    "name": "Marco Polo",
+    "slug": "marco-polo",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Marco Polo - Marble",
+    "description": "Premium natural Marble material: Marco Polo.",
+    "heroImage": "/products/Marbles/Marco%20Polo.png",
+    "gallery": [
+      "/products/Marbles/Marco%20Polo.png"
+    ],
+    "featured": false,
+    "sortOrder": 88
+  },
+  {
+    "id": "prod-micro-angelo-it",
+    "name": "Micro angelo (IT)",
+    "slug": "micro-angelo-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Micro angelo (IT) - Marble",
+    "description": "Premium natural Marble material: Micro angelo (IT).",
+    "heroImage": "/products/Marbles/Micro%20angelo%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Micro%20angelo%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 89
+  },
+  {
+    "id": "prod-mocha-gray-it",
+    "name": "Mocha gray (IT)",
+    "slug": "mocha-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Mocha gray (IT) - Marble",
+    "description": "Premium natural Marble material: Mocha gray (IT).",
+    "heroImage": "/products/Marbles/Mocha%20gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Mocha%20gray%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 90
+  },
+  {
+    "id": "prod-moon-cream",
+    "name": "Moon Cream ",
+    "slug": "moon-cream",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Moon Cream  - Marble",
+    "description": "Premium natural Marble material: Moon Cream .",
+    "heroImage": "/products/Marbles/Moon%20Cream%20.png",
+    "gallery": [
+      "/products/Marbles/Moon%20Cream%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 91
+  },
+  {
+    "id": "prod-moon-gray-it",
+    "name": "Moon Gray (IT)",
+    "slug": "moon-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Moon Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Moon Gray (IT).",
+    "heroImage": "/products/Marbles/Moon%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Moon%20Gray%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 92
+  },
+  {
+    "id": "prod-multi-red-it",
+    "name": "Multi Red (IT)",
+    "slug": "multi-red-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Multi Red (IT) - Marble",
+    "description": "Premium natural Marble material: Multi Red (IT).",
+    "heroImage": "/products/Marbles/Multi%20Red%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Multi%20Red%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 93
+  },
+  {
+    "id": "prod-mystic-green-indian-exotic",
+    "name": "Mystic Green (INDIAN EXOTIC)",
+    "slug": "mystic-green-indian-exotic",
+    "category": "marble",
+    "subcategory": "indian-marble",
+    "shortDescription": "Mystic Green (INDIAN EXOTIC) - Marble",
+    "description": "Premium natural Marble material: Mystic Green (INDIAN EXOTIC).",
+    "heroImage": "/products/Marbles/Mystic%20Green%20%28INDIAN%20EXOTIC%29.png",
+    "gallery": [
+      "/products/Marbles/Mystic%20Green%20%28INDIAN%20EXOTIC%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 94
+  },
+  {
+    "id": "prod-noche-travantine-it",
+    "name": "Noche Travantine (IT)",
+    "slug": "noche-travantine-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Noche Travantine (IT) - Marble",
+    "description": "Premium natural Marble material: Noche Travantine (IT).",
+    "heroImage": "/products/Marbles/Noche%20Travantine%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Noche%20Travantine%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 95
+  },
+  {
+    "id": "prod-nordic-gray-it",
+    "name": "Nordic Gray (IT)",
+    "slug": "nordic-gray-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Nordic Gray (IT) - Marble",
+    "description": "Premium natural Marble material: Nordic Gray (IT).",
+    "heroImage": "/products/Marbles/Nordic%20Gray%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Nordic%20Gray%20%28IT%29.png"
+    ],
+    "featured": true,
+    "sortOrder": 96
+  },
+  {
+    "id": "prod-ocean-blue-b",
+    "name": "OCean Blue (B)",
+    "slug": "ocean-blue-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "OCean Blue (B) - Marble",
+    "description": "Premium natural Marble material: OCean Blue (B).",
+    "heroImage": "/products/Marbles/OCean%20Blue%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/OCean%20Blue%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 97
+  },
+  {
+    "id": "prod-ocean-green-b",
+    "name": "Ocean green (B)",
+    "slug": "ocean-green-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Ocean green (B) - Marble",
+    "description": "Premium natural Marble material: Ocean green (B).",
+    "heroImage": "/products/Marbles/Ocean%20green%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Ocean%20green%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 98
+  },
+  {
+    "id": "prod-panda-white-it",
+    "name": "Panda White (IT)",
+    "slug": "panda-white-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Panda White (IT) - Marble",
+    "description": "Premium natural Marble material: Panda White (IT).",
+    "heroImage": "/products/Marbles/Panda%20White%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Panda%20White%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 99
+  },
+  {
+    "id": "prod-peach-white-p-b",
+    "name": "Peach White P (B)",
+    "slug": "peach-white-p-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Peach White P (B) - Marble",
+    "description": "Premium natural Marble material: Peach White P (B).",
+    "heroImage": "/products/Marbles/Peach%20White%20P%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Peach%20White%20P%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 100
+  },
+  {
+    "id": "prod-peach-white-b",
+    "name": "Peach white (B)",
+    "slug": "peach-white-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Peach white (B) - Marble",
+    "description": "Premium natural Marble material: Peach white (B).",
+    "heroImage": "/products/Marbles/Peach%20white%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Peach%20white%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 101
+  },
+  {
+    "id": "prod-pengia-indian-exotic",
+    "name": "Pengia Indian Exotic ",
+    "slug": "pengia-indian-exotic",
+    "category": "marble",
+    "subcategory": "indian-marble",
+    "shortDescription": "Pengia Indian Exotic  - Marble",
+    "description": "Premium natural Marble material: Pengia Indian Exotic .",
+    "heroImage": "/products/Marbles/Pengia%20Indian%20Exotic%20.png",
+    "gallery": [
+      "/products/Marbles/Pengia%20Indian%20Exotic%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 102
+  },
+  {
+    "id": "prod-polaris-green-b",
+    "name": "Polaris green (b)",
+    "slug": "polaris-green-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Polaris green (b) - Marble",
+    "description": "Premium natural Marble material: Polaris green (b).",
+    "heroImage": "/products/Marbles/Polaris%20green%20%28b%29.png",
+    "gallery": [
+      "/products/Marbles/Polaris%20green%20%28b%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 103
+  },
+  {
+    "id": "prod-pulpis-brown",
+    "name": "Pulpis Brown",
+    "slug": "pulpis-brown",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Pulpis Brown - Marble",
+    "description": "Premium natural Marble material: Pulpis Brown.",
+    "heroImage": "/products/Marbles/Pulpis%20Brown.png",
+    "gallery": [
+      "/products/Marbles/Pulpis%20Brown.png"
+    ],
+    "featured": false,
+    "sortOrder": 104
+  },
+  {
+    "id": "prod-purple-nest-b",
+    "name": "Purple Nest (B)",
+    "slug": "purple-nest-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Purple Nest (B) - Marble",
+    "description": "Premium natural Marble material: Purple Nest (B).",
+    "heroImage": "/products/Marbles/Purple%20Nest%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Purple%20Nest%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 105
+  },
+  {
+    "id": "prod-rafelo-b",
+    "name": "Rafelo (B)",
+    "slug": "rafelo-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Rafelo (B) - Marble",
+    "description": "Premium natural Marble material: Rafelo (B).",
+    "heroImage": "/products/Marbles/Rafelo%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Rafelo%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 106
+  },
+  {
+    "id": "prod-regal-beige-it",
+    "name": "Regal Beige (IT)",
+    "slug": "regal-beige-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Regal Beige (IT) - Marble",
+    "description": "Premium natural Marble material: Regal Beige (IT).",
+    "heroImage": "/products/Marbles/Regal%20Beige%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Regal%20Beige%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 107
+  },
+  {
+    "id": "prod-srk-black",
+    "name": "SRK Black ",
+    "slug": "srk-black",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "SRK Black  - Marble",
+    "description": "Premium natural Marble material: SRK Black .",
+    "heroImage": "/products/Marbles/SRK%20Black%20.png",
+    "gallery": [
+      "/products/Marbles/SRK%20Black%20.png"
+    ],
+    "featured": true,
+    "sortOrder": 108
+  },
+  {
+    "id": "prod-sangrila-leather-finish-b",
+    "name": "Sangrila leather finish (B)",
+    "slug": "sangrila-leather-finish-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Sangrila leather finish (B) - Marble",
+    "description": "Premium natural Marble material: Sangrila leather finish (B).",
+    "heroImage": "/products/Marbles/Sangrila%20leather%20finish%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Sangrila%20leather%20finish%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 109
+  },
+  {
+    "id": "prod-saran-koli",
+    "name": "Saran Koli ",
+    "slug": "saran-koli",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Saran Koli  - Marble",
+    "description": "Premium natural Marble material: Saran Koli .",
+    "heroImage": "/products/Marbles/Saran%20Koli%20.png",
+    "gallery": [
+      "/products/Marbles/Saran%20Koli%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 110
+  },
+  {
+    "id": "prod-silver-traventine-it",
+    "name": "Silver Traventine (IT)",
+    "slug": "silver-traventine-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Silver Traventine (IT) - Marble",
+    "description": "Premium natural Marble material: Silver Traventine (IT).",
+    "heroImage": "/products/Marbles/Silver%20Traventine%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Silver%20Traventine%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 111
+  },
+  {
+    "id": "prod-snake-black-indian",
+    "name": "Snake Black INDIAN ",
+    "slug": "snake-black-indian",
+    "category": "marble",
+    "subcategory": "indian-marble",
+    "shortDescription": "Snake Black INDIAN  - Marble",
+    "description": "Premium natural Marble material: Snake Black INDIAN .",
+    "heroImage": "/products/Marbles/Snake%20Black%20INDIAN%20.png",
+    "gallery": [
+      "/products/Marbles/Snake%20Black%20INDIAN%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 112
+  },
+  {
+    "id": "prod-snow-white-it",
+    "name": "Snow White (IT)",
+    "slug": "snow-white-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Snow White (IT) - Marble",
+    "description": "Premium natural Marble material: Snow White (IT).",
+    "heroImage": "/products/Marbles/Snow%20White%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Snow%20White%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 113
+  },
+  {
+    "id": "prod-spider-green",
+    "name": "Spider Green ",
+    "slug": "spider-green",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Spider Green  - Marble",
+    "description": "Premium natural Marble material: Spider Green .",
+    "heroImage": "/products/Marbles/Spider%20Green%20.png",
+    "gallery": [
+      "/products/Marbles/Spider%20Green%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 114
+  },
+  {
+    "id": "prod-stataurio-it",
+    "name": "Stataurio (IT)",
+    "slug": "stataurio-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Stataurio (IT) - Marble",
+    "description": "Premium natural Marble material: Stataurio (IT).",
+    "heroImage": "/products/Marbles/Stataurio%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Stataurio%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 115
+  },
+  {
+    "id": "prod-sunset-blue-b",
+    "name": "Sunset Blue (B)",
+    "slug": "sunset-blue-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Sunset Blue (B) - Marble",
+    "description": "Premium natural Marble material: Sunset Blue (B).",
+    "heroImage": "/products/Marbles/Sunset%20Blue%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Sunset%20Blue%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 116
+  },
+  {
+    "id": "prod-super-white-b",
+    "name": "Super White (B)",
+    "slug": "super-white-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Super White (B) - Marble",
+    "description": "Premium natural Marble material: Super White (B).",
+    "heroImage": "/products/Marbles/Super%20White%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Super%20White%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 117
+  },
+  {
+    "id": "prod-swarowski-white-v",
+    "name": "Swarowski White (V)",
+    "slug": "swarowski-white-v",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "Swarowski White (V) - Marble",
+    "description": "Premium natural Marble material: Swarowski White (V).",
+    "heroImage": "/products/Marbles/Swarowski%20White%20%28V%29.png",
+    "gallery": [
+      "/products/Marbles/Swarowski%20White%20%28V%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 118
+  },
+  {
+    "id": "prod-turtle-green-b",
+    "name": "Turtle Green (B)",
+    "slug": "turtle-green-b",
+    "category": "marble",
+    "subcategory": "brazilian-marble",
+    "shortDescription": "Turtle Green (B) - Marble",
+    "description": "Premium natural Marble material: Turtle Green (B).",
+    "heroImage": "/products/Marbles/Turtle%20Green%20%28B%29.png",
+    "gallery": [
+      "/products/Marbles/Turtle%20Green%20%28B%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 119
+  },
+  {
+    "id": "prod-vanilla-cream-it",
+    "name": "Vanilla Cream (IT)",
+    "slug": "vanilla-cream-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Vanilla Cream (IT) - Marble",
+    "description": "Premium natural Marble material: Vanilla Cream (IT).",
+    "heroImage": "/products/Marbles/Vanilla%20Cream%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Vanilla%20Cream%20%28IT%29.png"
+    ],
+    "featured": true,
+    "sortOrder": 120
+  },
+  {
+    "id": "prod-volacasa-it",
+    "name": "Volacasa (IT)",
+    "slug": "volacasa-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Volacasa (IT) - Marble",
+    "description": "Premium natural Marble material: Volacasa (IT).",
+    "heroImage": "/products/Marbles/Volacasa%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/Volacasa%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 121
+  },
+  {
+    "id": "prod-wavy-green-indian",
+    "name": "Wavy Green Indian ",
+    "slug": "wavy-green-indian",
+    "category": "marble",
+    "subcategory": "indian-marble",
+    "shortDescription": "Wavy Green Indian  - Marble",
+    "description": "Premium natural Marble material: Wavy Green Indian .",
+    "heroImage": "/products/Marbles/Wavy%20Green%20Indian%20.png",
+    "gallery": [
+      "/products/Marbles/Wavy%20Green%20Indian%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 122
+  },
+  {
+    "id": "prod-white-it",
+    "name": "White (IT)",
+    "slug": "white-it",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "White (IT) - Marble",
+    "description": "Premium natural Marble material: White (IT).",
+    "heroImage": "/products/Marbles/White%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/White%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 123
+  },
+  {
+    "id": "prod-white-v",
+    "name": "White (V)",
+    "slug": "white-v",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "White (V) - Marble",
+    "description": "Premium natural Marble material: White (V).",
+    "heroImage": "/products/Marbles/White%20%28V%29.png",
+    "gallery": [
+      "/products/Marbles/White%20%28V%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 124
+  },
+  {
+    "id": "prod-white-small-poker-v",
+    "name": "White Small Poker (V)",
+    "slug": "white-small-poker-v",
+    "category": "marble",
+    "subcategory": "marble-collection",
+    "shortDescription": "White Small Poker (V) - Marble",
+    "description": "Premium natural Marble material: White Small Poker (V).",
+    "heroImage": "/products/Marbles/White%20Small%20Poker%20%28V%29.png",
+    "gallery": [
+      "/products/Marbles/White%20Small%20Poker%20%28V%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 125
+  },
+  {
+    "id": "prod-ytd3-it",
+    "name": "YTD3 (IT)",
+    "slug": "ytd3-it",
+    "category": "marble",
+    "subcategory": "yet-to-decide",
+    "shortDescription": "YTD3 (IT) - Marble",
+    "description": "Premium natural Marble material: YTD3 (IT).",
+    "heroImage": "/products/Marbles/YTD3%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/YTD3%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 126
+  },
+  {
+    "id": "prod-ytd4-it",
+    "name": "YTD4 (IT)",
+    "slug": "ytd4-it",
+    "category": "marble",
+    "subcategory": "yet-to-decide",
+    "shortDescription": "YTD4 (IT) - Marble",
+    "description": "Premium natural Marble material: YTD4 (IT).",
+    "heroImage": "/products/Marbles/YTD4%20%28IT%29.png",
+    "gallery": [
+      "/products/Marbles/YTD4%20%28IT%29.png"
+    ],
+    "featured": false,
+    "sortOrder": 127
+  },
+  {
+    "id": "prod-yellow-traventine-it0",
+    "name": "Yellow Traventine (IT0",
+    "slug": "yellow-traventine-it0",
+    "category": "marble",
+    "subcategory": "italian-marble",
+    "shortDescription": "Yellow Traventine (IT0 - Marble",
+    "description": "Premium natural Marble material: Yellow Traventine (IT0.",
+    "heroImage": "/products/Marbles/Yellow%20Traventine%20%28IT0.png",
+    "gallery": [
+      "/products/Marbles/Yellow%20Traventine%20%28IT0.png"
+    ],
+    "featured": false,
+    "sortOrder": 128
+  },
+  {
+    "id": "prod-crystal",
+    "name": "Crystal",
+    "slug": "crystal",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Crystal - Onyx",
+    "description": "Premium natural Onyx material: Crystal.",
+    "heroImage": "/products/Onyx/Crystal.png",
+    "gallery": [
+      "/products/Onyx/Crystal.png"
+    ],
+    "featured": false,
+    "sortOrder": 129
+  },
+  {
+    "id": "prod-gray",
+    "name": "Gray",
+    "slug": "gray",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Gray - Onyx",
+    "description": "Premium natural Onyx material: Gray.",
+    "heroImage": "/products/Onyx/Gray.png",
+    "gallery": [
+      "/products/Onyx/Gray.png"
+    ],
+    "featured": false,
+    "sortOrder": 130
+  },
+  {
+    "id": "prod-green",
+    "name": "Green",
+    "slug": "green",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Green - Onyx",
+    "description": "Premium natural Onyx material: Green.",
+    "heroImage": "/products/Onyx/Green.png",
+    "gallery": [
+      "/products/Onyx/Green.png"
+    ],
+    "featured": false,
+    "sortOrder": 131
+  },
+  {
+    "id": "prod-mexican",
+    "name": "Mexican",
+    "slug": "mexican",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Mexican - Onyx",
+    "description": "Premium natural Onyx material: Mexican.",
+    "heroImage": "/products/Onyx/Mexican.png",
+    "gallery": [
+      "/products/Onyx/Mexican.png"
+    ],
+    "featured": true,
+    "sortOrder": 132
+  },
+  {
+    "id": "prod-orion",
+    "name": "Orion",
+    "slug": "orion",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Orion - Onyx",
+    "description": "Premium natural Onyx material: Orion.",
+    "heroImage": "/products/Onyx/Orion.png",
+    "gallery": [
+      "/products/Onyx/Orion.png"
+    ],
+    "featured": false,
+    "sortOrder": 133
+  },
+  {
+    "id": "prod-pink-onyx",
+    "name": "Pink Onyx",
+    "slug": "pink-onyx",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Pink Onyx - Onyx",
+    "description": "Premium natural Onyx material: Pink Onyx.",
+    "heroImage": "/products/Onyx/Pink%20Onyx.png",
+    "gallery": [
+      "/products/Onyx/Pink%20Onyx.png"
+    ],
+    "featured": false,
+    "sortOrder": 134
+  },
+  {
+    "id": "prod-pink-pentagonia",
+    "name": "Pink Pentagonia",
+    "slug": "pink-pentagonia",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Pink Pentagonia - Onyx",
+    "description": "Premium natural Onyx material: Pink Pentagonia.",
+    "heroImage": "/products/Onyx/Pink%20Pentagonia.png",
+    "gallery": [
+      "/products/Onyx/Pink%20Pentagonia.png"
+    ],
+    "featured": false,
+    "sortOrder": 135
+  },
+  {
+    "id": "prod-rainboz",
+    "name": "Rainboz",
+    "slug": "rainboz",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Rainboz - Onyx",
+    "description": "Premium natural Onyx material: Rainboz.",
+    "heroImage": "/products/Onyx/Rainboz.png",
+    "gallery": [
+      "/products/Onyx/Rainboz.png"
+    ],
+    "featured": false,
+    "sortOrder": 136
+  },
+  {
+    "id": "prod-tiffany",
+    "name": "Tiffany",
+    "slug": "tiffany",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Tiffany - Onyx",
+    "description": "Premium natural Onyx material: Tiffany.",
+    "heroImage": "/products/Onyx/Tiffany.png",
+    "gallery": [
+      "/products/Onyx/Tiffany.png"
+    ],
+    "featured": false,
+    "sortOrder": 137
+  },
+  {
+    "id": "prod-trevo",
+    "name": "Trevo",
+    "slug": "trevo",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Trevo - Onyx",
+    "description": "Premium natural Onyx material: Trevo.",
+    "heroImage": "/products/Onyx/Trevo.png",
+    "gallery": [
+      "/products/Onyx/Trevo.png"
+    ],
+    "featured": false,
+    "sortOrder": 138
+  },
+  {
+    "id": "prod-volcano",
+    "name": "Volcano",
+    "slug": "volcano",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "Volcano - Onyx",
+    "description": "Premium natural Onyx material: Volcano.",
+    "heroImage": "/products/Onyx/Volcano.png",
+    "gallery": [
+      "/products/Onyx/Volcano.png"
+    ],
+    "featured": false,
+    "sortOrder": 139
+  },
+  {
+    "id": "prod-ytd-1",
+    "name": "YTD 1",
+    "slug": "ytd-1",
+    "category": "onyx",
+    "subcategory": "onyx-collection",
+    "shortDescription": "YTD 1 - Onyx",
+    "description": "Premium natural Onyx material: YTD 1.",
+    "heroImage": "/products/Onyx/YTD%201.png",
+    "gallery": [
+      "/products/Onyx/YTD%201.png"
+    ],
+    "featured": false,
+    "sortOrder": 140
+  },
+  {
+    "id": "prod-3d-white-fluted",
+    "name": "3D White Fluted",
+    "slug": "3d-white-fluted",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "3D White Fluted - Sandstone",
+    "description": "Premium natural Sandstone material: 3D White Fluted.",
+    "heroImage": "/products/Sandstone/3D%20White%20Fluted.png",
+    "gallery": [
+      "/products/Sandstone/3D%20White%20Fluted.png"
+    ],
+    "featured": false,
+    "sortOrder": 141
+  },
+  {
+    "id": "prod-black-fluted",
+    "name": "Black Fluted",
+    "slug": "black-fluted",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "Black Fluted - Sandstone",
+    "description": "Premium natural Sandstone material: Black Fluted.",
+    "heroImage": "/products/Sandstone/Black%20Fluted.png",
+    "gallery": [
+      "/products/Sandstone/Black%20Fluted.png"
+    ],
+    "featured": false,
+    "sortOrder": 142
+  },
+  {
+    "id": "prod-black-hydra-finish",
+    "name": "Black Hydra Finish ",
+    "slug": "black-hydra-finish",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "Black Hydra Finish  - Sandstone",
+    "description": "Premium natural Sandstone material: Black Hydra Finish .",
+    "heroImage": "/products/Sandstone/Black%20Hydra%20Finish%20.png",
+    "gallery": [
+      "/products/Sandstone/Black%20Hydra%20Finish%20.png"
+    ],
+    "featured": false,
+    "sortOrder": 143
+  },
+  {
+    "id": "prod-graywood-hydra-finish",
+    "name": "Graywood Hydra Finish",
+    "slug": "graywood-hydra-finish",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "Graywood Hydra Finish - Sandstone",
+    "description": "Premium natural Sandstone material: Graywood Hydra Finish.",
+    "heroImage": "/products/Sandstone/Graywood%20Hydra%20Finish.png",
+    "gallery": [
+      "/products/Sandstone/Graywood%20Hydra%20Finish.png"
+    ],
+    "featured": true,
+    "sortOrder": 144
+  },
+  {
+    "id": "prod-graywood-sandplast-finish",
+    "name": "Graywood Sandplast Finish",
+    "slug": "graywood-sandplast-finish",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "Graywood Sandplast Finish - Sandstone",
+    "description": "Premium natural Sandstone material: Graywood Sandplast Finish.",
+    "heroImage": "/products/Sandstone/Graywood%20Sandplast%20Finish.png",
+    "gallery": [
+      "/products/Sandstone/Graywood%20Sandplast%20Finish.png"
+    ],
+    "featured": false,
+    "sortOrder": 145
+  },
+  {
+    "id": "prod-gwalior-mint-sandplast-finish",
+    "name": "Gwalior Mint Sandplast Finish",
+    "slug": "gwalior-mint-sandplast-finish",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "Gwalior Mint Sandplast Finish - Sandstone",
+    "description": "Premium natural Sandstone material: Gwalior Mint Sandplast Finish.",
+    "heroImage": "/products/Sandstone/Gwalior%20Mint%20Sandplast%20Finish.png",
+    "gallery": [
+      "/products/Sandstone/Gwalior%20Mint%20Sandplast%20Finish.png"
+    ],
+    "featured": false,
+    "sortOrder": 146
+  },
+  {
+    "id": "prod-indian-mocha",
+    "name": "Indian Mocha",
+    "slug": "indian-mocha",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "Indian Mocha - Sandstone",
+    "description": "Premium natural Sandstone material: Indian Mocha.",
+    "heroImage": "/products/Sandstone/Indian%20Mocha.png",
+    "gallery": [
+      "/products/Sandstone/Indian%20Mocha.png"
+    ],
+    "featured": false,
+    "sortOrder": 147
+  },
+  {
+    "id": "prod-jodhpur-finish",
+    "name": "Jodhpur Finish",
+    "slug": "jodhpur-finish",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "Jodhpur Finish - Sandstone",
+    "description": "Premium natural Sandstone material: Jodhpur Finish.",
+    "heroImage": "/products/Sandstone/Jodhpur%20Finish.png",
+    "gallery": [
+      "/products/Sandstone/Jodhpur%20Finish.png"
+    ],
+    "featured": false,
+    "sortOrder": 148
+  },
+  {
+    "id": "prod-monsoon-sunglass-finish",
+    "name": "Monsoon Sunglass Finish",
+    "slug": "monsoon-sunglass-finish",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "Monsoon Sunglass Finish - Sandstone",
+    "description": "Premium natural Sandstone material: Monsoon Sunglass Finish.",
+    "heroImage": "/products/Sandstone/Monsoon%20Sunglass%20Finish.png",
+    "gallery": [
+      "/products/Sandstone/Monsoon%20Sunglass%20Finish.png"
+    ],
+    "featured": false,
+    "sortOrder": 149
+  },
+  {
+    "id": "prod-monsoon-leather-finish",
+    "name": "Monsoon leather finish",
+    "slug": "monsoon-leather-finish",
+    "category": "sandstone",
+    "subcategory": "sandstone-collection",
+    "shortDescription": "Monsoon leather finish - Sandstone",
+    "description": "Premium natural Sandstone material: Monsoon leather finish.",
+    "heroImage": "/products/Sandstone/Monsoon%20leather%20finish.png",
+    "gallery": [
+      "/products/Sandstone/Monsoon%20leather%20finish.png"
+    ],
+    "featured": false,
+    "sortOrder": 150
+  }
+];
+
+const realSubcategories: ProductSubcategory[] = [
+  {
+    "id": "subcat-brazilian-marble",
+    "name": "Brazilian Marble",
+    "slug": "brazilian-marble",
+    "category": "marble",
+    "description": "Imported Brazilian marble slabs with unique veining and high polish.",
+    "image": "",
+    "sortOrder": 1
+  },
+  {
+    "id": "subcat-italian-marble",
+    "name": "Italian Marble",
+    "slug": "italian-marble",
+    "category": "marble",
+    "description": "Classic Italian marble slabs, featuring elegant tones and distinct patterns.",
+    "image": "",
+    "sortOrder": 2
+  },
+  {
+    "id": "subcat-indian-marble",
+    "name": "Indian Marble",
+    "slug": "indian-marble",
+    "category": "marble",
+    "description": "Fine domestic Indian marble sourced from premium quarries.",
+    "image": "",
+    "sortOrder": 3
+  },
+  {
+    "id": "subcat-yet-to-decide",
+    "name": "Yet To Decide",
+    "slug": "yet-to-decide",
+    "category": "marble",
+    "description": "Unclassified / Yet To Decide marble selection.",
+    "image": "",
+    "sortOrder": 4
+  },
+  {
+    "id": "subcat-marble-collection",
+    "name": "Marble Collection",
+    "slug": "marble-collection",
+    "category": "marble",
+    "description": "Curated marble slabs and natural stone tiles.",
+    "image": "",
+    "sortOrder": 5
+  },
+  {
+    "id": "subcat-granite-collection",
+    "name": "Granite Collection",
+    "slug": "granite-collection",
+    "category": "granite",
+    "description": "High-density natural granite slabs.",
+    "image": "",
+    "sortOrder": 6
+  },
+  {
+    "id": "subcat-onyx-collection",
+    "name": "Onyx Collection",
+    "slug": "onyx-collection",
+    "category": "onyx",
+    "description": "Exotic translucent onyx material.",
+    "image": "",
+    "sortOrder": 7
+  },
+  {
+    "id": "subcat-sandstone-collection",
+    "name": "Sandstone Collection",
+    "slug": "sandstone-collection",
+    "category": "sandstone",
+    "description": "Warm, textured sandstone blocks and tiles.",
+    "image": "",
+    "sortOrder": 8
+  }
+];
+
+export const subcategories: ProductSubcategory[] = [...realSubcategories];
+export const products: Product[] = [...realProducts];
 
 const slugCounts = new Map<string, number>();
+
+// Register real product slugs to prevent collisions with CNC/Kota/Wall Cladding
+realProducts.forEach((p) => slugCounts.set(slugify(p.name), 1));
 
 function getUniqueSlug(baseText: string): string {
   const baseSlug = slugify(baseText);
@@ -438,14 +2620,13 @@ function getUniqueSlug(baseText: string): string {
   return count === 1 ? baseSlug : `${baseSlug}-${count}`;
 }
 
-let subcatSortOrder = 1;
-let productSortOrder = 1;
+let subcatSortOrder = realSubcategories.length + 1;
+let productSortOrder = realProducts.length + 1;
 
 for (const [categoryName, categoryContent] of Object.entries(rawCatalogueStructure)) {
   const catSlug = slugify(categoryName);
 
   if (Array.isArray(categoryContent)) {
-    // Top-level array (e.g. Onyx, Sandstone)
     const subcatName = `${categoryName} Collection`;
     const subcatSlug = getUniqueSlug(subcatName);
     const subcatId = `subcat-${subcatSlug}`;
@@ -477,10 +2658,8 @@ for (const [categoryName, categoryContent] of Object.entries(rawCatalogueStructu
       });
     }
   } else {
-    // Object containing subcategories
     for (const [subcatKey, subcatContent] of Object.entries(categoryContent)) {
       if (Array.isArray(subcatContent)) {
-        // e.g. Granite -> "Imported Granites"
         const subcatSlug = getUniqueSlug(subcatKey);
         const subcatId = `subcat-${subcatSlug}`;
 
@@ -511,8 +2690,7 @@ for (const [categoryName, categoryContent] of Object.entries(rawCatalogueStructu
           });
         }
       } else if (typeof subcatContent === "object" && subcatContent !== null) {
-        // Nested subcategories (e.g. Marble -> Italian Marble -> [Beige Flooring, Onyx, etc.])
-        const groupName = subcatKey; // e.g. "Italian Marble"
+        const groupName = subcatKey;
         for (const [nestedName, nestedItems] of Object.entries(subcatContent)) {
           const fullSubcatName = `${groupName} - ${nestedName}`;
           const subcatSlug = getUniqueSlug(fullSubcatName);

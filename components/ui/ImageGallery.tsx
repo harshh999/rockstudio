@@ -22,6 +22,7 @@ export default function ImageGallery({ images, alt }: ImageGalleryProps) {
           alt={`${alt} — Image ${activeIndex + 1}`}
           fill
           sizes="(max-width: 768px) 100vw, 60vw"
+          quality={95}
           className="object-cover"
           priority={activeIndex === 0}
         />
@@ -46,6 +47,7 @@ export default function ImageGallery({ images, alt }: ImageGalleryProps) {
                 alt={`${alt} thumbnail ${i + 1}`}
                 fill
                 sizes="80px"
+                quality={95}
                 className="object-cover"
               />
             </button>

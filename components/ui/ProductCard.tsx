@@ -6,12 +6,14 @@ interface ProductCardProps {
   product: Product;
   index?: number;
   aspectRatio?: string;
+  quality?: number;
 }
 
 export default function ProductCard({
   product,
   index,
   aspectRatio = "aspect-[0.82/1]",
+  quality = 95,
 }: ProductCardProps) {
   const indexFormatted =
     typeof index === "number" ? String(index + 1).padStart(2, "0") : null;
@@ -33,7 +35,8 @@ export default function ProductCard({
         src={product.heroImage}
         alt={product.name}
         fill
-        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1536px) 25vw, 25vw"
+        quality={quality}
         className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
       />
 
