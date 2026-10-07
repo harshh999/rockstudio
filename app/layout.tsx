@@ -24,6 +24,13 @@ export const metadata: Metadata = {
   },
   description:
     "Premium natural stone manufacturer based in Ahmedabad, Gujarat. Marble, granite, quartzite, and sandstone for architectural and interior applications.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
