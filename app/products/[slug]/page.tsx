@@ -76,7 +76,14 @@ export default async function ProductDetailPage({
       <section className="mx-auto max-w-7xl px-6 pb-24 pt-8 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Gallery */}
-          <ImageGallery images={product.gallery} alt={product.name} />
+          <ImageGallery
+            images={
+              product.gallery && product.gallery.length > 0
+                ? [product.heroImage, ...product.gallery.filter((img) => img !== product.heroImage)]
+                : [product.heroImage]
+            }
+            alt={product.name}
+          />
 
           {/* Product Info */}
           <div className="flex flex-col justify-center">
@@ -115,7 +122,7 @@ export default async function ProductDetailPage({
             {/* CTA */}
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/contact"
+                href={`/contact?category=${encodeURIComponent(product.category)}`}
                 className="border border-stone-900 bg-stone-900 px-8 py-3 text-sm font-medium tracking-wide text-white transition-colors hover:bg-transparent hover:text-stone-900"
               >
                 Request a Quote

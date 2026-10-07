@@ -286,27 +286,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Adhunik Brown - Granite",
     "description": "Premium natural Granite material: Adhunik Brown.",
-    "heroImage": "/products/Granite/Adhunik%20Brown.png",
+    "heroImage": "/products/rocks-crumbs/Adhunik%20brown.png",
     "gallery": [
-      "/products/Granite/Adhunik%20Brown.png"
+      "/products/rocks-crumbs/Adhunik%20brown.png"
     ],
     "featured": false,
     "sortOrder": 1
-  },
-  {
-    "id": "prod-astodia-ivory-2",
-    "name": "Astodia Ivory 2 ",
-    "slug": "astodia-ivory-2",
-    "category": "granite",
-    "subcategory": "granite-collection",
-    "shortDescription": "Astodia Ivory 2  - Granite",
-    "description": "Premium natural Granite material: Astodia Ivory 2 .",
-    "heroImage": "/products/Granite/Astodia%20Ivory%202%20.png",
-    "gallery": [
-      "/products/Granite/Astodia%20Ivory%202%20.png"
-    ],
-    "featured": false,
-    "sortOrder": 2
   },
   {
     "id": "prod-astodia-ivory",
@@ -316,12 +301,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Astodia Ivory - Granite",
     "description": "Premium natural Granite material: Astodia Ivory.",
-    "heroImage": "/products/Granite/Astodia%20Ivory.png",
+    "heroImage": "/products/Granite/Astodia%20Ivory.jpeg",
     "gallery": [
-      "/products/Granite/Astodia%20Ivory.png"
+      "/products/Granite/Astodia%20Ivory.jpeg"
     ],
     "featured": false,
-    "sortOrder": 3
+    "sortOrder": 2
   },
   {
     "id": "prod-bess-paradise",
@@ -331,12 +316,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Bess Paradise - Granite",
     "description": "Premium natural Granite material: Bess Paradise.",
-    "heroImage": "/products/Granite/Bess%20Paradise.png",
+    "heroImage": "/products/rocks-crumbs/bess%20paradise.png",
     "gallery": [
-      "/products/Granite/Bess%20Paradise.png"
+      "/products/rocks-crumbs/bess%20paradise.png"
     ],
     "featured": false,
-    "sortOrder": 4
+    "sortOrder": 3
   },
   {
     "id": "prod-black-marquina-r",
@@ -351,7 +336,7 @@ const realProducts: Product[] = [
       "/products/Granite/Black%20Marquina%20R.png"
     ],
     "featured": false,
-    "sortOrder": 5
+    "sortOrder": 4
   },
   {
     "id": "prod-burgandy-white",
@@ -361,12 +346,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Burgandy White  - Granite",
     "description": "Premium natural Granite material: Burgandy White .",
-    "heroImage": "/products/Granite/Burgandy%20White%20.png",
+    "heroImage": "/products/Granite/Burgandy%20White%20.jpeg",
     "gallery": [
-      "/products/Granite/Burgandy%20White%20.png"
+      "/products/Granite/Burgandy%20White%20.jpeg"
     ],
     "featured": false,
-    "sortOrder": 6
+    "sortOrder": 5
   },
   {
     "id": "prod-classic-ivory",
@@ -381,7 +366,7 @@ const realProducts: Product[] = [
       "/products/Granite/Classic%20Ivory.png"
     ],
     "featured": false,
-    "sortOrder": 7
+    "sortOrder": 6
   },
   {
     "id": "prod-coffee-pearl",
@@ -391,12 +376,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Coffee Pearl - Granite",
     "description": "Premium natural Granite material: Coffee Pearl.",
-    "heroImage": "/products/Granite/Coffee%20Pearl.png",
+    "heroImage": "/products/Granite/Coffee%20Pearl.jpeg",
     "gallery": [
-      "/products/Granite/Coffee%20Pearl.png"
+      "/products/Granite/Coffee%20Pearl.jpeg"
     ],
     "featured": false,
-    "sortOrder": 8
+    "sortOrder": 7
   },
   {
     "id": "prod-d-gray",
@@ -406,12 +391,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "D Gray - Granite",
     "description": "Premium natural Granite material: D Gray.",
-    "heroImage": "/products/Granite/D%20Gray.png",
+    "heroImage": "/products/Granite/D%20Gray.jpeg",
     "gallery": [
-      "/products/Granite/D%20Gray.png"
+      "/products/Granite/D%20Gray.jpeg"
     ],
     "featured": false,
-    "sortOrder": 9
+    "sortOrder": 8
   },
   {
     "id": "prod-diamond-pearl",
@@ -421,12 +406,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Diamond Pearl - Granite",
     "description": "Premium natural Granite material: Diamond Pearl.",
-    "heroImage": "/products/Granite/Diamond%20Pearl.png",
+    "heroImage": "/products/Granite/Diamond%20Pearl.jpeg",
     "gallery": [
-      "/products/Granite/Diamond%20Pearl.png"
+      "/products/Granite/Diamond%20Pearl.jpeg"
     ],
     "featured": false,
-    "sortOrder": 10
+    "sortOrder": 9
   },
   {
     "id": "prod-dyna-blue",
@@ -436,12 +421,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Dyna Blue  - Granite",
     "description": "Premium natural Granite material: Dyna Blue .",
-    "heroImage": "/products/Granite/Dyna%20Blue%20.png",
+    "heroImage": "/products/rocks-crumbs/dyna%20blue%20.png",
     "gallery": [
-      "/products/Granite/Dyna%20Blue%20.png"
+      "/products/rocks-crumbs/dyna%20blue%20.png"
     ],
     "featured": false,
-    "sortOrder": 11
+    "sortOrder": 10
   },
   {
     "id": "prod-forest-brown",
@@ -451,12 +436,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Forest Brown - Granite",
     "description": "Premium natural Granite material: Forest Brown.",
-    "heroImage": "/products/Granite/Forest%20Brown.png",
+    "heroImage": "/products/Granite/Forest%20Brown.jpeg",
     "gallery": [
-      "/products/Granite/Forest%20Brown.png"
+      "/products/Granite/Forest%20Brown.jpeg"
     ],
-    "featured": true,
-    "sortOrder": 12
+    "featured": false,
+    "sortOrder": 11
   },
   {
     "id": "prod-godhra-gray",
@@ -466,12 +451,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Godhra gray - Granite",
     "description": "Premium natural Granite material: Godhra gray.",
-    "heroImage": "/products/Granite/Godhra%20gray.png",
+    "heroImage": "/products/Granite/Godhra%20gray.jpeg",
     "gallery": [
-      "/products/Granite/Godhra%20gray.png"
+      "/products/Granite/Godhra%20gray.jpeg"
     ],
-    "featured": false,
-    "sortOrder": 13
+    "featured": true,
+    "sortOrder": 12
   },
   {
     "id": "prod-gray-paradise",
@@ -481,12 +466,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Gray Paradise - Granite",
     "description": "Premium natural Granite material: Gray Paradise.",
-    "heroImage": "/products/Granite/Gray%20Paradise.png",
+    "heroImage": "/products/rocks-crumbs/Gray%20paradise%20.png",
     "gallery": [
-      "/products/Granite/Gray%20Paradise.png"
+      "/products/rocks-crumbs/Gray%20paradise%20.png"
     ],
     "featured": false,
-    "sortOrder": 14
+    "sortOrder": 13
   },
   {
     "id": "prod-hocco-brown",
@@ -496,12 +481,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Hocco Brown  - Granite",
     "description": "Premium natural Granite material: Hocco Brown .",
-    "heroImage": "/products/Granite/Hocco%20Brown%20.png",
+    "heroImage": "/products/Granite/Hocco%20Brown%20.jpeg",
     "gallery": [
-      "/products/Granite/Hocco%20Brown%20.png"
+      "/products/Granite/Hocco%20Brown%20.jpeg"
     ],
     "featured": false,
-    "sortOrder": 15
+    "sortOrder": 14
   },
   {
     "id": "prod-kashmiri-white",
@@ -511,12 +496,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Kashmiri White - Granite",
     "description": "Premium natural Granite material: Kashmiri White.",
-    "heroImage": "/products/Granite/Kashmiri%20White.png",
+    "heroImage": "/products/rocks-crumbs/kashmiri%20white.png",
     "gallery": [
-      "/products/Granite/Kashmiri%20White.png"
+      "/products/rocks-crumbs/kashmiri%20white.png"
     ],
     "featured": false,
-    "sortOrder": 16
+    "sortOrder": 15
   },
   {
     "id": "prod-kotda-black",
@@ -526,12 +511,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Kotda Black - Granite",
     "description": "Premium natural Granite material: Kotda Black.",
-    "heroImage": "/products/Granite/Kotda%20Black.png",
+    "heroImage": "/products/Granite/Kotda%20Black.jpeg",
     "gallery": [
-      "/products/Granite/Kotda%20Black.png"
+      "/products/Granite/Kotda%20Black.jpeg"
     ],
     "featured": false,
-    "sortOrder": 17
+    "sortOrder": 16
   },
   {
     "id": "prod-kupam-white",
@@ -541,12 +526,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Kupam White - Granite",
     "description": "Premium natural Granite material: Kupam White.",
-    "heroImage": "/products/Granite/Kupam%20White.png",
+    "heroImage": "/products/rocks-crumbs/kupam%20white.png",
     "gallery": [
-      "/products/Granite/Kupam%20White.png"
+      "/products/rocks-crumbs/kupam%20white.png"
     ],
     "featured": false,
-    "sortOrder": 18
+    "sortOrder": 17
   },
   {
     "id": "prod-lakha-red",
@@ -556,12 +541,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Lakha Red - Granite",
     "description": "Premium natural Granite material: Lakha Red.",
-    "heroImage": "/products/Granite/Lakha%20Red.png",
+    "heroImage": "/products/rocks-crumbs/lakha%20red.png",
     "gallery": [
-      "/products/Granite/Lakha%20Red.png"
+      "/products/rocks-crumbs/lakha%20red.png"
     ],
     "featured": false,
-    "sortOrder": 19
+    "sortOrder": 18
   },
   {
     "id": "prod-lava-gray",
@@ -571,12 +556,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Lava Gray - Granite",
     "description": "Premium natural Granite material: Lava Gray.",
-    "heroImage": "/products/Granite/Lava%20Gray.png",
+    "heroImage": "/products/rocks-crumbs/lava%20gray.png",
     "gallery": [
-      "/products/Granite/Lava%20Gray.png"
+      "/products/rocks-crumbs/lava%20gray.png"
     ],
     "featured": false,
-    "sortOrder": 20
+    "sortOrder": 19
   },
   {
     "id": "prod-melton-brown",
@@ -586,27 +571,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Melton Brown - Granite",
     "description": "Premium natural Granite material: Melton Brown.",
-    "heroImage": "/products/Granite/Melton%20Brown.png",
+    "heroImage": "/products/Granite/Melton%20Brown.jpeg",
     "gallery": [
-      "/products/Granite/Melton%20Brown.png"
+      "/products/Granite/Melton%20Brown.jpeg"
     ],
     "featured": false,
-    "sortOrder": 21
-  },
-  {
-    "id": "prod-mountain-brown-2",
-    "name": "Mountain Brown 2",
-    "slug": "mountain-brown-2",
-    "category": "granite",
-    "subcategory": "granite-collection",
-    "shortDescription": "Mountain Brown 2 - Granite",
-    "description": "Premium natural Granite material: Mountain Brown 2.",
-    "heroImage": "/products/Granite/Mountain%20Brown%202.png",
-    "gallery": [
-      "/products/Granite/Mountain%20Brown%202.png"
-    ],
-    "featured": false,
-    "sortOrder": 22
+    "sortOrder": 20
   },
   {
     "id": "prod-mountain-brown",
@@ -616,12 +586,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Mountain Brown - Granite",
     "description": "Premium natural Granite material: Mountain Brown.",
-    "heroImage": "/products/Granite/Mountain%20Brown.png",
+    "heroImage": "/products/rocks-crumbs/mountain%20brown.png",
     "gallery": [
-      "/products/Granite/Mountain%20Brown.png"
+      "/products/rocks-crumbs/mountain%20brown.png"
     ],
     "featured": false,
-    "sortOrder": 23
+    "sortOrder": 21
   },
   {
     "id": "prod-p-white",
@@ -631,12 +601,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "P White  - Granite",
     "description": "Premium natural Granite material: P White .",
-    "heroImage": "/products/Granite/P%20White%20.png",
+    "heroImage": "/products/Granite/P%20White%20.jpeg",
     "gallery": [
-      "/products/Granite/P%20White%20.png"
+      "/products/Granite/P%20White%20.jpeg"
     ],
-    "featured": true,
-    "sortOrder": 24
+    "featured": false,
+    "sortOrder": 22
   },
   {
     "id": "prod-pebble-black",
@@ -646,12 +616,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Pebble Black - Granite",
     "description": "Premium natural Granite material: Pebble Black.",
-    "heroImage": "/products/Granite/Pebble%20Black.png",
+    "heroImage": "/products/Granite/Pebble%20Black.jpeg",
     "gallery": [
-      "/products/Granite/Pebble%20Black.png"
+      "/products/Granite/Pebble%20Black.jpeg"
     ],
     "featured": false,
-    "sortOrder": 25
+    "sortOrder": 23
   },
   {
     "id": "prod-platinum-gray",
@@ -661,12 +631,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Platinum Gray - Granite",
     "description": "Premium natural Granite material: Platinum Gray.",
-    "heroImage": "/products/Granite/Platinum%20Gray.png",
+    "heroImage": "/products/Granite/Platinum%20Gray.jpeg",
     "gallery": [
-      "/products/Granite/Platinum%20Gray.png"
+      "/products/Granite/Platinum%20Gray.jpeg"
     ],
-    "featured": false,
-    "sortOrder": 26
+    "featured": true,
+    "sortOrder": 24
   },
   {
     "id": "prod-prada-gold",
@@ -676,12 +646,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Prada Gold - Granite",
     "description": "Premium natural Granite material: Prada Gold.",
-    "heroImage": "/products/Granite/Prada%20Gold.png",
+    "heroImage": "/products/Granite/Prada%20Gold.jpeg",
     "gallery": [
-      "/products/Granite/Prada%20Gold.png"
+      "/products/Granite/Prada%20Gold.jpeg"
     ],
     "featured": false,
-    "sortOrder": 27
+    "sortOrder": 25
   },
   {
     "id": "prod-rajyog-brown",
@@ -691,12 +661,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Rajyog Brown - Granite",
     "description": "Premium natural Granite material: Rajyog Brown.",
-    "heroImage": "/products/Granite/Rajyog%20Brown.png",
+    "heroImage": "/products/rocks-crumbs/Rajyog%20brown.png",
     "gallery": [
-      "/products/Granite/Rajyog%20Brown.png"
+      "/products/rocks-crumbs/Rajyog%20brown.png"
     ],
     "featured": false,
-    "sortOrder": 28
+    "sortOrder": 26
   },
   {
     "id": "prod-raw-silk",
@@ -706,12 +676,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Raw Silk - Granite",
     "description": "Premium natural Granite material: Raw Silk.",
-    "heroImage": "/products/Granite/Raw%20Silk.png",
+    "heroImage": "/products/rocks-crumbs/Raw%20silk.png",
     "gallery": [
-      "/products/Granite/Raw%20Silk.png"
+      "/products/rocks-crumbs/Raw%20silk.png"
     ],
     "featured": false,
-    "sortOrder": 29
+    "sortOrder": 27
   },
   {
     "id": "prod-river-white",
@@ -721,12 +691,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "River White - Granite",
     "description": "Premium natural Granite material: River White.",
-    "heroImage": "/products/Granite/River%20White.png",
+    "heroImage": "/products/rocks-crumbs/River%20white.png",
     "gallery": [
-      "/products/Granite/River%20White.png"
+      "/products/rocks-crumbs/River%20white.png"
     ],
     "featured": false,
-    "sortOrder": 30
+    "sortOrder": 28
   },
   {
     "id": "prod-royal-brown",
@@ -736,12 +706,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Royal Brown - Granite",
     "description": "Premium natural Granite material: Royal Brown.",
-    "heroImage": "/products/Granite/Royal%20Brown.png",
+    "heroImage": "/products/rocks-crumbs/Royal%20brown.png",
     "gallery": [
-      "/products/Granite/Royal%20Brown.png"
+      "/products/rocks-crumbs/Royal%20brown.png"
     ],
     "featured": false,
-    "sortOrder": 31
+    "sortOrder": 29
   },
   {
     "id": "prod-royal-gold",
@@ -751,12 +721,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Royal Gold - Granite",
     "description": "Premium natural Granite material: Royal Gold.",
-    "heroImage": "/products/Granite/Royal%20Gold.png",
+    "heroImage": "/products/rocks-crumbs/royal%20gold.png",
     "gallery": [
-      "/products/Granite/Royal%20Gold.png"
+      "/products/rocks-crumbs/royal%20gold.png"
     ],
     "featured": false,
-    "sortOrder": 32
+    "sortOrder": 30
   },
   {
     "id": "prod-sk-blue",
@@ -771,7 +741,7 @@ const realProducts: Product[] = [
       "/products/Granite/SK%20Blue.png"
     ],
     "featured": false,
-    "sortOrder": 33
+    "sortOrder": 31
   },
   {
     "id": "prod-silky-silver",
@@ -781,12 +751,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Silky Silver - Granite",
     "description": "Premium natural Granite material: Silky Silver.",
-    "heroImage": "/products/Granite/Silky%20Silver.png",
+    "heroImage": "/products/rocks-crumbs/silky%20silver.png",
     "gallery": [
-      "/products/Granite/Silky%20Silver.png"
+      "/products/rocks-crumbs/silky%20silver.png"
     ],
     "featured": false,
-    "sortOrder": 34
+    "sortOrder": 32
   },
   {
     "id": "prod-silver-river",
@@ -796,12 +766,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Silver River - Granite",
     "description": "Premium natural Granite material: Silver River.",
-    "heroImage": "/products/Granite/Silver%20River.png",
+    "heroImage": "/products/Granite/Silver%20River.jpeg",
     "gallery": [
-      "/products/Granite/Silver%20River.png"
+      "/products/Granite/Silver%20River.jpeg"
     ],
     "featured": false,
-    "sortOrder": 35
+    "sortOrder": 33
   },
   {
     "id": "prod-steel-gray",
@@ -811,12 +781,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Steel gray - Granite",
     "description": "Premium natural Granite material: Steel gray.",
-    "heroImage": "/products/Granite/Steel%20gray.png",
+    "heroImage": "/products/rocks-crumbs/steel%20gray%20.png",
     "gallery": [
-      "/products/Granite/Steel%20gray.png"
+      "/products/rocks-crumbs/steel%20gray%20.png"
     ],
-    "featured": true,
-    "sortOrder": 36
+    "featured": false,
+    "sortOrder": 34
   },
   {
     "id": "prod-swiss-brown",
@@ -826,12 +796,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Swiss Brown - Granite",
     "description": "Premium natural Granite material: Swiss Brown.",
-    "heroImage": "/products/Granite/Swiss%20Brown.png",
+    "heroImage": "/products/rocks-crumbs/swiss%20brown.png",
     "gallery": [
-      "/products/Granite/Swiss%20Brown.png"
+      "/products/rocks-crumbs/swiss%20brown.png"
     ],
     "featured": false,
-    "sortOrder": 37
+    "sortOrder": 35
   },
   {
     "id": "prod-symphony-ivory",
@@ -841,12 +811,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Symphony Ivory  - Granite",
     "description": "Premium natural Granite material: Symphony Ivory .",
-    "heroImage": "/products/Granite/Symphony%20Ivory%20.png",
+    "heroImage": "/products/Granite/Symphony%20Ivory%20.jpeg",
     "gallery": [
-      "/products/Granite/Symphony%20Ivory%20.png"
+      "/products/Granite/Symphony%20Ivory%20.jpeg"
     ],
-    "featured": false,
-    "sortOrder": 38
+    "featured": true,
+    "sortOrder": 36
   },
   {
     "id": "prod-walet-paradise",
@@ -856,12 +826,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Walet Paradise - Granite",
     "description": "Premium natural Granite material: Walet Paradise.",
-    "heroImage": "/products/Granite/Walet%20Paradise.png",
+    "heroImage": "/products/rocks-crumbs/walet%20paradise.png",
     "gallery": [
-      "/products/Granite/Walet%20Paradise.png"
+      "/products/rocks-crumbs/walet%20paradise.png"
     ],
     "featured": false,
-    "sortOrder": 39
+    "sortOrder": 37
   },
   {
     "id": "prod-ytd-6",
@@ -871,12 +841,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "YTD 6 - Granite",
     "description": "Premium natural Granite material: YTD 6.",
-    "heroImage": "/products/Granite/YTD%206.png",
+    "heroImage": "/products/Granite/YTD%206.jpeg",
     "gallery": [
-      "/products/Granite/YTD%206.png"
+      "/products/Granite/YTD%206.jpeg"
     ],
     "featured": false,
-    "sortOrder": 40
+    "sortOrder": 38
   },
   {
     "id": "prod-zubrana-gray",
@@ -886,12 +856,12 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Zubrana Gray - Granite",
     "description": "Premium natural Granite material: Zubrana Gray.",
-    "heroImage": "/products/Granite/Zubrana%20Gray.png",
+    "heroImage": "/products/Granite/Zubrana%20Gray.jpeg",
     "gallery": [
-      "/products/Granite/Zubrana%20Gray.png"
+      "/products/Granite/Zubrana%20Gray.jpeg"
     ],
     "featured": false,
-    "sortOrder": 41
+    "sortOrder": 39
   },
   {
     "id": "prod-abu-black",
@@ -906,7 +876,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Abu%20Black%20.png"
     ],
     "featured": false,
-    "sortOrder": 42
+    "sortOrder": 40
   },
   {
     "id": "prod-agora-beige",
@@ -921,7 +891,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Agora%20Beige.png"
     ],
     "featured": false,
-    "sortOrder": 43
+    "sortOrder": 41
   },
   {
     "id": "prod-arctic-white-b",
@@ -936,7 +906,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Arctic%20White%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 44
+    "sortOrder": 42
   },
   {
     "id": "prod-armani-bronze",
@@ -951,7 +921,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Armani%20Bronze.png"
     ],
     "featured": false,
-    "sortOrder": 45
+    "sortOrder": 43
   },
   {
     "id": "prod-armani-brown-it",
@@ -966,7 +936,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Armani%20Brown%20%28It%29.png"
     ],
     "featured": false,
-    "sortOrder": 46
+    "sortOrder": 44
   },
   {
     "id": "prod-ash-gray-it",
@@ -981,7 +951,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Ash%20Gray%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 47
+    "sortOrder": 45
   },
   {
     "id": "prod-avocado-leather-finish-b",
@@ -995,8 +965,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Avocado%20Leather%20finish%20%28B%29.png"
     ],
-    "featured": true,
-    "sortOrder": 48
+    "featured": false,
+    "sortOrder": 46
   },
   {
     "id": "prod-bardilo-gray-it",
@@ -1011,7 +981,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Bardilo%20Gray%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 49
+    "sortOrder": 47
   },
   {
     "id": "prod-belecimo-it",
@@ -1025,8 +995,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Belecimo%20%28IT%29.png"
     ],
-    "featured": false,
-    "sortOrder": 50
+    "featured": true,
+    "sortOrder": 48
   },
   {
     "id": "prod-belecimo-new-it",
@@ -1041,7 +1011,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Belecimo%20New%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 51
+    "sortOrder": 49
   },
   {
     "id": "prod-black-it",
@@ -1056,7 +1026,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Black%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 52
+    "sortOrder": 50
   },
   {
     "id": "prod-black-antique",
@@ -1071,7 +1041,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Black%20Antique.png"
     ],
     "featured": false,
-    "sortOrder": 53
+    "sortOrder": 51
   },
   {
     "id": "prod-black-marquina",
@@ -1086,7 +1056,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Black%20Marquina%20.png"
     ],
     "featured": false,
-    "sortOrder": 54
+    "sortOrder": 52
   },
   {
     "id": "prod-black-rose-it",
@@ -1101,7 +1071,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Black%20Rose%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 55
+    "sortOrder": 53
   },
   {
     "id": "prod-blue-bresiait",
@@ -1116,7 +1086,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Blue%20Bresia%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 56
+    "sortOrder": 54
   },
   {
     "id": "prod-brazillian-ytd-1",
@@ -1131,7 +1101,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Brazillian%20YTD%201.png"
     ],
     "featured": false,
-    "sortOrder": 57
+    "sortOrder": 55
   },
   {
     "id": "prod-cnc-fluted-indian-ytd-2",
@@ -1146,7 +1116,7 @@ const realProducts: Product[] = [
       "/products/Marbles/CNC%20Fluted%20%28INDIAN%29%20YTD%202.png"
     ],
     "featured": false,
-    "sortOrder": 58
+    "sortOrder": 56
   },
   {
     "id": "prod-cnc-white-ytd",
@@ -1161,7 +1131,7 @@ const realProducts: Product[] = [
       "/products/Marbles/CNC%20White%20YTD.png"
     ],
     "featured": false,
-    "sortOrder": 59
+    "sortOrder": 57
   },
   {
     "id": "prod-calcutta-white-b",
@@ -1175,8 +1145,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Calcutta%20White%20%28B%29.png"
     ],
-    "featured": true,
-    "sortOrder": 60
+    "featured": false,
+    "sortOrder": 58
   },
   {
     "id": "prod-camel-brown-it",
@@ -1191,7 +1161,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Camel%20Brown%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 61
+    "sortOrder": 59
   },
   {
     "id": "prod-cardian-gray-it",
@@ -1205,8 +1175,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Cardian%20Gray%20%28IT%29.png"
     ],
-    "featured": false,
-    "sortOrder": 62
+    "featured": true,
+    "sortOrder": 60
   },
   {
     "id": "prod-cora-cabana-b",
@@ -1221,7 +1191,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Cora%20Cabana%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 63
+    "sortOrder": 61
   },
   {
     "id": "prod-cream-italian",
@@ -1236,7 +1206,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Cream%20Italian%20.png"
     ],
     "featured": false,
-    "sortOrder": 64
+    "sortOrder": 62
   },
   {
     "id": "prod-cream-karaman-it",
@@ -1251,7 +1221,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Cream%20Karaman%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 65
+    "sortOrder": 63
   },
   {
     "id": "prod-crystal-lizato-b",
@@ -1266,7 +1236,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Crystal%20Lizato%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 66
+    "sortOrder": 64
   },
   {
     "id": "prod-cygnus-black-b",
@@ -1281,7 +1251,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Cygnus%20Black%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 67
+    "sortOrder": 65
   },
   {
     "id": "prod-emotion-gray-it",
@@ -1296,7 +1266,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Emotion%20Gray%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 68
+    "sortOrder": 66
   },
   {
     "id": "prod-ess-gray-it",
@@ -1311,7 +1281,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Ess%20Gray%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 69
+    "sortOrder": 67
   },
   {
     "id": "prod-extreme-gold-b",
@@ -1326,7 +1296,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Extreme%20Gold%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 70
+    "sortOrder": 68
   },
   {
     "id": "prod-fairyland-blue-it",
@@ -1341,7 +1311,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Fairyland%20Blue%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 71
+    "sortOrder": 69
   },
   {
     "id": "prod-fendi-gray-it",
@@ -1355,8 +1325,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Fendi%20Gray%20%28IT%29.png"
     ],
-    "featured": true,
-    "sortOrder": 72
+    "featured": false,
+    "sortOrder": 70
   },
   {
     "id": "prod-french-black-b",
@@ -1371,7 +1341,7 @@ const realProducts: Product[] = [
       "/products/Marbles/French%20Black%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 73
+    "sortOrder": 71
   },
   {
     "id": "prod-givenchy-white-b",
@@ -1385,8 +1355,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Givenchy%20white%20%28B%29.png"
     ],
-    "featured": false,
-    "sortOrder": 74
+    "featured": true,
+    "sortOrder": 72
   },
   {
     "id": "prod-glitter-brown-b",
@@ -1401,7 +1371,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Glitter%20Brown%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 75
+    "sortOrder": 73
   },
   {
     "id": "prod-golden-spider-it",
@@ -1416,7 +1386,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Golden%20Spider%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 76
+    "sortOrder": 74
   },
   {
     "id": "prod-gray-horizon-b",
@@ -1431,7 +1401,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Gray%20Horizon%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 77
+    "sortOrder": 75
   },
   {
     "id": "prod-gray-milano-it",
@@ -1446,7 +1416,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Gray%20Milano%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 78
+    "sortOrder": 76
   },
   {
     "id": "prod-gray-wave-it",
@@ -1461,7 +1431,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Gray%20wave%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 79
+    "sortOrder": 77
   },
   {
     "id": "prod-green-canyon-b",
@@ -1476,7 +1446,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Green%20Canyon%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 80
+    "sortOrder": 78
   },
   {
     "id": "prod-ice-gray-it",
@@ -1491,7 +1461,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Ice%20Gray%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 81
+    "sortOrder": 79
   },
   {
     "id": "prod-imperial-gray-indian",
@@ -1506,7 +1476,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Imperial%20Gray%20%28INDIAN%29.png"
     ],
     "featured": false,
-    "sortOrder": 82
+    "sortOrder": 80
   },
   {
     "id": "prod-lime-brown-it",
@@ -1521,7 +1491,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Lime%20Brown%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 83
+    "sortOrder": 81
   },
   {
     "id": "prod-lime-white",
@@ -1535,8 +1505,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Lime%20White%20.png"
     ],
-    "featured": true,
-    "sortOrder": 84
+    "featured": false,
+    "sortOrder": 82
   },
   {
     "id": "prod-london-gray-b",
@@ -1551,7 +1521,7 @@ const realProducts: Product[] = [
       "/products/Marbles/London%20Gray%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 85
+    "sortOrder": 83
   },
   {
     "id": "prod-luna-gray-it",
@@ -1565,8 +1535,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Luna%20Gray%20%28IT%29.png"
     ],
-    "featured": false,
-    "sortOrder": 86
+    "featured": true,
+    "sortOrder": 84
   },
   {
     "id": "prod-maori-b",
@@ -1581,7 +1551,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Maori%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 87
+    "sortOrder": 85
   },
   {
     "id": "prod-marco-polo",
@@ -1596,7 +1566,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Marco%20Polo.png"
     ],
     "featured": false,
-    "sortOrder": 88
+    "sortOrder": 86
   },
   {
     "id": "prod-micro-angelo-it",
@@ -1611,7 +1581,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Micro%20angelo%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 89
+    "sortOrder": 87
   },
   {
     "id": "prod-mocha-gray-it",
@@ -1626,7 +1596,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Mocha%20gray%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 90
+    "sortOrder": 88
   },
   {
     "id": "prod-moon-cream",
@@ -1641,7 +1611,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Moon%20Cream%20.png"
     ],
     "featured": false,
-    "sortOrder": 91
+    "sortOrder": 89
   },
   {
     "id": "prod-moon-gray-it",
@@ -1656,7 +1626,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Moon%20Gray%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 92
+    "sortOrder": 90
   },
   {
     "id": "prod-multi-red-it",
@@ -1671,7 +1641,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Multi%20Red%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 93
+    "sortOrder": 91
   },
   {
     "id": "prod-mystic-green-indian-exotic",
@@ -1686,7 +1656,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Mystic%20Green%20%28INDIAN%20EXOTIC%29.png"
     ],
     "featured": false,
-    "sortOrder": 94
+    "sortOrder": 92
   },
   {
     "id": "prod-noche-travantine-it",
@@ -1701,7 +1671,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Noche%20Travantine%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 95
+    "sortOrder": 93
   },
   {
     "id": "prod-nordic-gray-it",
@@ -1715,8 +1685,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Nordic%20Gray%20%28IT%29.png"
     ],
-    "featured": true,
-    "sortOrder": 96
+    "featured": false,
+    "sortOrder": 94
   },
   {
     "id": "prod-ocean-blue-b",
@@ -1731,7 +1701,7 @@ const realProducts: Product[] = [
       "/products/Marbles/OCean%20Blue%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 97
+    "sortOrder": 95
   },
   {
     "id": "prod-ocean-green-b",
@@ -1745,8 +1715,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Ocean%20green%20%28B%29.png"
     ],
-    "featured": false,
-    "sortOrder": 98
+    "featured": true,
+    "sortOrder": 96
   },
   {
     "id": "prod-panda-white-it",
@@ -1761,7 +1731,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Panda%20White%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 99
+    "sortOrder": 97
   },
   {
     "id": "prod-peach-white-p-b",
@@ -1776,7 +1746,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Peach%20White%20P%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 100
+    "sortOrder": 98
   },
   {
     "id": "prod-peach-white-b",
@@ -1791,7 +1761,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Peach%20white%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 101
+    "sortOrder": 99
   },
   {
     "id": "prod-pengia-indian-exotic",
@@ -1806,7 +1776,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Pengia%20Indian%20Exotic%20.png"
     ],
     "featured": false,
-    "sortOrder": 102
+    "sortOrder": 100
   },
   {
     "id": "prod-polaris-green-b",
@@ -1821,7 +1791,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Polaris%20green%20%28b%29.png"
     ],
     "featured": false,
-    "sortOrder": 103
+    "sortOrder": 101
   },
   {
     "id": "prod-pulpis-brown",
@@ -1836,7 +1806,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Pulpis%20Brown.png"
     ],
     "featured": false,
-    "sortOrder": 104
+    "sortOrder": 102
   },
   {
     "id": "prod-purple-nest-b",
@@ -1851,7 +1821,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Purple%20Nest%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 105
+    "sortOrder": 103
   },
   {
     "id": "prod-rafelo-b",
@@ -1866,7 +1836,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Rafelo%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 106
+    "sortOrder": 104
   },
   {
     "id": "prod-regal-beige-it",
@@ -1881,7 +1851,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Regal%20Beige%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 107
+    "sortOrder": 105
   },
   {
     "id": "prod-srk-black",
@@ -1895,8 +1865,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/SRK%20Black%20.png"
     ],
-    "featured": true,
-    "sortOrder": 108
+    "featured": false,
+    "sortOrder": 106
   },
   {
     "id": "prod-sangrila-leather-finish-b",
@@ -1911,7 +1881,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Sangrila%20leather%20finish%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 109
+    "sortOrder": 107
   },
   {
     "id": "prod-saran-koli",
@@ -1925,8 +1895,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Saran%20Koli%20.png"
     ],
-    "featured": false,
-    "sortOrder": 110
+    "featured": true,
+    "sortOrder": 108
   },
   {
     "id": "prod-silver-traventine-it",
@@ -1941,7 +1911,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Silver%20Traventine%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 111
+    "sortOrder": 109
   },
   {
     "id": "prod-snake-black-indian",
@@ -1956,7 +1926,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Snake%20Black%20INDIAN%20.png"
     ],
     "featured": false,
-    "sortOrder": 112
+    "sortOrder": 110
   },
   {
     "id": "prod-snow-white-it",
@@ -1971,7 +1941,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Snow%20White%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 113
+    "sortOrder": 111
   },
   {
     "id": "prod-spider-green",
@@ -1986,7 +1956,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Spider%20Green%20.png"
     ],
     "featured": false,
-    "sortOrder": 114
+    "sortOrder": 112
   },
   {
     "id": "prod-stataurio-it",
@@ -2001,7 +1971,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Stataurio%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 115
+    "sortOrder": 113
   },
   {
     "id": "prod-sunset-blue-b",
@@ -2016,7 +1986,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Sunset%20Blue%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 116
+    "sortOrder": 114
   },
   {
     "id": "prod-super-white-b",
@@ -2031,7 +2001,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Super%20White%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 117
+    "sortOrder": 115
   },
   {
     "id": "prod-swarowski-white-v",
@@ -2046,7 +2016,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Swarowski%20White%20%28V%29.png"
     ],
     "featured": false,
-    "sortOrder": 118
+    "sortOrder": 116
   },
   {
     "id": "prod-turtle-green-b",
@@ -2061,7 +2031,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Turtle%20Green%20%28B%29.png"
     ],
     "featured": false,
-    "sortOrder": 119
+    "sortOrder": 117
   },
   {
     "id": "prod-vanilla-cream-it",
@@ -2075,8 +2045,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Vanilla%20Cream%20%28IT%29.png"
     ],
-    "featured": true,
-    "sortOrder": 120
+    "featured": false,
+    "sortOrder": 118
   },
   {
     "id": "prod-volacasa-it",
@@ -2091,7 +2061,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Volacasa%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 121
+    "sortOrder": 119
   },
   {
     "id": "prod-wavy-green-indian",
@@ -2105,8 +2075,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Marbles/Wavy%20Green%20Indian%20.png"
     ],
-    "featured": false,
-    "sortOrder": 122
+    "featured": true,
+    "sortOrder": 120
   },
   {
     "id": "prod-white-it",
@@ -2121,7 +2091,7 @@ const realProducts: Product[] = [
       "/products/Marbles/White%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 123
+    "sortOrder": 121
   },
   {
     "id": "prod-white-v",
@@ -2136,7 +2106,7 @@ const realProducts: Product[] = [
       "/products/Marbles/White%20%28V%29.png"
     ],
     "featured": false,
-    "sortOrder": 124
+    "sortOrder": 122
   },
   {
     "id": "prod-white-small-poker-v",
@@ -2151,7 +2121,7 @@ const realProducts: Product[] = [
       "/products/Marbles/White%20Small%20Poker%20%28V%29.png"
     ],
     "featured": false,
-    "sortOrder": 125
+    "sortOrder": 123
   },
   {
     "id": "prod-ytd3-it",
@@ -2166,7 +2136,7 @@ const realProducts: Product[] = [
       "/products/Marbles/YTD3%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 126
+    "sortOrder": 124
   },
   {
     "id": "prod-ytd4-it",
@@ -2181,7 +2151,7 @@ const realProducts: Product[] = [
       "/products/Marbles/YTD4%20%28IT%29.png"
     ],
     "featured": false,
-    "sortOrder": 127
+    "sortOrder": 125
   },
   {
     "id": "prod-yellow-traventine-it0",
@@ -2196,7 +2166,7 @@ const realProducts: Product[] = [
       "/products/Marbles/Yellow%20Traventine%20%28IT0.png"
     ],
     "featured": false,
-    "sortOrder": 128
+    "sortOrder": 126
   },
   {
     "id": "prod-crystal",
@@ -2211,7 +2181,7 @@ const realProducts: Product[] = [
       "/products/Onyx/Crystal.png"
     ],
     "featured": false,
-    "sortOrder": 129
+    "sortOrder": 127
   },
   {
     "id": "prod-gray",
@@ -2226,7 +2196,7 @@ const realProducts: Product[] = [
       "/products/Onyx/Gray.png"
     ],
     "featured": false,
-    "sortOrder": 130
+    "sortOrder": 128
   },
   {
     "id": "prod-green",
@@ -2241,7 +2211,7 @@ const realProducts: Product[] = [
       "/products/Onyx/Green.png"
     ],
     "featured": false,
-    "sortOrder": 131
+    "sortOrder": 129
   },
   {
     "id": "prod-mexican",
@@ -2255,8 +2225,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Onyx/Mexican.png"
     ],
-    "featured": true,
-    "sortOrder": 132
+    "featured": false,
+    "sortOrder": 130
   },
   {
     "id": "prod-orion",
@@ -2271,7 +2241,7 @@ const realProducts: Product[] = [
       "/products/Onyx/Orion.png"
     ],
     "featured": false,
-    "sortOrder": 133
+    "sortOrder": 131
   },
   {
     "id": "prod-pink-onyx",
@@ -2285,8 +2255,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Onyx/Pink%20Onyx.png"
     ],
-    "featured": false,
-    "sortOrder": 134
+    "featured": true,
+    "sortOrder": 132
   },
   {
     "id": "prod-pink-pentagonia",
@@ -2301,7 +2271,7 @@ const realProducts: Product[] = [
       "/products/Onyx/Pink%20Pentagonia.png"
     ],
     "featured": false,
-    "sortOrder": 135
+    "sortOrder": 133
   },
   {
     "id": "prod-rainboz",
@@ -2316,7 +2286,7 @@ const realProducts: Product[] = [
       "/products/Onyx/Rainboz.png"
     ],
     "featured": false,
-    "sortOrder": 136
+    "sortOrder": 134
   },
   {
     "id": "prod-tiffany",
@@ -2331,7 +2301,7 @@ const realProducts: Product[] = [
       "/products/Onyx/Tiffany.png"
     ],
     "featured": false,
-    "sortOrder": 137
+    "sortOrder": 135
   },
   {
     "id": "prod-trevo",
@@ -2346,7 +2316,7 @@ const realProducts: Product[] = [
       "/products/Onyx/Trevo.png"
     ],
     "featured": false,
-    "sortOrder": 138
+    "sortOrder": 136
   },
   {
     "id": "prod-volcano",
@@ -2361,7 +2331,7 @@ const realProducts: Product[] = [
       "/products/Onyx/Volcano.png"
     ],
     "featured": false,
-    "sortOrder": 139
+    "sortOrder": 137
   },
   {
     "id": "prod-ytd-1",
@@ -2376,7 +2346,7 @@ const realProducts: Product[] = [
       "/products/Onyx/YTD%201.png"
     ],
     "featured": false,
-    "sortOrder": 140
+    "sortOrder": 138
   },
   {
     "id": "prod-3d-white-fluted",
@@ -2391,7 +2361,7 @@ const realProducts: Product[] = [
       "/products/Sandstone/3D%20White%20Fluted.png"
     ],
     "featured": false,
-    "sortOrder": 141
+    "sortOrder": 139
   },
   {
     "id": "prod-black-fluted",
@@ -2406,7 +2376,7 @@ const realProducts: Product[] = [
       "/products/Sandstone/Black%20Fluted.png"
     ],
     "featured": false,
-    "sortOrder": 142
+    "sortOrder": 140
   },
   {
     "id": "prod-black-hydra-finish",
@@ -2421,7 +2391,7 @@ const realProducts: Product[] = [
       "/products/Sandstone/Black%20Hydra%20Finish%20.png"
     ],
     "featured": false,
-    "sortOrder": 143
+    "sortOrder": 141
   },
   {
     "id": "prod-graywood-hydra-finish",
@@ -2435,8 +2405,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Sandstone/Graywood%20Hydra%20Finish.png"
     ],
-    "featured": true,
-    "sortOrder": 144
+    "featured": false,
+    "sortOrder": 142
   },
   {
     "id": "prod-graywood-sandplast-finish",
@@ -2451,7 +2421,7 @@ const realProducts: Product[] = [
       "/products/Sandstone/Graywood%20Sandplast%20Finish.png"
     ],
     "featured": false,
-    "sortOrder": 145
+    "sortOrder": 143
   },
   {
     "id": "prod-gwalior-mint-sandplast-finish",
@@ -2465,8 +2435,8 @@ const realProducts: Product[] = [
     "gallery": [
       "/products/Sandstone/Gwalior%20Mint%20Sandplast%20Finish.png"
     ],
-    "featured": false,
-    "sortOrder": 146
+    "featured": true,
+    "sortOrder": 144
   },
   {
     "id": "prod-indian-mocha",
@@ -2481,7 +2451,7 @@ const realProducts: Product[] = [
       "/products/Sandstone/Indian%20Mocha.png"
     ],
     "featured": false,
-    "sortOrder": 147
+    "sortOrder": 145
   },
   {
     "id": "prod-jodhpur-finish",
@@ -2496,7 +2466,7 @@ const realProducts: Product[] = [
       "/products/Sandstone/Jodhpur%20Finish.png"
     ],
     "featured": false,
-    "sortOrder": 148
+    "sortOrder": 146
   },
   {
     "id": "prod-monsoon-sunglass-finish",
@@ -2511,7 +2481,7 @@ const realProducts: Product[] = [
       "/products/Sandstone/Monsoon%20Sunglass%20Finish.png"
     ],
     "featured": false,
-    "sortOrder": 149
+    "sortOrder": 147
   },
   {
     "id": "prod-monsoon-leather-finish",
@@ -2526,7 +2496,7 @@ const realProducts: Product[] = [
       "/products/Sandstone/Monsoon%20leather%20finish.png"
     ],
     "featured": false,
-    "sortOrder": 150
+    "sortOrder": 148
   }
 ];
 

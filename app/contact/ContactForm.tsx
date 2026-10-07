@@ -1,7 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { categories } from "@/data/categories";
+
+function resolveCategorySlug(param?: string): string {
+  if (!param) return "";
+  const norm = param.trim().toLowerCase().replace(/[\s\-_]+/g, "");
+  const found = categories.find((c) => {
+    const slugNorm = c.slug.toLowerCase().replace(/[\s\-_]+/g, "");
+    const nameNorm = c.name.toLowerCase().replace(/[\s\-_]+/g, "");
+    return norm === slugNorm || norm === nameNorm;
+  });
+  return found ? found.slug : "";
+}
 
 interface FormData {
   name: string;
@@ -16,17 +28,33 @@ interface FormErrors {
   [key: string]: string;
 }
 
-export default function ContactForm() {
+interface ContactFormProps {
+  initialCategory?: string;
+}
+
+function ContactFormInner({ initialCategory }: ContactFormProps) {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category") || initialCategory;
+  const initialSlug = resolveCategorySlug(categoryParam);
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     company: "",
     email: "",
     phone: "",
-    requirement: "",
+    requirement: initialSlug,
     message: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const currentParam = searchParams.get("category") || initialCategory;
+    const resolved = resolveCategorySlug(currentParam);
+    if (resolved) {
+      setFormData((prev) => ({ ...prev, requirement: resolved }));
+    }
+  }, [searchParams, initialCategory]);
 
   function validate(): boolean {
     const newErrors: FormErrors = {};
@@ -226,5 +254,13 @@ export default function ContactForm() {
         Send Enquiry
       </button>
     </form>
+  );
+}
+
+export default function ContactForm(props: ContactFormProps) {
+  return (
+    <Suspense fallback={null}>
+      <ContactFormInner {...props} />
+    </Suspense>
   );
 }

@@ -66,20 +66,76 @@ for sub_id, sub_name, sub_cat, sub_desc in subcat_defs:
 sort_order = 1
 category_counts = {'Granite': 0, 'Marble': 0, 'Onyx': 0, 'Sandstone': 0}
 
+CRUMBS_DIR = 'public/products/rocks-crumbs'
+crumbs_map = {}
+if os.path.exists(CRUMBS_DIR):
+    for cf in os.listdir(CRUMBS_DIR):
+        if not cf.startswith('.'):
+            norm = os.path.splitext(cf)[0].lower()
+            norm = re.sub(r'[\s\-_]+', ' ', norm).strip()
+            crumbs_map[norm] = cf
+
+# Set of normalized names to REMOVE ENTIRELY (0 cards remaining)
+remove_entirely = {
+  'astodia ivory 2',
+  'mountain brown 2'
+}
+
+# Set of normalized names where we REMOVE OCCURRENCE #1 (keep #2)
+remove_1st_occ = {
+  'black marquina r',
+  'classic ivory',
+  'kashmiri white',
+  'kupam white',
+  'sk blue',
+  'walet paradise'
+}
+
 for cat_name, folder_path, cat_slug, cat_display in folders:
     if not os.path.exists(folder_path):
         print(f"Directory missing: {folder_path}")
         continue
     files = sorted([f for f in os.listdir(folder_path) if not f.startswith('.')])
-    category_counts[cat_name] = len(files)
     
-    for f in files:
+    # Track occurrence counts per normalized stone name in this category
+    cat_counts = {}
+    valid_files = []
+    
+    if cat_name == 'Granite':
+        for f in files:
+            name_no_ext, _ = os.path.splitext(f)
+            norm_name = re.sub(r'[\s\-_]+', ' ', name_no_ext.lower()).strip()
+            
+            if norm_name in remove_entirely:
+                continue
+                
+            cat_counts[norm_name] = cat_counts.get(norm_name, 0) + 1
+            occ = cat_counts[norm_name]
+            
+            # Determine which occurrence to remove
+            remove_occ = 1 if norm_name in remove_1st_occ else 2
+            if occ != remove_occ:
+                valid_files.append(f)
+    else:
+        valid_files = files
+
+    category_counts[cat_name] = len(valid_files)
+    
+    for f in valid_files:
         name_no_ext, _ = os.path.splitext(f)
         p_slug = get_unique_slug(name_no_ext)
         
-        folder_url_name = 'Marbles' if cat_name == 'Marble' else cat_name
-        encoded_filename = urllib.parse.quote(f)
-        hero_image = f"/products/{folder_url_name}/{encoded_filename}"
+        norm_name = re.sub(r'[\s\-_]+', ' ', name_no_ext.lower()).strip()
+        if norm_name == 'astodia ivory':
+            hero_image = "/products/Granite/Astodia%20Ivory.jpeg"
+        elif norm_name in crumbs_map:
+            cf = crumbs_map[norm_name]
+            encoded_crumbs = urllib.parse.quote(cf)
+            hero_image = f"/products/rocks-crumbs/{encoded_crumbs}"
+        else:
+            folder_url_name = 'Marbles' if cat_name == 'Marble' else cat_name
+            encoded_filename = urllib.parse.quote(f)
+            hero_image = f"/products/{folder_url_name}/{encoded_filename}"
         
         subcat_slug = f"{cat_slug}-collection"
         if cat_name == 'Marble':

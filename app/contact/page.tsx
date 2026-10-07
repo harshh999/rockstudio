@@ -10,7 +10,12 @@ export const metadata: Metadata = {
     "Get in touch with Rocks Studio. Request a quote, enquire about our products, or visit our office in Ahmedabad, Gujarat.",
 };
 
-export default async function ContactPage() {
+interface ContactPageProps {
+  searchParams: Promise<{ category?: string }>;
+}
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const { category } = await searchParams;
   const settings = await getSiteSettings();
 
   return (
@@ -74,7 +79,7 @@ export default async function ContactPage() {
               business day.
             </p>
             <div className="mt-8">
-              <ContactForm />
+              <ContactForm initialCategory={category} />
             </div>
           </div>
         </div>
