@@ -75,7 +75,7 @@ export default function Footer({ settings }: FooterProps) {
   ];
 
   return (
-    <footer className="relative bg-[#0D0D0D] text-white pt-12 lg:pt-14 pb-2 select-none overflow-hidden">
+    <footer className="relative bg-[#0D0D0D] text-white pt-9 sm:pt-11 lg:pt-14 pb-2 select-none overflow-hidden">
       {/* Background Texture - Dark Marble */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image 
@@ -90,11 +90,11 @@ export default function Footer({ settings }: FooterProps) {
       <div className="absolute inset-0 z-0 bg-black/[0.58] pointer-events-none" />
 
       <ScrollReveal yOffset={15} className="relative z-10 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-20">
-        {/* Layer 01: Four Columns (Brand, Menu, Materials, Expertise) with optical track sizing */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:[grid-template-columns:1.2fr_0.6fr_1.2fr_1.6fr] gap-8 lg:gap-10 xl:gap-12 items-start">
+        {/* Layer 01: Brand, Menu + Materials (side-by-side on mobile/tablet), Expertise */}
+        <div className="flex flex-col gap-7 sm:gap-8 lg:grid lg:[grid-template-columns:1.2fr_0.6fr_1.2fr_1.6fr] lg:gap-10 xl:gap-12 items-start">
           {/* Column 1: Brand */}
-          <div className="flex flex-col min-w-0">
-            <Link href="/" className="inline-block transition-opacity hover:opacity-80 shrink-0 mb-4" aria-label="Rocks Studio Home">
+          <div className="flex flex-col min-w-0 w-full lg:w-auto">
+            <Link href="/" className="inline-block transition-opacity hover:opacity-80 shrink-0 mb-3.5 sm:mb-4" aria-label="Rocks Studio Home">
               <Image
                 src="/images/logo-white.png"
                 alt="Rocks Studio"
@@ -103,7 +103,7 @@ export default function Footer({ settings }: FooterProps) {
                 className="h-[37px] sm:h-[40px] w-auto object-contain"
               />
             </Link>
-            <p className="text-[14px] sm:text-[15px] leading-[1.6] text-white/65 font-sans mb-5 max-w-[300px]">
+            <p className="text-[14px] sm:text-[15px] leading-[1.6] text-white/65 font-sans mb-4 sm:mb-5 max-w-[320px]">
               Natural stone for architecture, interiors and spaces made to last.
             </p>
             {/* Social Icons */}
@@ -130,69 +130,72 @@ export default function Footer({ settings }: FooterProps) {
             </div>
           </div>
 
-          {/* Column 2: MENU */}
-          <div className="flex flex-col min-w-0">
-            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-4">
-              MENU
-            </h4>
-            <ul className="flex flex-col space-y-3.5">
-              {[
-                { label: "Home", href: "/" },
-                { label: "About Us", href: "/about" },
-                { label: "Products", href: "/products" },
-                { label: "Process", href: "/process" },
-                { label: "Contact Us", href: "/contact" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-[14px] sm:text-[15px] font-normal text-white/65 hover:text-white transition-colors duration-200 block"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Menu & Materials side-by-side container on mobile/tablet (< lg), unrolled into desktop grid via lg:contents */}
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 items-start w-full lg:contents">
+            {/* Column 2: MENU */}
+            <div className="flex flex-col min-w-0">
+              <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-3 sm:mb-4">
+                MENU
+              </h4>
+              <ul className="flex flex-col space-y-2.5 sm:space-y-3 lg:space-y-3.5">
+                {[
+                  { label: "Home", href: "/" },
+                  { label: "About Us", href: "/about" },
+                  { label: "Products", href: "/products" },
+                  { label: "Process", href: "/process" },
+                  { label: "Contact Us", href: "/contact" },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-[14px] sm:text-[15px] font-normal text-white/65 hover:text-white transition-colors duration-200 block"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Column 3: MATERIALS */}
-          <div className="flex flex-col min-w-0">
-            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-4">
-              MATERIALS
-            </h4>
-            <div className="grid grid-cols-2 gap-x-8 min-w-0">
-              <div className="flex flex-col space-y-3.5 min-w-0">
-                {materialsCol1.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={`/products?category=${encodeURIComponent(item.filter)}`}
-                    className="text-[14px] sm:text-[15px] font-normal text-white/65 hover:text-white transition-colors duration-200 truncate"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-              <div className="flex flex-col space-y-3.5 min-w-0">
-                {materialsCol2.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={`/products?category=${encodeURIComponent(item.filter)}`}
-                    className="text-[14px] sm:text-[15px] font-normal text-white/65 hover:text-white transition-colors duration-200 truncate"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+            {/* Column 3: MATERIALS */}
+            <div className="flex flex-col min-w-0">
+              <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-3 sm:mb-4">
+                MATERIALS
+              </h4>
+              <div className="flex flex-col space-y-2.5 sm:space-y-3 lg:grid lg:grid-cols-2 lg:space-y-0 lg:gap-x-8 min-w-0">
+                <div className="flex flex-col space-y-2.5 sm:space-y-3 lg:space-y-3.5 min-w-0">
+                  {materialsCol1.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={`/products?category=${encodeURIComponent(item.filter)}`}
+                      className="text-[14px] sm:text-[15px] font-normal text-white/65 hover:text-white transition-colors duration-200 truncate"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+                <div className="flex flex-col space-y-2.5 sm:space-y-3 lg:space-y-3.5 min-w-0">
+                  {materialsCol2.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={`/products?category=${encodeURIComponent(item.filter)}`}
+                      className="text-[14px] sm:text-[15px] font-normal text-white/65 hover:text-white transition-colors duration-200 truncate"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Column 4: EXPERTISE */}
-          <div className="flex flex-col min-w-0">
-            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-4">
+          {/* Column 4: EXPERTISE (full width below Menu + Materials on mobile) */}
+          <div className="flex flex-col min-w-0 w-full lg:w-auto">
+            <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-3 sm:mb-4">
               EXPERTISE
             </h4>
-            <div className="grid grid-cols-2 gap-x-12 min-w-0">
-              <div className="flex flex-col space-y-3.5 min-w-0">
+            <div className="grid grid-cols-2 gap-x-6 sm:gap-x-12 min-w-0">
+              <div className="flex flex-col space-y-2.5 sm:space-y-3 lg:space-y-3.5 min-w-0">
                 {expertiseCol1.map((item) => (
                   <Link
                     key={item.label}
@@ -203,7 +206,7 @@ export default function Footer({ settings }: FooterProps) {
                   </Link>
                 ))}
               </div>
-              <div className="flex flex-col space-y-3.5 min-w-0">
+              <div className="flex flex-col space-y-2.5 sm:space-y-3 lg:space-y-3.5 min-w-0">
                 {expertiseCol2.map((item) => (
                   <Link
                     key={item.label}
@@ -219,20 +222,20 @@ export default function Footer({ settings }: FooterProps) {
         </div>
 
         {/* Divider 01 */}
-        <div className="mt-10 lg:mt-12 mb-8 lg:mb-10 border-t border-white/15 w-full" />
+        <div className="mt-7 sm:mt-9 lg:mt-12 mb-6 sm:mb-8 lg:mb-10 border-t border-white/15 w-full" />
 
         {/* Layer 02: LOCATIONS */}
         <div className="min-w-0">
-          <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-5">
+          <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-white/90 mb-4 sm:mb-5">
             LOCATIONS
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start min-w-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start min-w-0">
             {locationsList.map((loc) => (
               <div key={loc.name} className="flex flex-col min-w-0">
-                <h5 className="text-[15px] sm:text-[16px] font-medium text-white/90 mb-2.5">
+                <h5 className="text-[15px] sm:text-[16px] font-medium text-white/90 mb-2 sm:mb-2.5">
                   {loc.name}
                 </h5>
-                <p className="text-[14px] sm:text-[15px] leading-[1.55] text-white/65 mb-3 whitespace-pre-line">
+                <p className="text-[14px] sm:text-[15px] leading-[1.55] text-white/65 mb-2.5 sm:mb-3 whitespace-pre-line">
                   {loc.address}
                 </p>
                 <div className="flex flex-wrap xl:flex-nowrap items-center gap-x-3 gap-y-1.5 text-[13px] text-white/75 min-w-0">
@@ -269,10 +272,10 @@ export default function Footer({ settings }: FooterProps) {
         </div>
 
         {/* Divider 02 */}
-        <div className="mt-8 lg:mt-10 border-t border-white/15 w-full" />
+        <div className="mt-6 sm:mt-8 lg:mt-10 border-t border-white/15 w-full" />
 
         {/* Bottom Bar */}
-        <div className="py-5 sm:py-6 flex flex-col sm:flex-row justify-between items-center gap-4 w-full text-[13px] sm:text-[14px]">
+        <div className="py-4 sm:py-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 w-full text-[13px] sm:text-[14px]">
           <Link
             href="/privacy-policy"
             className={`transition-colors duration-200 ${
