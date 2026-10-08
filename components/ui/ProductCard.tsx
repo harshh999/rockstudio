@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Product } from "@/types";
 
 interface ProductCardProps {
@@ -18,7 +19,8 @@ export default function ProductCard({
     typeof index === "number" ? String(index + 1).padStart(2, "0") : null;
 
   return (
-    <div
+    <Link
+      href={`/products/${product.slug}`}
       className={`group relative block w-full ${aspectRatio} overflow-hidden rounded-[18px] sm:rounded-[20px] lg:rounded-[22px] bg-stone-200/60`}
     >
       {/* Optional Editorial Index Number */}
@@ -50,6 +52,6 @@ export default function ProductCard({
           {product.name}
         </h3>
       </div>
-    </div>
+    </Link>
   );
 }
