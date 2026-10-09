@@ -17,11 +17,13 @@ export interface Product {
   slug: string;
   category: string;
   subcategory: string;
-  shortDescription: string;
+  shortDescription?: string;
   description: string;
   heroImage: string;
   gallery: string[];
-  featured: boolean;
+  featured?: boolean;
+  finish?: string;
+  application?: string;
   sortOrder: number;
 }
 

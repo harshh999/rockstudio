@@ -14,7 +14,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
     >
       <Image
         src={category.image}
-        alt={`${category.name} natural stone`}
+        alt={`${category.name} natural stone collection — Rocks Studio`}
         fill
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
         className="object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.03]"

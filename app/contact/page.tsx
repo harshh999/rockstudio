@@ -1,13 +1,38 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getSiteSettings } from "@/lib/data";
+import { getSiteSettings, getProductCategories } from "@/lib/data";
 import ContactDetails from "@/components/ui/ContactDetails";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Rocks Studio | Natural Stone Supplier in Ahmedabad",
   description:
-    "Get in touch with Rocks Studio. Request a quote, enquire about our products, or visit our office in Ahmedabad, Gujarat.",
+    "Get in touch with Rocks Studio in Ahmedabad, Gujarat. Request a quote, enquire about our natural stone products, or visit our showroom.",
+  keywords: [
+    "contact Rocks Studio",
+    "natural stone supplier Ahmedabad",
+    "marble supplier Ahmedabad",
+    "granite supplier Ahmedabad",
+    "stone enquiry Ahmedabad",
+  ],
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Rocks Studio | Natural Stone Supplier in Ahmedabad",
+    description:
+      "Get in touch with Rocks Studio in Ahmedabad, Gujarat. Request a quote, enquire about our natural stone products, or visit our showroom.",
+    url: "https://rocks-studio.com/contact",
+    siteName: "Rocks Studio",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Rocks Studio | Natural Stone Supplier in Ahmedabad",
+    description:
+      "Get in touch with Rocks Studio in Ahmedabad, Gujarat. Request a quote or enquire about our natural stone products.",
+  },
 };
 
 interface ContactPageProps {
@@ -17,6 +42,7 @@ interface ContactPageProps {
 export default async function ContactPage({ searchParams }: ContactPageProps) {
   const { category } = await searchParams;
   const settings = await getSiteSettings();
+  const categories = await getProductCategories();
 
   return (
     <>
@@ -79,7 +105,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               business day.
             </p>
             <div className="mt-8">
-              <ContactForm initialCategory={category} />
+              <ContactForm categories={categories} initialCategory={category} />
             </div>
           </div>
         </div>

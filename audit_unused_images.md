@@ -1,0 +1,395 @@
+# Asset Audit Report
+
+## SAFE TO DELETE (194)
+- **public/products/Granite/Adhunik Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Adhunik Brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Astodia Ivory 2 .png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Astodia Ivory 2.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Astodia Ivory.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Astodia Ivory.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Bess Paradise.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Bess Paradise.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Black Marquina R.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Black Marquina R.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Burgandy White .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Burgandy White .png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Classic Ivory.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Classic Ivory.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Coffee Pearl.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Coffee Pearl.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/D Gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/D Gray.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Diamond Pearl.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Diamond Pearl.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Dyna Blue .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Dyna Blue .png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Forest Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Forest Brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Godhra gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Godhra gray.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Gray Paradise.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Gray Paradise.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Hocco Brown .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Hocco Brown .png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Kashmiri White.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Kashmiri White.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Kotda Black.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Kotda Black.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Kupam White.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Kupam White.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Lakha Red.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Lakha Red.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Lava Gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Lava Gray.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Melton Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Melton Brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Mountain Brown 2.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Mountain Brown 2.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Mountain Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Mountain Brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/P White .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/P White .png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Pebble Black.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Pebble Black.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Platinum Gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Platinum Gray.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Prada Gold.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Prada Gold.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Rajyog Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Rajyog Brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Raw Silk.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Raw Silk.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/River White.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/River White.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Royal Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Royal Brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Royal Gold.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Royal Gold.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/SK Blue.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/SK Blue.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Silky Silver.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Silky Silver.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Silver River.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Silver River.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Steel gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Steel gray.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Swiss Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Swiss Brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Symphony Ivory .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Symphony Ivory .png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Walet Paradise.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Walet Paradise.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/YTD 6.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/YTD 6.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Zubrana Gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite/Zubrana Gray.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/Adhunik brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/Gray paradise .png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/Mountain brown 2.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/Rajyog brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/Raw silk.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/River white.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/Royal brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/bess paradise.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/dyna blue .png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/kashmiri white.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/kupam white.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/lakha red.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/lava gray.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/mountain brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/royal gold.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/silky silver.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/steel gray .png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/swiss brown.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/rocks-crumbs/walet paradise.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Adhunik Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Astodia Ivory 2.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Astodia Ivory.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Bess Paradise.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Black Marquina R.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Burgandy White .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Classic Ivory.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Coffee Pearl.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/D Gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Diamond Pearl.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Dyna Blue .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Forest Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Godhra gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Gray Paradise.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Hocco Brown .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Kashmiri White.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Kotda Black.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Kupam White.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Lahka Red.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Lakha Red.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Lava Gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Melton Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Mountain Brown 2.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Mountain Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/P White .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Pebble Black.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Platinum Gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Prada Gold.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Rajyog Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Raw Silk.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/River White.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Royal Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Royal Gold.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/SK Blue.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Silky Silver.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Silver River.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Steel gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Swiss Brown.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Symphony Ivory .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Walet Paradise.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/YTD 6.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/Zubrana Gray.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean/blackmarqui.png**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean-comparisons/comp_Adhunik Brown.jpg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean-comparisons/comp_Bess Paradise.jpg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean-comparisons/comp_Black Marquina R.jpg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean-comparisons/comp_Forest Brown.jpg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean-comparisons/comp_Gray Paradise.jpg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean-comparisons/comp_Kashmiri White.jpg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean-comparisons/comp_Lahka Red.jpg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-clean-comparisons/comp_Royal Gold.jpg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/D gray granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/P white granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/adhunik brown granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/astodia ivory granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/astodia ivory granitee.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/bess paradise granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/black marquina r granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/burgandy white granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/classic ivory granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/coffee pearl granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/diamond pearl granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/dyna blue granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/forest brown granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/godhra grey granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/granite ytd last.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/grey paradise granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/hocco brown granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/kashmiri white granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/kotda black granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/kupam white granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/lakha red granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/lava grey granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/melton brown granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/mountain brown granite-2.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/mountain brown granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/pebble black granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/pink onyx.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/platinum gray granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/prada gold granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/rajyog brown granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/raw silk granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/river white granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/royal brown granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/royal gold granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/silky silver granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/silver river granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/sk blue granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/steel gray granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/swiss brown granite .jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/symphony ivory granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/walet paradise granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+- **public/products/Granite-original-images/zubrana grey granite.jpeg**
+  - Reason: No references to this specific old path found anywhere in the codebase
+
+## STILL REFERENCED (0)
+
+## UNCERTAIN / NEEDS MANUAL REVIEW (0)

@@ -40,6 +40,7 @@ export const metadata: Metadata = {
 
 import { getSiteSettings } from "@/lib/data";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import JsonLd from "@/components/seo/JsonLd";
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const settings = await getSiteSettings();
@@ -49,6 +50,9 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${playfair.variable} h-auto overflow-visible antialiased`}
     >
+      <head>
+        <JsonLd />
+      </head>
       <body className="flex min-h-screen h-auto overflow-visible flex-col font-sans">
         <SmoothScrollProvider>
           <Navbar />

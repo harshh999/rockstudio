@@ -2,12 +2,13 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { categories } from "@/data/categories";
+import type { ProductCategory } from "@/types";
+import { categories as defaultCategories } from "@/data/categories";
 
-function resolveCategorySlug(param?: string): string {
+function resolveCategorySlug(categoryList: ProductCategory[], param?: string): string {
   if (!param) return "";
   const norm = param.trim().toLowerCase().replace(/[\s\-_]+/g, "");
-  const found = categories.find((c) => {
+  const found = categoryList.find((c) => {
     const slugNorm = c.slug.toLowerCase().replace(/[\s\-_]+/g, "");
     const nameNorm = c.name.toLowerCase().replace(/[\s\-_]+/g, "");
     return norm === slugNorm || norm === nameNorm;
@@ -29,13 +30,14 @@ interface FormErrors {
 }
 
 interface ContactFormProps {
+  categories?: ProductCategory[];
   initialCategory?: string;
 }
 
-function ContactFormInner({ initialCategory }: ContactFormProps) {
+function ContactFormInner({ categories = defaultCategories, initialCategory }: ContactFormProps) {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category") || initialCategory;
-  const initialSlug = resolveCategorySlug(categoryParam);
+  const initialSlug = resolveCategorySlug(categories, categoryParam);
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -50,11 +52,11 @@ function ContactFormInner({ initialCategory }: ContactFormProps) {
 
   useEffect(() => {
     const currentParam = searchParams.get("category") || initialCategory;
-    const resolved = resolveCategorySlug(currentParam);
+    const resolved = resolveCategorySlug(categories, currentParam);
     if (resolved) {
       setFormData((prev) => ({ ...prev, requirement: resolved }));
     }
-  }, [searchParams, initialCategory]);
+  }, [searchParams, initialCategory, categories]);
 
   function validate(): boolean {
     const newErrors: FormErrors = {};

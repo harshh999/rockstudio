@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   getProductCategories,
@@ -16,6 +17,44 @@ import SelectedProductsGrid from "@/components/ui/SelectedProductsGrid";
 import TestimonialGrid from "@/components/ui/TestimonialGrid";
 import QuoteCTA from "@/components/ui/QuoteCTA";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+
+export const metadata: Metadata = {
+  title: "Rocks Studio — Natural Stone Supplier in Ahmedabad",
+  description:
+    "Rocks Studio is a leading natural stone supplier and manufacturer in Ahmedabad, Gujarat. Sourcing and crafting premium marble, granite, quartzite, CNC textures, onyx, sandstone, and wall cladding for architecture and interiors.",
+  keywords: [
+    "natural stone",
+    "natural stone supplier",
+    "natural stone manufacturer",
+    "marble supplier Ahmedabad",
+    "granite supplier Ahmedabad",
+    "marble and granite",
+    "natural stone supplier Ahmedabad",
+    "architectural stone",
+    "stone surfaces",
+    "premium natural stone",
+    "stone slabs",
+    "natural stone for architecture",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Rocks Studio — Natural Stone Supplier in Ahmedabad",
+    description:
+      "Leading natural stone supplier and manufacturer in Ahmedabad, Gujarat. Sourcing and crafting premium marble, granite, CNC textures, onyx, sandstone, and wall cladding.",
+    url: "https://rocks-studio.com",
+    siteName: "Rocks Studio",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rocks Studio — Natural Stone Supplier in Ahmedabad",
+    description:
+      "Leading natural stone supplier and manufacturer in Ahmedabad, Gujarat. Premium marble, granite, CNC textures, onyx, sandstone, and wall cladding.",
+  },
+};
 
 export default async function HomePage() {
   const [categories, featuredProducts, testimonials, hero, aboutPreview, applicationTiles, whyStudio] =

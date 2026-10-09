@@ -5,9 +5,35 @@ import QuoteCTA from "@/components/ui/QuoteCTA";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Process | Rocks Studio",
+  title: "Natural Stone Processing & Finishes | Rocks Studio",
   description:
-    "Explore how Rocks Studio sources, processes and finishes premium natural stone for architectural and interior applications.",
+    "Discover how Rocks Studio sources, processes, and finishes natural stone in Ahmedabad. From quarry extraction to leathered, polished, flamed, honed, and CNC surface textures.",
+  keywords: [
+    "natural stone processing",
+    "stone finishes",
+    "leathered granite finish",
+    "polished marble finish",
+    "natural stone manufacturer Ahmedabad",
+    "stone slab processing",
+  ],
+  alternates: {
+    canonical: "/process",
+  },
+  openGraph: {
+    title: "Natural Stone Processing & Finishes | Rocks Studio",
+    description:
+      "Discover how Rocks Studio sources, processes, and finishes natural stone in Ahmedabad. From quarry extraction to leathered, polished, flamed, honed, and CNC surface textures.",
+    url: "https://rocks-studio.com/process",
+    siteName: "Rocks Studio",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Natural Stone Processing & Finishes | Rocks Studio",
+    description:
+      "Discover how Rocks Studio sources, processes, and finishes natural stone in Ahmedabad.",
+  },
 };
 
 const NATURAL_STONE_DATA = {

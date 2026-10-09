@@ -1,5 +1,11 @@
+// ============================================================================
+// 1. TYPES & INTERFACES
+// ============================================================================
 import type { ProductCategory, ProductSubcategory, Product } from "@/types";
 
+// ============================================================================
+// 4. PRODUCT / MATERIAL RECORDS
+// ============================================================================
 export const rawCatalogueStructure = {
   CNC: {
     "CNC Inlay": [
@@ -191,15 +197,9 @@ export const rawCatalogueStructure = {
   }
 };
 
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/[\s_-]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
+// ============================================================================
+// 2. CATEGORY DEFINITIONS
+// ============================================================================
 const sampleMaterialImages: Record<string, string> = {
   granite: "/HeroPage/Granite_1.png",
   cnc: "/HeroPage/CNC_1.jpg",
@@ -286,9 +286,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Adhunik Brown - Granite",
     "description": "Premium natural Granite material: Adhunik Brown.",
-    "heroImage": "/products/rocks-crumbs/Adhunik%20brown.png",
+    "heroImage": "/products/Granite-fix/Adhunik brown.png",
     "gallery": [
-      "/products/rocks-crumbs/Adhunik%20brown.png"
+      "/products/Granite-fix/Adhunik brown.png"
     ],
     "featured": false,
     "sortOrder": 1
@@ -301,9 +301,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Astodia Ivory - Granite",
     "description": "Premium natural Granite material: Astodia Ivory.",
-    "heroImage": "/products/Granite/Astodia%20Ivory.jpeg",
+    "heroImage": "/products/Granite-fix/Astodia Ivory.jpeg",
     "gallery": [
-      "/products/Granite/Astodia%20Ivory.jpeg"
+      "/products/Granite-fix/Astodia Ivory.jpeg"
     ],
     "featured": false,
     "sortOrder": 2
@@ -316,9 +316,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Bess Paradise - Granite",
     "description": "Premium natural Granite material: Bess Paradise.",
-    "heroImage": "/products/rocks-crumbs/bess%20paradise.png",
+    "heroImage": "/products/Granite-fix/bess paradise.png",
     "gallery": [
-      "/products/rocks-crumbs/bess%20paradise.png"
+      "/products/Granite-fix/bess paradise.png"
     ],
     "featured": false,
     "sortOrder": 3
@@ -331,9 +331,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Black Marquina R - Granite",
     "description": "Premium natural Granite material: Black Marquina R.",
-    "heroImage": "/products/Granite/Black%20Marquina%20R.png",
+    "heroImage": "/products/Granite-fix/Black Marquina R.png",
     "gallery": [
-      "/products/Granite/Black%20Marquina%20R.png"
+      "/products/Granite-fix/Black Marquina R.png"
     ],
     "featured": false,
     "sortOrder": 4
@@ -346,9 +346,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Burgandy White  - Granite",
     "description": "Premium natural Granite material: Burgandy White .",
-    "heroImage": "/products/Granite/Burgandy%20White%20.jpeg",
+    "heroImage": "/products/Granite-fix/Burgandy White .jpeg",
     "gallery": [
-      "/products/Granite/Burgandy%20White%20.jpeg"
+      "/products/Granite-fix/Burgandy White .jpeg"
     ],
     "featured": false,
     "sortOrder": 5
@@ -361,9 +361,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Classic Ivory - Granite",
     "description": "Premium natural Granite material: Classic Ivory.",
-    "heroImage": "/products/Granite/Classic%20Ivory.png",
+    "heroImage": "/products/Granite-fix/Classic Ivory.png",
     "gallery": [
-      "/products/Granite/Classic%20Ivory.png"
+      "/products/Granite-fix/Classic Ivory.png"
     ],
     "featured": false,
     "sortOrder": 6
@@ -376,9 +376,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Coffee Pearl - Granite",
     "description": "Premium natural Granite material: Coffee Pearl.",
-    "heroImage": "/products/Granite/Coffee%20Pearl.jpeg",
+    "heroImage": "/products/Granite-fix/Coffee Pearl.jpeg",
     "gallery": [
-      "/products/Granite/Coffee%20Pearl.jpeg"
+      "/products/Granite-fix/Coffee Pearl.jpeg"
     ],
     "featured": false,
     "sortOrder": 7
@@ -391,9 +391,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "D Gray - Granite",
     "description": "Premium natural Granite material: D Gray.",
-    "heroImage": "/products/Granite/D%20Gray.jpeg",
+    "heroImage": "/products/Granite-fix/D Gray.jpeg",
     "gallery": [
-      "/products/Granite/D%20Gray.jpeg"
+      "/products/Granite-fix/D Gray.jpeg"
     ],
     "featured": false,
     "sortOrder": 8
@@ -406,9 +406,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Diamond Pearl - Granite",
     "description": "Premium natural Granite material: Diamond Pearl.",
-    "heroImage": "/products/Granite/Diamond%20Pearl.jpeg",
+    "heroImage": "/products/Granite-fix/Diamond Pearl.jpeg",
     "gallery": [
-      "/products/Granite/Diamond%20Pearl.jpeg"
+      "/products/Granite-fix/Diamond Pearl.jpeg"
     ],
     "featured": false,
     "sortOrder": 9
@@ -421,9 +421,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Dyna Blue  - Granite",
     "description": "Premium natural Granite material: Dyna Blue .",
-    "heroImage": "/products/rocks-crumbs/dyna%20blue%20.png",
+    "heroImage": "/products/Granite-fix/dyna blue .png",
     "gallery": [
-      "/products/rocks-crumbs/dyna%20blue%20.png"
+      "/products/Granite-fix/dyna blue .png"
     ],
     "featured": false,
     "sortOrder": 10
@@ -436,9 +436,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Forest Brown - Granite",
     "description": "Premium natural Granite material: Forest Brown.",
-    "heroImage": "/products/Granite/Forest%20Brown.jpeg",
+    "heroImage": "/products/Granite-fix/Forest Brown.jpeg",
     "gallery": [
-      "/products/Granite/Forest%20Brown.jpeg"
+      "/products/Granite-fix/Forest Brown.jpeg"
     ],
     "featured": false,
     "sortOrder": 11
@@ -451,9 +451,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Godhra gray - Granite",
     "description": "Premium natural Granite material: Godhra gray.",
-    "heroImage": "/products/Granite/Godhra%20gray.jpeg",
+    "heroImage": "/products/Granite-fix/Godhra gray.jpeg",
     "gallery": [
-      "/products/Granite/Godhra%20gray.jpeg"
+      "/products/Granite-fix/Godhra gray.jpeg"
     ],
     "featured": true,
     "sortOrder": 12
@@ -466,9 +466,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Gray Paradise - Granite",
     "description": "Premium natural Granite material: Gray Paradise.",
-    "heroImage": "/products/rocks-crumbs/Gray%20paradise%20.png",
+    "heroImage": "/products/Granite-fix/Gray paradise .png",
     "gallery": [
-      "/products/rocks-crumbs/Gray%20paradise%20.png"
+      "/products/Granite-fix/Gray paradise .png"
     ],
     "featured": false,
     "sortOrder": 13
@@ -481,9 +481,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Hocco Brown  - Granite",
     "description": "Premium natural Granite material: Hocco Brown .",
-    "heroImage": "/products/Granite/Hocco%20Brown%20.jpeg",
+    "heroImage": "/products/Granite-fix/Hocco Brown .jpeg",
     "gallery": [
-      "/products/Granite/Hocco%20Brown%20.jpeg"
+      "/products/Granite-fix/Hocco Brown .jpeg"
     ],
     "featured": false,
     "sortOrder": 14
@@ -496,9 +496,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Kashmiri White - Granite",
     "description": "Premium natural Granite material: Kashmiri White.",
-    "heroImage": "/products/rocks-crumbs/kashmiri%20white.png",
+    "heroImage": "/products/Granite-fix/kashmiri white.png",
     "gallery": [
-      "/products/rocks-crumbs/kashmiri%20white.png"
+      "/products/Granite-fix/kashmiri white.png"
     ],
     "featured": false,
     "sortOrder": 15
@@ -511,9 +511,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Kotda Black - Granite",
     "description": "Premium natural Granite material: Kotda Black.",
-    "heroImage": "/products/Granite/Kotda%20Black.jpeg",
+    "heroImage": "/products/Granite-fix/Kotda Black.jpeg",
     "gallery": [
-      "/products/Granite/Kotda%20Black.jpeg"
+      "/products/Granite-fix/Kotda Black.jpeg"
     ],
     "featured": false,
     "sortOrder": 16
@@ -526,9 +526,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Kupam White - Granite",
     "description": "Premium natural Granite material: Kupam White.",
-    "heroImage": "/products/rocks-crumbs/kupam%20white.png",
+    "heroImage": "/products/Granite-fix/kupam white.png",
     "gallery": [
-      "/products/rocks-crumbs/kupam%20white.png"
+      "/products/Granite-fix/kupam white.png"
     ],
     "featured": false,
     "sortOrder": 17
@@ -541,9 +541,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Lakha Red - Granite",
     "description": "Premium natural Granite material: Lakha Red.",
-    "heroImage": "/products/rocks-crumbs/lakha%20red.png",
+    "heroImage": "/products/Granite-fix/lakha red.png",
     "gallery": [
-      "/products/rocks-crumbs/lakha%20red.png"
+      "/products/Granite-fix/lakha red.png"
     ],
     "featured": false,
     "sortOrder": 18
@@ -556,9 +556,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Lava Gray - Granite",
     "description": "Premium natural Granite material: Lava Gray.",
-    "heroImage": "/products/rocks-crumbs/lava%20gray.png",
+    "heroImage": "/products/Granite-fix/lava gray.png",
     "gallery": [
-      "/products/rocks-crumbs/lava%20gray.png"
+      "/products/Granite-fix/lava gray.png"
     ],
     "featured": false,
     "sortOrder": 19
@@ -571,9 +571,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Melton Brown - Granite",
     "description": "Premium natural Granite material: Melton Brown.",
-    "heroImage": "/products/Granite/Melton%20Brown.jpeg",
+    "heroImage": "/products/Granite-fix/Melton Brown.jpeg",
     "gallery": [
-      "/products/Granite/Melton%20Brown.jpeg"
+      "/products/Granite-fix/Melton Brown.jpeg"
     ],
     "featured": false,
     "sortOrder": 20
@@ -586,9 +586,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Mountain Brown - Granite",
     "description": "Premium natural Granite material: Mountain Brown.",
-    "heroImage": "/products/rocks-crumbs/mountain%20brown.png",
+    "heroImage": "/products/Granite-fix/mountain brown.png",
     "gallery": [
-      "/products/rocks-crumbs/mountain%20brown.png"
+      "/products/Granite-fix/mountain brown.png"
     ],
     "featured": false,
     "sortOrder": 21
@@ -601,9 +601,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "P White  - Granite",
     "description": "Premium natural Granite material: P White .",
-    "heroImage": "/products/Granite/P%20White%20.jpeg",
+    "heroImage": "/products/Granite-fix/P White .jpeg",
     "gallery": [
-      "/products/Granite/P%20White%20.jpeg"
+      "/products/Granite-fix/P White .jpeg"
     ],
     "featured": false,
     "sortOrder": 22
@@ -616,9 +616,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Pebble Black - Granite",
     "description": "Premium natural Granite material: Pebble Black.",
-    "heroImage": "/products/Granite/Pebble%20Black.jpeg",
+    "heroImage": "/products/Granite-fix/Pebble Black.jpeg",
     "gallery": [
-      "/products/Granite/Pebble%20Black.jpeg"
+      "/products/Granite-fix/Pebble Black.jpeg"
     ],
     "featured": false,
     "sortOrder": 23
@@ -631,9 +631,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Platinum Gray - Granite",
     "description": "Premium natural Granite material: Platinum Gray.",
-    "heroImage": "/products/Granite/Platinum%20Gray.jpeg",
+    "heroImage": "/products/Granite-fix/Platinum Gray.jpeg",
     "gallery": [
-      "/products/Granite/Platinum%20Gray.jpeg"
+      "/products/Granite-fix/Platinum Gray.jpeg"
     ],
     "featured": true,
     "sortOrder": 24
@@ -646,9 +646,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Prada Gold - Granite",
     "description": "Premium natural Granite material: Prada Gold.",
-    "heroImage": "/products/Granite/Prada%20Gold.jpeg",
+    "heroImage": "/products/Granite-fix/Prada Gold.jpeg",
     "gallery": [
-      "/products/Granite/Prada%20Gold.jpeg"
+      "/products/Granite-fix/Prada Gold.jpeg"
     ],
     "featured": false,
     "sortOrder": 25
@@ -661,9 +661,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Rajyog Brown - Granite",
     "description": "Premium natural Granite material: Rajyog Brown.",
-    "heroImage": "/products/rocks-crumbs/Rajyog%20brown.png",
+    "heroImage": "/products/Granite-fix/Rajyog brown.png",
     "gallery": [
-      "/products/rocks-crumbs/Rajyog%20brown.png"
+      "/products/Granite-fix/Rajyog brown.png"
     ],
     "featured": false,
     "sortOrder": 26
@@ -676,9 +676,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Raw Silk - Granite",
     "description": "Premium natural Granite material: Raw Silk.",
-    "heroImage": "/products/rocks-crumbs/Raw%20silk.png",
+    "heroImage": "/products/Granite-fix/Raw silk.png",
     "gallery": [
-      "/products/rocks-crumbs/Raw%20silk.png"
+      "/products/Granite-fix/Raw silk.png"
     ],
     "featured": false,
     "sortOrder": 27
@@ -691,9 +691,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "River White - Granite",
     "description": "Premium natural Granite material: River White.",
-    "heroImage": "/products/rocks-crumbs/River%20white.png",
+    "heroImage": "/products/Granite-fix/River white.png",
     "gallery": [
-      "/products/rocks-crumbs/River%20white.png"
+      "/products/Granite-fix/River white.png"
     ],
     "featured": false,
     "sortOrder": 28
@@ -706,9 +706,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Royal Brown - Granite",
     "description": "Premium natural Granite material: Royal Brown.",
-    "heroImage": "/products/rocks-crumbs/Royal%20brown.png",
+    "heroImage": "/products/Granite-fix/Royal brown.png",
     "gallery": [
-      "/products/rocks-crumbs/Royal%20brown.png"
+      "/products/Granite-fix/Royal brown.png"
     ],
     "featured": false,
     "sortOrder": 29
@@ -721,9 +721,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Royal Gold - Granite",
     "description": "Premium natural Granite material: Royal Gold.",
-    "heroImage": "/products/rocks-crumbs/royal%20gold.png",
+    "heroImage": "/products/Granite-fix/royal gold.png",
     "gallery": [
-      "/products/rocks-crumbs/royal%20gold.png"
+      "/products/Granite-fix/royal gold.png"
     ],
     "featured": false,
     "sortOrder": 30
@@ -736,9 +736,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "SK Blue - Granite",
     "description": "Premium natural Granite material: SK Blue.",
-    "heroImage": "/products/Granite/SK%20Blue.png",
+    "heroImage": "/products/Granite-fix/SK Blue.png",
     "gallery": [
-      "/products/Granite/SK%20Blue.png"
+      "/products/Granite-fix/SK Blue.png"
     ],
     "featured": false,
     "sortOrder": 31
@@ -751,9 +751,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Silky Silver - Granite",
     "description": "Premium natural Granite material: Silky Silver.",
-    "heroImage": "/products/rocks-crumbs/silky%20silver.png",
+    "heroImage": "/products/Granite-fix/silky silver.png",
     "gallery": [
-      "/products/rocks-crumbs/silky%20silver.png"
+      "/products/Granite-fix/silky silver.png"
     ],
     "featured": false,
     "sortOrder": 32
@@ -766,9 +766,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Silver River - Granite",
     "description": "Premium natural Granite material: Silver River.",
-    "heroImage": "/products/Granite/Silver%20River.jpeg",
+    "heroImage": "/products/Granite-fix/Silver River.jpeg",
     "gallery": [
-      "/products/Granite/Silver%20River.jpeg"
+      "/products/Granite-fix/Silver River.jpeg"
     ],
     "featured": false,
     "sortOrder": 33
@@ -781,9 +781,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Steel gray - Granite",
     "description": "Premium natural Granite material: Steel gray.",
-    "heroImage": "/products/rocks-crumbs/steel%20gray%20.png",
+    "heroImage": "/products/Granite-fix/steel gray .png",
     "gallery": [
-      "/products/rocks-crumbs/steel%20gray%20.png"
+      "/products/Granite-fix/steel gray .png"
     ],
     "featured": false,
     "sortOrder": 34
@@ -796,9 +796,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Swiss Brown - Granite",
     "description": "Premium natural Granite material: Swiss Brown.",
-    "heroImage": "/products/rocks-crumbs/swiss%20brown.png",
+    "heroImage": "/products/Granite-fix/swiss brown.png",
     "gallery": [
-      "/products/rocks-crumbs/swiss%20brown.png"
+      "/products/Granite-fix/swiss brown.png"
     ],
     "featured": false,
     "sortOrder": 35
@@ -811,9 +811,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Symphony Ivory  - Granite",
     "description": "Premium natural Granite material: Symphony Ivory .",
-    "heroImage": "/products/Granite/Symphony%20Ivory%20.jpeg",
+    "heroImage": "/products/Granite-fix/Symphony Ivory .jpeg",
     "gallery": [
-      "/products/Granite/Symphony%20Ivory%20.jpeg"
+      "/products/Granite-fix/Symphony Ivory .jpeg"
     ],
     "featured": true,
     "sortOrder": 36
@@ -826,9 +826,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Walet Paradise - Granite",
     "description": "Premium natural Granite material: Walet Paradise.",
-    "heroImage": "/products/rocks-crumbs/walet%20paradise.png",
+    "heroImage": "/products/Granite-fix/walet paradise.png",
     "gallery": [
-      "/products/rocks-crumbs/walet%20paradise.png"
+      "/products/Granite-fix/walet paradise.png"
     ],
     "featured": false,
     "sortOrder": 37
@@ -841,9 +841,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "YTD 6 - Granite",
     "description": "Premium natural Granite material: YTD 6.",
-    "heroImage": "/products/Granite/YTD%206.jpeg",
+    "heroImage": "/products/Granite-fix/YTD 6.jpeg",
     "gallery": [
-      "/products/Granite/YTD%206.jpeg"
+      "/products/Granite-fix/YTD 6.jpeg"
     ],
     "featured": false,
     "sortOrder": 38
@@ -856,9 +856,9 @@ const realProducts: Product[] = [
     "subcategory": "granite-collection",
     "shortDescription": "Zubrana Gray - Granite",
     "description": "Premium natural Granite material: Zubrana Gray.",
-    "heroImage": "/products/Granite/Zubrana%20Gray.jpeg",
+    "heroImage": "/products/Granite-fix/Zubrana Gray.jpeg",
     "gallery": [
-      "/products/Granite/Zubrana%20Gray.jpeg"
+      "/products/Granite-fix/Zubrana Gray.jpeg"
     ],
     "featured": false,
     "sortOrder": 39
@@ -871,9 +871,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Abu Black  - Marble",
     "description": "Premium natural Marble material: Abu Black .",
-    "heroImage": "/products/Marbles/Abu%20Black%20.png",
+    "heroImage": "/products/Marbles/Abu Black .png",
     "gallery": [
-      "/products/Marbles/Abu%20Black%20.png"
+      "/products/Marbles/Abu Black .png"
     ],
     "featured": false,
     "sortOrder": 40
@@ -886,9 +886,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Agora Beige - Marble",
     "description": "Premium natural Marble material: Agora Beige.",
-    "heroImage": "/products/Marbles/Agora%20Beige.png",
+    "heroImage": "/products/Marbles/Agora Beige.png",
     "gallery": [
-      "/products/Marbles/Agora%20Beige.png"
+      "/products/Marbles/Agora Beige.png"
     ],
     "featured": false,
     "sortOrder": 41
@@ -901,9 +901,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Arctic White (B) - Marble",
     "description": "Premium natural Marble material: Arctic White (B).",
-    "heroImage": "/products/Marbles/Arctic%20White%20%28B%29.png",
+    "heroImage": "/products/Marbles/Arctic White (B).png",
     "gallery": [
-      "/products/Marbles/Arctic%20White%20%28B%29.png"
+      "/products/Marbles/Arctic White (B).png"
     ],
     "featured": false,
     "sortOrder": 42
@@ -916,9 +916,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Armani Bronze - Marble",
     "description": "Premium natural Marble material: Armani Bronze.",
-    "heroImage": "/products/Marbles/Armani%20Bronze.png",
+    "heroImage": "/products/Marbles/Armani Bronze.png",
     "gallery": [
-      "/products/Marbles/Armani%20Bronze.png"
+      "/products/Marbles/Armani Bronze.png"
     ],
     "featured": false,
     "sortOrder": 43
@@ -931,9 +931,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Armani Brown (It) - Marble",
     "description": "Premium natural Marble material: Armani Brown (It).",
-    "heroImage": "/products/Marbles/Armani%20Brown%20%28It%29.png",
+    "heroImage": "/products/Marbles/Armani Brown (It).png",
     "gallery": [
-      "/products/Marbles/Armani%20Brown%20%28It%29.png"
+      "/products/Marbles/Armani Brown (It).png"
     ],
     "featured": false,
     "sortOrder": 44
@@ -946,9 +946,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Ash Gray (IT) - Marble",
     "description": "Premium natural Marble material: Ash Gray (IT).",
-    "heroImage": "/products/Marbles/Ash%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Ash Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Ash%20Gray%20%28IT%29.png"
+      "/products/Marbles/Ash Gray (IT).png"
     ],
     "featured": false,
     "sortOrder": 45
@@ -961,9 +961,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Avocado Leather finish (B) - Marble",
     "description": "Premium natural Marble material: Avocado Leather finish (B).",
-    "heroImage": "/products/Marbles/Avocado%20Leather%20finish%20%28B%29.png",
+    "heroImage": "/products/Marbles/Avocado Leather finish (B).png",
     "gallery": [
-      "/products/Marbles/Avocado%20Leather%20finish%20%28B%29.png"
+      "/products/Marbles/Avocado Leather finish (B).png"
     ],
     "featured": false,
     "sortOrder": 46
@@ -976,9 +976,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Bardilo Gray (IT) - Marble",
     "description": "Premium natural Marble material: Bardilo Gray (IT).",
-    "heroImage": "/products/Marbles/Bardilo%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Bardilo Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Bardilo%20Gray%20%28IT%29.png"
+      "/products/Marbles/Bardilo Gray (IT).png"
     ],
     "featured": false,
     "sortOrder": 47
@@ -991,9 +991,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Belecimo (IT) - Marble",
     "description": "Premium natural Marble material: Belecimo (IT).",
-    "heroImage": "/products/Marbles/Belecimo%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Belecimo (IT).png",
     "gallery": [
-      "/products/Marbles/Belecimo%20%28IT%29.png"
+      "/products/Marbles/Belecimo (IT).png"
     ],
     "featured": true,
     "sortOrder": 48
@@ -1006,9 +1006,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Belecimo New (IT) - Marble",
     "description": "Premium natural Marble material: Belecimo New (IT).",
-    "heroImage": "/products/Marbles/Belecimo%20New%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Belecimo New (IT).png",
     "gallery": [
-      "/products/Marbles/Belecimo%20New%20%28IT%29.png"
+      "/products/Marbles/Belecimo New (IT).png"
     ],
     "featured": false,
     "sortOrder": 49
@@ -1021,9 +1021,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Black (IT) - Marble",
     "description": "Premium natural Marble material: Black (IT).",
-    "heroImage": "/products/Marbles/Black%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Black (IT).png",
     "gallery": [
-      "/products/Marbles/Black%20%28IT%29.png"
+      "/products/Marbles/Black (IT).png"
     ],
     "featured": false,
     "sortOrder": 50
@@ -1036,9 +1036,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Black Antique - Marble",
     "description": "Premium natural Marble material: Black Antique.",
-    "heroImage": "/products/Marbles/Black%20Antique.png",
+    "heroImage": "/products/Marbles/Black Antique.png",
     "gallery": [
-      "/products/Marbles/Black%20Antique.png"
+      "/products/Marbles/Black Antique.png"
     ],
     "featured": false,
     "sortOrder": 51
@@ -1051,9 +1051,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Black Marquina  - Marble",
     "description": "Premium natural Marble material: Black Marquina .",
-    "heroImage": "/products/Marbles/Black%20Marquina%20.png",
+    "heroImage": "/products/Marbles/Black Marquina .png",
     "gallery": [
-      "/products/Marbles/Black%20Marquina%20.png"
+      "/products/Marbles/Black Marquina .png"
     ],
     "featured": false,
     "sortOrder": 52
@@ -1066,9 +1066,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Black Rose (IT) - Marble",
     "description": "Premium natural Marble material: Black Rose (IT).",
-    "heroImage": "/products/Marbles/Black%20Rose%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Black Rose (IT).png",
     "gallery": [
-      "/products/Marbles/Black%20Rose%20%28IT%29.png"
+      "/products/Marbles/Black Rose (IT).png"
     ],
     "featured": false,
     "sortOrder": 53
@@ -1081,9 +1081,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Blue Bresia(IT) - Marble",
     "description": "Premium natural Marble material: Blue Bresia(IT).",
-    "heroImage": "/products/Marbles/Blue%20Bresia%28IT%29.png",
+    "heroImage": "/products/Marbles/Blue Bresia(IT).png",
     "gallery": [
-      "/products/Marbles/Blue%20Bresia%28IT%29.png"
+      "/products/Marbles/Blue Bresia(IT).png"
     ],
     "featured": false,
     "sortOrder": 54
@@ -1096,9 +1096,9 @@ const realProducts: Product[] = [
     "subcategory": "yet-to-decide",
     "shortDescription": "Brazillian YTD 1 - Marble",
     "description": "Premium natural Marble material: Brazillian YTD 1.",
-    "heroImage": "/products/Marbles/Brazillian%20YTD%201.png",
+    "heroImage": "/products/Marbles/Brazillian YTD 1.png",
     "gallery": [
-      "/products/Marbles/Brazillian%20YTD%201.png"
+      "/products/Marbles/Brazillian YTD 1.png"
     ],
     "featured": false,
     "sortOrder": 55
@@ -1111,9 +1111,9 @@ const realProducts: Product[] = [
     "subcategory": "yet-to-decide",
     "shortDescription": "CNC Fluted (INDIAN) YTD 2 - Marble",
     "description": "Premium natural Marble material: CNC Fluted (INDIAN) YTD 2.",
-    "heroImage": "/products/Marbles/CNC%20Fluted%20%28INDIAN%29%20YTD%202.png",
+    "heroImage": "/products/Marbles/CNC Fluted (INDIAN) YTD 2.png",
     "gallery": [
-      "/products/Marbles/CNC%20Fluted%20%28INDIAN%29%20YTD%202.png"
+      "/products/Marbles/CNC Fluted (INDIAN) YTD 2.png"
     ],
     "featured": false,
     "sortOrder": 56
@@ -1126,9 +1126,9 @@ const realProducts: Product[] = [
     "subcategory": "yet-to-decide",
     "shortDescription": "CNC White YTD - Marble",
     "description": "Premium natural Marble material: CNC White YTD.",
-    "heroImage": "/products/Marbles/CNC%20White%20YTD.png",
+    "heroImage": "/products/Marbles/CNC White YTD.png",
     "gallery": [
-      "/products/Marbles/CNC%20White%20YTD.png"
+      "/products/Marbles/CNC White YTD.png"
     ],
     "featured": false,
     "sortOrder": 57
@@ -1141,9 +1141,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Calcutta White (B) - Marble",
     "description": "Premium natural Marble material: Calcutta White (B).",
-    "heroImage": "/products/Marbles/Calcutta%20White%20%28B%29.png",
+    "heroImage": "/products/Marbles/Calcutta White (B).png",
     "gallery": [
-      "/products/Marbles/Calcutta%20White%20%28B%29.png"
+      "/products/Marbles/Calcutta White (B).png"
     ],
     "featured": false,
     "sortOrder": 58
@@ -1156,9 +1156,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Camel Brown (IT) - Marble",
     "description": "Premium natural Marble material: Camel Brown (IT).",
-    "heroImage": "/products/Marbles/Camel%20Brown%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Camel Brown (IT).png",
     "gallery": [
-      "/products/Marbles/Camel%20Brown%20%28IT%29.png"
+      "/products/Marbles/Camel Brown (IT).png"
     ],
     "featured": false,
     "sortOrder": 59
@@ -1171,9 +1171,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Cardian Gray (IT) - Marble",
     "description": "Premium natural Marble material: Cardian Gray (IT).",
-    "heroImage": "/products/Marbles/Cardian%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Cardian Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Cardian%20Gray%20%28IT%29.png"
+      "/products/Marbles/Cardian Gray (IT).png"
     ],
     "featured": true,
     "sortOrder": 60
@@ -1186,9 +1186,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Cora Cabana (B) - Marble",
     "description": "Premium natural Marble material: Cora Cabana (B).",
-    "heroImage": "/products/Marbles/Cora%20Cabana%20%28B%29.png",
+    "heroImage": "/products/Marbles/Cora Cabana (B).png",
     "gallery": [
-      "/products/Marbles/Cora%20Cabana%20%28B%29.png"
+      "/products/Marbles/Cora Cabana (B).png"
     ],
     "featured": false,
     "sortOrder": 61
@@ -1201,9 +1201,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Cream Italian  - Marble",
     "description": "Premium natural Marble material: Cream Italian .",
-    "heroImage": "/products/Marbles/Cream%20Italian%20.png",
+    "heroImage": "/products/Marbles/Cream Italian .png",
     "gallery": [
-      "/products/Marbles/Cream%20Italian%20.png"
+      "/products/Marbles/Cream Italian .png"
     ],
     "featured": false,
     "sortOrder": 62
@@ -1216,9 +1216,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Cream Karaman (IT) - Marble",
     "description": "Premium natural Marble material: Cream Karaman (IT).",
-    "heroImage": "/products/Marbles/Cream%20Karaman%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Cream Karaman (IT).png",
     "gallery": [
-      "/products/Marbles/Cream%20Karaman%20%28IT%29.png"
+      "/products/Marbles/Cream Karaman (IT).png"
     ],
     "featured": false,
     "sortOrder": 63
@@ -1231,9 +1231,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Crystal Lizato (B) - Marble",
     "description": "Premium natural Marble material: Crystal Lizato (B).",
-    "heroImage": "/products/Marbles/Crystal%20Lizato%20%28B%29.png",
+    "heroImage": "/products/Marbles/Crystal Lizato (B).png",
     "gallery": [
-      "/products/Marbles/Crystal%20Lizato%20%28B%29.png"
+      "/products/Marbles/Crystal Lizato (B).png"
     ],
     "featured": false,
     "sortOrder": 64
@@ -1246,9 +1246,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Cygnus Black (B) - Marble",
     "description": "Premium natural Marble material: Cygnus Black (B).",
-    "heroImage": "/products/Marbles/Cygnus%20Black%20%28B%29.png",
+    "heroImage": "/products/Marbles/Cygnus Black (B).png",
     "gallery": [
-      "/products/Marbles/Cygnus%20Black%20%28B%29.png"
+      "/products/Marbles/Cygnus Black (B).png"
     ],
     "featured": false,
     "sortOrder": 65
@@ -1261,9 +1261,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Emotion Gray (IT) - Marble",
     "description": "Premium natural Marble material: Emotion Gray (IT).",
-    "heroImage": "/products/Marbles/Emotion%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Emotion Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Emotion%20Gray%20%28IT%29.png"
+      "/products/Marbles/Emotion Gray (IT).png"
     ],
     "featured": false,
     "sortOrder": 66
@@ -1276,9 +1276,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Ess Gray (IT) - Marble",
     "description": "Premium natural Marble material: Ess Gray (IT).",
-    "heroImage": "/products/Marbles/Ess%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Ess Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Ess%20Gray%20%28IT%29.png"
+      "/products/Marbles/Ess Gray (IT).png"
     ],
     "featured": false,
     "sortOrder": 67
@@ -1291,9 +1291,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Extreme Gold (B) - Marble",
     "description": "Premium natural Marble material: Extreme Gold (B).",
-    "heroImage": "/products/Marbles/Extreme%20Gold%20%28B%29.png",
+    "heroImage": "/products/Marbles/Extreme Gold (B).png",
     "gallery": [
-      "/products/Marbles/Extreme%20Gold%20%28B%29.png"
+      "/products/Marbles/Extreme Gold (B).png"
     ],
     "featured": false,
     "sortOrder": 68
@@ -1306,9 +1306,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Fairyland Blue (IT) - Marble",
     "description": "Premium natural Marble material: Fairyland Blue (IT).",
-    "heroImage": "/products/Marbles/Fairyland%20Blue%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Fairyland Blue (IT).png",
     "gallery": [
-      "/products/Marbles/Fairyland%20Blue%20%28IT%29.png"
+      "/products/Marbles/Fairyland Blue (IT).png"
     ],
     "featured": false,
     "sortOrder": 69
@@ -1321,9 +1321,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Fendi Gray (IT) - Marble",
     "description": "Premium natural Marble material: Fendi Gray (IT).",
-    "heroImage": "/products/Marbles/Fendi%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Fendi Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Fendi%20Gray%20%28IT%29.png"
+      "/products/Marbles/Fendi Gray (IT).png"
     ],
     "featured": false,
     "sortOrder": 70
@@ -1336,9 +1336,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "French Black (B) - Marble",
     "description": "Premium natural Marble material: French Black (B).",
-    "heroImage": "/products/Marbles/French%20Black%20%28B%29.png",
+    "heroImage": "/products/Marbles/French Black (B).png",
     "gallery": [
-      "/products/Marbles/French%20Black%20%28B%29.png"
+      "/products/Marbles/French Black (B).png"
     ],
     "featured": false,
     "sortOrder": 71
@@ -1351,9 +1351,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Givenchy white (B) - Marble",
     "description": "Premium natural Marble material: Givenchy white (B).",
-    "heroImage": "/products/Marbles/Givenchy%20white%20%28B%29.png",
+    "heroImage": "/products/Marbles/Givenchy white (B).png",
     "gallery": [
-      "/products/Marbles/Givenchy%20white%20%28B%29.png"
+      "/products/Marbles/Givenchy white (B).png"
     ],
     "featured": true,
     "sortOrder": 72
@@ -1366,9 +1366,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Glitter Brown (B) - Marble",
     "description": "Premium natural Marble material: Glitter Brown (B).",
-    "heroImage": "/products/Marbles/Glitter%20Brown%20%28B%29.png",
+    "heroImage": "/products/Marbles/Glitter Brown (B).png",
     "gallery": [
-      "/products/Marbles/Glitter%20Brown%20%28B%29.png"
+      "/products/Marbles/Glitter Brown (B).png"
     ],
     "featured": false,
     "sortOrder": 73
@@ -1381,9 +1381,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Golden Spider (IT) - Marble",
     "description": "Premium natural Marble material: Golden Spider (IT).",
-    "heroImage": "/products/Marbles/Golden%20Spider%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Golden Spider (IT).png",
     "gallery": [
-      "/products/Marbles/Golden%20Spider%20%28IT%29.png"
+      "/products/Marbles/Golden Spider (IT).png"
     ],
     "featured": false,
     "sortOrder": 74
@@ -1396,9 +1396,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Gray Horizon (B) - Marble",
     "description": "Premium natural Marble material: Gray Horizon (B).",
-    "heroImage": "/products/Marbles/Gray%20Horizon%20%28B%29.png",
+    "heroImage": "/products/Marbles/Gray Horizon (B).png",
     "gallery": [
-      "/products/Marbles/Gray%20Horizon%20%28B%29.png"
+      "/products/Marbles/Gray Horizon (B).png"
     ],
     "featured": false,
     "sortOrder": 75
@@ -1411,9 +1411,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Gray Milano (IT) - Marble",
     "description": "Premium natural Marble material: Gray Milano (IT).",
-    "heroImage": "/products/Marbles/Gray%20Milano%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Gray Milano (IT).png",
     "gallery": [
-      "/products/Marbles/Gray%20Milano%20%28IT%29.png"
+      "/products/Marbles/Gray Milano (IT).png"
     ],
     "featured": false,
     "sortOrder": 76
@@ -1426,9 +1426,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Gray wave (IT) - Marble",
     "description": "Premium natural Marble material: Gray wave (IT).",
-    "heroImage": "/products/Marbles/Gray%20wave%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Gray wave (IT).png",
     "gallery": [
-      "/products/Marbles/Gray%20wave%20%28IT%29.png"
+      "/products/Marbles/Gray wave (IT).png"
     ],
     "featured": false,
     "sortOrder": 77
@@ -1441,9 +1441,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Green Canyon (B) - Marble",
     "description": "Premium natural Marble material: Green Canyon (B).",
-    "heroImage": "/products/Marbles/Green%20Canyon%20%28B%29.png",
+    "heroImage": "/products/Marbles/Green Canyon (B).png",
     "gallery": [
-      "/products/Marbles/Green%20Canyon%20%28B%29.png"
+      "/products/Marbles/Green Canyon (B).png"
     ],
     "featured": false,
     "sortOrder": 78
@@ -1456,9 +1456,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Ice Gray (IT) - Marble",
     "description": "Premium natural Marble material: Ice Gray (IT).",
-    "heroImage": "/products/Marbles/Ice%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Ice Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Ice%20Gray%20%28IT%29.png"
+      "/products/Marbles/Ice Gray (IT).png"
     ],
     "featured": false,
     "sortOrder": 79
@@ -1471,9 +1471,9 @@ const realProducts: Product[] = [
     "subcategory": "indian-marble",
     "shortDescription": "Imperial Gray (INDIAN) - Marble",
     "description": "Premium natural Marble material: Imperial Gray (INDIAN).",
-    "heroImage": "/products/Marbles/Imperial%20Gray%20%28INDIAN%29.png",
+    "heroImage": "/products/Marbles/Imperial Gray (INDIAN).png",
     "gallery": [
-      "/products/Marbles/Imperial%20Gray%20%28INDIAN%29.png"
+      "/products/Marbles/Imperial Gray (INDIAN).png"
     ],
     "featured": false,
     "sortOrder": 80
@@ -1486,9 +1486,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Lime Brown (IT) - Marble",
     "description": "Premium natural Marble material: Lime Brown (IT).",
-    "heroImage": "/products/Marbles/Lime%20Brown%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Lime Brown (IT).png",
     "gallery": [
-      "/products/Marbles/Lime%20Brown%20%28IT%29.png"
+      "/products/Marbles/Lime Brown (IT).png"
     ],
     "featured": false,
     "sortOrder": 81
@@ -1501,9 +1501,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Lime White  - Marble",
     "description": "Premium natural Marble material: Lime White .",
-    "heroImage": "/products/Marbles/Lime%20White%20.png",
+    "heroImage": "/products/Marbles/Lime White .png",
     "gallery": [
-      "/products/Marbles/Lime%20White%20.png"
+      "/products/Marbles/Lime White .png"
     ],
     "featured": false,
     "sortOrder": 82
@@ -1516,9 +1516,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "London Gray (B) - Marble",
     "description": "Premium natural Marble material: London Gray (B).",
-    "heroImage": "/products/Marbles/London%20Gray%20%28B%29.png",
+    "heroImage": "/products/Marbles/London Gray (B).png",
     "gallery": [
-      "/products/Marbles/London%20Gray%20%28B%29.png"
+      "/products/Marbles/London Gray (B).png"
     ],
     "featured": false,
     "sortOrder": 83
@@ -1531,9 +1531,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Luna Gray (IT) - Marble",
     "description": "Premium natural Marble material: Luna Gray (IT).",
-    "heroImage": "/products/Marbles/Luna%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Luna Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Luna%20Gray%20%28IT%29.png"
+      "/products/Marbles/Luna Gray (IT).png"
     ],
     "featured": true,
     "sortOrder": 84
@@ -1546,9 +1546,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Maori (B) - Marble",
     "description": "Premium natural Marble material: Maori (B).",
-    "heroImage": "/products/Marbles/Maori%20%28B%29.png",
+    "heroImage": "/products/Marbles/Maori (B).png",
     "gallery": [
-      "/products/Marbles/Maori%20%28B%29.png"
+      "/products/Marbles/Maori (B).png"
     ],
     "featured": false,
     "sortOrder": 85
@@ -1561,9 +1561,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Marco Polo - Marble",
     "description": "Premium natural Marble material: Marco Polo.",
-    "heroImage": "/products/Marbles/Marco%20Polo.png",
+    "heroImage": "/products/Marbles/Marco Polo.png",
     "gallery": [
-      "/products/Marbles/Marco%20Polo.png"
+      "/products/Marbles/Marco Polo.png"
     ],
     "featured": false,
     "sortOrder": 86
@@ -1576,9 +1576,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Micro angelo (IT) - Marble",
     "description": "Premium natural Marble material: Micro angelo (IT).",
-    "heroImage": "/products/Marbles/Micro%20angelo%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Micro angelo (IT).png",
     "gallery": [
-      "/products/Marbles/Micro%20angelo%20%28IT%29.png"
+      "/products/Marbles/Micro angelo (IT).png"
     ],
     "featured": false,
     "sortOrder": 87
@@ -1591,9 +1591,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Mocha gray (IT) - Marble",
     "description": "Premium natural Marble material: Mocha gray (IT).",
-    "heroImage": "/products/Marbles/Mocha%20gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Mocha gray (IT).png",
     "gallery": [
-      "/products/Marbles/Mocha%20gray%20%28IT%29.png"
+      "/products/Marbles/Mocha gray (IT).png"
     ],
     "featured": false,
     "sortOrder": 88
@@ -1606,9 +1606,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Moon Cream  - Marble",
     "description": "Premium natural Marble material: Moon Cream .",
-    "heroImage": "/products/Marbles/Moon%20Cream%20.png",
+    "heroImage": "/products/Marbles/Moon Cream .png",
     "gallery": [
-      "/products/Marbles/Moon%20Cream%20.png"
+      "/products/Marbles/Moon Cream .png"
     ],
     "featured": false,
     "sortOrder": 89
@@ -1621,9 +1621,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Moon Gray (IT) - Marble",
     "description": "Premium natural Marble material: Moon Gray (IT).",
-    "heroImage": "/products/Marbles/Moon%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Moon Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Moon%20Gray%20%28IT%29.png"
+      "/products/Marbles/Moon Gray (IT).png"
     ],
     "featured": false,
     "sortOrder": 90
@@ -1636,9 +1636,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Multi Red (IT) - Marble",
     "description": "Premium natural Marble material: Multi Red (IT).",
-    "heroImage": "/products/Marbles/Multi%20Red%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Multi Red (IT).png",
     "gallery": [
-      "/products/Marbles/Multi%20Red%20%28IT%29.png"
+      "/products/Marbles/Multi Red (IT).png"
     ],
     "featured": false,
     "sortOrder": 91
@@ -1651,9 +1651,9 @@ const realProducts: Product[] = [
     "subcategory": "indian-marble",
     "shortDescription": "Mystic Green (INDIAN EXOTIC) - Marble",
     "description": "Premium natural Marble material: Mystic Green (INDIAN EXOTIC).",
-    "heroImage": "/products/Marbles/Mystic%20Green%20%28INDIAN%20EXOTIC%29.png",
+    "heroImage": "/products/Marbles/Mystic Green (INDIAN EXOTIC).png",
     "gallery": [
-      "/products/Marbles/Mystic%20Green%20%28INDIAN%20EXOTIC%29.png"
+      "/products/Marbles/Mystic Green (INDIAN EXOTIC).png"
     ],
     "featured": false,
     "sortOrder": 92
@@ -1666,9 +1666,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Noche Travantine (IT) - Marble",
     "description": "Premium natural Marble material: Noche Travantine (IT).",
-    "heroImage": "/products/Marbles/Noche%20Travantine%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Noche Travantine (IT).png",
     "gallery": [
-      "/products/Marbles/Noche%20Travantine%20%28IT%29.png"
+      "/products/Marbles/Noche Travantine (IT).png"
     ],
     "featured": false,
     "sortOrder": 93
@@ -1681,9 +1681,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Nordic Gray (IT) - Marble",
     "description": "Premium natural Marble material: Nordic Gray (IT).",
-    "heroImage": "/products/Marbles/Nordic%20Gray%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Nordic Gray (IT).png",
     "gallery": [
-      "/products/Marbles/Nordic%20Gray%20%28IT%29.png"
+      "/products/Marbles/Nordic Gray (IT).png"
     ],
     "featured": false,
     "sortOrder": 94
@@ -1696,9 +1696,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "OCean Blue (B) - Marble",
     "description": "Premium natural Marble material: OCean Blue (B).",
-    "heroImage": "/products/Marbles/OCean%20Blue%20%28B%29.png",
+    "heroImage": "/products/Marbles/OCean Blue (B).png",
     "gallery": [
-      "/products/Marbles/OCean%20Blue%20%28B%29.png"
+      "/products/Marbles/OCean Blue (B).png"
     ],
     "featured": false,
     "sortOrder": 95
@@ -1711,9 +1711,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Ocean green (B) - Marble",
     "description": "Premium natural Marble material: Ocean green (B).",
-    "heroImage": "/products/Marbles/Ocean%20green%20%28B%29.png",
+    "heroImage": "/products/Marbles/Ocean green (B).png",
     "gallery": [
-      "/products/Marbles/Ocean%20green%20%28B%29.png"
+      "/products/Marbles/Ocean green (B).png"
     ],
     "featured": true,
     "sortOrder": 96
@@ -1726,9 +1726,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Panda White (IT) - Marble",
     "description": "Premium natural Marble material: Panda White (IT).",
-    "heroImage": "/products/Marbles/Panda%20White%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Panda White (IT).png",
     "gallery": [
-      "/products/Marbles/Panda%20White%20%28IT%29.png"
+      "/products/Marbles/Panda White (IT).png"
     ],
     "featured": false,
     "sortOrder": 97
@@ -1741,9 +1741,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Peach White P (B) - Marble",
     "description": "Premium natural Marble material: Peach White P (B).",
-    "heroImage": "/products/Marbles/Peach%20White%20P%20%28B%29.png",
+    "heroImage": "/products/Marbles/Peach White P (B).png",
     "gallery": [
-      "/products/Marbles/Peach%20White%20P%20%28B%29.png"
+      "/products/Marbles/Peach White P (B).png"
     ],
     "featured": false,
     "sortOrder": 98
@@ -1756,9 +1756,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Peach white (B) - Marble",
     "description": "Premium natural Marble material: Peach white (B).",
-    "heroImage": "/products/Marbles/Peach%20white%20%28B%29.png",
+    "heroImage": "/products/Marbles/Peach white (B).png",
     "gallery": [
-      "/products/Marbles/Peach%20white%20%28B%29.png"
+      "/products/Marbles/Peach white (B).png"
     ],
     "featured": false,
     "sortOrder": 99
@@ -1771,9 +1771,9 @@ const realProducts: Product[] = [
     "subcategory": "indian-marble",
     "shortDescription": "Pengia Indian Exotic  - Marble",
     "description": "Premium natural Marble material: Pengia Indian Exotic .",
-    "heroImage": "/products/Marbles/Pengia%20Indian%20Exotic%20.png",
+    "heroImage": "/products/Marbles/Pengia Indian Exotic .png",
     "gallery": [
-      "/products/Marbles/Pengia%20Indian%20Exotic%20.png"
+      "/products/Marbles/Pengia Indian Exotic .png"
     ],
     "featured": false,
     "sortOrder": 100
@@ -1786,9 +1786,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Polaris green (b) - Marble",
     "description": "Premium natural Marble material: Polaris green (b).",
-    "heroImage": "/products/Marbles/Polaris%20green%20%28b%29.png",
+    "heroImage": "/products/Marbles/Polaris green (b).png",
     "gallery": [
-      "/products/Marbles/Polaris%20green%20%28b%29.png"
+      "/products/Marbles/Polaris green (b).png"
     ],
     "featured": false,
     "sortOrder": 101
@@ -1801,9 +1801,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Pulpis Brown - Marble",
     "description": "Premium natural Marble material: Pulpis Brown.",
-    "heroImage": "/products/Marbles/Pulpis%20Brown.png",
+    "heroImage": "/products/Marbles/Pulpis Brown.png",
     "gallery": [
-      "/products/Marbles/Pulpis%20Brown.png"
+      "/products/Marbles/Pulpis Brown.png"
     ],
     "featured": false,
     "sortOrder": 102
@@ -1816,9 +1816,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Purple Nest (B) - Marble",
     "description": "Premium natural Marble material: Purple Nest (B).",
-    "heroImage": "/products/Marbles/Purple%20Nest%20%28B%29.png",
+    "heroImage": "/products/Marbles/Purple Nest (B).png",
     "gallery": [
-      "/products/Marbles/Purple%20Nest%20%28B%29.png"
+      "/products/Marbles/Purple Nest (B).png"
     ],
     "featured": false,
     "sortOrder": 103
@@ -1831,9 +1831,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Rafelo (B) - Marble",
     "description": "Premium natural Marble material: Rafelo (B).",
-    "heroImage": "/products/Marbles/Rafelo%20%28B%29.png",
+    "heroImage": "/products/Marbles/Rafelo (B).png",
     "gallery": [
-      "/products/Marbles/Rafelo%20%28B%29.png"
+      "/products/Marbles/Rafelo (B).png"
     ],
     "featured": false,
     "sortOrder": 104
@@ -1846,9 +1846,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Regal Beige (IT) - Marble",
     "description": "Premium natural Marble material: Regal Beige (IT).",
-    "heroImage": "/products/Marbles/Regal%20Beige%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Regal Beige (IT).png",
     "gallery": [
-      "/products/Marbles/Regal%20Beige%20%28IT%29.png"
+      "/products/Marbles/Regal Beige (IT).png"
     ],
     "featured": false,
     "sortOrder": 105
@@ -1861,9 +1861,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "SRK Black  - Marble",
     "description": "Premium natural Marble material: SRK Black .",
-    "heroImage": "/products/Marbles/SRK%20Black%20.png",
+    "heroImage": "/products/Marbles/SRK Black .png",
     "gallery": [
-      "/products/Marbles/SRK%20Black%20.png"
+      "/products/Marbles/SRK Black .png"
     ],
     "featured": false,
     "sortOrder": 106
@@ -1876,9 +1876,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Sangrila leather finish (B) - Marble",
     "description": "Premium natural Marble material: Sangrila leather finish (B).",
-    "heroImage": "/products/Marbles/Sangrila%20leather%20finish%20%28B%29.png",
+    "heroImage": "/products/Marbles/Sangrila leather finish (B).png",
     "gallery": [
-      "/products/Marbles/Sangrila%20leather%20finish%20%28B%29.png"
+      "/products/Marbles/Sangrila leather finish (B).png"
     ],
     "featured": false,
     "sortOrder": 107
@@ -1891,9 +1891,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Saran Koli  - Marble",
     "description": "Premium natural Marble material: Saran Koli .",
-    "heroImage": "/products/Marbles/Saran%20Koli%20.png",
+    "heroImage": "/products/Marbles/Saran Koli .png",
     "gallery": [
-      "/products/Marbles/Saran%20Koli%20.png"
+      "/products/Marbles/Saran Koli .png"
     ],
     "featured": true,
     "sortOrder": 108
@@ -1906,9 +1906,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Silver Traventine (IT) - Marble",
     "description": "Premium natural Marble material: Silver Traventine (IT).",
-    "heroImage": "/products/Marbles/Silver%20Traventine%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Silver Traventine (IT).png",
     "gallery": [
-      "/products/Marbles/Silver%20Traventine%20%28IT%29.png"
+      "/products/Marbles/Silver Traventine (IT).png"
     ],
     "featured": false,
     "sortOrder": 109
@@ -1921,9 +1921,9 @@ const realProducts: Product[] = [
     "subcategory": "indian-marble",
     "shortDescription": "Snake Black INDIAN  - Marble",
     "description": "Premium natural Marble material: Snake Black INDIAN .",
-    "heroImage": "/products/Marbles/Snake%20Black%20INDIAN%20.png",
+    "heroImage": "/products/Marbles/Snake Black INDIAN .png",
     "gallery": [
-      "/products/Marbles/Snake%20Black%20INDIAN%20.png"
+      "/products/Marbles/Snake Black INDIAN .png"
     ],
     "featured": false,
     "sortOrder": 110
@@ -1936,9 +1936,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Snow White (IT) - Marble",
     "description": "Premium natural Marble material: Snow White (IT).",
-    "heroImage": "/products/Marbles/Snow%20White%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Snow White (IT).png",
     "gallery": [
-      "/products/Marbles/Snow%20White%20%28IT%29.png"
+      "/products/Marbles/Snow White (IT).png"
     ],
     "featured": false,
     "sortOrder": 111
@@ -1951,9 +1951,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Spider Green  - Marble",
     "description": "Premium natural Marble material: Spider Green .",
-    "heroImage": "/products/Marbles/Spider%20Green%20.png",
+    "heroImage": "/products/Marbles/Spider Green .png",
     "gallery": [
-      "/products/Marbles/Spider%20Green%20.png"
+      "/products/Marbles/Spider Green .png"
     ],
     "featured": false,
     "sortOrder": 112
@@ -1966,9 +1966,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Stataurio (IT) - Marble",
     "description": "Premium natural Marble material: Stataurio (IT).",
-    "heroImage": "/products/Marbles/Stataurio%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Stataurio (IT).png",
     "gallery": [
-      "/products/Marbles/Stataurio%20%28IT%29.png"
+      "/products/Marbles/Stataurio (IT).png"
     ],
     "featured": false,
     "sortOrder": 113
@@ -1981,9 +1981,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Sunset Blue (B) - Marble",
     "description": "Premium natural Marble material: Sunset Blue (B).",
-    "heroImage": "/products/Marbles/Sunset%20Blue%20%28B%29.png",
+    "heroImage": "/products/Marbles/Sunset Blue (B).png",
     "gallery": [
-      "/products/Marbles/Sunset%20Blue%20%28B%29.png"
+      "/products/Marbles/Sunset Blue (B).png"
     ],
     "featured": false,
     "sortOrder": 114
@@ -1996,9 +1996,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Super White (B) - Marble",
     "description": "Premium natural Marble material: Super White (B).",
-    "heroImage": "/products/Marbles/Super%20White%20%28B%29.png",
+    "heroImage": "/products/Marbles/Super White (B).png",
     "gallery": [
-      "/products/Marbles/Super%20White%20%28B%29.png"
+      "/products/Marbles/Super White (B).png"
     ],
     "featured": false,
     "sortOrder": 115
@@ -2011,9 +2011,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "Swarowski White (V) - Marble",
     "description": "Premium natural Marble material: Swarowski White (V).",
-    "heroImage": "/products/Marbles/Swarowski%20White%20%28V%29.png",
+    "heroImage": "/products/Marbles/Swarowski White (V).png",
     "gallery": [
-      "/products/Marbles/Swarowski%20White%20%28V%29.png"
+      "/products/Marbles/Swarowski White (V).png"
     ],
     "featured": false,
     "sortOrder": 116
@@ -2026,9 +2026,9 @@ const realProducts: Product[] = [
     "subcategory": "brazilian-marble",
     "shortDescription": "Turtle Green (B) - Marble",
     "description": "Premium natural Marble material: Turtle Green (B).",
-    "heroImage": "/products/Marbles/Turtle%20Green%20%28B%29.png",
+    "heroImage": "/products/Marbles/Turtle Green (B).png",
     "gallery": [
-      "/products/Marbles/Turtle%20Green%20%28B%29.png"
+      "/products/Marbles/Turtle Green (B).png"
     ],
     "featured": false,
     "sortOrder": 117
@@ -2041,9 +2041,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Vanilla Cream (IT) - Marble",
     "description": "Premium natural Marble material: Vanilla Cream (IT).",
-    "heroImage": "/products/Marbles/Vanilla%20Cream%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Vanilla Cream (IT).png",
     "gallery": [
-      "/products/Marbles/Vanilla%20Cream%20%28IT%29.png"
+      "/products/Marbles/Vanilla Cream (IT).png"
     ],
     "featured": false,
     "sortOrder": 118
@@ -2056,9 +2056,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Volacasa (IT) - Marble",
     "description": "Premium natural Marble material: Volacasa (IT).",
-    "heroImage": "/products/Marbles/Volacasa%20%28IT%29.png",
+    "heroImage": "/products/Marbles/Volacasa (IT).png",
     "gallery": [
-      "/products/Marbles/Volacasa%20%28IT%29.png"
+      "/products/Marbles/Volacasa (IT).png"
     ],
     "featured": false,
     "sortOrder": 119
@@ -2071,9 +2071,9 @@ const realProducts: Product[] = [
     "subcategory": "indian-marble",
     "shortDescription": "Wavy Green Indian  - Marble",
     "description": "Premium natural Marble material: Wavy Green Indian .",
-    "heroImage": "/products/Marbles/Wavy%20Green%20Indian%20.png",
+    "heroImage": "/products/Marbles/Wavy Green Indian .png",
     "gallery": [
-      "/products/Marbles/Wavy%20Green%20Indian%20.png"
+      "/products/Marbles/Wavy Green Indian .png"
     ],
     "featured": true,
     "sortOrder": 120
@@ -2086,9 +2086,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "White (IT) - Marble",
     "description": "Premium natural Marble material: White (IT).",
-    "heroImage": "/products/Marbles/White%20%28IT%29.png",
+    "heroImage": "/products/Marbles/White (IT).png",
     "gallery": [
-      "/products/Marbles/White%20%28IT%29.png"
+      "/products/Marbles/White (IT).png"
     ],
     "featured": false,
     "sortOrder": 121
@@ -2101,9 +2101,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "White (V) - Marble",
     "description": "Premium natural Marble material: White (V).",
-    "heroImage": "/products/Marbles/White%20%28V%29.png",
+    "heroImage": "/products/Marbles/White (V).png",
     "gallery": [
-      "/products/Marbles/White%20%28V%29.png"
+      "/products/Marbles/White (V).png"
     ],
     "featured": false,
     "sortOrder": 122
@@ -2116,9 +2116,9 @@ const realProducts: Product[] = [
     "subcategory": "marble-collection",
     "shortDescription": "White Small Poker (V) - Marble",
     "description": "Premium natural Marble material: White Small Poker (V).",
-    "heroImage": "/products/Marbles/White%20Small%20Poker%20%28V%29.png",
+    "heroImage": "/products/Marbles/White Small Poker (V).png",
     "gallery": [
-      "/products/Marbles/White%20Small%20Poker%20%28V%29.png"
+      "/products/Marbles/White Small Poker (V).png"
     ],
     "featured": false,
     "sortOrder": 123
@@ -2131,9 +2131,9 @@ const realProducts: Product[] = [
     "subcategory": "yet-to-decide",
     "shortDescription": "YTD3 (IT) - Marble",
     "description": "Premium natural Marble material: YTD3 (IT).",
-    "heroImage": "/products/Marbles/YTD3%20%28IT%29.png",
+    "heroImage": "/products/Marbles/YTD3 (IT).png",
     "gallery": [
-      "/products/Marbles/YTD3%20%28IT%29.png"
+      "/products/Marbles/YTD3 (IT).png"
     ],
     "featured": false,
     "sortOrder": 124
@@ -2146,9 +2146,9 @@ const realProducts: Product[] = [
     "subcategory": "yet-to-decide",
     "shortDescription": "YTD4 (IT) - Marble",
     "description": "Premium natural Marble material: YTD4 (IT).",
-    "heroImage": "/products/Marbles/YTD4%20%28IT%29.png",
+    "heroImage": "/products/Marbles/YTD4 (IT).png",
     "gallery": [
-      "/products/Marbles/YTD4%20%28IT%29.png"
+      "/products/Marbles/YTD4 (IT).png"
     ],
     "featured": false,
     "sortOrder": 125
@@ -2161,9 +2161,9 @@ const realProducts: Product[] = [
     "subcategory": "italian-marble",
     "shortDescription": "Yellow Traventine (IT0 - Marble",
     "description": "Premium natural Marble material: Yellow Traventine (IT0.",
-    "heroImage": "/products/Marbles/Yellow%20Traventine%20%28IT0.png",
+    "heroImage": "/products/Marbles/Yellow Traventine (IT0.png",
     "gallery": [
-      "/products/Marbles/Yellow%20Traventine%20%28IT0.png"
+      "/products/Marbles/Yellow Traventine (IT0.png"
     ],
     "featured": false,
     "sortOrder": 126
@@ -2251,9 +2251,9 @@ const realProducts: Product[] = [
     "subcategory": "onyx-collection",
     "shortDescription": "Pink Onyx - Onyx",
     "description": "Premium natural Onyx material: Pink Onyx.",
-    "heroImage": "/products/Onyx/Pink%20Onyx.png",
+    "heroImage": "/products/Onyx/Pink Onyx.png",
     "gallery": [
-      "/products/Onyx/Pink%20Onyx.png"
+      "/products/Onyx/Pink Onyx.png"
     ],
     "featured": true,
     "sortOrder": 132
@@ -2266,9 +2266,9 @@ const realProducts: Product[] = [
     "subcategory": "onyx-collection",
     "shortDescription": "Pink Pentagonia - Onyx",
     "description": "Premium natural Onyx material: Pink Pentagonia.",
-    "heroImage": "/products/Onyx/Pink%20Pentagonia.png",
+    "heroImage": "/products/Onyx/Pink Pentagonia.png",
     "gallery": [
-      "/products/Onyx/Pink%20Pentagonia.png"
+      "/products/Onyx/Pink Pentagonia.png"
     ],
     "featured": false,
     "sortOrder": 133
@@ -2341,9 +2341,9 @@ const realProducts: Product[] = [
     "subcategory": "onyx-collection",
     "shortDescription": "YTD 1 - Onyx",
     "description": "Premium natural Onyx material: YTD 1.",
-    "heroImage": "/products/Onyx/YTD%201.png",
+    "heroImage": "/products/Onyx/YTD 1.png",
     "gallery": [
-      "/products/Onyx/YTD%201.png"
+      "/products/Onyx/YTD 1.png"
     ],
     "featured": false,
     "sortOrder": 138
@@ -2356,9 +2356,9 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "3D White Fluted - Sandstone",
     "description": "Premium natural Sandstone material: 3D White Fluted.",
-    "heroImage": "/products/Sandstone/3D%20White%20Fluted.png",
+    "heroImage": "/products/Sandstone/3D White Fluted.png",
     "gallery": [
-      "/products/Sandstone/3D%20White%20Fluted.png"
+      "/products/Sandstone/3D White Fluted.png"
     ],
     "featured": false,
     "sortOrder": 139
@@ -2371,9 +2371,9 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "Black Fluted - Sandstone",
     "description": "Premium natural Sandstone material: Black Fluted.",
-    "heroImage": "/products/Sandstone/Black%20Fluted.png",
+    "heroImage": "/products/Sandstone/Black Fluted.png",
     "gallery": [
-      "/products/Sandstone/Black%20Fluted.png"
+      "/products/Sandstone/Black Fluted.png"
     ],
     "featured": false,
     "sortOrder": 140
@@ -2386,9 +2386,9 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "Black Hydra Finish  - Sandstone",
     "description": "Premium natural Sandstone material: Black Hydra Finish .",
-    "heroImage": "/products/Sandstone/Black%20Hydra%20Finish%20.png",
+    "heroImage": "/products/Sandstone/Black Hydra Finish .png",
     "gallery": [
-      "/products/Sandstone/Black%20Hydra%20Finish%20.png"
+      "/products/Sandstone/Black Hydra Finish .png"
     ],
     "featured": false,
     "sortOrder": 141
@@ -2401,9 +2401,9 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "Graywood Hydra Finish - Sandstone",
     "description": "Premium natural Sandstone material: Graywood Hydra Finish.",
-    "heroImage": "/products/Sandstone/Graywood%20Hydra%20Finish.png",
+    "heroImage": "/products/Sandstone/Graywood Hydra Finish.png",
     "gallery": [
-      "/products/Sandstone/Graywood%20Hydra%20Finish.png"
+      "/products/Sandstone/Graywood Hydra Finish.png"
     ],
     "featured": false,
     "sortOrder": 142
@@ -2416,9 +2416,9 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "Graywood Sandplast Finish - Sandstone",
     "description": "Premium natural Sandstone material: Graywood Sandplast Finish.",
-    "heroImage": "/products/Sandstone/Graywood%20Sandplast%20Finish.png",
+    "heroImage": "/products/Sandstone/Graywood Sandplast Finish.png",
     "gallery": [
-      "/products/Sandstone/Graywood%20Sandplast%20Finish.png"
+      "/products/Sandstone/Graywood Sandplast Finish.png"
     ],
     "featured": false,
     "sortOrder": 143
@@ -2431,9 +2431,9 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "Gwalior Mint Sandplast Finish - Sandstone",
     "description": "Premium natural Sandstone material: Gwalior Mint Sandplast Finish.",
-    "heroImage": "/products/Sandstone/Gwalior%20Mint%20Sandplast%20Finish.png",
+    "heroImage": "/products/Sandstone/Gwalior Mint Sandplast Finish.png",
     "gallery": [
-      "/products/Sandstone/Gwalior%20Mint%20Sandplast%20Finish.png"
+      "/products/Sandstone/Gwalior Mint Sandplast Finish.png"
     ],
     "featured": true,
     "sortOrder": 144
@@ -2446,9 +2446,9 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "Indian Mocha - Sandstone",
     "description": "Premium natural Sandstone material: Indian Mocha.",
-    "heroImage": "/products/Sandstone/Indian%20Mocha.png",
+    "heroImage": "/products/Sandstone/Indian Mocha.png",
     "gallery": [
-      "/products/Sandstone/Indian%20Mocha.png"
+      "/products/Sandstone/Indian Mocha.png"
     ],
     "featured": false,
     "sortOrder": 145
@@ -2461,9 +2461,9 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "Jodhpur Finish - Sandstone",
     "description": "Premium natural Sandstone material: Jodhpur Finish.",
-    "heroImage": "/products/Sandstone/Jodhpur%20Finish.png",
+    "heroImage": "/products/Sandstone/Jodhpur Finish.png",
     "gallery": [
-      "/products/Sandstone/Jodhpur%20Finish.png"
+      "/products/Sandstone/Jodhpur Finish.png"
     ],
     "featured": false,
     "sortOrder": 146
@@ -2476,9 +2476,9 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "Monsoon Sunglass Finish - Sandstone",
     "description": "Premium natural Sandstone material: Monsoon Sunglass Finish.",
-    "heroImage": "/products/Sandstone/Monsoon%20Sunglass%20Finish.png",
+    "heroImage": "/products/Sandstone/Monsoon Sunglass Finish.png",
     "gallery": [
-      "/products/Sandstone/Monsoon%20Sunglass%20Finish.png"
+      "/products/Sandstone/Monsoon Sunglass Finish.png"
     ],
     "featured": false,
     "sortOrder": 147
@@ -2491,15 +2491,18 @@ const realProducts: Product[] = [
     "subcategory": "sandstone-collection",
     "shortDescription": "Monsoon leather finish - Sandstone",
     "description": "Premium natural Sandstone material: Monsoon leather finish.",
-    "heroImage": "/products/Sandstone/Monsoon%20leather%20finish.png",
+    "heroImage": "/products/Sandstone/Monsoon leather finish.png",
     "gallery": [
-      "/products/Sandstone/Monsoon%20leather%20finish.png"
+      "/products/Sandstone/Monsoon leather finish.png"
     ],
     "featured": false,
     "sortOrder": 148
   }
 ];
 
+// ============================================================================
+// 3. SUBCATEGORY DEFINITIONS
+// ============================================================================
 const realSubcategories: ProductSubcategory[] = [
   {
     "id": "subcat-brazilian-marble",
@@ -2575,6 +2578,21 @@ const realSubcategories: ProductSubcategory[] = [
   }
 ];
 
+// ============================================================================
+// 5. DERIVED TAXONOMY & HELPERS
+// ============================================================================
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+// ============================================================================
+// 6. EXPORTS
+// ============================================================================
 export const subcategories: ProductSubcategory[] = [...realSubcategories];
 export const products: Product[] = [...realProducts];
 

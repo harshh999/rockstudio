@@ -31,7 +31,11 @@ export default function ProductCard({
       {/* Primary Material Photograph */}
       <Image
         src={product.heroImage}
-        alt={product.name}
+        alt={
+          product.category
+            ? `${product.name} ${product.category} — Rocks Studio`
+            : `${product.name} — Rocks Studio`
+        }
         fill
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1536px) 25vw, 25vw"
         quality={quality}

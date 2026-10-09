@@ -16,9 +16,37 @@ import CategoryFilter from "@/components/ui/CategoryFilter";
 import QuoteCTA from "@/components/ui/QuoteCTA";
 
 export const metadata: Metadata = {
-  title: "Catalogue | Rocks Studio",
+  title: "Natural Stone, Marble & Granite Collection | Rocks Studio",
   description:
-    "Explore Rocks Studio's natural stone material catalogue categorized by Granite, CNC, Marble, Onyx, Sandstone, and Wall Cladding.",
+    "Explore Rocks Studio's natural stone collection in Ahmedabad. Sourcing premium marble, granite, CNC textures, onyx, sandstone, wall cladding, Kota, and Kaddapa slabs for architecture.",
+  keywords: [
+    "natural stone collection",
+    "marble supplier Ahmedabad",
+    "granite supplier Ahmedabad",
+    "natural stone supplier",
+    "stone slabs",
+    "marble and granite",
+    "CNC stone cladding",
+    "onyx slabs",
+  ],
+  alternates: {
+    canonical: "/products",
+  },
+  openGraph: {
+    title: "Natural Stone, Marble & Granite Collection | Rocks Studio",
+    description:
+      "Explore Rocks Studio's natural stone collection in Ahmedabad. Sourcing premium marble, granite, CNC textures, onyx, sandstone, wall cladding, Kota, and Kaddapa slabs.",
+    url: "https://rocks-studio.com/products",
+    siteName: "Rocks Studio",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Natural Stone, Marble & Granite Collection | Rocks Studio",
+    description:
+      "Explore Rocks Studio's natural stone collection in Ahmedabad. Premium marble, granite, CNC textures, onyx, sandstone, and wall cladding.",
+  },
 };
 
 interface ProductsPageProps {

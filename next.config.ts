@@ -27,11 +27,6 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
-      {
-        source: "/products/:slug+",
-        destination: "/products",
-        permanent: true,
-      },
     ];
   },
 };

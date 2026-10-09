@@ -8,9 +8,35 @@ import FoundationSection from "@/components/ui/FoundationSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "About Us | Rocks Studio",
+  title: "About Rocks Studio | Natural Stone Supplier in Ahmedabad",
   description:
-    "Learn about Rocks Studio — an Ahmedabad-based natural stone company sourcing, processing, and supplying premium marble, granite, quartzite, and sandstone for architectural and interior applications.",
+    "Learn about Rocks Studio — a leading natural stone supplier and manufacturer based in Ahmedabad, Gujarat. Sourcing and processing premium marble, granite, CNC textures, onyx, sandstone, and wall cladding.",
+  keywords: [
+    "about Rocks Studio",
+    "natural stone supplier Ahmedabad",
+    "marble supplier Ahmedabad",
+    "granite supplier Ahmedabad",
+    "natural stone manufacturer",
+    "architectural stone",
+  ],
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Rocks Studio | Natural Stone Supplier in Ahmedabad",
+    description:
+      "Learn about Rocks Studio — a leading natural stone supplier and manufacturer based in Ahmedabad, Gujarat. Sourcing and processing premium marble, granite, CNC textures, onyx, sandstone, and wall cladding.",
+    url: "https://rocks-studio.com/about",
+    siteName: "Rocks Studio",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Rocks Studio | Natural Stone Supplier in Ahmedabad",
+    description:
+      "Learn about Rocks Studio — a leading natural stone supplier and manufacturer based in Ahmedabad, Gujarat.",
+  },
 };
 
 export default async function AboutPage() {
