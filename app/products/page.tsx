@@ -54,8 +54,19 @@ interface ProductsPageProps {
 }
 
 export default async function ProductsPage({ searchParams }: ProductsPageProps) {
-  const { category, subcategory } = await searchParams;
+  const { category: rawCategory, subcategory } = await searchParams;
   const categories = await getProductCategories();
+
+  // Find matching category by slug or name (case-insensitive)
+  const activeCategory = rawCategory && rawCategory !== "all"
+    ? categories.find(
+        (c) =>
+          c.slug.toLowerCase() === rawCategory.trim().toLowerCase() ||
+          c.name.toLowerCase() === rawCategory.trim().toLowerCase()
+      )
+    : null;
+
+  const category = activeCategory ? activeCategory.slug : (rawCategory && rawCategory !== "all" ? rawCategory : "all");
 
   const subcategories =
     category && category !== "all"
@@ -71,7 +82,6 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     products = await getProducts();
   }
 
-  const activeCategory = categories.find((c) => c.slug === category);
   const activeSubcategory = subcategory
     ? await getProductSubcategoryBySlug(subcategory)
     : null;

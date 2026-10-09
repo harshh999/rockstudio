@@ -14,7 +14,15 @@ export default function CategoryFilter({
 }: CategoryFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const activeCategory = searchParams.get("category") ?? "all";
+  const rawCategory = searchParams.get("category");
+  const matchedCat = rawCategory && rawCategory !== "all"
+    ? categories.find(
+        (c) =>
+          c.slug.toLowerCase() === rawCategory.trim().toLowerCase() ||
+          c.name.toLowerCase() === rawCategory.trim().toLowerCase()
+      )
+    : null;
+  const activeCategory = matchedCat ? matchedCat.slug : (rawCategory && rawCategory !== "all" ? rawCategory : "all");
   const activeSubcategory = searchParams.get("subcategory") ?? "all";
 
   function handleCategoryChange(categorySlug: string) {

@@ -19,7 +19,9 @@ import QuoteCTA from "@/components/ui/QuoteCTA";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Rocks Studio — Natural Stone Supplier in Ahmedabad",
+  title: {
+    absolute: "Best Marble and Granite Manufacturers & Supplier in India",
+  },
   description:
     "Rocks Studio is a leading natural stone supplier and manufacturer in Ahmedabad, Gujarat. Sourcing and crafting premium marble, granite, quartzite, CNC textures, onyx, sandstone, and wall cladding for architecture and interiors.",
   keywords: [
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Rocks Studio — Natural Stone Supplier in Ahmedabad",
+    title: "Best Marble and Granite Manufacturers & Supplier in India",
     description:
       "Leading natural stone supplier and manufacturer in Ahmedabad, Gujarat. Sourcing and crafting premium marble, granite, CNC textures, onyx, sandstone, and wall cladding.",
     url: "https://rocks-studio.com",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rocks Studio — Natural Stone Supplier in Ahmedabad",
+    title: "Best Marble and Granite Manufacturers & Supplier in India",
     description:
       "Leading natural stone supplier and manufacturer in Ahmedabad, Gujarat. Premium marble, granite, CNC textures, onyx, sandstone, and wall cladding.",
   },

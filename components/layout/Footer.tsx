@@ -17,30 +17,30 @@ export default function Footer({ settings }: FooterProps) {
 
   // Explicit 8 materials split into 2 sub-columns
   const materialsCol1 = [
-    { label: "Marble", filter: "Marble" },
-    { label: "Granite", filter: "Granite" },
-    { label: "CNC", filter: "CNC" },
-    { label: "Onyx", filter: "Onyx" },
+    { label: "Marble", filter: "marble" },
+    { label: "Granite", filter: "granite" },
+    { label: "CNC", filter: "cnc" },
+    { label: "Onyx", filter: "onyx" },
   ];
 
   const materialsCol2 = [
-    { label: "Sand Stone", filter: "Sand Stone" },
-    { label: "Wall Cladding", filter: "Wall Cladding" },
-    { label: "Kota", filter: "Kota" },
-    { label: "Kaddapa", filter: "Kaddapa" },
+    { label: "Sand Stone", filter: "sandstone" },
+    { label: "Wall Cladding", filter: "wall-cladding" },
+    { label: "Kota", filter: "kota" },
+    { label: "Kaddapa", filter: "kaddapa" },
   ];
 
   // Expertise items split into 2 sub-columns (3 items each)
   const expertiseCol1 = [
-    { label: "Stone Sourcing", href: "/process" },
+    { label: "Stone Sourcing", href: "/process#mining-sourcing" },
     { label: "Material Selection", href: "/products" },
-    { label: "Precision Processing", href: "/process" },
+    { label: "Precision Processing", href: "/process#manufacturing" },
   ];
 
   const expertiseCol2 = [
-    { label: "Surface Finishing", href: "/process" },
-    { label: "Quality Inspection", href: "/process" },
-    { label: "Project Supply", href: "/about" },
+    { label: "Surface Finishing", href: "/process#processing-finishing" },
+    { label: "Quality Inspection", href: "/process#quality-control" },
+    { label: "Project Supply", href: "/process#capabilities" },
   ];
 
   // Dynamic Location Data
