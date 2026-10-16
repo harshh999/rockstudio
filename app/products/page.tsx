@@ -18,7 +18,7 @@ import QuoteCTA from "@/components/ui/QuoteCTA";
 export const metadata: Metadata = {
   title: "Natural Stone, Marble & Granite Collection | Rocks Studio",
   description:
-    "Explore Rocks Studio's natural stone collection in Ahmedabad. Sourcing premium marble, granite, CNC textures, onyx, sandstone, wall cladding, Kota, and Kaddapa slabs for architecture.",
+    "Explore Rocks Studio's natural stone collection in Ahmedabad. Sourcing premium marble, granite, CNC textures, onyx, sandstone, wall cladding, and Parking/Walkway slabs for architecture.",
   keywords: [
     "natural stone collection",
     "marble supplier Ahmedabad",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Natural Stone, Marble & Granite Collection | Rocks Studio",
     description:
-      "Explore Rocks Studio's natural stone collection in Ahmedabad. Sourcing premium marble, granite, CNC textures, onyx, sandstone, wall cladding, Kota, and Kaddapa slabs.",
+      "Explore Rocks Studio's natural stone collection in Ahmedabad. Sourcing premium marble, granite, CNC textures, onyx, sandstone, wall cladding, and Parking/Walkway slabs.",
     url: "https://rocks-studio.com/products",
     siteName: "Rocks Studio",
     locale: "en_IN",

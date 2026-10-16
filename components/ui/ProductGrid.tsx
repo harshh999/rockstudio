@@ -122,9 +122,12 @@ export default function ProductGrid({
 
   if (products.length === 0) {
     return (
-      <div className="py-24 text-center">
-        <p className="text-base font-light text-stone-500">
-          No materials found matching the selected filter.
+      <div className="py-20 sm:py-28 text-center rounded-2xl border border-stone-200/80 bg-stone-50/50 p-8 sm:p-12 my-6">
+        <h3 className="font-serif text-2xl sm:text-3xl font-light text-stone-800">
+          No Materials Currently Listed
+        </h3>
+        <p className="mt-3 text-sm sm:text-base font-light text-stone-500 max-w-md mx-auto leading-relaxed">
+          We are currently updating our active catalogue for this selection. Please contact us directly for custom sourcing, samples, and architectural specifications.
         </p>
       </div>
     );

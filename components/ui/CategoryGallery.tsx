@@ -12,7 +12,7 @@ interface CategoryGalleryProps {
 }
 
 // Explicit 8-category ordering:
-// 1. Marble, 2. Granite, 3. CNC, 4. Wall Cladding, 5. Onyx, 6. Sandstone, 7. Kota, 8. Kaddapa
+// 1. Marble, 2. Granite, 3. CNC, 4. Wall Cladding, 5. Onyx, 6. Sandstone, 7. Parking/Walkway
 const ORDERED_SLUGS = [
   "marble",
   "granite",
@@ -20,8 +20,7 @@ const ORDERED_SLUGS = [
   "wall-cladding",
   "onyx",
   "sandstone",
-  "kota",
-  "kaddapa",
+  "parking-walkway",
 ];
 
 const FALLBACK_IMAGES: Record<string, string> = {
@@ -31,8 +30,7 @@ const FALLBACK_IMAGES: Record<string, string> = {
   "wall-cladding": "/HeroPage/WallCladding_1.jpg",
   onyx: "/HeroPage/Onyx_1.jpg",
   sandstone: "/HeroPage/Sandstone_1.png",
-  kota: "/images/categories/kota.jpg",
-  kaddapa: "/images/categories/kaddapa.jpg",
+  "parking-walkway": "/HeroPage/Kota_1.jpg",
 };
 
 const DISPLAY_NAMES: Record<string, string> = {
@@ -42,8 +40,7 @@ const DISPLAY_NAMES: Record<string, string> = {
   "wall-cladding": "Wall Cladding",
   onyx: "Onyx",
   sandstone: "Sand Stone",
-  kota: "Kota",
-  kaddapa: "Kaddapa",
+  "parking-walkway": "Parking/Walkway",
 };
 
 // Compact Grid span and typography configurations per category role
@@ -61,7 +58,7 @@ const LAYOUT_CONFIG: Record<
     priority: true,
   },
   granite: {
-    containerClass: "col-span-1 row-span-2 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2",
+    containerClass: "col-span-2 sm:col-span-1 row-span-2 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2",
     titleSizeClass: "text-[18px] sm:text-[22px] lg:text-[24px]",
     priority: true,
   },
@@ -74,20 +71,16 @@ const LAYOUT_CONFIG: Record<
     titleSizeClass: "text-[15px] sm:text-[18px] lg:text-[20px]",
   },
   onyx: {
-    containerClass: "col-span-2 row-span-1 md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1",
+    containerClass: "col-span-1 row-span-1 md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1",
     titleSizeClass: "text-[15px] sm:text-[18px] lg:text-[20px]",
   },
   sandstone: {
     containerClass: "col-span-1 row-span-1 md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1",
     titleSizeClass: "text-[15px] sm:text-[18px] lg:text-[20px]",
   },
-  kota: {
-    containerClass: "col-span-1 row-span-1 md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1",
-    titleSizeClass: "text-[15px] sm:text-[18px] lg:text-[20px]",
-  },
-  kaddapa: {
-    containerClass: "col-span-2 row-span-1 md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1",
-    titleSizeClass: "text-[15px] sm:text-[18px] lg:text-[20px]",
+  "parking-walkway": {
+    containerClass: "col-span-2 row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-1",
+    titleSizeClass: "text-[16px] sm:text-[20px] lg:text-[22px]",
   },
 };
 

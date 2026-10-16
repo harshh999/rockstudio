@@ -26,8 +26,7 @@ export default function Footer({ settings }: FooterProps) {
   const materialsCol2 = [
     { label: "Sand Stone", filter: "sandstone" },
     { label: "Wall Cladding", filter: "wall-cladding" },
-    { label: "Kota", filter: "kota" },
-    { label: "Kaddapa", filter: "kaddapa" },
+    { label: "Parking/Walkway", filter: "parking-walkway" },
   ];
 
   // Expertise items split into 2 sub-columns (3 items each)

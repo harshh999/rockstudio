@@ -54,6 +54,7 @@ function ContactFormInner({ categories = defaultCategories, initialCategory }: C
     const currentParam = searchParams.get("category") || initialCategory;
     const resolved = resolveCategorySlug(categories, currentParam);
     if (resolved) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData((prev) => ({ ...prev, requirement: resolved }));
     }
   }, [searchParams, initialCategory, categories]);

@@ -45,8 +45,7 @@ export const NAVIGATION_DATA: NavItem[] = [
       { id: 34, title: "Onyx", slug: "onyx" },
       { id: 35, title: "Sand Stone", slug: "sandstone" },
       { id: 36, title: "Wall Cladding", slug: "wall-cladding" },
-      { id: 37, title: "Kota", slug: "kota" },
-      { id: 38, title: "Kaddapa", slug: "kaddapa" },
+      { id: 37, title: "Parking/Walkway", slug: "parking-walkway" },
     ],
   },
   {
